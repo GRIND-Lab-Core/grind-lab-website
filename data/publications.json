@@ -1,0 +1,73 @@
+[
+  {
+    "id": "pub-001",
+    "type": "journal",
+    "title": "PLACEHOLDER: Full Paper Title Here",
+    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author"],
+    "journal": "PLACEHOLDER: Journal Name",
+    "year": 2025,
+    "volume": "PLACEHOLDER",
+    "issue": "PLACEHOLDER",
+    "pages": "PLACEHOLDER",
+    "doi": "PLACEHOLDER: 10.XXXX/XXXXXX",
+    "url": "#",
+    "abstract": "PLACEHOLDER: Brief abstract or summary of this paper.",
+    "tags": ["GeoAI", "Remote Sensing"]
+  },
+  {
+    "id": "pub-002",
+    "type": "journal",
+    "title": "PLACEHOLDER: Full Paper Title Here",
+    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author", "PLACEHOLDER Co-Author"],
+    "journal": "PLACEHOLDER: Journal Name",
+    "year": 2024,
+    "doi": "PLACEHOLDER: 10.XXXX/XXXXXX",
+    "url": "#",
+    "abstract": "PLACEHOLDER: Brief abstract.",
+    "tags": ["Disaster Risk", "GeoAI"]
+  },
+  {
+    "id": "pub-003",
+    "type": "journal",
+    "title": "PLACEHOLDER: Full Paper Title Here",
+    "authors": ["PLACEHOLDER Co-Author", "Bing Zhou"],
+    "journal": "PLACEHOLDER: Journal Name",
+    "year": 2024,
+    "doi": "PLACEHOLDER: 10.XXXX/XXXXXX",
+    "url": "#",
+    "abstract": "PLACEHOLDER: Brief abstract.",
+    "tags": ["Nature-Human", "Climate"]
+  },
+  {
+    "id": "pub-004",
+    "type": "conference",
+    "title": "PLACEHOLDER: Conference Paper Title",
+    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author"],
+    "venue": "PLACEHOLDER: Conference Name (CONF XXXX)",
+    "year": 2024,
+    "pages": "PLACEHOLDER: pp. XX–XX",
+    "url": "#",
+    "tags": ["GeoAI", "XAI"]
+  },
+  {
+    "id": "pub-005",
+    "type": "conference",
+    "title": "PLACEHOLDER: Conference Paper Title",
+    "authors": ["PLACEHOLDER Student Name", "Bing Zhou"],
+    "venue": "PLACEHOLDER: Conference Name (CONF XXXX)",
+    "year": 2025,
+    "url": "#",
+    "tags": ["Remote Sensing", "Disaster"]
+  },
+  {
+    "id": "pub-006",
+    "type": "preprint",
+    "title": "PLACEHOLDER: Preprint Title",
+    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author"],
+    "venue": "arXiv / ESSOAr",
+    "year": 2025,
+    "arxiv": "PLACEHOLDER: XXXX.XXXXX",
+    "url": "#",
+    "tags": ["GeoAI", "Responsible AI"]
+  }
+]

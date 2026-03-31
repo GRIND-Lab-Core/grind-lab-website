@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apply to the GRIND Lab — PhD, MS, postdoc, and undergrad research opportunities at UTK.">
+  <title>Apply — GRIND Lab</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* Apply page specific styles */
+    .apply-intro { max-width: 1200px; margin: 0 auto; padding: 64px 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .apply-intro-text h2 { font-size: 38px; font-weight: 900; color: var(--text-dark); margin-bottom: 16px; line-height: 1.2; }
+    .apply-intro-text p { font-size: 16px; color: var(--text-gray); line-height: 1.8; margin-bottom: 16px; }
+    .apply-intro-values { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .apply-value { background: var(--lighter); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+    .apply-value-icon { font-size: 24px; margin-bottom: 10px; }
+    .apply-value h4 { font-size: 14px; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+    .apply-value p { font-size: 13px; color: var(--text-gray); line-height: 1.55; margin: 0; }
+
+    .positions-section { background: var(--primary); padding: 80px 28px; }
+    .position-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 28px; }
+    .position-header { padding: 32px 36px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .position-title-group { flex: 1; }
+    .position-title { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 8px; }
+    .position-meta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+    .position-meta span { font-size: 13px; color: rgba(255,255,255,0.55); display: flex; align-items: center; gap: 5px; }
+    .position-meta i { color: var(--accent-light); font-size: 12px; }
+    .position-status { padding: 8px 18px; border-radius: 50px; font-size: 12px; font-weight: 700; letter-spacing: 0.5px; flex-shrink: 0; }
+    .position-status.open { background: rgba(5,150,105,0.2); color: #34d399; border: 1px solid rgba(52,211,153,0.25); }
+    .position-status.closed { background: rgba(107,114,128,0.2); color: rgba(255,255,255,0.4); border: 1px solid rgba(255,255,255,0.1); }
+    .position-status.reviewing { background: rgba(0,150,183,0.2); color: var(--accent-light); border: 1px solid rgba(78,205,196,0.25); }
+    .position-body { padding: 32px 36px; }
+    .position-body p { font-size: 15px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 20px; }
+    .position-requirements h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent-light); margin-bottom: 14px; }
+    .req-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
+    .req-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 14px; color: rgba(255,255,255,0.6); }
+    .req-list i { color: var(--accent-light); margin-top: 2px; font-size: 11px; flex-shrink: 0; }
+    .position-deadline { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: rgba(255,255,255,0.04); border-radius: 8px; font-size: 14px; color: rgba(255,255,255,0.6); margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.06); }
+    .position-deadline i { color: var(--highlight); }
+    .position-deadline strong { color: var(--white); }
+
+    .apply-steps { background: var(--lighter); padding: 80px 28px; }
+    .steps-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 24px; counter-reset: steps; }
+    .step-card { text-align: center; padding: 32px 24px; background: var(--white); border-radius: var(--radius); border: 1px solid var(--border); position: relative; }
+    .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--accent); color: var(--white); font-size: 20px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
+    .step-card h3 { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 10px; }
+    .step-card p { font-size: 13.5px; color: var(--text-gray); line-height: 1.65; }
+    .step-connector { position: absolute; top: 48px; right: -12px; width: 24px; height: 2px; background: var(--border); z-index: 1; }
+
+    .materials-section { max-width: 900px; margin: 0 auto; padding: 64px 28px; }
+    .material-item { display: flex; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--border-light); }
+    .material-item:last-child { border-bottom: none; }
+    .material-icon { width: 44px; height: 44px; border-radius: 10px; background: var(--light); color: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .material-text h4 { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 5px; }
+    .material-text p { font-size: 13.5px; color: var(--text-gray); line-height: 1.6; }
+    .required-mark { color: var(--highlight); font-weight: 700; font-size: 12px; margin-left: 6px; }
+
+    @media (max-width: 1024px) { .steps-grid { grid-template-columns: repeat(2,1fr); } .apply-intro { grid-template-columns: 1fr; } }
+    @media (max-width: 768px) { .steps-grid { grid-template-columns: 1fr; } .req-list { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="page-loader" id="page-loader">
+  <img src="assets/images/logo/logo-white.svg" alt="GRIND Lab" class="loader-logo" width="80">
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/images/logo/logo.svg" alt="GRIND Lab Logo" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">GRIND Lab</span>
+        <span class="nav-logo-sub">UTK Geography</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="news.html" class="nav-link">News</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="team.html" class="nav-link">Team</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="apply.html" class="btn-apply">Apply</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Apply</span>
+    </div>
+    <div class="page-hero-eyebrow">Opportunities</div>
+    <h1>Join the GRIND Lab</h1>
+    <p>We are looking for passionate, motivated researchers to join our team. See current openings below.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     WHY JOIN
+═══════════════════════════════════════ -->
+<div class="apply-intro">
+  <div class="apply-intro-text fade-up">
+    <div class="section-tag" style="display:inline-block;margin-bottom:16px;">Why Join Us</div>
+    <h2>Research That Matters</h2>
+    <p>The GRIND Lab addresses some of the most pressing challenges of our time — natural disasters, climate risk, and environmental inequality — using cutting-edge geospatial AI.</p>
+    <p>As a GRIND Lab member, you'll work on impactful research, publish in top venues, build technical skills, and contribute to a more resilient and equitable world.</p>
+    <a href="#open-positions" class="btn btn-primary btn-lg" style="margin-top:12px;">
+      <i class="fas fa-search"></i> See Open Positions
+    </a>
+  </div>
+
+  <div class="apply-intro-values fade-up" data-delay="200">
+    <div class="apply-value">
+      <div class="apply-value-icon">🎓</div>
+      <h4>Rigorous Training</h4>
+      <p>Develop cutting-edge skills in GeoAI, remote sensing, and spatial data science through hands-on research.</p>
+    </div>
+    <div class="apply-value">
+      <div class="apply-value-icon">🤝</div>
+      <h4>Collaborative Culture</h4>
+      <p>Work within a supportive, diverse, and interdisciplinary team that values open science and collaboration.</p>
+    </div>
+    <div class="apply-value">
+      <div class="apply-value-icon">🌍</div>
+      <h4>Real-World Impact</h4>
+      <p>Contribute to research that directly informs disaster management, environmental policy, and community resilience.</p>
+    </div>
+    <div class="apply-value">
+      <div class="apply-value-icon">📈</div>
+      <h4>Career Development</h4>
+      <p>Receive mentorship, networking opportunities, and support for conference presentations and career goals.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     OPEN POSITIONS
+═══════════════════════════════════════ -->
+<section class="positions-section" id="open-positions">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Current Openings</div>
+      <h2 class="section-title">Open Positions</h2>
+      <p class="section-subtitle">Applications are reviewed on a rolling basis. Contact Dr. Zhou early to discuss fit.</p>
+    </div>
+
+    <!-- Position 1: PhD -->
+    <div class="position-card fade-up">
+      <div class="position-header">
+        <div class="position-title-group">
+          <div class="position-title">Ph.D. Student in Responsible GeoAI</div>
+          <div class="position-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Knoxville, TN (On-campus)</span>
+            <span><i class="fas fa-calendar"></i> Start: Fall 2026 / Spring 2026</span>
+            <span><i class="fas fa-dollar-sign"></i> Fully Funded (RA/TA)</span>
+            <span><i class="fas fa-clock"></i> Full-time</span>
+          </div>
+        </div>
+        <span class="position-status open">Open</span>
+      </div>
+      <div class="position-body">
+        <p>We are seeking motivated PhD students to work on NSF-funded and internally supported research projects in responsible GeoAI, disaster risk assessment, and coupled nature-human systems. Students will develop advanced AI/ML models and apply them to real-world geospatial problems.</p>
+
+        <div class="position-requirements">
+          <h4>Required Qualifications</h4>
+          <ul class="req-list">
+            <li><i class="fas fa-check"></i> B.S. or M.S. in Geography, GIScience, CS, Data Science, or related</li>
+            <li><i class="fas fa-check"></i> Programming proficiency (Python and/or R)</li>
+            <li><i class="fas fa-check"></i> Interest in GeoAI, remote sensing, or natural hazards</li>
+            <li><i class="fas fa-check"></i> Strong analytical and communication skills</li>
+          </ul>
+
+          <h4>Preferred Qualifications</h4>
+          <ul class="req-list">
+            <li><i class="fas fa-star"></i> Experience with deep learning frameworks (PyTorch, TensorFlow)</li>
+            <li><i class="fas fa-star"></i> GIS/remote sensing experience (QGIS, ArcGIS, Google Earth Engine)</li>
+            <li><i class="fas fa-star"></i> Prior research experience or publications</li>
+            <li><i class="fas fa-star"></i> Experience with satellite data (Sentinel, Landsat, etc.)</li>
+          </ul>
+        </div>
+
+        <div class="position-deadline">
+          <i class="fas fa-clock"></i>
+          <span>Application Deadline: <strong>PLACEHOLDER: Month DD, YYYY</strong> (for fall entry) — Contact Dr. Zhou before applying.</span>
+        </div>
+
+        <a href="contact.html" class="btn btn-outline-white">
+          <i class="fas fa-envelope"></i> Express Interest
+        </a>
+      </div>
+    </div>
+
+    <!-- Position 2: Postdoc (Placeholder) -->
+    <div class="position-card fade-up">
+      <div class="position-header">
+        <div class="position-title-group">
+          <div class="position-title">Postdoctoral Researcher — PLACEHOLDER: Research Area</div>
+          <div class="position-meta">
+            <span><i class="fas fa-map-marker-alt"></i> Knoxville, TN</span>
+            <span><i class="fas fa-calendar"></i> Start: PLACEHOLDER</span>
+            <span><i class="fas fa-clock"></i> 1–2 Year Appointment</span>
+          </div>
+        </div>
+        <span class="position-status reviewing">Reviewing</span>
+      </div>
+      <div class="position-body">
+        <p>PLACEHOLDER: Description of postdoc position. We are seeking a postdoctoral researcher with expertise in [PLACEHOLDER: research area]. The candidate will lead a research project on [PLACEHOLDER topic], mentor graduate students, and contribute to grant writing.</p>
+        <div class="position-requirements">
+          <h4>Required Qualifications</h4>
+          <ul class="req-list">
+            <li><i class="fas fa-check"></i> Ph.D. in relevant field</li>
+            <li><i class="fas fa-check"></i> Strong publication record</li>
+            <li><i class="fas fa-check"></i> PLACEHOLDER: Specific technical skill</li>
+            <li><i class="fas fa-check"></i> PLACEHOLDER: Specific domain expertise</li>
+          </ul>
+        </div>
+        <div class="position-deadline">
+          <i class="fas fa-clock"></i>
+          <span>Deadline: <strong>PLACEHOLDER: Open until filled</strong></span>
+        </div>
+        <a href="contact.html" class="btn btn-outline-white"><i class="fas fa-envelope"></i> Express Interest</a>
+      </div>
+    </div>
+
+    <!-- Position 3: Undergrad -->
+    <div class="position-card fade-up">
+      <div class="position-header">
+        <div class="position-title-group">
+          <div class="position-title">Undergraduate Research Assistant</div>
+          <div class="position-meta">
+            <span><i class="fas fa-map-marker-alt"></i> UTK Campus</span>
+            <span><i class="fas fa-calendar"></i> Rolling Admission</span>
+            <span><i class="fas fa-clock"></i> Part-time (10–15 hrs/week)</span>
+          </div>
+        </div>
+        <span class="position-status open">Open</span>
+      </div>
+      <div class="position-body">
+        <p>UTK undergraduate students interested in geospatial AI research are encouraged to apply. Research assistants will support ongoing projects through data processing, literature reviews, and coding assistance. This is an excellent opportunity to gain research experience.</p>
+        <div class="position-requirements">
+          <h4>Requirements</h4>
+          <ul class="req-list">
+            <li><i class="fas fa-check"></i> UTK undergraduate (Junior/Senior preferred)</li>
+            <li><i class="fas fa-check"></i> Basic Python or R knowledge</li>
+            <li><i class="fas fa-check"></i> Curiosity and commitment to learning</li>
+            <li><i class="fas fa-check"></i> Can dedicate 10+ hours/week</li>
+          </ul>
+        </div>
+        <a href="contact.html" class="btn btn-outline-white"><i class="fas fa-envelope"></i> Inquire</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     APPLICATION STEPS
+═══════════════════════════════════════ -->
+<section class="apply-steps">
+  <div class="container">
+    <div class="section-header fade-up">
+      <div class="section-tag">Process</div>
+      <h2 class="section-title">How to Apply</h2>
+      <p class="section-subtitle">Follow these steps to apply for a position in the GRIND Lab.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <h3>Explore &amp; Prepare</h3>
+        <p>Read our recent publications and projects. Identify 1–2 topics you're most interested in and how your background aligns.</p>
+      </div>
+      <div class="step-card fade-up" data-delay="100">
+        <div class="step-num">2</div>
+        <h3>Email Dr. Zhou</h3>
+        <p>Send a brief email to <a href="mailto:bzhou@utk.edu" style="color:var(--accent);">bzhou@utk.edu</a> with your CV and a short statement (1 paragraph) about your interests and goals. Use subject: "Prospective [PhD/Postdoc/Undergrad]: [Your Name]".</p>
+      </div>
+      <div class="step-card fade-up" data-delay="200">
+        <div class="step-num">3</div>
+        <h3>Initial Meeting</h3>
+        <p>If there's a potential fit, Dr. Zhou will schedule a 30-minute video call to discuss your background, interests, and available projects.</p>
+      </div>
+      <div class="step-card fade-up" data-delay="300">
+        <div class="step-num">4</div>
+        <h3>Formal Application</h3>
+        <p>Submit a formal application through the <a href="https://gradschool.utk.edu/" target="_blank" rel="noopener" style="color:var(--accent);">UTK Graduate School</a> and the Department of Geography &amp; Sustainability. PLACEHOLDER: Application portal link.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     APPLICATION MATERIALS
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="materials-section">
+    <div class="section-header fade-up" style="text-align:left;">
+      <div class="section-tag" style="display:inline-block;">Checklist</div>
+      <h2 class="section-title" style="font-size:30px;text-align:left;">Application Materials</h2>
+      <p class="section-subtitle" style="text-align:left;max-width:100%;">Prepare the following documents for your application. Specific requirements may vary by position.</p>
+    </div>
+
+    <div class="fade-up">
+      <div class="material-item">
+        <div class="material-icon"><i class="fas fa-file-alt"></i></div>
+        <div class="material-text">
+          <h4>Curriculum Vitae (CV) <span class="required-mark">REQUIRED</span></h4>
+          <p>A complete academic CV including education, research experience, publications, presentations, awards, and technical skills.</p>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon"><i class="fas fa-scroll"></i></div>
+        <div class="material-text">
+          <h4>Statement of Purpose <span class="required-mark">REQUIRED</span></h4>
+          <p>2–3 pages describing your research background, specific interests in the GRIND Lab, career goals, and why UTK Geography is the right fit for you.</p>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <div class="material-text">
+          <h4>Letters of Recommendation <span class="required-mark">REQUIRED (3)</span></h4>
+          <p>Three letters from academic supervisors, research mentors, or professors who can speak to your research potential and academic ability.</p>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="material-text">
+          <h4>Transcripts <span class="required-mark">REQUIRED</span></h4>
+          <p>Official or unofficial transcripts from all post-secondary institutions. Official transcripts required for formal university application.</p>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon"><i class="fas fa-language"></i></div>
+        <div class="material-text">
+          <h4>English Proficiency Scores <span style="color:var(--text-light);font-size:12px;margin-left:6px;">(if applicable)</span></h4>
+          <p>TOEFL or IELTS scores for international students whose primary language is not English. PLACEHOLDER: Minimum scores required by UTK.</p>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon"><i class="fas fa-file-pdf"></i></div>
+        <div class="material-text">
+          <h4>Writing Sample / Publications <span style="color:var(--text-light);font-size:12px;margin-left:6px;">(recommended)</span></h4>
+          <p>A representative paper, thesis chapter, or technical report demonstrating your research and writing ability.</p>
+        </div>
+      </div>
+
+      <div class="material-item">
+        <div class="material-icon"><i class="fas fa-award"></i></div>
+        <div class="material-text">
+          <h4>GRE Scores <span style="color:var(--text-light);font-size:12px;margin-left:6px;">(optional)</span></h4>
+          <p>PLACEHOLDER: GRE may be optional or required depending on UTK's current policy. Check the UTK Geography application requirements.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner fade-up">
+    <h2>Ready to Apply?</h2>
+    <p>Reach out to Dr. Bing Zhou to discuss your research interests and potential fit before submitting a formal application.</p>
+    <div class="cta-actions">
+      <a href="mailto:bzhou@utk.edu" class="btn btn-white btn-lg"><i class="fas fa-envelope"></i> Email Dr. Zhou</a>
+      <a href="contact.html" class="btn btn-outline-white btn-lg"><i class="fas fa-comment"></i> Contact Form</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <img src="assets/images/logo/logo-white.svg" alt="GRIND Lab">
+      <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="projects.html">GeoAI</a></li>
+        <li><a href="projects.html">Remote Sensing</a></li>
+        <li><a href="projects.html">Disaster Risk</a></li>
+        <li><a href="projects.html">Publications</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Dept. of Geography &amp; Sustainability</li>
+        <li>University of Tennessee, Knoxville</li>
+        <li>Knoxville, TN 37996</li>
+        <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville.</span>
+    <span>Built with ❤️ for science and society.</span>
+  </div>
+</footer>
+
+<button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

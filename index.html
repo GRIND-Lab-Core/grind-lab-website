@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GRIND Lab — Geospatial Responsible AI for Nature-human Dynamics. Led by Dr. Bing Zhou at the University of Tennessee, Knoxville.">
+  <meta property="og:title" content="GRIND Lab — UTK Geography">
+  <meta property="og:description" content="Responsible GeoAI for a Resilient, Equitable, and Healthy Society.">
+  <title>GRIND Lab — Home</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="page-loader" id="page-loader">
+  <img src="assets/images/logo/logo-white.svg" alt="GRIND Lab" class="loader-logo" width="80">
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/images/logo/logo.svg" alt="GRIND Lab Logo" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">GRIND Lab</span>
+        <span class="nav-logo-sub">UTK Geography</span>
+      </div>
+    </a>
+
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="news.html" class="nav-link">News</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="team.html" class="nav-link">Team</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <a href="apply.html" class="btn-apply">Apply</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO SECTION
+═══════════════════════════════════════ -->
+<section class="hero" id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-bg-glow glow-1"></div>
+  <div class="hero-bg-glow glow-2"></div>
+
+  <div class="hero-container">
+    <!-- Left: Content -->
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span></span>
+        University of Tennessee, Knoxville
+      </div>
+      <h1 class="hero-title">
+        Responsible GeoAI<br>
+        for a <span class="highlight">Resilient World</span>
+      </h1>
+      <p class="hero-desc">
+        The GRIND Lab develops responsible geospatial AI to understand and mitigate
+        coupled nature-human risks — fostering a more resilient, equitable, and healthy society.
+      </p>
+      <div class="hero-cta">
+        <a href="projects.html" class="btn btn-primary btn-lg">
+          <i class="fas fa-flask"></i> Our Research
+        </a>
+        <a href="team.html" class="btn btn-outline-white btn-lg">
+          <i class="fas fa-users"></i> Meet the Team
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Stats card -->
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-main-card">
+          <div class="hero-card-title">Lab at a Glance</div>
+          <div class="hero-stats-grid">
+            <div class="hero-stat-item">
+              <div class="hero-stat-num"><span data-count="20" data-suffix="+">20+</span></div>
+              <div class="hero-stat-label">Publications</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num"><span data-count="6" data-suffix="+">6+</span></div>
+              <div class="hero-stat-label">Active Projects</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num"><span data-count="8" data-suffix="+">8+</span></div>
+              <div class="hero-stat-label">Team Members</div>
+            </div>
+            <div class="hero-stat-item">
+              <div class="hero-stat-num"><span data-count="3" data-suffix="M+">3M+</span></div>
+              <div class="hero-stat-label">Funding Secured</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-float-card card-1">
+          <div class="float-icon green"><i class="fas fa-satellite"></i></div>
+          <div class="float-text">
+            <span>Latest research</span>
+            <strong>GeoAI for Wildfire Risk</strong>
+          </div>
+        </div>
+
+        <div class="hero-float-card card-2">
+          <div class="float-icon blue"><i class="fas fa-award"></i></div>
+          <div class="float-text">
+            <span>NSF Funded</span>
+            <strong>2024 Award</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <i class="fas fa-chevron-down"></i>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     STATS BANNER
+═══════════════════════════════════════ -->
+<section class="stats-banner">
+  <div class="stats-inner">
+    <div class="stat-item fade-in" data-delay="100">
+      <div class="stat-num"><span data-count="20" data-suffix="+">20+</span></div>
+      <div class="stat-label">Peer-Reviewed Publications</div>
+    </div>
+    <div class="stat-item fade-in" data-delay="200">
+      <div class="stat-num"><span data-count="6">6</span></div>
+      <div class="stat-label">Active Research Projects</div>
+    </div>
+    <div class="stat-item fade-in" data-delay="300">
+      <div class="stat-num"><span data-count="8" data-suffix="+">8+</span></div>
+      <div class="stat-label">Lab Members</div>
+    </div>
+    <div class="stat-item fade-in" data-delay="400">
+      <div class="stat-num"><span data-count="3" data-suffix="+">3+</span></div>
+      <div class="stat-label">External Collaborations</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     RESEARCH FOCUS AREAS
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag fade-up">Research Focus</div>
+      <h2 class="section-title fade-up" data-delay="100">What We Study</h2>
+      <p class="section-subtitle fade-up" data-delay="200">
+        We combine geospatial thinking, artificial intelligence, and domain expertise
+        to tackle pressing challenges at the intersection of nature, society, and technology.
+      </p>
+    </div>
+
+    <div class="research-grid">
+      <!-- Card 1 -->
+      <div class="research-card fade-up">
+        <div class="research-icon"><i class="fas fa-brain"></i></div>
+        <h3>Responsible GeoAI</h3>
+        <p>Designing fair, explainable, and trustworthy geospatial AI models that account for spatial heterogeneity and social equity in predictions.</p>
+        <div class="research-tags">
+          <span class="badge badge-blue">XAI</span>
+          <span class="badge badge-blue">Fairness</span>
+          <span class="badge badge-blue">GNN</span>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="research-card fade-up" data-delay="100">
+        <div class="research-icon"><i class="fas fa-satellite"></i></div>
+        <h3>Remote Sensing & Earth Observation</h3>
+        <p>Leveraging multi-source satellite imagery (SAR, optical, LiDAR) and deep learning for land cover mapping, change detection, and disaster monitoring.</p>
+        <div class="research-tags">
+          <span class="badge badge-teal">SAR</span>
+          <span class="badge badge-teal">Sentinel</span>
+          <span class="badge badge-teal">Deep Learning</span>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="research-card fade-up" data-delay="200">
+        <div class="research-icon"><i class="fas fa-fire-flame-curved"></i></div>
+        <h3>Disaster Risk & Resilience</h3>
+        <p>Developing predictive and post-event models for wildfire, flood, hurricane, and compound hazards, with a focus on community resilience and recovery.</p>
+        <div class="research-tags">
+          <span class="badge badge-orange">Wildfire</span>
+          <span class="badge badge-orange">Flood</span>
+          <span class="badge badge-orange">Hurricane</span>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="research-card fade-up" data-delay="300">
+        <div class="research-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Coupled Nature-Human Systems</h3>
+        <p>Studying how human activities and natural processes interact across spatial and temporal scales to generate and amplify socio-environmental risks.</p>
+        <div class="research-tags">
+          <span class="badge badge-green">Sustainability</span>
+          <span class="badge badge-green">Urban Heat</span>
+          <span class="badge badge-green">Ecosystem</span>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="research-card fade-up" data-delay="100">
+        <div class="research-icon"><i class="fas fa-chart-network"></i></div>
+        <h3>Spatial Data Science</h3>
+        <p>Advancing methods for spatial statistics, graph neural networks, and spatio-temporal modeling to extract knowledge from complex geospatial datasets.</p>
+        <div class="research-tags">
+          <span class="badge badge-purple">GNN</span>
+          <span class="badge badge-purple">Spatio-Temporal</span>
+          <span class="badge badge-purple">ML</span>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="research-card fade-up" data-delay="200">
+        <div class="research-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>Environmental Justice & Equity</h3>
+        <p>Examining how environmental hazards and climate change disproportionately affect marginalized communities, and developing equitable GeoAI solutions.</p>
+        <div class="research-tags">
+          <span class="badge badge-red">Equity</span>
+          <span class="badge badge-red">Environmental Justice</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     DIRECTOR SPOTLIGHT
+═══════════════════════════════════════ -->
+<section class="director-section">
+  <div class="director-inner">
+    <div class="director-photo-wrap fade-up">
+      <div class="director-photo">
+        <!-- Replace with actual photo: <img src="assets/images/team/bing-zhou.jpg" alt="Dr. Bing Zhou"> -->
+        <i class="fas fa-user-tie"></i>
+      </div>
+      <div class="director-badge">Lab Director</div>
+    </div>
+
+    <div class="director-content fade-up" data-delay="200">
+      <div class="section-tag">Principal Investigator</div>
+      <h2>Dr. Bing Zhou</h2>
+      <div class="director-title">Assistant Professor (Tenure-Track)</div>
+      <div class="director-dept">Department of Geography &amp; Sustainability, UTK</div>
+
+      <p>Dr. Zhou's research develops responsible geospatial AI to understand and mitigate coupled nature-human risks. He designs advanced GeoAI models for disaster detection, forecasting, and impact explanation across space and time.</p>
+      <p>Before joining UTK, Dr. Zhou completed his Ph.D. at Texas A&amp;M University and holds degrees from Tongji University and Wuhan University.</p>
+
+      <div class="director-interests">
+        <span class="interest-tag">GeoAI</span>
+        <span class="interest-tag">Remote Sensing</span>
+        <span class="interest-tag">Disaster Management</span>
+        <span class="interest-tag">Responsible AI</span>
+        <span class="interest-tag">Nature-Human Systems</span>
+        <span class="interest-tag">Spatial Data Science</span>
+      </div>
+
+      <div class="director-links">
+        <a href="team.html" class="btn btn-outline-white btn-sm">
+          <i class="fas fa-user"></i> Full Profile
+        </a>
+        <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener" class="btn btn-outline-white btn-sm">
+          <i class="fas fa-graduation-cap"></i> Google Scholar
+        </a>
+        <a href="mailto:bzhou@utk.edu" class="btn btn-outline-white btn-sm">
+          <i class="fas fa-envelope"></i> Contact
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FEATURED NEWS
+═══════════════════════════════════════ -->
+<section class="section section-light">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag fade-up">Latest Updates</div>
+      <h2 class="section-title fade-up" data-delay="100">News &amp; Announcements</h2>
+      <p class="section-subtitle fade-up" data-delay="200">
+        Stay up to date with the latest research findings, awards, and events from the GRIND Lab.
+      </p>
+    </div>
+
+    <div class="news-preview-grid">
+      <!-- News Item 1 -->
+      <div class="card news-preview-card fade-up">
+        <div class="news-preview-img">🏆</div>
+        <div class="news-preview-body">
+          <div class="news-preview-meta">
+            <span class="badge badge-orange">Award</span>
+            <span class="news-preview-date"><i class="far fa-calendar"></i> Sep 2024</span>
+          </div>
+          <h3><a href="news.html">GRIND Lab Receives NSF Grant for GeoAI-Powered Wildfire Risk Assessment</a></h3>
+          <p>The GRIND Lab has been awarded an NSF grant to develop next-generation GeoAI models for wildfire risk assessment and community vulnerability mapping.</p>
+          <a href="news.html" class="news-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- News Item 2 -->
+      <div class="card news-preview-card fade-up" data-delay="150">
+        <div class="news-preview-img">📄</div>
+        <div class="news-preview-body">
+          <div class="news-preview-meta">
+            <span class="badge badge-blue">Publication</span>
+            <span class="news-preview-date"><i class="far fa-calendar"></i> Oct 2024</span>
+          </div>
+          <h3><a href="news.html">New Paper: Responsible GeoAI for Coupled Nature-Human Risk Systems</a></h3>
+          <p>PLACEHOLDER: Brief summary of the paper published in [Journal Name]. This paper introduces a novel framework for responsible GeoAI in disaster risk modeling.</p>
+          <a href="news.html" class="news-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- News Item 3 -->
+      <div class="card news-preview-card fade-up" data-delay="300">
+        <div class="news-preview-img">🗺️</div>
+        <div class="news-preview-body">
+          <div class="news-preview-meta">
+            <span class="badge badge-teal">Event</span>
+            <span class="news-preview-date"><i class="far fa-calendar"></i> Mar 2025</span>
+          </div>
+          <h3><a href="news.html">GRIND Lab Presents at AAG Annual Meeting 2025</a></h3>
+          <p>Lab members presented three papers at the American Association of Geographers Annual Meeting on GeoAI fairness, multi-hazard risk, and remote sensing.</p>
+          <a href="news.html" class="news-read-more">Read more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+
+      <!-- News Item 4 -->
+      <div class="card news-preview-card fade-up" data-delay="150">
+        <div class="news-preview-img">📢</div>
+        <div class="news-preview-body">
+          <div class="news-preview-meta">
+            <span class="badge badge-purple">Recruiting</span>
+            <span class="news-preview-date"><i class="far fa-calendar"></i> Oct 2025</span>
+          </div>
+          <h3><a href="apply.html">Open Positions: PhD Students for Spring/Fall 2026</a></h3>
+          <p>PLACEHOLDER: The GRIND Lab is actively seeking motivated PhD students with backgrounds in geography, computer science, data science, or related fields.</p>
+          <a href="apply.html" class="news-read-more">Apply now <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:44px;" class="fade-up">
+      <a href="news.html" class="btn btn-outline">
+        <i class="fas fa-newspaper"></i> View All News
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FEATURED PROJECTS
+═══════════════════════════════════════ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag fade-up">Research Portfolio</div>
+      <h2 class="section-title fade-up" data-delay="100">Featured Projects</h2>
+      <p class="section-subtitle fade-up" data-delay="200">
+        Ongoing and recently completed research projects addressing critical challenges
+        in geospatial AI and nature-human risk.
+      </p>
+    </div>
+
+    <div class="projects-preview-grid">
+      <!-- Project 1 -->
+      <div class="card project-preview-card fade-up">
+        <div class="project-preview-img">🔥</div>
+        <div class="project-preview-body">
+          <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+            <span class="badge badge-orange">Ongoing</span>
+            <span class="badge badge-blue">NSF</span>
+          </div>
+          <h3>GeoAI-Powered Wildfire Risk Assessment and Community Vulnerability Mapping</h3>
+          <p>Developing explainable GeoAI models to assess wildfire risk and identify socially vulnerable communities across the western U.S.</p>
+          <div class="project-preview-footer">
+            <span class="project-status active">Ongoing</span>
+            <a href="projects.html" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="card project-preview-card fade-up" data-delay="150">
+        <div class="project-preview-img">🌊</div>
+        <div class="project-preview-body">
+          <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+            <span class="badge badge-orange">Ongoing</span>
+          </div>
+          <h3>Responsible AI for Flood Damage Assessment Using Multi-Temporal Satellite Imagery</h3>
+          <p>Deep learning models for automated flood damage assessment using SAR and optical imagery with bias mitigation across socioeconomic regions.</p>
+          <div class="project-preview-footer">
+            <span class="project-status active">Ongoing</span>
+            <a href="projects.html" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="card project-preview-card fade-up" data-delay="300">
+        <div class="project-preview-img">⚖️</div>
+        <div class="project-preview-body">
+          <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
+            <span class="badge badge-orange">Ongoing</span>
+          </div>
+          <h3>Spatial Fairness in GeoAI: Detecting and Mitigating Geographic Bias in AI Models</h3>
+          <p>Foundational research examining sources of geographic and demographic bias in GeoAI models and developing fairness-aware frameworks.</p>
+          <div class="project-preview-footer">
+            <span class="project-status active">Ongoing</span>
+            <a href="projects.html" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:44px;" class="fade-up">
+      <a href="projects.html" class="btn btn-outline">
+        <i class="fas fa-folder-open"></i> View All Projects
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FUNDING / PARTNERS
+═══════════════════════════════════════ -->
+<section class="section-light">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:32px;">
+      <div class="section-tag fade-up">Supported By</div>
+      <h2 class="section-title fade-up" data-delay="100" style="font-size:24px;">Funding &amp; Affiliations</h2>
+    </div>
+    <div class="partners-row fade-up">
+      <!-- Add real logos once available — replace placeholders below -->
+      <div class="partner-placeholder">NSF</div>
+      <div class="partner-placeholder">NOAA</div>
+      <div class="partner-placeholder">NIH</div>
+      <div class="partner-placeholder">NASA</div>
+      <div class="partner-placeholder">USGS</div>
+      <div class="partner-placeholder">UTK</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CALL TO ACTION
+═══════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner fade-up">
+    <h2>Join the GRIND Lab</h2>
+    <p>We are actively recruiting PhD students, postdocs, and undergraduate researchers with a passion for geospatial AI, remote sensing, and disaster risk science.</p>
+    <div class="cta-actions">
+      <a href="apply.html" class="btn btn-white btn-lg">
+        <i class="fas fa-graduation-cap"></i> Apply Now
+      </a>
+      <a href="contact.html" class="btn btn-outline-white btn-lg">
+        <i class="fas fa-envelope"></i> Get in Touch
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <!-- Brand -->
+    <div class="footer-brand-col">
+      <img src="assets/images/logo/logo-white.svg" alt="GRIND Lab">
+      <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter/X" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+
+    <!-- Nav Links -->
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
+      </ul>
+    </div>
+
+    <!-- Research Links -->
+    <div class="footer-col">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="projects.html">GeoAI</a></li>
+        <li><a href="projects.html">Remote Sensing</a></li>
+        <li><a href="projects.html">Disaster Risk</a></li>
+        <li><a href="projects.html">Publications</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Dept. of Geography &amp; Sustainability</li>
+        <li>University of Tennessee, Knoxville</li>
+        <li>Knoxville, TN 37996</li>
+        <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom container">
+    <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville. All rights reserved.</span>
+    <span>Built with ❤️ for science and society.</span>
+  </div>
+</footer>
+
+<!-- Scroll to top -->
+<button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/particles.js"></script>
+</body>
+</html>

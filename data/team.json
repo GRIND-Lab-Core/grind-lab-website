@@ -1,0 +1,135 @@
+{
+  "director": {
+    "name": "Bing Zhou",
+    "title": "Assistant Professor (Tenure-Track)",
+    "department": "Department of Geography and Sustainability",
+    "university": "University of Tennessee, Knoxville",
+    "email": "bzhou@utk.edu",
+    "office": "PLACEHOLDER: Building Name, Room XXX",
+    "phone": "PLACEHOLDER: (865) XXX-XXXX",
+    "website": "https://geography.utk.edu/people/instructional-faculty/bing-zhou/",
+    "scholar": "https://scholar.google.com/citations?user=ehw9A-EAAAAJ",
+    "orcid": "PLACEHOLDER: 0000-0000-0000-0000",
+    "github": "PLACEHOLDER: github.com/username",
+    "twitter": "PLACEHOLDER: @username",
+    "linkedin": "https://www.linkedin.com/in/bing-zhou-a90b98239/",
+    "photo": "assets/images/team/bing-zhou.jpg",
+    "bio": [
+      "Dr. Bing Zhou is an Assistant Professor (Tenure-Track) in the Department of Geography and Sustainability at the University of Tennessee, Knoxville. He leads the GRIND Lab (Geospatial Responsible AI for Nature-human Dynamics Laboratory).",
+      "Dr. Zhou's research focuses on developing responsible geospatial AI to understand and mitigate coupled nature-human risks. His work spans GeoAI model design, remote sensing applications, and explainable AI for disaster detection, forecasting, and impact assessment across space and time.",
+      "PLACEHOLDER: Additional bio paragraph about research philosophy, key contributions, or vision."
+    ],
+    "education": [
+      { "degree": "Ph.D. in Geography", "institution": "Texas A&M University", "year": "PLACEHOLDER" },
+      { "degree": "M.S. in [PLACEHOLDER]", "institution": "Tongji University", "year": "PLACEHOLDER" },
+      { "degree": "B.S. in [PLACEHOLDER]", "institution": "Wuhan University", "year": "PLACEHOLDER" }
+    ],
+    "research_interests": [
+      "Geospatial Data Science",
+      "GeoAI (Geographic Artificial Intelligence)",
+      "Remote Sensing",
+      "Disaster Risk Assessment",
+      "Nature-Human Coupled Systems",
+      "Responsible AI / XAI",
+      "Spatial Fairness"
+    ],
+    "courses": [
+      "PLACEHOLDER: Course Title (GEOG XXXX)",
+      "PLACEHOLDER: Course Title (GEOG XXXX)"
+    ]
+  },
+  "phd_students": [
+    {
+      "name": "PLACEHOLDER Student Name",
+      "role": "Ph.D. Student",
+      "year": "Year 1",
+      "research": "PLACEHOLDER: Brief research focus description.",
+      "email": "PLACEHOLDER@vols.utk.edu",
+      "photo": "assets/images/team/placeholder.jpg",
+      "tags": ["GeoAI", "Remote Sensing"],
+      "advisor": "Dr. Bing Zhou"
+    },
+    {
+      "name": "PLACEHOLDER Student Name",
+      "role": "Ph.D. Student",
+      "year": "Year 2",
+      "research": "PLACEHOLDER: Brief research focus description.",
+      "email": "PLACEHOLDER@vols.utk.edu",
+      "photo": "assets/images/team/placeholder.jpg",
+      "tags": ["Disaster Risk", "Deep Learning"],
+      "advisor": "Dr. Bing Zhou"
+    },
+    {
+      "name": "PLACEHOLDER Student Name",
+      "role": "Ph.D. Student",
+      "year": "Year 3",
+      "research": "PLACEHOLDER: Brief research focus description.",
+      "email": "PLACEHOLDER@vols.utk.edu",
+      "photo": "assets/images/team/placeholder.jpg",
+      "tags": ["Coupled Systems", "Climate"],
+      "advisor": "Dr. Bing Zhou"
+    }
+  ],
+  "ms_students": [
+    {
+      "name": "PLACEHOLDER Student Name",
+      "role": "M.S. Student",
+      "year": "Year 1",
+      "research": "PLACEHOLDER: Brief research focus.",
+      "email": "PLACEHOLDER@vols.utk.edu",
+      "tags": ["GeoAI"],
+      "advisor": "Dr. Bing Zhou"
+    },
+    {
+      "name": "PLACEHOLDER Student Name",
+      "role": "M.S. Student",
+      "year": "Year 2",
+      "research": "PLACEHOLDER: Brief research focus.",
+      "email": "PLACEHOLDER@vols.utk.edu",
+      "tags": ["Remote Sensing"],
+      "advisor": "Dr. Bing Zhou"
+    }
+  ],
+  "undergrads": [
+    {
+      "name": "PLACEHOLDER Student Name",
+      "role": "Undergraduate Researcher",
+      "major": "PLACEHOLDER Major",
+      "research": "PLACEHOLDER: Brief research involvement.",
+      "tags": ["Data Analysis"]
+    }
+  ],
+  "visiting": [],
+  "collaborators": [
+    {
+      "name": "PLACEHOLDER Collaborator Name",
+      "title": "PLACEHOLDER Title",
+      "institution": "PLACEHOLDER Institution",
+      "topic": "PLACEHOLDER: Collaboration topic",
+      "website": "#"
+    },
+    {
+      "name": "PLACEHOLDER Collaborator Name",
+      "title": "PLACEHOLDER Title",
+      "institution": "PLACEHOLDER Institution",
+      "topic": "PLACEHOLDER: Collaboration topic",
+      "website": "#"
+    },
+    {
+      "name": "PLACEHOLDER Collaborator Name",
+      "title": "PLACEHOLDER Title",
+      "institution": "PLACEHOLDER Institution",
+      "topic": "PLACEHOLDER: Collaboration topic",
+      "website": "#"
+    }
+  ],
+  "alumni": [
+    {
+      "name": "PLACEHOLDER Alumni Name",
+      "degree": "Ph.D.",
+      "year": "PLACEHOLDER",
+      "thesis": "PLACEHOLDER: Thesis title",
+      "placement": "PLACEHOLDER: Current position at institution"
+    }
+  ]
+}

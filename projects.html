@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GRIND Lab Research Projects — GeoAI, Remote Sensing, Disaster Risk, and Coupled Systems research.">
+  <title>Projects — GRIND Lab</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/logo/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+<body>
+
+<div class="page-loader" id="page-loader">
+  <img src="assets/images/logo/logo-white.svg" alt="GRIND Lab" class="loader-logo" width="80">
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/images/logo/logo.svg" alt="GRIND Lab Logo" class="nav-logo-img">
+      <div class="nav-logo-text">
+        <span class="nav-logo-main">GRIND Lab</span>
+        <span class="nav-logo-sub">UTK Geography</span>
+      </div>
+    </a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="news.html" class="nav-link">News</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="team.html" class="nav-link">Team</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="apply.html" class="btn-apply">Apply</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Projects</span>
+    </div>
+    <div class="page-hero-eyebrow">Research Portfolio</div>
+    <h1>Our Research Projects</h1>
+    <p>Advancing responsible geospatial AI to understand and mitigate coupled nature-human risks across scales.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FILTER BAR
+═══════════════════════════════════════ -->
+<div class="projects-filter">
+  <div class="projects-filter-inner">
+    <div class="projects-filter-tabs">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="geoai">GeoAI</button>
+      <button class="filter-btn" data-filter="remote-sensing">Remote Sensing</button>
+      <button class="filter-btn" data-filter="coupled-systems">Coupled Systems</button>
+    </div>
+    <div class="projects-sort">
+      <label for="sort-select">Sort by:</label>
+      <select id="sort-select">
+        <option>Newest First</option>
+        <option>Status: Active</option>
+        <option>Funding Agency</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     FEATURED PROJECT
+═══════════════════════════════════════ -->
+<section class="projects-section">
+  <div class="projects-container">
+
+    <!-- Featured highlight -->
+    <div class="project-featured-card fade-up" data-category="geoai">
+      <div class="project-featured-visual">
+        <span style="font-size:100px;opacity:0.3;">🔥</span>
+      </div>
+      <div class="project-featured-body">
+        <div class="section-tag">Featured Project</div>
+        <h2>GeoAI-Powered Wildfire Risk Assessment and Community Vulnerability Mapping</h2>
+        <p>Developing explainable GeoAI models to assess wildfire risk and identify socially vulnerable communities in the western U.S. We integrate multi-source remote sensing, socioeconomic data, and physics-informed AI for near-real-time risk mapping.</p>
+        <div class="project-meta-row">
+          <div class="project-meta-item">
+            <i class="fas fa-clock"></i>
+            <span>2024 – 2027</span>
+          </div>
+          <div class="project-meta-item">
+            <i class="fas fa-building"></i>
+            <strong>NSF Funded</strong>
+          </div>
+          <div class="project-meta-item">
+            <i class="fas fa-user"></i>
+            <span>PI: Dr. Bing Zhou</span>
+          </div>
+        </div>
+        <a href="#project-details-001" class="btn btn-outline-white">
+          <i class="fas fa-info-circle"></i> Learn More
+        </a>
+      </div>
+    </div>
+
+    <!-- ═══════ ONGOING PROJECTS ═══════ -->
+    <div class="projects-category">
+      <div class="projects-category-header">
+        <h2>Ongoing Projects</h2>
+        <span class="count">5 Active</span>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Project Card 1 -->
+        <article class="project-card fade-up" data-category="remote-sensing">
+          <div class="project-card-img theme-disaster">
+            <span class="project-icon">🌊</span>
+            <span class="project-status-badge ongoing">Ongoing</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span class="badge badge-teal">Remote Sensing</span>
+              <span class="badge badge-blue">Deep Learning</span>
+            </div>
+            <h3><a href="#">Responsible AI for Flood Damage Assessment Using Multi-Temporal Satellite Imagery</a></h3>
+            <p>Deep learning models for automated flood damage assessment using Sentinel-1 SAR and Sentinel-2 optical imagery, with bias mitigation across socioeconomic regions.</p>
+            <div class="project-card-footer">
+              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: Funding Agency</span>
+              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card 2 -->
+        <article class="project-card fade-up" data-delay="100" data-category="coupled-systems">
+          <div class="project-card-img theme-nature">
+            <span class="project-icon">🌀</span>
+            <span class="project-status-badge ongoing">Ongoing</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span class="badge badge-green">Coupled Systems</span>
+              <span class="badge badge-orange">Hurricane</span>
+            </div>
+            <h3><a href="#">Coupled Nature-Human Risk Modeling: Hurricane Impacts on Coastal Communities</a></h3>
+            <p>Investigating how coupled nature-human system dynamics influence hurricane impact severity and recovery trajectories across Gulf Coast communities.</p>
+            <div class="project-card-footer">
+              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: NOAA/NSF</span>
+              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card 3 -->
+        <article class="project-card fade-up" data-delay="200" data-category="geoai">
+          <div class="project-card-img theme-urban">
+            <span class="project-icon">⚖️</span>
+            <span class="project-status-badge ongoing">Ongoing</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span class="badge badge-purple">Responsible AI</span>
+              <span class="badge badge-blue">Fairness</span>
+            </div>
+            <h3><a href="#">Spatial Fairness in GeoAI: Detecting and Mitigating Geographic Bias</a></h3>
+            <p>Foundational research examining sources of geographic and demographic bias in GeoAI models, developing methodological frameworks for fairness-aware geospatial AI.</p>
+            <div class="project-card-footer">
+              <span class="project-funding"><i class="fas fa-coins"></i> Internal / PLACEHOLDER</span>
+              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card 4 (Placeholder) -->
+        <article class="project-card fade-up" data-category="geoai">
+          <div class="project-card-img theme-remote">
+            <span class="project-icon">🌡️</span>
+            <span class="project-status-badge upcoming">Upcoming</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span class="badge badge-red">Urban Heat</span>
+              <span class="badge badge-green">Env. Justice</span>
+            </div>
+            <h3><a href="#">Urban Heat Island Detection and Environmental Justice Using Remote Sensing and GeoAI</a></h3>
+            <p>PLACEHOLDER: Mapping urban heat island patterns with high spatial resolution and analyzing their unequal distribution across income and race demographics in U.S. cities.</p>
+            <div class="project-card-footer">
+              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: NIH/EPA</span>
+              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Card 5 (Placeholder) -->
+        <article class="project-card fade-up" data-delay="100" data-category="coupled-systems">
+          <div class="project-card-img theme-nature">
+            <span class="project-icon">🏔️</span>
+            <span class="project-status-badge upcoming">Upcoming</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span class="badge badge-teal">PLACEHOLDER</span>
+              <span class="badge badge-blue">GeoAI</span>
+            </div>
+            <h3><a href="#">PLACEHOLDER: Upcoming Project Title</a></h3>
+            <p>PLACEHOLDER: Brief description of upcoming project. Replace with actual project details when available. Describe the research questions, methods, and anticipated impact.</p>
+            <div class="project-card-footer">
+              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER Funding</span>
+              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div><!-- end ongoing -->
+
+    <!-- ═══════ COMPLETED PROJECTS ═══════ -->
+    <div class="projects-category">
+      <div class="projects-category-header">
+        <h2>Completed Projects</h2>
+        <span class="count">1 Completed</span>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Completed Project 1 -->
+        <article class="project-card fade-up" data-category="coupled-systems">
+          <div class="project-card-img theme-disaster" style="opacity:0.8;">
+            <span class="project-icon">🗺️</span>
+            <span class="project-status-badge completed">Completed</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span class="badge badge-dark">2023–2024</span>
+              <span class="badge badge-teal">Multi-Hazard</span>
+            </div>
+            <h3><a href="#">Multi-Hazard Risk Atlas for the Tennessee Valley Region</a></h3>
+            <p>Developed a comprehensive multi-hazard risk atlas integrating floods, tornadoes, severe storms, and drought for the Tennessee Valley region to support emergency management planning.</p>
+            <div class="project-card-footer">
+              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: State/Local</span>
+              <a href="#" class="project-link">View Output <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Placeholder for completed projects -->
+        <article class="project-card fade-up" data-delay="100" data-category="geoai">
+          <div class="project-card-img" style="background:linear-gradient(135deg,#e5e7eb,#d1d5db); opacity:0.7;">
+            <span class="project-icon" style="color:#6b7280;">➕</span>
+            <span class="project-status-badge" style="background:rgba(107,114,128,0.85);color:white;">Placeholder</span>
+          </div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span class="badge badge-dark">PLACEHOLDER Year</span>
+            </div>
+            <h3>PLACEHOLDER: Completed Project Title</h3>
+            <p>PLACEHOLDER: Description of a completed project. Replace with actual project details including methods, findings, and publications that resulted from this work.</p>
+            <div class="project-card-footer">
+              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER Funding</span>
+              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div><!-- end completed -->
+
+    <!-- ═══════ PUBLICATIONS TEASER ═══════ -->
+    <section class="section section-light" style="border-radius:var(--radius-lg); margin-top:20px; padding:48px;">
+      <div class="section-header fade-up" style="margin-bottom:36px;">
+        <div class="section-tag">Publications</div>
+        <h2 class="section-title" style="font-size:28px;">Selected Publications</h2>
+        <p class="section-subtitle" style="font-size:15px;">
+          PLACEHOLDER: A curated list of key publications will appear here. See Google Scholar for the full list.
+        </p>
+      </div>
+
+      <!-- Publication items -->
+      <div style="display:flex;flex-direction:column;gap:16px;max-width:900px;margin:0 auto;">
+
+        <div style="background:white;border-radius:10px;padding:20px 24px;border:1px solid var(--border);" class="fade-up">
+          <div style="display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Journal Article</span>
+            <span style="font-size:12px;color:var(--text-light);">2025</span>
+          </div>
+          <p style="font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:4px;">PLACEHOLDER: Full Paper Title Here</p>
+          <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;"><strong>Bing Zhou</strong>, PLACEHOLDER Co-Authors. <em>PLACEHOLDER: Journal Name</em>.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-external-link-alt"></i> DOI</a>
+            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-file-pdf"></i> PDF</a>
+          </div>
+        </div>
+
+        <div style="background:white;border-radius:10px;padding:20px 24px;border:1px solid var(--border);" class="fade-up" data-delay="100">
+          <div style="display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <span class="badge badge-blue">Journal Article</span>
+            <span style="font-size:12px;color:var(--text-light);">2024</span>
+          </div>
+          <p style="font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:4px;">PLACEHOLDER: Full Paper Title Here</p>
+          <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;"><strong>Bing Zhou</strong>, PLACEHOLDER Co-Authors. <em>PLACEHOLDER: Journal Name</em>.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-external-link-alt"></i> DOI</a>
+            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-file-pdf"></i> PDF</a>
+          </div>
+        </div>
+
+        <div style="background:white;border-radius:10px;padding:20px 24px;border:1px solid var(--border);" class="fade-up" data-delay="200">
+          <div style="display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
+            <span class="badge badge-teal">Conference Paper</span>
+            <span style="font-size:12px;color:var(--text-light);">2025</span>
+          </div>
+          <p style="font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:4px;">PLACEHOLDER: Conference Paper Title</p>
+          <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;"><strong>Bing Zhou</strong>, PLACEHOLDER Co-Authors. <em>PLACEHOLDER: Conference Name</em>, 2025.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-external-link-alt"></i> DOI</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="text-align:center;margin-top:32px;" class="fade-up">
+        <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener" class="btn btn-outline">
+          <i class="fas fa-graduation-cap"></i> Full List on Google Scholar
+        </a>
+      </div>
+    </section>
+
+  </div><!-- end container -->
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner fade-up">
+    <h2>Collaborate With Us</h2>
+    <p>Interested in research collaboration or joining the GRIND Lab? We welcome inquiries from prospective students, postdocs, and collaborators.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn btn-white btn-lg"><i class="fas fa-envelope"></i> Get in Touch</a>
+      <a href="apply.html" class="btn btn-outline-white btn-lg"><i class="fas fa-graduation-cap"></i> Apply to Join</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand-col">
+      <img src="assets/images/logo/logo-white.svg" alt="GRIND Lab">
+      <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="apply.html">Apply</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="projects.html">GeoAI</a></li>
+        <li><a href="projects.html">Remote Sensing</a></li>
+        <li><a href="projects.html">Disaster Risk</a></li>
+        <li><a href="projects.html">Publications</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li>Dept. of Geography &amp; Sustainability</li>
+        <li>University of Tennessee, Knoxville</li>
+        <li>Knoxville, TN 37996</li>
+        <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom container">
+    <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville.</span>
+    <span>Built with ❤️ for science and society.</span>
+  </div>
+</footer>
+
+<button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

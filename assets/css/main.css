@@ -8,17 +8,17 @@
 
 /* ── CSS Variables ── */
 :root {
-  --primary:       #0d1b2a;
-  --primary-light: #1b3a57;
-  --secondary:     #005f73;
-  --accent:        #0096b7;
-  --accent-light:  #4ecdc4;
-  --highlight:     #e07b54;
-  --highlight-dark:#c9653e;
-  --light:         #f0f9fc;
-  --lighter:       #f8fafc;
+  --primary:       #2a2520;   /* dark warm charcoal — logo text color */
+  --primary-light: #3d3530;   /* lighter charcoal */
+  --secondary:     #1a1714;   /* deepest dark */
+  --accent:        #72c02c;   /* bright green — logo globe/ECG line */
+  --accent-light:  #8ed44a;   /* lighter green */
+  --highlight:     #e8317a;   /* hot pink — logo sparkles/dots */
+  --highlight-dark:#c91f62;   /* deeper pink */
+  --light:         #f4f9f0;   /* soft green-tinted white */
+  --lighter:       #f9fcf7;   /* near-white */
   --white:         #ffffff;
-  --text-dark:     #1a1a2e;
+  --text-dark:     #1a1a1a;
   --text-gray:     #6b7280;
   --text-light:    #9ca3af;
   --border:        #e5e7eb;
@@ -87,14 +87,17 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   gap: 12px;
   flex-shrink: 0;
 }
-.nav-logo-img { width: 46px; height: 46px; }
-.nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
-.nav-logo-main {
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: 0.3px;
+.nav-logo-img {
+  height: 40px;
+  width: auto;
+  max-width: 150px;
+  border-radius: 7px;
+  background: var(--white);
+  padding: 4px 8px;
+  object-fit: contain;
 }
+.nav-logo-text { display: flex; flex-direction: column; line-height: 1.15; }
+.nav-logo-main { display: none; } /* hidden — logo image already contains "GRIND" */
 .nav-logo-sub {
   font-size: 9.5px;
   color: var(--accent-light);
@@ -157,7 +160,7 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
 
 /* ── Page Hero (inner pages) ── */
 .page-hero {
-  background: linear-gradient(135deg, var(--primary) 0%, #0a3d5c 50%, var(--secondary) 100%);
+  background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 50%, var(--primary-light) 100%);
   padding: calc(var(--nav-height) + 60px) 28px 70px;
   text-align: center;
   position: relative;
@@ -341,7 +344,16 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   max-width: 1200px; margin: 0 auto; padding: 0 28px 48px;
   display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px;
 }
-.footer-brand-col img { width: 150px; margin-bottom: 16px; }
+.footer-brand-col img {
+  height: 46px;
+  width: auto;
+  max-width: 160px;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 5px 10px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
 .footer-brand-col p { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.75; max-width: 240px; }
 .footer-social { display: flex; gap: 10px; margin-top: 20px; }
 .footer-social a {
@@ -390,7 +402,15 @@ button { cursor: pointer; border: none; background: none; font-family: var(--fon
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 .page-loader.hidden { opacity: 0; visibility: hidden; }
-.loader-logo { width: 80px; animation: pulse 1.2s ease-in-out infinite; }
+.loader-logo {
+  height: 56px;
+  width: auto;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 10px 20px;
+  object-fit: contain;
+  animation: pulse 1.2s ease-in-out infinite;
+}
 @keyframes pulse { 0%,100%{ opacity:0.6; transform:scale(0.95) } 50%{ opacity:1; transform:scale(1.05) } }
 
 /* ── Responsive ── */

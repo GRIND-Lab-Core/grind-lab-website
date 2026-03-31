@@ -13,7 +13,7 @@
 }
 .director-photo-full .photo-frame {
   width: 100%; aspect-ratio: 3/4;
-  background: linear-gradient(160deg, #0a3d5c, var(--secondary));
+  background: linear-gradient(160deg, var(--primary-light), var(--primary));
   border-radius: var(--radius-lg);
   overflow: hidden; position: relative;
   border: 1px solid var(--border);
@@ -90,7 +90,7 @@
 .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 .team-card-photo {
   width: 100%; height: 200px;
-  background: linear-gradient(160deg, var(--light), #d1e8ef);
+  background: linear-gradient(160deg, var(--light), #d4efc0);
   display: flex; align-items: center; justify-content: center;
   font-size: 56px; color: var(--accent); position: relative; overflow: hidden;
 }

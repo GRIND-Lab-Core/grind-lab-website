@@ -22,8 +22,8 @@
   filter: blur(120px); opacity: 0.15;
   pointer-events: none;
 }
-.hero-bg-glow.glow-1 { background: var(--accent); top: -150px; right: -100px; }
-.hero-bg-glow.glow-2 { background: var(--secondary); bottom: -200px; left: -100px; }
+.hero-bg-glow.glow-1 { background: var(--accent); top: -150px; right: -100px; }      /* green */
+.hero-bg-glow.glow-2 { background: var(--highlight); bottom: -200px; left: -100px; } /* pink */
 .hero-container {
   position: relative; z-index: 2;
   max-width: 1200px; margin: 0 auto;
@@ -165,7 +165,7 @@
 .news-preview-card { display: flex; flex-direction: column; }
 .news-preview-img {
   width: 100%; height: 200px;
-  background: linear-gradient(135deg, var(--light), #d1e8ef);
+  background: linear-gradient(135deg, var(--light), #d4efc0);
   border-radius: var(--radius) var(--radius) 0 0;
   display: flex; align-items: center; justify-content: center;
   font-size: 40px; overflow: hidden;
@@ -186,7 +186,7 @@
 .project-preview-card {}
 .project-preview-img {
   width: 100%; height: 180px;
-  background: linear-gradient(135deg, #1b3a57 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
   display: flex; align-items: center; justify-content: center;
   font-size: 36px; color: rgba(255,255,255,0.4);
   border-radius: var(--radius) var(--radius) 0 0;
@@ -210,7 +210,7 @@
 .director-photo-wrap { position: relative; }
 .director-photo {
   width: 280px; height: 320px;
-  background: linear-gradient(160deg, #1b3a57, var(--secondary));
+  background: linear-gradient(160deg, var(--primary-light), var(--primary));
   border-radius: var(--radius-lg);
   display: flex; align-items: center; justify-content: center;
   font-size: 80px; color: rgba(255,255,255,0.3);
@@ -240,7 +240,7 @@
 
 /* ── Join / CTA Section ── */
 .cta-section {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--secondary) 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #4a8a1a 100%);
   padding: 80px 28px;
   text-align: center;
   position: relative; overflow: hidden;

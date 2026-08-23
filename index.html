@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GRIND Lab — Geospatial Responsible AI for Nature-human Dynamics. Led by Dr. Bing Zhou at the University of Tennessee, Knoxville.">
+  <meta name="description"
+    content="GRIND Lab — Geospatial Responsible AI for Nature-human Dynamics. Led by Dr. Bing Zhou at the University of Tennessee, Knoxville.">
   <meta property="og:title" content="GRIND Lab — UTK Geography">
   <meta property="og:description" content="Responsible GeoAI for a Resilient, Equitable, and Healthy Society.">
   <title>GRIND Lab — Home</title>
@@ -13,366 +15,704 @@
 
   <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/home.css">
+  <link rel="stylesheet" href="assets/css/resilience-game.css">
 </head>
+
 <body>
 
-<!-- Page Loader -->
-<div class="page-loader" id="page-loader">
-  <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab" class="loader-logo" width="80">
-</div>
-
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-brand">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab Logo" class="nav-logo-img">
-      <div class="nav-logo-text">
-        <span class="nav-logo-main">GRIND Lab</span>
-        <span class="nav-logo-sub">UTK Geography</span>
-      </div>
-    </a>
-
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="news.html" class="nav-link">News</a></li>
-      <li><a href="projects.html" class="nav-link">Projects</a></li>
-      <li><a href="team.html" class="nav-link">Team</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
-
-    <div class="nav-actions">
-      <a href="apply.html" class="btn-apply">Apply</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- Page Loader -->
+  <div class="page-loader" id="page-loader">
+    <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab" class="loader-logo" width="80">
   </div>
-</nav>
 
-<!-- ═══════════════════════════════════════
-     HERO SECTION
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab Logo" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">GRIND Lab</span>
+          <span class="nav-logo-sub">UTK Geography</span>
+        </div>
+      </a>
+
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <a href="apply.html" class="btn-apply">Apply</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════
+     INTERACTIVE RESILIENCE HERO
 ═══════════════════════════════════════ -->
-<section class="hero" id="home">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-bg-glow glow-1"></div>
-  <div class="hero-bg-glow glow-2"></div>
+  <section class="hero game-hero" id="home">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero-bg-glow glow-1"></div>
+    <div class="hero-bg-glow glow-2"></div>
 
-  <div class="hero-container">
-    <!-- Left: Content -->
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <span></span>
-        University of Tennessee, Knoxville
+    <div class="hero-container">
+      <!-- Left: Original GRIND visual language -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span></span>
+          GRIND Lab · University of Tennessee, Knoxville
+        </div>
+
+        <h1 class="hero-title">
+          Can You Make a City
+          <span class="highlight">Resilient?</span>
+        </h1>
+
+        <p class="hero-desc">
+          Prepare for a disaster. Protect communities. Make difficult choices.
+          Your city has only three actions before the hazard arrives.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#resilience-game" class="btn btn-primary btn-lg">
+            <i class="fas fa-shield-halved"></i> Protect the City
+          </a>
+          <a href="#research-focus" class="btn btn-outline-white btn-lg">
+            <i class="fas fa-flask"></i> Explore Our Research
+          </a>
+        </div>
+
+        <div class="rg-hero-note">
+          <i class="fas fa-circle-info"></i>
+          There is no perfect strategy—resilience also depends on who is protected.
+        </div>
       </div>
-      <h1 class="hero-title">
-        Responsible GeoAI<br>
-        for a <span class="highlight">Resilient World</span>
-      </h1>
-      <p class="hero-desc">
-        The GRIND Lab develops responsible geospatial AI to understand and mitigate
-        coupled nature-human risks — fostering a more resilient, equitable, and healthy society.
-      </p>
-      <div class="hero-cta">
-        <a href="projects.html" class="btn btn-primary btn-lg">
-          <i class="fas fa-flask"></i> Our Research
-        </a>
-        <a href="team.html" class="btn btn-outline-white btn-lg">
-          <i class="fas fa-users"></i> Meet the Team
-        </a>
+
+      <!-- Right: Interactive game -->
+      <div class="hero-visual">
+        <article class="rg-game-card" id="resilience-game" aria-label="Protect the City resilience game">
+          <div class="rg-game-topbar">
+            <div>
+              <div class="rg-kicker">Interactive scenario</div>
+              <h2>Protect the City</h2>
+            </div>
+            <div class="rg-action-counter" aria-live="polite">
+              <strong id="rg-actions-left">0 / 3</strong>
+              <span>deployed</span>
+            </div>
+          </div>
+
+          <div class="rg-step">
+            <span class="rg-step-number">1</span>
+            <span>Choose a hazard</span>
+          </div>
+
+          <div class="rg-hazard-options" role="group" aria-label="Choose a hazard">
+            <button type="button" class="rg-hazard-btn" data-hazard="flood">
+              <i class="fas fa-water"></i><span>Flood</span>
+            </button>
+            <button type="button" class="rg-hazard-btn" data-hazard="hurricane">
+              <i class="fas fa-hurricane"></i><span>Hurricane</span>
+            </button>
+            <button type="button" class="rg-hazard-btn" data-hazard="heatwave">
+              <i class="fas fa-temperature-high"></i><span>Heatwave</span>
+            </button>
+            <button type="button" class="rg-hazard-btn" data-hazard="wildfire">
+              <i class="fas fa-fire-flame-curved"></i><span>Wildfire</span>
+            </button>
+          </div>
+
+          <div class="rg-guidance" id="rg-guidance" data-state="start" aria-live="polite">
+            <div class="rg-guidance-icon"><i class="fas fa-hand-pointer"></i></div>
+            <div>
+              <strong id="rg-guidance-title">Start here: choose a hazard</strong>
+              <span id="rg-guidance-copy">The map and protective actions will activate after you select one.</span>
+            </div>
+          </div>
+
+          <div class="rg-map-shell" data-hazard="">
+            <div class="rg-map-status">
+              <span class="rg-status-dot"></span>
+              <span id="rg-map-status-text">Choose a hazard to begin</span>
+            </div>
+
+            <aside class="rg-hazard-info" id="rg-hazard-info" aria-hidden="true">
+              <strong id="rg-hazard-info-title">Scenario context</strong>
+              <span id="rg-hazard-info-line-1">Select a hazard to view its drivers.</span>
+              <span id="rg-hazard-info-line-2" hidden></span>
+            </aside>
+
+            <div class="rg-map-prompt" id="rg-map-prompt" aria-hidden="true">
+              <i class="fas fa-location-dot"></i>
+              <span id="rg-map-prompt-text">Now click a community</span>
+            </div>
+
+            <svg class="rg-city-map" viewBox="0 0 640 390" role="img"
+              aria-label="Simplified city map with four selectable communities">
+              <defs>
+                <linearGradient id="rg-map-bg" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0%" stop-color="#edf7e8" />
+                  <stop offset="100%" stop-color="#dcefd5" />
+                </linearGradient>
+                <filter id="rg-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feDropShadow dx="0" dy="6" stdDeviation="7" flood-opacity=".14" />
+                </filter>
+                <pattern id="rg-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+                  <path d="M 22 0 L 0 0 0 22" fill="none" stroke="#9fbd99" stroke-width=".7" opacity=".22" />
+                </pattern>
+
+                <marker id="rg-arrow-blue" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                  <path d="M0,0 L9,4.5 L0,9 Z" fill="#2f91b8" />
+                </marker>
+                <marker id="rg-arrow-purple" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                  <path d="M0,0 L9,4.5 L0,9 Z" fill="#5f72d9" />
+                </marker>
+                <marker id="rg-arrow-orange" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                  <path d="M0,0 L9,4.5 L0,9 Z" fill="#d96835" />
+                </marker>
+              </defs>
+
+              <rect width="640" height="390" rx="24" fill="url(#rg-map-bg)" />
+              <rect width="640" height="390" rx="24" fill="url(#rg-grid)" />
+
+              <!-- River -->
+              <path class="rg-river" d="M56,-10 C105,54 65,105 112,165 C153,218 108,272 155,400" fill="none"
+                stroke="#8ac9dd" stroke-width="54" opacity=".9" />
+              <path d="M56,-10 C105,54 65,105 112,165 C153,218 108,272 155,400" fill="none" stroke="#d9f2fa"
+                stroke-width="4" opacity=".85" />
+
+              <!-- Roads -->
+              <g class="rg-roads" fill="none" stroke="#ffffff" stroke-linecap="round">
+                <path d="M155 82 L585 82" stroke-width="13" />
+                <path d="M170 304 L578 304" stroke-width="11" />
+                <path d="M292 32 L292 352" stroke-width="12" />
+                <path d="M462 34 L462 356" stroke-width="10" />
+                <path d="M190 220 L570 220" stroke-width="8" />
+              </g>
+              <g fill="none" stroke="#bbd0b7" stroke-width="1.5" stroke-dasharray="6 7">
+                <path d="M155 82 L585 82" />
+                <path d="M170 304 L578 304" />
+                <path d="M292 32 L292 352" />
+                <path d="M462 34 L462 356" />
+                <path d="M190 220 L570 220" />
+              </g>
+
+              <!-- Hazard-specific spatial context -->
+              <g class="rg-context-layer rg-flood-context" aria-hidden="true">
+                <path d="M92 38 C105 78 98 117 118 154" fill="none" stroke="#2f91b8" stroke-width="4"
+                  stroke-linecap="round" marker-end="url(#rg-arrow-blue)" />
+                <text x="122" y="84" class="rg-context-label rg-context-label-blue">RIVER FLOW</text>
+              </g>
+
+              <g class="rg-context-layer rg-hurricane-context" aria-hidden="true">
+                <path d="M260 338 C350 272 436 175 555 74" fill="none" stroke="#5f72d9" stroke-width="4"
+                  stroke-linecap="round" stroke-dasharray="8 8" marker-end="url(#rg-arrow-purple)" />
+                <text x="463" y="125" class="rg-context-label rg-context-label-purple">STORM MOTION</text>
+              </g>
+
+              <g class="rg-context-layer rg-wildfire-context" aria-hidden="true">
+                <path d="M300 30 L565 30" fill="none" stroke="#d96835" stroke-width="4" stroke-linecap="round"
+                  marker-end="url(#rg-arrow-orange)" />
+                <text x="412" y="21" text-anchor="middle" class="rg-context-label rg-context-label-orange">WIND W →
+                  E</text>
+              </g>
+
+              <!-- Selectable communities -->
+              <g class="rg-zone" data-zone="riverside" tabindex="0" role="button"
+                aria-label="Riverfront community, low elevation">
+                <path d="M133 108 Q175 90 230 105 L250 194 Q203 215 146 196 Z" fill="#f6fbf3" stroke="#87b87a"
+                  stroke-width="3" filter="url(#rg-shadow)" />
+                <g class="rg-place-symbol rg-place-symbol-riverfront">
+                  <path d="M160 143 Q174 135 188 143 T216 143" />
+                  <path d="M160 154 Q174 146 188 154 T216 154" />
+                  <path d="M160 165 Q174 157 188 165 T216 165" />
+                </g>
+                <text x="190" y="188" text-anchor="middle" class="rg-zone-name">RIVERFRONT</text>
+              </g>
+
+              <g class="rg-zone" data-zone="hillside" tabindex="0" role="button"
+                aria-label="Highland community, steep slope">
+                <path d="M322 42 Q382 21 439 47 L443 180 Q382 197 321 176 Z" fill="#f6fbf3" stroke="#87b87a"
+                  stroke-width="3" filter="url(#rg-shadow)" />
+                <g class="rg-place-symbol rg-place-symbol-highland">
+                  <path d="M348 154 L372 119 L385 137 L402 111 L427 154" />
+                  <path d="M356 162 Q382 151 419 162" opacity=".55" />
+                </g>
+                <text x="382" y="181" text-anchor="middle" class="rg-zone-name">HIGHLAND</text>
+              </g>
+
+              <g class="rg-zone" data-zone="downtown" tabindex="0" role="button"
+                aria-label="Central District, critical infrastructure">
+                <path d="M266 202 Q337 181 413 203 L426 286 Q344 304 265 286 Z" fill="#f6fbf3" stroke="#87b87a"
+                  stroke-width="3" filter="url(#rg-shadow)" />
+                <g class="rg-place-symbol rg-place-symbol-central">
+                  <circle cx="350" cy="244" r="11" />
+                  <path d="M350 216 V233" />
+                  <path d="M350 255 V272" />
+                  <path d="M322 244 H339" />
+                  <path d="M361 244 H378" />
+                  <path d="M330 224 L342 236" />
+                  <path d="M358 252 L370 264" />
+                </g>
+                <text x="346" y="286" text-anchor="middle" class="rg-zone-name">CENTRAL</text>
+              </g>
+
+              <g class="rg-zone rg-zone-vulnerable" data-zone="eastside" tabindex="0" role="button"
+                aria-label="Eastside community, higher social vulnerability">
+                <path d="M474 131 Q536 110 598 134 L605 278 Q546 298 480 279 Z" fill="#fff9ed" stroke="#dcab54"
+                  stroke-width="3" filter="url(#rg-shadow)" />
+                <g class="rg-place-symbol rg-place-symbol-eastside">
+                  <circle cx="523" cy="183" r="8" />
+                  <circle cx="546" cy="175" r="9" />
+                  <circle cx="568" cy="184" r="8" />
+                  <path d="M510 207 Q523 194 536 207" />
+                  <path d="M532 207 Q546 190 560 207" />
+                  <path d="M554 207 Q568 194 582 207" />
+                </g>
+                <text x="540" y="232" text-anchor="middle" class="rg-zone-name">EASTSIDE</text>
+              </g>
+
+              <!-- Hazard animation layers -->
+              <g class="rg-hazard-layer rg-flood-layer" aria-hidden="true">
+                <!-- Floodwater expands outward from the river on the left -->
+                <path class="rg-flood-spread" d="M56,-10 C105,54 65,105 112,165 C153,218 108,272 155,400" fill="none"
+                  stroke="#42afd2" stroke-width="70" stroke-linecap="round" opacity=".28" />
+                <path class="rg-flood-edge" d="M56,-10 C105,54 65,105 112,165 C153,218 108,272 155,400" fill="none"
+                  stroke="#bdeeff" stroke-width="5" stroke-linecap="round" opacity=".75" />
+                <path class="rg-flood-ripple" d="M92 35 C125 88 91 132 130 182 C168 231 137 278 173 338" fill="none"
+                  stroke="#e6f9ff" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 12" opacity=".65" />
+              </g>
+
+              <g class="rg-hazard-layer rg-hurricane-layer" aria-hidden="true">
+                <path d="M30 348 C170 280 210 160 347 124 S536 94 620 20" fill="none" stroke="#6a83ff" stroke-width="5"
+                  stroke-linecap="round" stroke-dasharray="12 12" />
+                <g class="rg-hurricane-symbol">
+                  <circle cx="210" cy="228" r="33" fill="none" stroke="#5e73e8" stroke-width="8" opacity=".55" />
+                  <circle cx="210" cy="228" r="13" fill="#5e73e8" opacity=".75" />
+                  <path d="M177 223 C146 204 150 165 183 155" fill="none" stroke="#5e73e8" stroke-width="8"
+                    stroke-linecap="round" />
+                  <path d="M243 233 C275 251 270 292 237 302" fill="none" stroke="#5e73e8" stroke-width="8"
+                    stroke-linecap="round" />
+                </g>
+              </g>
+
+              <g class="rg-hazard-layer rg-heat-layer" aria-hidden="true">
+                <circle class="rg-heat-ring ring-1" cx="525" cy="205" r="54" fill="#ff8f3d" opacity=".13" />
+                <circle class="rg-heat-ring ring-2" cx="377" cy="118" r="43" fill="#ff5f45" opacity=".12" />
+                <circle class="rg-heat-ring ring-3" cx="296" cy="265" r="49" fill="#ffb13b" opacity=".12" />
+              </g>
+
+              <g class="rg-hazard-layer rg-fire-layer" aria-hidden="true">
+                <text class="rg-fire-icon fire-1" x="368" y="75">🔥</text>
+                <text class="rg-fire-icon fire-2" x="421" y="108">🔥</text>
+                <text class="rg-fire-icon fire-3" x="468" y="75">🔥</text>
+                <path d="M331 41 Q413 15 490 56" fill="none" stroke="#eb6b3b" stroke-width="7" stroke-linecap="round"
+                  stroke-dasharray="2 13" opacity=".65" />
+              </g>
+
+              <!-- Deployment markers are inserted here -->
+              <g id="rg-deployment-layer"></g>
+            </svg>
+          </div>
+
+          <div class="rg-step rg-step-two">
+            <span class="rg-step-number">2</span>
+            <span>Deploy three protective actions</span>
+          </div>
+
+          <div class="rg-resource-options" role="group" aria-label="Choose a protective action">
+            <button type="button" class="rg-resource-btn" data-resource="barrier" title="Flood barrier">
+              <i class="fas fa-water-ladder"></i><span>Barrier</span>
+            </button>
+            <button type="button" class="rg-resource-btn" data-resource="cooling" title="Cooling center">
+              <i class="fas fa-snowflake"></i><span>Cooling</span>
+            </button>
+            <button type="button" class="rg-resource-btn" data-resource="shelter" title="Emergency shelter">
+              <i class="fas fa-house-medical"></i><span>Shelter</span>
+            </button>
+            <button type="button" class="rg-resource-btn" data-resource="evacuation" title="Evacuation route">
+              <i class="fas fa-route"></i><span>Evacuation</span>
+            </button>
+            <button type="button" class="rg-resource-btn" data-resource="warning" title="Early-warning system">
+              <i class="fas fa-tower-broadcast"></i><span>Warning</span>
+            </button>
+          </div>
+
+          <div class="rg-plan-row">
+            <div class="rg-plan-list" id="rg-plan-list" aria-live="polite">
+              <span class="rg-plan-empty">No actions deployed yet</span>
+            </div>
+            <button type="button" class="rg-undo-btn" id="rg-undo-last" disabled>
+              <i class="fas fa-rotate-left"></i> Undo last
+            </button>
+          </div>
+
+          <div class="rg-game-footer">
+            <p id="rg-game-hint">
+              <i class="fas fa-circle-1"></i>
+              Choose a hazard above to start.
+            </p>
+            <button type="button" class="rg-run-btn" id="rg-run-disaster" disabled>
+              Run Disaster <i class="fas fa-play"></i>
+            </button>
+          </div>
+
+          <p class="rg-method-note">
+            <i class="fas fa-circle-info"></i>
+            Illustrative scenario — not a real-time forecast.
+          </p>
+
+          <div class="rg-toast" id="rg-toast" role="status" aria-live="polite"></div>
+
+          <!-- Result overlay -->
+          <div class="rg-results" id="rg-results" aria-hidden="true">
+            <div class="rg-results-inner">
+              <div class="rg-results-kicker">Illustrative scenario outcome</div>
+              <h3>Scenario Scores</h3>
+
+              <div class="rg-score-grid">
+                <div class="rg-score-card">
+                  <span>Life-Safety Impact</span>
+                  <strong id="rg-score-lives">—</strong>
+                  <div class="rg-score-track"><i id="rg-bar-lives"></i></div>
+                </div>
+                <div class="rg-score-card">
+                  <span>Protection Fairness</span>
+                  <strong id="rg-score-fairness">—</strong>
+                  <div class="rg-score-track"><i id="rg-bar-fairness"></i></div>
+                </div>
+                <div class="rg-score-card">
+                  <span>Resource Efficiency</span>
+                  <strong id="rg-score-cost">—</strong>
+                  <div class="rg-score-track"><i id="rg-bar-cost"></i></div>
+                </div>
+                <div class="rg-score-card">
+                  <span>Recovery Outlook</span>
+                  <strong id="rg-score-recovery">—</strong>
+                  <div class="rg-score-track"><i id="rg-bar-recovery"></i></div>
+                </div>
+              </div>
+
+              <p class="rg-scenario-disclaimer">
+                <i class="fas fa-circle-info"></i>
+                Illustrative simulation: scores use simplified, research-informed assumptions
+                and are not real-time hazard or life-safety predictions.
+              </p>
+
+              <p class="rg-feedback" id="rg-feedback"></p>
+
+              <div class="rg-results-actions">
+                <button type="button" class="rg-play-again" id="rg-play-again">
+                  <i class="fas fa-rotate-right"></i> Try Another Strategy
+                </button>
+                <a href="#research-focus" class="rg-research-link">
+                  From decisions to research <i class="fas fa-arrow-down"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
 
-    <!-- Right: Stats card -->
-    <div class="hero-visual">
-      <div class="hero-card-stack">
-        <div class="hero-main-card">
-          <div class="hero-card-title">Lab at a Glance</div>
-          <div class="hero-stats-grid">
-            <div class="hero-stat-item">
-              <div class="hero-stat-num"><span data-count="20" data-suffix="+">20+</span></div>
-              <div class="hero-stat-label">Publications</div>
-            </div>
-            <div class="hero-stat-item">
-              <div class="hero-stat-num"><span data-count="6" data-suffix="+">6+</span></div>
-              <div class="hero-stat-label">Active Projects</div>
-            </div>
-            <div class="hero-stat-item">
-              <div class="hero-stat-num"><span data-count="8" data-suffix="+">8+</span></div>
-              <div class="hero-stat-label">Team Members</div>
-            </div>
-            <div class="hero-stat-item">
-              <div class="hero-stat-num"><span data-count="3" data-suffix="M+">3M+</span></div>
-              <div class="hero-stat-label">Funding Secured</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="hero-float-card card-1">
-          <div class="float-icon green"><i class="fas fa-satellite"></i></div>
-          <div class="float-text">
-            <span>Latest research</span>
-            <strong>GeoAI for Wildfire Risk</strong>
-          </div>
-        </div>
-
-        <div class="hero-float-card card-2">
-          <div class="float-icon blue"><i class="fas fa-award"></i></div>
-          <div class="float-text">
-            <span>NSF Funded</span>
-            <strong>2024 Award</strong>
-          </div>
-        </div>
-      </div>
+    <div class="hero-scroll">
+      <i class="fas fa-chevron-down"></i>
+      <span>Explore the Lab</span>
     </div>
-  </div>
+  </section>
 
-  <div class="hero-scroll">
-    <i class="fas fa-chevron-down"></i>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      STATS BANNER
 ═══════════════════════════════════════ -->
-<section class="stats-banner">
-  <div class="stats-inner">
-    <div class="stat-item fade-in" data-delay="100">
-      <div class="stat-num"><span data-count="20" data-suffix="+">20+</span></div>
-      <div class="stat-label">Peer-Reviewed Publications</div>
+  <section class="stats-banner">
+    <div class="stats-inner">
+      <div class="stat-item fade-in" data-delay="100">
+        <div class="stat-num"><span data-count="20" data-suffix="+">20+</span></div>
+        <div class="stat-label">Peer-Reviewed Publications</div>
+      </div>
+      <div class="stat-item fade-in" data-delay="200">
+        <div class="stat-num"><span data-count="6">6</span></div>
+        <div class="stat-label">Active Research Projects</div>
+      </div>
+      <div class="stat-item fade-in" data-delay="300">
+        <div class="stat-num"><span data-count="8" data-suffix="+">8+</span></div>
+        <div class="stat-label">Lab Members</div>
+      </div>
+      <div class="stat-item fade-in" data-delay="400">
+        <div class="stat-num"><span data-count="3" data-suffix="+">3+</span></div>
+        <div class="stat-label">External Collaborations</div>
+      </div>
     </div>
-    <div class="stat-item fade-in" data-delay="200">
-      <div class="stat-num"><span data-count="6">6</span></div>
-      <div class="stat-label">Active Research Projects</div>
-    </div>
-    <div class="stat-item fade-in" data-delay="300">
-      <div class="stat-num"><span data-count="8" data-suffix="+">8+</span></div>
-      <div class="stat-label">Lab Members</div>
-    </div>
-    <div class="stat-item fade-in" data-delay="400">
-      <div class="stat-num"><span data-count="3" data-suffix="+">3+</span></div>
-      <div class="stat-label">External Collaborations</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      RESEARCH FOCUS AREAS
 ═══════════════════════════════════════ -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-tag fade-up">Research Focus</div>
-      <h2 class="section-title fade-up" data-delay="100">What We Study</h2>
-      <p class="section-subtitle fade-up" data-delay="200">
-        We combine geospatial thinking, artificial intelligence, and domain expertise
-        to tackle pressing challenges at the intersection of nature, society, and technology.
-      </p>
+  <section class="section" id="research-focus">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag fade-up">Research Focus</div>
+        <h2 class="section-title fade-up" data-delay="100">What We Study</h2>
+        <p class="section-subtitle fade-up" data-delay="200">
+          We combine geospatial thinking, artificial intelligence, and domain expertise
+          to tackle pressing challenges at the intersection of nature, society, and technology.
+        </p>
+      </div>
+
+      <div class="research-grid">
+        <!-- Card 1 -->
+        <div class="research-card fade-up">
+          <div class="research-icon"><i class="fas fa-brain"></i></div>
+          <h3>Responsible GeoAI</h3>
+          <p>Designing fair, explainable, and trustworthy geospatial AI models that account for spatial heterogeneity
+            and social equity in predictions.</p>
+          <div class="research-tags">
+            <span class="badge badge-blue">XAI</span>
+            <span class="badge badge-blue">Fairness</span>
+            <span class="badge badge-blue">GNN</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="research-card fade-up" data-delay="100">
+          <div class="research-icon"><i class="fas fa-satellite"></i></div>
+          <h3>Remote Sensing & Earth Observation</h3>
+          <p>Leveraging multi-source satellite imagery (SAR, optical, LiDAR) and deep learning for land cover mapping,
+            change detection, and disaster monitoring.</p>
+          <div class="research-tags">
+            <span class="badge badge-teal">SAR</span>
+            <span class="badge badge-teal">Sentinel</span>
+            <span class="badge badge-teal">Deep Learning</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="research-card fade-up" data-delay="200">
+          <div class="research-icon"><i class="fas fa-fire-flame-curved"></i></div>
+          <h3>Disaster Risk & Resilience</h3>
+          <p>Developing predictive and post-event models for wildfire, flood, hurricane, and compound hazards, with a
+            focus on community resilience and recovery.</p>
+          <div class="research-tags">
+            <span class="badge badge-orange">Wildfire</span>
+            <span class="badge badge-orange">Flood</span>
+            <span class="badge badge-orange">Hurricane</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="research-card fade-up" data-delay="300">
+          <div class="research-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Coupled Nature-Human Systems</h3>
+          <p>Studying how human activities and natural processes interact across spatial and temporal scales to generate
+            and amplify socio-environmental risks.</p>
+          <div class="research-tags">
+            <span class="badge badge-green">Sustainability</span>
+            <span class="badge badge-green">Urban Heat</span>
+            <span class="badge badge-green">Ecosystem</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="research-card fade-up" data-delay="100">
+          <div class="research-icon"><i class="fas fa-chart-network"></i></div>
+          <h3>Spatial Data Science</h3>
+          <p>Advancing methods for spatial statistics, graph neural networks, and spatio-temporal modeling to extract
+            knowledge from complex geospatial datasets.</p>
+          <div class="research-tags">
+            <span class="badge badge-purple">GNN</span>
+            <span class="badge badge-purple">Spatio-Temporal</span>
+            <span class="badge badge-purple">ML</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="research-card fade-up" data-delay="200">
+          <div class="research-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Environmental Justice & Equity</h3>
+          <p>Examining how environmental hazards and climate change disproportionately affect marginalized communities,
+            and developing equitable GeoAI solutions.</p>
+          <div class="research-tags">
+            <span class="badge badge-red">Equity</span>
+            <span class="badge badge-red">Environmental Justice</span>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="research-grid">
-      <!-- Card 1 -->
-      <div class="research-card fade-up">
-        <div class="research-icon"><i class="fas fa-brain"></i></div>
-        <h3>Responsible GeoAI</h3>
-        <p>Designing fair, explainable, and trustworthy geospatial AI models that account for spatial heterogeneity and social equity in predictions.</p>
-        <div class="research-tags">
-          <span class="badge badge-blue">XAI</span>
-          <span class="badge badge-blue">Fairness</span>
-          <span class="badge badge-blue">GNN</span>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="research-card fade-up" data-delay="100">
-        <div class="research-icon"><i class="fas fa-satellite"></i></div>
-        <h3>Remote Sensing & Earth Observation</h3>
-        <p>Leveraging multi-source satellite imagery (SAR, optical, LiDAR) and deep learning for land cover mapping, change detection, and disaster monitoring.</p>
-        <div class="research-tags">
-          <span class="badge badge-teal">SAR</span>
-          <span class="badge badge-teal">Sentinel</span>
-          <span class="badge badge-teal">Deep Learning</span>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="research-card fade-up" data-delay="200">
-        <div class="research-icon"><i class="fas fa-fire-flame-curved"></i></div>
-        <h3>Disaster Risk & Resilience</h3>
-        <p>Developing predictive and post-event models for wildfire, flood, hurricane, and compound hazards, with a focus on community resilience and recovery.</p>
-        <div class="research-tags">
-          <span class="badge badge-orange">Wildfire</span>
-          <span class="badge badge-orange">Flood</span>
-          <span class="badge badge-orange">Hurricane</span>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="research-card fade-up" data-delay="300">
-        <div class="research-icon"><i class="fas fa-leaf"></i></div>
-        <h3>Coupled Nature-Human Systems</h3>
-        <p>Studying how human activities and natural processes interact across spatial and temporal scales to generate and amplify socio-environmental risks.</p>
-        <div class="research-tags">
-          <span class="badge badge-green">Sustainability</span>
-          <span class="badge badge-green">Urban Heat</span>
-          <span class="badge badge-green">Ecosystem</span>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="research-card fade-up" data-delay="100">
-        <div class="research-icon"><i class="fas fa-chart-network"></i></div>
-        <h3>Spatial Data Science</h3>
-        <p>Advancing methods for spatial statistics, graph neural networks, and spatio-temporal modeling to extract knowledge from complex geospatial datasets.</p>
-        <div class="research-tags">
-          <span class="badge badge-purple">GNN</span>
-          <span class="badge badge-purple">Spatio-Temporal</span>
-          <span class="badge badge-purple">ML</span>
-        </div>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="research-card fade-up" data-delay="200">
-        <div class="research-icon"><i class="fas fa-shield-halved"></i></div>
-        <h3>Environmental Justice & Equity</h3>
-        <p>Examining how environmental hazards and climate change disproportionately affect marginalized communities, and developing equitable GeoAI solutions.</p>
-        <div class="research-tags">
-          <span class="badge badge-red">Equity</span>
-          <span class="badge badge-red">Environmental Justice</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      DIRECTOR SPOTLIGHT
 ═══════════════════════════════════════ -->
-<section class="director-section">
-  <div class="director-inner">
-    <div class="director-photo-wrap fade-up">
-      <div class="director-photo">
-        <!-- Replace with actual photo: <img src="assets/images/team/bing-zhou.jpg" alt="Dr. Bing Zhou"> -->
-        <i class="fas fa-user-tie"></i>
+  <section class="director-section">
+    <div class="director-inner">
+
+      <div class="director-photo-wrap fade-up">
+        <div class="director-photo">
+          <img src="assets/images/team/bingzhou.jpg" alt="Dr. Bing Zhou">
+        </div>
+        <div class="director-badge">Lab Director</div>
       </div>
-      <div class="director-badge">Lab Director</div>
+
+      <div class="director-content fade-up" data-delay="200">
+
+        <div class="section-tag">Principal Investigator</div>
+
+        <h2>Dr. Bing Zhou</h2>
+
+        <div class="director-title">
+          Assistant Professor (Tenure-Track)
+        </div>
+
+        <div class="director-dept">
+          Department of Geography &amp; Sustainability, UTK
+        </div>
+
+        <p>
+          Dr. Bing Zhou leads the GRIND Lab, developing responsible GeoAI to understand disaster risk, nature–human
+          dynamics, and community resilience.
+        </p>
+
+        <div class="director-interests">
+          <span class="interest-tag">GeoAI</span>
+          <span class="interest-tag">Disaster Resilience</span>
+          <span class="interest-tag">Nature–Human Systems</span>
+        </div>
+
+        <div class="director-links">
+
+          <a href="team.html" class="btn btn-outline-white btn-sm">
+            <i class="fas fa-user"></i> View Profile
+          </a>
+
+          <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener noreferrer"
+            class="btn btn-outline-white btn-sm">
+            <i class="fas fa-graduation-cap"></i> Google Scholar
+          </a>
+
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="director-content fade-up" data-delay="200">
-      <div class="section-tag">Principal Investigator</div>
-      <h2>Dr. Bing Zhou</h2>
-      <div class="director-title">Assistant Professor (Tenure-Track)</div>
-      <div class="director-dept">Department of Geography &amp; Sustainability, UTK</div>
-
-      <p>Dr. Zhou's research develops responsible geospatial AI to understand and mitigate coupled nature-human risks. He designs advanced GeoAI models for disaster detection, forecasting, and impact explanation across space and time.</p>
-      <p>Before joining UTK, Dr. Zhou completed his Ph.D. at Texas A&amp;M University and holds degrees from Tongji University and Wuhan University.</p>
-
-      <div class="director-interests">
-        <span class="interest-tag">GeoAI</span>
-        <span class="interest-tag">Remote Sensing</span>
-        <span class="interest-tag">Disaster Management</span>
-        <span class="interest-tag">Responsible AI</span>
-        <span class="interest-tag">Nature-Human Systems</span>
-        <span class="interest-tag">Spatial Data Science</span>
-      </div>
-
-      <div class="director-links">
-        <a href="team.html" class="btn btn-outline-white btn-sm">
-          <i class="fas fa-user"></i> Full Profile
-        </a>
-        <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener" class="btn btn-outline-white btn-sm">
-          <i class="fas fa-graduation-cap"></i> Google Scholar
-        </a>
-        <a href="mailto:bzhou@utk.edu" class="btn btn-outline-white btn-sm">
-          <i class="fas fa-envelope"></i> Contact
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     FEATURED NEWS
+ <!-- ═══════════════════════════════════════
+     LATEST NEWS
 ═══════════════════════════════════════ -->
 <section class="section section-light">
   <div class="container">
+
     <div class="section-header">
       <div class="section-tag fade-up">Latest Updates</div>
-      <h2 class="section-title fade-up" data-delay="100">News &amp; Announcements</h2>
+      <h2 class="section-title fade-up" data-delay="100">Latest News</h2>
       <p class="section-subtitle fade-up" data-delay="200">
-        Stay up to date with the latest research findings, awards, and events from the GRIND Lab.
+        Recent publications and research updates from the GRIND Lab.
       </p>
     </div>
 
-    <div class="news-preview-grid">
-      <!-- News Item 1 -->
-      <div class="card news-preview-card fade-up">
-        <div class="news-preview-img">🏆</div>
-        <div class="news-preview-body">
-          <div class="news-preview-meta">
-            <span class="badge badge-orange">Award</span>
-            <span class="news-preview-date"><i class="far fa-calendar"></i> Sep 2024</span>
-          </div>
-          <h3><a href="news.html">GRIND Lab Receives NSF Grant for GeoAI-Powered Wildfire Risk Assessment</a></h3>
-          <p>The GRIND Lab has been awarded an NSF grant to develop next-generation GeoAI models for wildfire risk assessment and community vulnerability mapping.</p>
-          <a href="news.html" class="news-read-more">Read more <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
+    <div class="home-preview-grid">
 
-      <!-- News Item 2 -->
-      <div class="card news-preview-card fade-up" data-delay="150">
-        <div class="news-preview-img">📄</div>
-        <div class="news-preview-body">
-          <div class="news-preview-meta">
+      <!-- News 1 -->
+      <article class="home-preview-card fade-up">
+
+        <div class="home-preview-image">
+          <img src="assets/images/news/NLP.png"
+               alt="GeoAI and large language models for disaster response">
+        </div>
+
+        <div class="home-preview-body">
+
+          <div class="home-preview-meta">
             <span class="badge badge-blue">Publication</span>
-            <span class="news-preview-date"><i class="far fa-calendar"></i> Oct 2024</span>
+            <span class="home-preview-date">
+              <i class="far fa-calendar"></i> Mar 2026
+            </span>
           </div>
-          <h3><a href="news.html">New Paper: Responsible GeoAI for Coupled Nature-Human Risk Systems</a></h3>
-          <p>PLACEHOLDER: Brief summary of the paper published in [Journal Name]. This paper introduces a novel framework for responsible GeoAI in disaster risk modeling.</p>
-          <a href="news.html" class="news-read-more">Read more <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
 
-      <!-- News Item 3 -->
-      <div class="card news-preview-card fade-up" data-delay="300">
-        <div class="news-preview-img">🗺️</div>
-        <div class="news-preview-body">
-          <div class="news-preview-meta">
-            <span class="badge badge-teal">Event</span>
-            <span class="news-preview-date"><i class="far fa-calendar"></i> Mar 2025</span>
-          </div>
-          <h3><a href="news.html">GRIND Lab Presents at AAG Annual Meeting 2025</a></h3>
-          <p>Lab members presented three papers at the American Association of Geographers Annual Meeting on GeoAI fairness, multi-hazard risk, and remote sensing.</p>
-          <a href="news.html" class="news-read-more">Read more <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
+          <h3>
+            <a href="https://doi.org/10.1080/24694452.2025.2560491"
+               target="_blank"
+               rel="noopener noreferrer">
+              Rapid Disaster Response and Damage Estimation with Social Media and Pretrained Large Language Models
+            </a>
+          </h3>
 
-      <!-- News Item 4 -->
-      <div class="card news-preview-card fade-up" data-delay="150">
-        <div class="news-preview-img">📢</div>
-        <div class="news-preview-body">
-          <div class="news-preview-meta">
-            <span class="badge badge-purple">Recruiting</span>
-            <span class="news-preview-date"><i class="far fa-calendar"></i> Oct 2025</span>
-          </div>
-          <h3><a href="apply.html">Open Positions: PhD Students for Spring/Fall 2026</a></h3>
-          <p>PLACEHOLDER: The GRIND Lab is actively seeking motivated PhD students with backgrounds in geography, computer science, data science, or related fields.</p>
-          <a href="apply.html" class="news-read-more">Apply now <i class="fas fa-arrow-right"></i></a>
+          <p>
+            A GeoAI framework using pretrained language models and social media
+            to support rapid, location-based disaster response and damage assessment.
+          </p>
+
+          <a href="https://doi.org/10.1080/24694452.2025.2560491"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="home-preview-link">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+
         </div>
-      </div>
+      </article>
+
+
+      <!-- News 2 -->
+      <article class="home-preview-card fade-up" data-delay="150">
+
+        <div class="home-preview-image">
+          <img src="assets/images/news/hurricane-damage-map.jpg"
+               alt="Street-view imagery for disaster damage assessment">
+        </div>
+
+        <div class="home-preview-body">
+
+          <div class="home-preview-meta">
+            <span class="badge badge-teal">Publication</span>
+            <span class="home-preview-date">
+              <i class="far fa-calendar"></i> Oct 2025
+            </span>
+          </div>
+
+          <h3>
+            <a href="https://doi.org/10.1016/j.compenvurbsys.2025.102335"
+               target="_blank"
+               rel="noopener noreferrer">
+              Hyperlocal Disaster Damage Assessment Using Bi-temporal Street-view Imagery and Pre-trained Vision Models
+            </a>
+          </h3>
+
+          <p>
+            Using pre- and post-disaster street-view imagery and vision models
+            to assess damage at building and street-level scales.
+          </p>
+
+          <a href="https://doi.org/10.1016/j.compenvurbsys.2025.102335"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="home-preview-link">
+            Read More <i class="fas fa-arrow-right"></i>
+          </a>
+
+        </div>
+      </article>
+
     </div>
 
-    <div style="text-align:center; margin-top:44px;" class="fade-up">
+    <div class="home-preview-button fade-up">
       <a href="news.html" class="btn btn-outline">
         <i class="fas fa-newspaper"></i> View All News
       </a>
     </div>
+
   </div>
 </section>
 
@@ -381,177 +721,211 @@
 ═══════════════════════════════════════ -->
 <section class="section">
   <div class="container">
+
     <div class="section-header">
-      <div class="section-tag fade-up">Research Portfolio</div>
+      <div class="section-tag fade-up">Our Research</div>
       <h2 class="section-title fade-up" data-delay="100">Featured Projects</h2>
       <p class="section-subtitle fade-up" data-delay="200">
-        Ongoing and recently completed research projects addressing critical challenges
-        in geospatial AI and nature-human risk.
+        Selected research advancing GeoAI, resilience, and human–environment understanding.
       </p>
     </div>
 
-    <div class="projects-preview-grid">
-      <!-- Project 1 -->
-      <div class="card project-preview-card fade-up">
-        <div class="project-preview-img">🔥</div>
-        <div class="project-preview-body">
-          <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
-            <span class="badge badge-orange">Ongoing</span>
-            <span class="badge badge-blue">NSF</span>
-          </div>
-          <h3>GeoAI-Powered Wildfire Risk Assessment and Community Vulnerability Mapping</h3>
-          <p>Developing explainable GeoAI models to assess wildfire risk and identify socially vulnerable communities across the western U.S.</p>
-          <div class="project-preview-footer">
-            <span class="project-status active">Ongoing</span>
-            <a href="projects.html" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+    <div class="home-preview-grid">
 
-      <!-- Project 2 -->
-      <div class="card project-preview-card fade-up" data-delay="150">
-        <div class="project-preview-img">🌊</div>
-        <div class="project-preview-body">
-          <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
-            <span class="badge badge-orange">Ongoing</span>
-          </div>
-          <h3>Responsible AI for Flood Damage Assessment Using Multi-Temporal Satellite Imagery</h3>
-          <p>Deep learning models for automated flood damage assessment using SAR and optical imagery with bias mitigation across socioeconomic regions.</p>
-          <div class="project-preview-footer">
-            <span class="project-status active">Ongoing</span>
-            <a href="projects.html" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+      <!-- Project 1: VisMo-Health -->
+      <article class="home-preview-card fade-up">
 
-      <!-- Project 3 -->
-      <div class="card project-preview-card fade-up" data-delay="300">
-        <div class="project-preview-img">⚖️</div>
-        <div class="project-preview-body">
-          <div style="display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;">
-            <span class="badge badge-orange">Ongoing</span>
-          </div>
-          <h3>Spatial Fairness in GeoAI: Detecting and Mitigating Geographic Bias in AI Models</h3>
-          <p>Foundational research examining sources of geographic and demographic bias in GeoAI models and developing fairness-aware frameworks.</p>
-          <div class="project-preview-footer">
-            <span class="project-status active">Ongoing</span>
-            <a href="projects.html" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-          </div>
+        <div class="home-preview-image">
+          <img src="assets/images/projects/vismo-health.jpg"
+               alt="VisMo-Health explainable GeoAI project">
         </div>
-      </div>
+
+        <div class="home-preview-body">
+
+          <div class="home-preview-meta">
+            <span class="badge badge-blue">GeoAI</span>
+            <span class="home-preview-status">Ongoing</span>
+          </div>
+
+          <h3>
+            <a href="https://sdl.gis.harvard.edu/project-25008"
+               target="_blank"
+               rel="noopener noreferrer">
+              VisMo-Health: Explainable GeoAI for Post-Disaster Health and Community Recovery
+            </a>
+          </h3>
+
+          <p>
+            Integrating street-view imagery, human mobility, and explainable GeoAI
+            to understand disaster impacts, community recovery, and health outcomes.
+          </p>
+
+          <a href="https://sdl.gis.harvard.edu/project-25008"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="home-preview-link">
+            View Project <i class="fas fa-arrow-right"></i>
+          </a>
+
+        </div>
+      </article>
+
+
+      <!-- Project 2: SounDiT -->
+      <article class="home-preview-card fade-up" data-delay="150">
+
+        <div class="home-preview-image">
+          <img src="assets/images/projects/soundit-cover.jpg"
+               alt="SounDiT geo-contextual soundscape-to-landscape generation">
+        </div>
+
+        <div class="home-preview-body">
+
+          <div class="home-preview-meta">
+            <span class="badge badge-teal">Multimodal GeoAI</span>
+            <span class="home-preview-status completed">Completed</span>
+          </div>
+
+          <h3>
+            <a href="https://gisense.github.io/SounDiT-Page/"
+               target="_blank"
+               rel="noopener noreferrer">
+              SounDiT: Geo-Contextual Soundscape-to-Landscape Generation
+            </a>
+          </h3>
+
+          <p>
+            A geo-contextual multimodal framework that generates geographically
+            coherent landscape images from environmental soundscapes using Diffusion Transformers.
+          </p>
+
+          <a href="https://gisense.github.io/SounDiT-Page/"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="home-preview-link">
+            View Project <i class="fas fa-arrow-right"></i>
+          </a>
+
+        </div>
+      </article>
+
     </div>
 
-    <div style="text-align:center; margin-top:44px;" class="fade-up">
+    <div class="home-preview-button fade-up">
       <a href="projects.html" class="btn btn-outline">
         <i class="fas fa-folder-open"></i> View All Projects
       </a>
     </div>
+
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      FUNDING / PARTNERS
 ═══════════════════════════════════════ -->
-<section class="section-light">
-  <div class="container">
-    <div class="section-header" style="margin-bottom:32px;">
-      <div class="section-tag fade-up">Supported By</div>
-      <h2 class="section-title fade-up" data-delay="100" style="font-size:24px;">Funding &amp; Affiliations</h2>
+  <section class="section-light">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:32px;">
+        <div class="section-tag fade-up">Supported By</div>
+        <h2 class="section-title fade-up" data-delay="100" style="font-size:24px;">Funding &amp; Affiliations</h2>
+      </div>
+      <div class="partners-row fade-up">
+        <!-- Add real logos once available — replace placeholders below -->
+        <div class="partner-placeholder">NSF</div>
+        <div class="partner-placeholder">NOAA</div>
+        <div class="partner-placeholder">NIH</div>
+        <div class="partner-placeholder">NASA</div>
+        <div class="partner-placeholder">USGS</div>
+        <div class="partner-placeholder">UTK</div>
+      </div>
     </div>
-    <div class="partners-row fade-up">
-      <!-- Add real logos once available — replace placeholders below -->
-      <div class="partner-placeholder">NSF</div>
-      <div class="partner-placeholder">NOAA</div>
-      <div class="partner-placeholder">NIH</div>
-      <div class="partner-placeholder">NASA</div>
-      <div class="partner-placeholder">USGS</div>
-      <div class="partner-placeholder">UTK</div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      CALL TO ACTION
 ═══════════════════════════════════════ -->
-<section class="cta-section">
-  <div class="cta-inner fade-up">
-    <h2>Join the GRIND Lab</h2>
-    <p>We are actively recruiting PhD students, postdocs, and undergraduate researchers with a passion for geospatial AI, remote sensing, and disaster risk science.</p>
-    <div class="cta-actions">
-      <a href="apply.html" class="btn btn-white btn-lg">
-        <i class="fas fa-graduation-cap"></i> Apply Now
-      </a>
-      <a href="contact.html" class="btn btn-outline-white btn-lg">
-        <i class="fas fa-envelope"></i> Get in Touch
-      </a>
+  <section class="cta-section">
+    <div class="cta-inner fade-up">
+      <h2>Join the GRIND Lab</h2>
+      <p>We are actively recruiting PhD students, postdocs, and undergraduate researchers with a passion for geospatial
+        AI, remote sensing, and disaster risk science.</p>
+      <div class="cta-actions">
+        <a href="apply.html" class="btn btn-white btn-lg">
+          <i class="fas fa-graduation-cap"></i> Apply Now
+        </a>
+        <a href="contact.html" class="btn btn-outline-white btn-lg">
+          <i class="fas fa-envelope"></i> Get in Touch
+        </a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════ -->
-<footer class="footer">
-  <div class="footer-inner">
-    <!-- Brand -->
-    <div class="footer-brand-col">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
-      <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Twitter/X" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  <footer class="footer">
+    <div class="footer-inner">
+      <!-- Brand -->
+      <div class="footer-brand-col">
+        <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
+        <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter/X" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Nav Links -->
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="apply.html">Apply</a></li>
+        </ul>
+      </div>
+
+      <!-- Research Links -->
+      <div class="footer-col">
+        <h4>Research</h4>
+        <ul>
+          <li><a href="projects.html">GeoAI</a></li>
+          <li><a href="projects.html">Remote Sensing</a></li>
+          <li><a href="projects.html">Disaster Risk</a></li>
+          <li><a href="projects.html">Publications</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Dept. of Geography &amp; Sustainability</li>
+          <li>University of Tennessee, Knoxville</li>
+          <li>Knoxville, TN 37996</li>
+          <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
+        </ul>
       </div>
     </div>
 
-    <!-- Nav Links -->
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="apply.html">Apply</a></li>
-      </ul>
+    <div class="footer-bottom container">
+      <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville. All rights reserved.</span>
+      <span>Built with ❤️ for science and society.</span>
     </div>
+  </footer>
 
-    <!-- Research Links -->
-    <div class="footer-col">
-      <h4>Research</h4>
-      <ul>
-        <li><a href="projects.html">GeoAI</a></li>
-        <li><a href="projects.html">Remote Sensing</a></li>
-        <li><a href="projects.html">Disaster Risk</a></li>
-        <li><a href="projects.html">Publications</a></li>
-      </ul>
-    </div>
+  <!-- Scroll to top -->
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
 
-    <!-- Contact -->
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li>Dept. of Geography &amp; Sustainability</li>
-        <li>University of Tennessee, Knoxville</li>
-        <li>Knoxville, TN 37996</li>
-        <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer-bottom container">
-    <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville. All rights reserved.</span>
-    <span>Built with ❤️ for science and society.</span>
-  </div>
-</footer>
-
-<!-- Scroll to top -->
-<button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-
-<!-- Scripts -->
-<script src="assets/js/main.js"></script>
-<script src="assets/js/particles.js"></script>
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/resilience-game.js"></script>
+  <script src="assets/js/particles.js"></script>
 </body>
+
 </html>

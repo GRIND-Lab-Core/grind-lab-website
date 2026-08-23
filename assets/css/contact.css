@@ -94,6 +94,13 @@
 
 /* ── Join the Lab ── */
 .join-section { background: var(--primary); padding: 80px 28px; }
+.join-section .section-title {
+  color: var(--white);
+}
+
+.join-section .section-subtitle {
+  color: rgba(255,255,255,0.65);
+}
 .join-inner { max-width: 1200px; margin: 0 auto; }
 .join-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
 .join-card {

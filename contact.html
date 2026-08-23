@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,419 +8,406 @@
   <title>Contact — GRIND Lab</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/logo/Lab_Logo_ver01.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/contact.css">
 </head>
+
 <body>
 
-<div class="page-loader" id="page-loader">
-  <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab" class="loader-logo" width="80">
-</div>
-
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-brand">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab Logo" class="nav-logo-img">
-      <div class="nav-logo-text">
-        <span class="nav-logo-main">GRIND Lab</span>
-        <span class="nav-logo-sub">UTK Geography</span>
-      </div>
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="news.html" class="nav-link">News</a></li>
-      <li><a href="projects.html" class="nav-link">Projects</a></li>
-      <li><a href="team.html" class="nav-link">Team</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="apply.html" class="btn-apply">Apply</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<!-- Page Hero -->
-<section class="page-hero">
-  <div class="page-hero-content">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Contact</span>
-    </div>
-    <div class="page-hero-eyebrow">Get in Touch</div>
-    <h1>Contact Us</h1>
-    <p>Whether you're a prospective student, potential collaborator, or just curious about our research — we'd love to hear from you.</p>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
-     CONTACT LAYOUT
-═══════════════════════════════════════ -->
-<div class="contact-layout">
-
-  <!-- ── Left: Info ── -->
-  <div class="contact-info fade-up">
-
-    <div class="contact-info-block">
-      <h3>Contact Information</h3>
-      <div class="contact-detail">
-        <div class="contact-detail-icon"><i class="fas fa-user"></i></div>
-        <div class="contact-detail-text">
-          <strong>Principal Investigator</strong>
-          <span>Dr. Bing Zhou</span>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
-        <div class="contact-detail-text">
-          <strong>Email</strong>
-          <a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
-        <div class="contact-detail-text">
-          <strong>Phone</strong>
-          <span>PLACEHOLDER: (865) XXX-XXXX</span>
-        </div>
-      </div>
-      <div class="contact-detail">
-        <div class="contact-detail-icon"><i class="fas fa-building"></i></div>
-        <div class="contact-detail-text">
-          <strong>Office</strong>
-          <span>PLACEHOLDER: Building Name, Room XXX</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="contact-info-block">
-      <h3>Location</h3>
-      <div class="contact-detail">
-        <div class="contact-detail-icon"><i class="fas fa-university"></i></div>
-        <div class="contact-detail-text">
-          <strong>Department of Geography &amp; Sustainability</strong>
-          <span>University of Tennessee, Knoxville<br>
-          PLACEHOLDER: Street Address<br>
-          Knoxville, TN 37996</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Map Placeholder -->
-    <div class="map-placeholder" onclick="window.open('https://maps.google.com/?q=University+of+Tennessee+Knoxville', '_blank')">
-      <i class="fas fa-map-marker-alt"></i>
-      <span>Click to open in Google Maps</span>
-      <span style="font-size:12px;color:var(--text-light);position:relative;z-index:1;">UTK Department of Geography &amp; Sustainability</span>
-    </div>
-
-    <div class="contact-info-block">
-      <h3>Office Hours</h3>
-      <div class="office-hours">
-        <div class="office-hour-row">
-          <span class="day">Monday</span>
-          <span class="time">PLACEHOLDER: e.g., 2:00–4:00 PM</span>
-        </div>
-        <div class="office-hour-row today">
-          <span class="day">Wednesday</span>
-          <span class="time">PLACEHOLDER: e.g., 10:00 AM–12:00 PM</span>
-        </div>
-        <div class="office-hour-row">
-          <span class="day">Friday</span>
-          <span class="time">PLACEHOLDER: e.g., By appointment</span>
-        </div>
-        <div class="office-hour-row closed">
-          <span class="day">Tue / Thu / Sat / Sun</span>
-          <span class="time">By appointment only</span>
-        </div>
-      </div>
-      <p style="font-size:12.5px;color:var(--text-light);margin-top:12px;">
-        <i class="fas fa-info-circle" style="color:var(--accent);"></i>
-        PLACEHOLDER: Note about scheduling or preferred contact method.
-      </p>
-    </div>
-
-    <!-- Social Links -->
-    <div class="contact-info-block">
-      <h3>Follow Us</h3>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;">
-        <a href="#" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:8px;border:1.5px solid var(--border);font-size:13px;color:var(--text-dark);font-weight:600;transition:var(--transition);" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-dark)';">
-          <i class="fab fa-x-twitter"></i> Twitter/X
-        </a>
-        <a href="https://github.com/GRIND-Lab-Core" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:8px;border:1.5px solid var(--border);font-size:13px;color:var(--text-dark);font-weight:600;transition:var(--transition);" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-dark)';">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:8px;padding:9px 16px;border-radius:8px;border:1.5px solid var(--border);font-size:13px;color:var(--text-dark);font-weight:600;transition:var(--transition);" onmouseover="this.style.borderColor='var(--accent)';this.style.color='var(--accent)';" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--text-dark)';">
-          <i class="fas fa-graduation-cap"></i> Scholar
-        </a>
-      </div>
-    </div>
+  <div class="page-loader" id="page-loader">
+    <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab" class="loader-logo" width="80">
   </div>
 
-  <!-- ── Right: Contact Form ── -->
-  <div class="contact-form-wrap fade-up" data-delay="200">
-    <div class="form-header">
-      <h2>Send a Message</h2>
-      <p>Fill out the form below and we'll get back to you as soon as possible. For prospective students, please see the <a href="apply.html" style="color:var(--accent);">Apply page</a> for details.</p>
-    </div>
-
-    <form class="contact-form" id="contact-form" novalidate>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="first-name">First Name *</label>
-          <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab Logo" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <span class="nav-logo-main">GRIND Lab</span>
+          <span class="nav-logo-sub">UTK Geography</span>
         </div>
-        <div class="form-group">
-          <label for="last-name">Last Name *</label>
-          <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email Address *</label>
-        <input type="email" id="email" name="email" placeholder="jane.smith@university.edu" required>
-      </div>
-
-      <div class="form-group">
-        <label for="affiliation">Affiliation / Institution</label>
-        <input type="text" id="affiliation" name="affiliation" placeholder="University / Company / Independent">
-      </div>
-
-      <div class="form-group">
-        <label for="subject">Subject *</label>
-        <select id="subject" name="subject" required>
-          <option value="" disabled selected>Select a topic…</option>
-          <option value="prospective-phd">Prospective PhD Student</option>
-          <option value="prospective-ms">Prospective MS Student</option>
-          <option value="prospective-postdoc">Prospective Postdoc</option>
-          <option value="collaboration">Research Collaboration</option>
-          <option value="media">Media / Press Inquiry</option>
-          <option value="general">General Inquiry</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message *</label>
-        <textarea id="message" name="message" placeholder="Please briefly describe your inquiry, research background, and how you learned about the GRIND Lab…" required></textarea>
-      </div>
-
-      <div class="form-group form-checkbox">
-        <input type="checkbox" id="consent" name="consent" required>
-        <label for="consent">I agree that this information may be stored and used to respond to my inquiry. *</label>
-      </div>
-
-      <div class="form-submit">
-        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
-          <i class="fas fa-paper-plane"></i> Send Message
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="news.html" class="nav-link">News</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="team.html" class="nav-link">Team</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="apply.html" class="btn-apply">Apply</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
       </div>
-      <p class="form-note">
-        <i class="fas fa-lock" style="font-size:11px;"></i>
-        Your information is kept private and never shared.
-        <!-- PLACEHOLDER: Replace form action with Formspree, Netlify Forms, or your backend -->
-      </p>
-    </form>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Contact</span>
+      </div>
+      <div class="page-hero-eyebrow">Get in Touch</div>
+      <h1>Contact Us</h1>
+      <p>Whether you're a prospective student, potential collaborator, or just curious about our research — we'd love to
+        hear from you.</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+     CONTACT LAYOUT
+═══════════════════════════════════════ -->
+  <div class="contact-layout">
+
+    <!-- ── Left: Info ── -->
+    <div class="contact-info fade-up">
+
+      <div class="contact-info-block">
+        <h3>Contact Information</h3>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-user"></i></div>
+          <div class="contact-detail-text">
+            <strong>Principal Investigator</strong>
+            <span>Dr. Bing Zhou</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-envelope"></i></div>
+          <div class="contact-detail-text">
+            <strong>Email</strong>
+            <a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-phone"></i></div>
+          <div class="contact-detail-text">
+            <strong>Phone</strong>
+            <span>(979) 255-0199</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-building"></i></div>
+          <div class="contact-detail-text">
+            <strong>Office</strong>
+            <span>207 Burchfiel Geography Bldg. Knoxville, TN 37996-0925</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-info-block">
+        <h3>Location</h3>
+        <div class="contact-detail">
+          <div class="contact-detail-icon"><i class="fas fa-university"></i></div>
+          <div class="contact-detail-text">
+            <strong>Department of Geography &amp; Sustainability</strong>
+            <span>University of Tennessee, Knoxville<br>
+              PLACEHOLDER: Street Address<br>
+              Knoxville, TN 37996</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Map -->
+      <div class="map-embed" style="border-radius: 12px; overflow: hidden; height: 300px;">
+        <iframe
+          src="https://maps.google.com/maps?q=207+Burchfiel+Geography+Bldg+Knoxville+TN+37996&t=&z=17&ie=UTF8&iwloc=&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+      <a href="https://maps.google.com/?q=207+Burchfiel+Geography+Bldg+Knoxville+TN+37996" target="_blank"
+        style="font-size:12px; color:var(--text-light); display:block; margin-top:8px; text-align:center;">
+        Click to open in Google Maps →
+      </a>
+      <span style="font-size:12px;color:var(--text-light);display:block;text-align:center;margin-top:4px;">UTK
+        Department of Geography &amp; Sustainability</span>
+
+    </div>
+
+    <!-- ── Right: Contact Form ── -->
+    <div class="contact-form-wrap fade-up" data-delay="200">
+      <div class="form-header">
+        <h2>Send a Message</h2>
+        <p>Fill out the form below and we'll get back to you as soon as possible. For prospective students, please see
+          the <a href="apply.html" style="color:var(--accent);">Apply page</a> for details.</p>
+      </div>
+
+      <form class="contact-form" id="contact-form" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first-name">First Name *</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Jane" required>
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name *</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Smith" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="jane.smith@university.edu" required>
+        </div>
+
+        <div class="form-group">
+          <label for="affiliation">Affiliation / Institution</label>
+          <input type="text" id="affiliation" name="affiliation" placeholder="University / Company / Independent">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject *</label>
+          <select id="subject" name="subject" required>
+            <option value="" disabled selected>Select a topic…</option>
+            <option value="prospective-phd">Prospective PhD Student</option>
+            <option value="prospective-ms">Prospective MS Student</option>
+            <option value="prospective-postdoc">Prospective Postdoc</option>
+            <option value="collaboration">Research Collaboration</option>
+            <option value="media">Media / Press Inquiry</option>
+            <option value="general">General Inquiry</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message"
+            placeholder="Please briefly describe your inquiry, research background, and how you learned about the GRIND Lab…"
+            required></textarea>
+        </div>
+
+        <div class="form-group form-checkbox">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent">I agree that this information may be stored and used to respond to my inquiry. *</label>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </div>
+        <p class="form-note">
+          <i class="fas fa-lock" style="font-size:11px;"></i>
+          Your information is kept private and never shared.
+          <!-- PLACEHOLDER: Replace form action with Formspree, Netlify Forms, or your backend -->
+        </p>
+      </form>
+    </div>
+
   </div>
 
-</div>
-
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      JOIN THE LAB
 ═══════════════════════════════════════ -->
-<section class="join-section">
-  <div class="join-inner">
-    <div class="section-header fade-up">
-      <div class="section-tag">Opportunities</div>
-      <h2 class="section-title">Join the GRIND Lab</h2>
-      <p class="section-subtitle">We welcome applications from passionate individuals at all career stages.</p>
+  <section class="join-section">
+    <div class="join-inner">
+      <div class="section-header fade-up">
+        <div class="section-tag">Opportunities</div>
+        <h2 class="section-title">Join the GRIND Lab</h2>
+        <p class="section-subtitle">We welcome applications from passionate individuals at all career stages.</p>
+      </div>
+
+      <div class="join-cards">
+
+        <div class="join-card fade-up">
+          <div class="join-card-icon"><i class="fas fa-user-graduate"></i></div>
+          <h3>PhD Students</h3>
+          <p>Fully funded PhD positions available. We seek students with strong backgrounds in geography, GIScience,
+            computer science, or related fields.</p>
+          <div class="requirements">
+            <div class="req-item"><i class="fas fa-check"></i> B.S. or M.S. in relevant field</div>
+            <div class="req-item"><i class="fas fa-check"></i> Programming experience (Python/R)</div>
+            <div class="req-item"><i class="fas fa-check"></i> Research interest in GeoAI/remote sensing</div>
+            <div class="req-item"><i class="fas fa-check"></i> Strong written &amp; verbal communication</div>
+          </div>
+          <a href="apply.html" class="btn btn-outline-white btn-sm">Learn More →</a>
+        </div>
+
+        <div class="join-card fade-up" data-delay="150">
+          <div class="join-card-icon"><i class="fas fa-microscope"></i></div>
+          <h3>Postdoctoral Researchers</h3>
+          <p>PLACEHOLDER: Postdoc positions available as funding permits. We look for candidates with expertise in
+            machine learning, remote sensing, or geospatial data science.</p>
+          <div class="requirements">
+            <div class="req-item"><i class="fas fa-check"></i> Ph.D. in relevant field</div>
+            <div class="req-item"><i class="fas fa-check"></i> Strong publication record</div>
+            <div class="req-item"><i class="fas fa-check"></i> Expertise in ML/DL or remote sensing</div>
+            <div class="req-item"><i class="fas fa-check"></i> Grant writing experience a plus</div>
+          </div>
+          <a href="contact.html" class="btn btn-outline-white btn-sm">Inquire →</a>
+        </div>
+
+        <div class="join-card fade-up" data-delay="300">
+          <div class="join-card-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Undergraduate Researchers</h3>
+          <p>UTK undergraduates interested in GeoAI and geospatial research are welcome to inquire about research
+            opportunities during the semester or summer.</p>
+          <div class="requirements">
+            <div class="req-item"><i class="fas fa-check"></i> UTK undergraduate student</div>
+            <div class="req-item"><i class="fas fa-check"></i> Junior or Senior standing preferred</div>
+            <div class="req-item"><i class="fas fa-check"></i> Basic coding skills helpful</div>
+            <div class="req-item"><i class="fas fa-check"></i> Curiosity &amp; dedication</div>
+          </div>
+          <a href="contact.html" class="btn btn-outline-white btn-sm">Inquire →</a>
+        </div>
+
+      </div>
     </div>
+  </section>
 
-    <div class="join-cards">
-
-      <div class="join-card fade-up">
-        <div class="join-card-icon"><i class="fas fa-user-graduate"></i></div>
-        <h3>PhD Students</h3>
-        <p>Fully funded PhD positions available. We seek students with strong backgrounds in geography, GIScience, computer science, or related fields.</p>
-        <div class="requirements">
-          <div class="req-item"><i class="fas fa-check"></i> B.S. or M.S. in relevant field</div>
-          <div class="req-item"><i class="fas fa-check"></i> Programming experience (Python/R)</div>
-          <div class="req-item"><i class="fas fa-check"></i> Research interest in GeoAI/remote sensing</div>
-          <div class="req-item"><i class="fas fa-check"></i> Strong written &amp; verbal communication</div>
-        </div>
-        <a href="apply.html" class="btn btn-outline-white btn-sm">Learn More →</a>
-      </div>
-
-      <div class="join-card fade-up" data-delay="150">
-        <div class="join-card-icon"><i class="fas fa-microscope"></i></div>
-        <h3>Postdoctoral Researchers</h3>
-        <p>PLACEHOLDER: Postdoc positions available as funding permits. We look for candidates with expertise in machine learning, remote sensing, or geospatial data science.</p>
-        <div class="requirements">
-          <div class="req-item"><i class="fas fa-check"></i> Ph.D. in relevant field</div>
-          <div class="req-item"><i class="fas fa-check"></i> Strong publication record</div>
-          <div class="req-item"><i class="fas fa-check"></i> Expertise in ML/DL or remote sensing</div>
-          <div class="req-item"><i class="fas fa-check"></i> Grant writing experience a plus</div>
-        </div>
-        <a href="contact.html" class="btn btn-outline-white btn-sm">Inquire →</a>
-      </div>
-
-      <div class="join-card fade-up" data-delay="300">
-        <div class="join-card-icon"><i class="fas fa-laptop-code"></i></div>
-        <h3>Undergraduate Researchers</h3>
-        <p>UTK undergraduates interested in GeoAI and geospatial research are welcome to inquire about research opportunities during the semester or summer.</p>
-        <div class="requirements">
-          <div class="req-item"><i class="fas fa-check"></i> UTK undergraduate student</div>
-          <div class="req-item"><i class="fas fa-check"></i> Junior or Senior standing preferred</div>
-          <div class="req-item"><i class="fas fa-check"></i> Basic coding skills helpful</div>
-          <div class="req-item"><i class="fas fa-check"></i> Curiosity &amp; dedication</div>
-        </div>
-        <a href="contact.html" class="btn btn-outline-white btn-sm">Inquire →</a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════════════════════════════════
+  <!-- ═══════════════════════════════════════
      FAQ
 ═══════════════════════════════════════ -->
-<section class="faq-section">
-  <div class="faq-container">
-    <div class="section-header fade-up">
-      <div class="section-tag">FAQ</div>
-      <h2 class="section-title">Frequently Asked Questions</h2>
-    </div>
-
-    <div class="faq-item fade-up">
-      <div class="faq-question">
-        Are there funded PhD positions available?
-        <i class="fas fa-plus"></i>
+  <section class="faq-section">
+    <div class="faq-container">
+      <div class="section-header fade-up">
+        <div class="section-tag">FAQ</div>
+        <h2 class="section-title">Frequently Asked Questions</h2>
       </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">
-          PLACEHOLDER: Yes/No and details about funding. Typically PhD students are supported through research assistantships (RA), teaching assistantships (TA), or fellowships. Please check the Apply page and contact Dr. Zhou directly for current openings.
+
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Are there funded PhD positions available?
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PLACEHOLDER: Yes/No and details about funding. Typically PhD students are supported through research
+            assistantships (RA), teaching assistantships (TA), or fellowships. Please check the Apply page and contact
+            Dr. Zhou directly for current openings.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="faq-item fade-up">
-      <div class="faq-question">
-        What backgrounds are you looking for in PhD applicants?
-        <i class="fas fa-plus"></i>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">
-          PLACEHOLDER: We welcome students from diverse backgrounds including geography, GIScience, computer science, data science, environmental science, civil engineering, and related fields. A strong interest in geospatial AI and natural hazards is more important than a specific background.
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          What backgrounds are you looking for in PhD applicants?
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PLACEHOLDER: We welcome students from diverse backgrounds including geography, GIScience, computer science,
+            data science, environmental science, civil engineering, and related fields. A strong interest in geospatial
+            AI and natural hazards is more important than a specific background.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="faq-item fade-up">
-      <div class="faq-question">
-        When should I apply to the PhD program?
-        <i class="fas fa-plus"></i>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">
-          PLACEHOLDER: The UTK Geography PhD program has deadlines of approximately [MONTH] for fall admission. We recommend reaching out to Dr. Zhou several months before the application deadline to discuss your interests and ensure fit. See the Apply page for details.
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          When should I apply to the PhD program?
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PLACEHOLDER: The UTK Geography PhD program has deadlines of approximately [MONTH] for fall admission. We
+            recommend reaching out to Dr. Zhou several months before the application deadline to discuss your interests
+            and ensure fit. See the Apply page for details.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="faq-item fade-up">
-      <div class="faq-question">
-        Can I do a research internship or visiting scholar position?
-        <i class="fas fa-plus"></i>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">
-          PLACEHOLDER: We occasionally host visiting scholars and research interns depending on project needs and funding. Please contact Dr. Zhou with your CV, a description of your research interests, and proposed timeline.
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          Can I do a research internship or visiting scholar position?
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PLACEHOLDER: We occasionally host visiting scholars and research interns depending on project needs and
+            funding. Please contact Dr. Zhou with your CV, a description of your research interests, and proposed
+            timeline.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="faq-item fade-up">
-      <div class="faq-question">
-        I am not in Knoxville — can I collaborate remotely?
-        <i class="fas fa-plus"></i>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">
-          PLACEHOLDER: Remote collaboration is possible for external collaborators and visiting researchers. However, PhD and MS students are expected to be on-campus at UTK. Please reach out to discuss specific arrangements.
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          I am not in Knoxville — can I collaborate remotely?
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PLACEHOLDER: Remote collaboration is possible for external collaborators and visiting researchers. However,
+            PhD and MS students are expected to be on-campus at UTK. Please reach out to discuss specific arrangements.
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="faq-item fade-up">
-      <div class="faq-question">
-        How long does it take to hear back after sending an inquiry?
-        <i class="fas fa-plus"></i>
-      </div>
-      <div class="faq-answer">
-        <div class="faq-answer-inner">
-          PLACEHOLDER: We try to respond within 1–2 weeks. Due to the volume of inquiries, we may not be able to respond to all messages individually. If you haven't heard back in 2 weeks, a gentle follow-up is welcome.
+      <div class="faq-item fade-up">
+        <div class="faq-question">
+          How long does it take to hear back after sending an inquiry?
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PLACEHOLDER: We try to respond within 1–2 weeks. Due to the volume of inquiries, we may not be able to
+            respond to all messages individually. If you haven't heard back in 2 weeks, a gentle follow-up is welcome.
+          </div>
         </div>
       </div>
+
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand-col">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
-      <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
+        <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="apply.html">Apply</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Research</h4>
+        <ul>
+          <li><a href="projects.html">GeoAI</a></li>
+          <li><a href="projects.html">Remote Sensing</a></li>
+          <li><a href="projects.html">Disaster Risk</a></li>
+          <li><a href="projects.html">Publications</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>Dept. of Geography &amp; Sustainability</li>
+          <li>University of Tennessee, Knoxville</li>
+          <li>Knoxville, TN 37996</li>
+          <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
+        </ul>
       </div>
     </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="apply.html">Apply</a></li>
-      </ul>
+    <div class="footer-bottom container">
+      <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville.</span>
+      <span>Built with ❤️ for science and society.</span>
     </div>
-    <div class="footer-col">
-      <h4>Research</h4>
-      <ul>
-        <li><a href="projects.html">GeoAI</a></li>
-        <li><a href="projects.html">Remote Sensing</a></li>
-        <li><a href="projects.html">Disaster Risk</a></li>
-        <li><a href="projects.html">Publications</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li>Dept. of Geography &amp; Sustainability</li>
-        <li>University of Tennessee, Knoxville</li>
-        <li>Knoxville, TN 37996</li>
-        <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom container">
-    <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville.</span>
-    <span>Built with ❤️ for science and society.</span>
-  </div>
-</footer>
+  </footer>
 
-<button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-<script src="assets/js/main.js"></script>
+  <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>

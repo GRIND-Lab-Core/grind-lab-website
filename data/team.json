@@ -5,24 +5,36 @@
     "department": "Department of Geography and Sustainability",
     "university": "University of Tennessee, Knoxville",
     "email": "bzhou@utk.edu",
-    "office": "PLACEHOLDER: Building Name, Room XXX",
-    "phone": "PLACEHOLDER: (865) XXX-XXXX",
+    "office": "207 Burchfiel Geography Bldg. Knoxville, TN 37996-0925",
+    "phone": "(979) 255-0199",
     "website": "https://geography.utk.edu/people/instructional-faculty/bing-zhou/",
     "scholar": "https://scholar.google.com/citations?user=ehw9A-EAAAAJ",
-    "orcid": "PLACEHOLDER: 0000-0000-0000-0000",
-    "github": "PLACEHOLDER: github.com/username",
-    "twitter": "PLACEHOLDER: @username",
+    "orcid": "https://orcid.org/0000-0003-1106-1370",
+    "github": "https://bzbarrett.github.io/",
+    "twitter": "https://x.com/BarrettBingZhou/media",
     "linkedin": "https://www.linkedin.com/in/bing-zhou-a90b98239/",
-    "photo": "assets/images/team/bing-zhou.jpg",
+    "photo": "assets/images/team/bingzhou.jpg",
     "bio": [
       "Dr. Bing Zhou is an Assistant Professor (Tenure-Track) in the Department of Geography and Sustainability at the University of Tennessee, Knoxville. He leads the GRIND Lab (Geospatial Responsible AI for Nature-human Dynamics Laboratory).",
       "Dr. Zhou's research focuses on developing responsible geospatial AI to understand and mitigate coupled nature-human risks. His work spans GeoAI model design, remote sensing applications, and explainable AI for disaster detection, forecasting, and impact assessment across space and time.",
-      "PLACEHOLDER: Additional bio paragraph about research philosophy, key contributions, or vision."
+      "His work integrates remote sensing, street-view imagery, human mobility, environmental monitoring, and other geospatial big data to examine patterns of exposure, vulnerability, and recovery. Through GRIND Lab, he emphasizes responsible and interdisciplinary geospatial research that translates advanced AI methods into actionable knowledge for building more resilient, equitable, and healthy communities."
     ],
     "education": [
-      { "degree": "Ph.D. in Geography", "institution": "Texas A&M University", "year": "PLACEHOLDER" },
-      { "degree": "M.S. in [PLACEHOLDER]", "institution": "Tongji University", "year": "PLACEHOLDER" },
-      { "degree": "B.S. in [PLACEHOLDER]", "institution": "Wuhan University", "year": "PLACEHOLDER" }
+      {
+        "degree": "Ph.D. in Geography",
+        "institution": "Texas A&M University",
+        "year": "Aug 2021 – Jun 2024"
+      },
+      {
+        "degree": "M.S. in Geodesy and Geoinformatics",
+        "institution": "Tongji University",
+        "year": "Sep 2011-Mar 2014"
+      },
+      {
+        "degree": "B.S. in Geomatics",
+        "institution": "Wuhan University",
+        "year": "Sep 2007-Jun 2011"
+      }
     ],
     "research_interests": [
       "Geospatial Data Science",
@@ -34,59 +46,39 @@
       "Spatial Fairness"
     ],
     "courses": [
-      "PLACEHOLDER: Course Title (GEOG XXXX)",
-      "PLACEHOLDER: Course Title (GEOG XXXX)"
+      "Geovisualization and Geographic Information Science (GEOG 311)",
+      "First Steps in GIS Programming (GEOG 312)",
+      "Intermediate Geographic Information Science (GEOG 411)",
+      "Quantitative Methods in Geography (GEOG 415)"
     ]
   },
   "phd_students": [
     {
-      "name": "PLACEHOLDER Student Name",
+      "name": "Lula(Feifei) Yang",
       "role": "Ph.D. Student",
       "year": "Year 1",
-      "research": "PLACEHOLDER: Brief research focus description.",
-      "email": "PLACEHOLDER@vols.utk.edu",
-      "photo": "assets/images/team/placeholder.jpg",
-      "tags": ["GeoAI", "Remote Sensing"],
-      "advisor": "Dr. Bing Zhou"
-    },
-    {
-      "name": "PLACEHOLDER Student Name",
-      "role": "Ph.D. Student",
-      "year": "Year 2",
-      "research": "PLACEHOLDER: Brief research focus description.",
-      "email": "PLACEHOLDER@vols.utk.edu",
-      "photo": "assets/images/team/placeholder.jpg",
-      "tags": ["Disaster Risk", "Deep Learning"],
-      "advisor": "Dr. Bing Zhou"
-    },
-    {
-      "name": "PLACEHOLDER Student Name",
-      "role": "Ph.D. Student",
-      "year": "Year 3",
-      "research": "PLACEHOLDER: Brief research focus description.",
-      "email": "PLACEHOLDER@vols.utk.edu",
-      "photo": "assets/images/team/placeholder.jpg",
-      "tags": ["Coupled Systems", "Climate"],
+      "research": "Her research uses GeoAI and geospatial analysis to study nature–human dynamics, with interests in disaster resilience, environmental health, and responsible modeling.",
+      "email": "Fyang40@vols.utk.edu",
+      "photo": "assets/images/team/lula.png",
+      "tags": [
+        "Geospatial Science",
+        "Public Health"
+      ],
       "advisor": "Dr. Bing Zhou"
     }
   ],
   "ms_students": [
     {
-      "name": "PLACEHOLDER Student Name",
-      "role": "M.S. Student",
-      "year": "Year 1",
-      "research": "PLACEHOLDER: Brief research focus.",
-      "email": "PLACEHOLDER@vols.utk.edu",
-      "tags": ["GeoAI"],
-      "advisor": "Dr. Bing Zhou"
-    },
-    {
-      "name": "PLACEHOLDER Student Name",
+      "name": "Junbo Wang",
       "role": "M.S. Student",
       "year": "Year 2",
-      "research": "PLACEHOLDER: Brief research focus.",
-      "email": "PLACEHOLDER@vols.utk.edu",
-      "tags": ["Remote Sensing"],
+      "research": "His research focuses on GeoAI, foundation models, and their applications in natural hazards and human-centered environmental perception.",
+      "email": "Jwang206@vols.utk.edu",
+      "photo": "assets/images/team/bbo.png",
+      "tags": [
+        "GeoAI",
+        "Data Analysis"
+      ],
       "advisor": "Dr. Bing Zhou"
     }
   ],
@@ -96,7 +88,9 @@
       "role": "Undergraduate Researcher",
       "major": "PLACEHOLDER Major",
       "research": "PLACEHOLDER: Brief research involvement.",
-      "tags": ["Data Analysis"]
+      "tags": [
+        "Data Analysis"
+      ]
     }
   ],
   "visiting": [],

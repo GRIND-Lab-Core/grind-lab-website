@@ -1,380 +1,2406 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GRIND Lab News — Latest research findings, awards, events, and announcements.">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="GRIND Lab News — Research findings, awards, events, publications, and announcements.">
+
   <title>News — GRIND Lab</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo/Lab_Logo_ver01.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/news.css">
+
+
+  <!-- ======================================================
+       FAVICON
+  ======================================================= -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/images/logo/Lab_Logo_ver01.png">
+
+
+  <!-- ======================================================
+       FONTS
+  ======================================================= -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+
+  <!-- ======================================================
+       ICONS
+  ======================================================= -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- ======================================================
+       GLOBAL CSS
+  ======================================================= -->
+
+  <link
+    rel="stylesheet"
+    href="assets/css/main.css">
+
+
+  <!-- ======================================================
+       NEWS CSS
+  ======================================================= -->
+
+  <link
+    rel="stylesheet"
+    href="assets/css/news.css">
+
+
+  <!-- ======================================================
+       NEWS PAGE OVERRIDES
+  ======================================================= -->
+
+  <style>
+
+    /* ======================================================
+       HERO
+    ======================================================= */
+
+    .page-hero {
+      position: relative !important;
+
+      width: 100%;
+
+      min-height: 350px !important;
+      height: auto !important;
+
+      padding:
+        118px
+        28px
+        66px !important;
+
+      overflow: visible !important;
+    }
+
+
+
+    /* ======================================================
+       HERO CONTENT
+    ======================================================= */
+
+    .page-hero-content {
+      position: relative;
+
+      z-index: 5;
+
+      width: 100%;
+      max-width: 980px;
+
+      margin: 0 auto;
+
+      text-align: center;
+    }
+
+
+
+    /* ======================================================
+       HIDE ANY BREADCRUMB
+       Safety fallback even though breadcrumb HTML is removed
+    ======================================================= */
+
+    .page-hero .breadcrumb {
+      display: none !important;
+    }
+
+
+
+    /* ======================================================
+       LAB UPDATES
+    ======================================================= */
+
+    .page-hero-eyebrow {
+      display: inline-flex !important;
+
+      align-items: center;
+      justify-content: center;
+
+      margin:
+        0
+        auto
+        13px !important;
+
+      padding:
+        8px
+        22px;
+
+      opacity: 1 !important;
+      visibility: visible !important;
+
+      transform: none !important;
+    }
+
+
+
+    /* ======================================================
+       HERO TITLE
+    ======================================================= */
+
+    .page-hero h1 {
+      margin:
+        0
+        0
+        15px !important;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(
+          43px,
+          4.7vw,
+          60px
+        );
+
+      font-weight: 900;
+
+      line-height: 1.02;
+
+      letter-spacing: -0.04em;
+    }
+
+
+
+    /* ======================================================
+       HERO DESCRIPTION
+    ======================================================= */
+
+    .page-hero p {
+      max-width: 720px;
+
+      margin:
+        0
+        auto !important;
+
+      color:
+        rgba(255, 255, 255, 0.78);
+
+      font-size: 16px;
+
+      line-height: 1.5;
+    }
+
+
+
+    /* ======================================================
+       FEATURED NEWS SECTION
+    ======================================================= */
+
+    .news-featured {
+      padding-top: 44px !important;
+      padding-bottom: 48px !important;
+    }
+
+
+
+    /* ======================================================
+       FEATURED CARD
+    ======================================================= */
+
+    .news-featured-card {
+      overflow: hidden;
+    }
+
+
+
+    /* ======================================================
+       FEATURED IMAGE
+    ======================================================= */
+
+    .news-featured-img {
+      position: relative;
+
+      min-height: 400px;
+
+      overflow: hidden;
+
+      background: #081522;
+    }
+
+
+    .news-featured-img a {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .news-featured-img img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      min-height: 400px;
+
+      object-fit: cover;
+
+      transition:
+        transform 0.32s ease,
+        filter 0.32s ease;
+    }
+
+
+
+    /* ======================================================
+       SOUNDIT CROP
+       Focus more on center/right of image
+    ======================================================= */
+
+    .news-featured-img img.soundit-featured {
+      object-position:
+        82%
+        center !important;
+    }
+
+
+    .news-featured-card:hover
+    .news-featured-img img {
+      transform:
+        scale(1.015);
+
+      filter:
+        brightness(1.035);
+    }
+
+
+
+    /* ======================================================
+       FEATURED TITLE LINK
+    ======================================================= */
+
+    .news-featured-body h2 a {
+      color: inherit;
+
+      text-decoration: none;
+    }
+
+
+
+    /* ======================================================
+       FILTER BAR
+    ======================================================= */
+
+    .filter-bar {
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+    }
+
+
+    .filter-btn {
+      cursor: pointer;
+    }
+
+
+
+    /* ======================================================
+       SEARCH
+    ======================================================= */
+
+    .news-search-wrap {
+      margin-bottom: 32px;
+    }
+
+
+
+    /* ======================================================
+       NEWS CARD IMAGES
+    ======================================================= */
+
+    .news-card-img {
+      position: relative;
+
+      width: 100%;
+      height: 220px;
+
+      overflow: hidden;
+
+      background: #eef2ee;
+    }
+
+
+    .news-card-img img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      transition:
+        transform 0.28s ease,
+        filter 0.28s ease;
+    }
+
+
+    .news-card:hover
+    .news-card-img img {
+      transform:
+        scale(1.025);
+
+      filter:
+        brightness(1.035);
+    }
+
+
+
+    /* ======================================================
+       CATEGORY BADGE
+    ======================================================= */
+
+    .cat-icon {
+      position: absolute;
+
+      z-index: 3;
+
+      top: 14px;
+      left: 14px;
+    }
+
+
+
+    /* ======================================================
+       CARD TITLE LINKS
+    ======================================================= */
+
+    .news-card h3 a {
+      color: inherit;
+
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease;
+    }
+
+
+    .news-card h3 a:hover {
+      color:
+        var(--accent);
+    }
+
+
+
+    /* ======================================================
+       FILTER VISIBILITY
+    ======================================================= */
+
+    .news-card.news-hidden {
+      display: none !important;
+    }
+
+
+
+    /* ======================================================
+       NO RESULTS
+    ======================================================= */
+
+    .news-no-results {
+      display: none;
+
+      grid-column:
+        1 / -1;
+
+      padding:
+        64px
+        20px;
+
+      color:
+        var(--text-light);
+
+      text-align: center;
+    }
+
+
+    .news-no-results.show {
+      display: block;
+    }
+
+
+    .news-no-results i {
+      display: block;
+
+      margin-bottom: 14px;
+
+      color:
+        var(--accent);
+
+      font-size: 30px;
+    }
+
+
+
+    /* ======================================================
+       TABLET
+    ======================================================= */
+
+    @media (max-width: 768px) {
+
+      .page-hero {
+        min-height:
+          325px !important;
+
+        padding:
+          106px
+          22px
+          60px !important;
+      }
+
+
+      .page-hero h1 {
+        font-size:
+          42px;
+      }
+
+
+      .page-hero p {
+        font-size:
+          15.5px;
+      }
+
+
+      .news-featured {
+        padding-top:
+          36px !important;
+      }
+
+
+      .news-featured-img,
+      .news-featured-img img {
+        min-height:
+          290px;
+      }
+
+
+      .news-card-img {
+        height:
+          240px;
+      }
+
+    }
+
+
+
+    /* ======================================================
+       MOBILE
+    ======================================================= */
+
+    @media (max-width: 520px) {
+
+      .page-hero {
+        min-height:
+          300px !important;
+
+        padding:
+          96px
+          18px
+          54px !important;
+      }
+
+
+      .page-hero-eyebrow {
+        margin-bottom:
+          10px !important;
+      }
+
+
+      .page-hero h1 {
+        margin-bottom:
+          12px !important;
+
+        font-size:
+          34px;
+      }
+
+
+      .page-hero p {
+        font-size:
+          14px;
+      }
+
+
+      .news-featured {
+        padding-top:
+          28px !important;
+      }
+
+
+      .news-featured-img,
+      .news-featured-img img {
+        min-height:
+          220px;
+      }
+
+
+      .news-featured-img img.soundit-featured {
+        object-position:
+          78%
+          center !important;
+      }
+
+
+      .news-card-img {
+        height:
+          220px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
+
 <body>
 
-<!-- Page Loader -->
-<div class="page-loader" id="page-loader">
-  <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab" class="loader-logo" width="80">
-</div>
 
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-brand">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab Logo" class="nav-logo-img">
-      <div class="nav-logo-text">
-        <span class="nav-logo-main">GRIND Lab</span>
-        <span class="nav-logo-sub">UTK Geography</span>
-      </div>
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="news.html" class="nav-link">News</a></li>
-      <li><a href="projects.html" class="nav-link">Projects</a></li>
-      <li><a href="team.html" class="nav-link">Team</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="apply.html" class="btn-apply">Apply</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- ======================================================
+       PAGE LOADER
+  ======================================================= -->
+
+  <div
+    class="page-loader"
+    id="page-loader">
+
+    <img
+      src="assets/images/logo/Lab_Logo_ver01.png"
+      alt="GRIND Lab"
+      class="loader-logo"
+      width="80">
+
   </div>
-</nav>
 
-<!-- Page Hero -->
-<section class="page-hero">
-  <div class="page-hero-content">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>News</span>
-    </div>
-    <div class="page-hero-eyebrow">Lab Updates</div>
-    <h1>News &amp; Announcements</h1>
-    <p>Research findings, awards, publications, events, and the latest happenings from the GRIND Lab.</p>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════
-     FEATURED NEWS
-═══════════════════════════════════════ -->
-<section class="news-featured fade-up">
-  <div class="news-featured-card">
-    <div class="news-featured-img">
-      <div class="news-emoji">💰</div>
-    </div>
-    <div class="news-featured-body">
-      <div class="news-featured-meta">
-        <span class="badge badge-orange">Featured · Award</span>
-        <span style="font-size:12px; color:rgba(255,255,255,0.5);"><i class="far fa-calendar" style="margin-right:5px;"></i>September 10, 2024</span>
-      </div>
-      <h2><a href="#">GRIND Lab Receives NSF Grant for GeoAI-Powered Wildfire Risk Assessment</a></h2>
-      <p>The GRIND Lab has been awarded a significant NSF grant to develop next-generation GeoAI models for wildfire risk assessment and community vulnerability mapping across the western United States. The project will integrate multi-source remote sensing, socioeconomic data, and physics-informed AI for near-real-time risk mapping.</p>
-      <div class="news-featured-footer">
-        <div class="news-author">
-          <div class="author-avatar">BZ</div>
-          <span class="author-name">Dr. Bing Zhou</span>
-        </div>
-        <a href="#" class="btn btn-outline-white btn-sm">Read Full Story <i class="fas fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════
-     FILTER & SEARCH
-═══════════════════════════════════════ -->
-<div class="filter-bar fade-up">
-  <span class="filter-label"><i class="fas fa-filter"></i> Filter:</span>
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="publication">Publications</button>
-  <button class="filter-btn" data-filter="award">Awards</button>
-  <button class="filter-btn" data-filter="event">Events</button>
-  <button class="filter-btn" data-filter="announcement">Announcements</button>
-</div>
+  <!-- ======================================================
+       NAVBAR
+  ======================================================= -->
 
-<div class="news-search-wrap">
-  <div class="news-search">
-    <i class="fas fa-search"></i>
-    <input type="text" id="news-search" placeholder="Search news…" aria-label="Search news">
-  </div>
-</div>
+  <nav
+    class="navbar"
+    id="navbar">
 
-<!-- ═══════════════════════════════════════
-     NEWS GRID
-═══════════════════════════════════════ -->
-<section class="news-section">
-  <div class="news-grid">
+    <div class="nav-container">
 
-    <!-- News Card 1 -->
-    <article class="news-card fade-up" data-category="publication">
-      <div class="news-card-img">
-        📄
-        <span class="cat-icon badge badge-blue">Publication</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> October 5, 2024</span>
-        </div>
-        <h3><a href="#">New Paper: Responsible GeoAI for Coupled Nature-Human Risk Systems Published in Nature Communications</a></h3>
-        <p>PLACEHOLDER: Brief abstract or summary of the paper. This paper introduces a novel framework for responsible GeoAI that accounts for social equity in disaster risk modeling.</p>
-        <div class="news-card-footer">
-          <div style="display:flex;gap:6px;">
-            <span class="badge badge-blue">GeoAI</span>
-            <span class="badge badge-teal">Nature Communications</span>
-          </div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
 
-    <!-- News Card 2 -->
-    <article class="news-card fade-up" data-delay="100" data-category="event">
-      <div class="news-card-img" style="background:linear-gradient(135deg,#e8f4f8,#d1e8ef);">
-        🗺️
-        <span class="cat-icon badge badge-teal">Event</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> March 22, 2025</span>
-        </div>
-        <h3><a href="#">GRIND Lab Presents at AAG Annual Meeting 2025 — Detroit, MI</a></h3>
-        <p>Lab members presented three papers at the American Association of Geographers Annual Meeting. Topics included GeoAI fairness, multi-hazard risk, and remote sensing for disaster response.</p>
-        <div class="news-card-footer">
-          <div style="display:flex;gap:6px;">
-            <span class="badge badge-teal">AAG</span>
-            <span class="badge badge-blue">Conference</span>
-          </div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
+      <a
+        href="index.html"
+        class="nav-brand">
 
-    <!-- News Card 3 -->
-    <article class="news-card fade-up" data-delay="200" data-category="award">
-      <div class="news-card-img" style="background:linear-gradient(135deg,#fef3ec,#fde8d8);">
-        🏆
-        <span class="cat-icon badge badge-orange">Award</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> November 14, 2024</span>
-        </div>
-        <h3><a href="#">PhD Student [PLACEHOLDER NAME] Wins Best Paper Award at GIScience 2024</a></h3>
-        <p>PLACEHOLDER: Congratulations to [student name] for receiving the Best Paper Award at the International Conference on Geographic Information Science (GIScience 2024).</p>
-        <div class="news-card-footer">
-          <div style="display:flex;gap:6px;">
-            <span class="badge badge-orange">Award</span>
-            <span class="badge badge-blue">GIScience</span>
-          </div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
 
-    <!-- News Card 4 -->
-    <article class="news-card fade-up" data-category="announcement">
-      <div class="news-card-img" style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);">
-        👋
-        <span class="cat-icon badge badge-green">Announcement</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> August 20, 2025</span>
-        </div>
-        <h3><a href="#">GRIND Lab Welcomes New PhD Students for Fall 2025</a></h3>
-        <p>PLACEHOLDER: The GRIND Lab is pleased to welcome [number] new PhD students joining in Fall 2025. Brief introduction to the new members and their research interests.</p>
-        <div class="news-card-footer">
-          <div><span class="badge badge-green">New Members</span></div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
+        <img
+          src="assets/images/logo/Lab_Logo_ver01.png"
+          alt="GRIND Lab Logo"
+          class="nav-logo-img">
 
-    <!-- News Card 5 -->
-    <article class="news-card fade-up" data-delay="100" data-category="event">
-      <div class="news-card-img" style="background:linear-gradient(135deg,#f5f3ff,#ede9fe);">
-        🎤
-        <span class="cat-icon badge badge-purple">Event</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> January 18, 2025</span>
-        </div>
-        <h3><a href="#">Invited Talk: Dr. Zhou Presents GeoAI Research at [PLACEHOLDER University/Conference]</a></h3>
-        <p>PLACEHOLDER: Dr. Bing Zhou was invited to present GRIND Lab's research on responsible GeoAI. Talk title: "PLACEHOLDER".</p>
-        <div class="news-card-footer">
-          <div><span class="badge badge-purple">Invited Talk</span></div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
 
-    <!-- News Card 6 -->
-    <article class="news-card fade-up" data-delay="200" data-category="announcement">
-      <div class="news-card-img" style="background:linear-gradient(135deg,#fef2f2,#fee2e2);">
-        🤝
-        <span class="cat-icon badge badge-red">Partnership</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> February 28, 2025</span>
-        </div>
-        <h3><a href="#">New Research Collaboration Established with [PLACEHOLDER Partner Institution]</a></h3>
-        <p>PLACEHOLDER: The GRIND Lab has established a new research collaboration with [partner institution] focused on multi-hazard risk assessment using GeoAI.</p>
-        <div class="news-card-footer">
-          <div><span class="badge badge-red">Collaboration</span></div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
+        <div class="nav-logo-text">
 
-    <!-- News Card 7 -->
-    <article class="news-card fade-up" data-category="publication">
-      <div class="news-card-img">
-        📑
-        <span class="cat-icon badge badge-blue">Preprint</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> June 15, 2025</span>
-        </div>
-        <h3><a href="#">New Preprint: [PLACEHOLDER Paper Title] — Now on arXiv</a></h3>
-        <p>PLACEHOLDER: A new preprint from the GRIND Lab is now available on arXiv/ESSOAr. Brief summary of the paper's main contribution and key findings.</p>
-        <div class="news-card-footer">
-          <div style="display:flex;gap:6px;">
-            <span class="badge badge-blue">Preprint</span>
-            <span class="badge badge-teal">arXiv</span>
-          </div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
+          <span class="nav-logo-main">
+            GRIND Lab
+          </span>
 
-    <!-- News Card 8 -->
-    <article class="news-card fade-up" data-delay="100" data-category="announcement">
-      <div class="news-card-img" style="background:linear-gradient(135deg,#fffbeb,#fef3c7);">
-        📢
-        <span class="cat-icon badge badge-orange">Recruiting</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> October 1, 2025</span>
+          <span class="nav-logo-sub">
+            UTK Geography
+          </span>
+
         </div>
-        <h3><a href="apply.html">Open Positions: GRIND Lab Seeking PhD Students for Spring/Fall 2026</a></h3>
-        <p>PLACEHOLDER: The GRIND Lab is actively recruiting motivated PhD students with backgrounds in geography, computer science, data science, or related fields. See the Apply page for details.</p>
-        <div class="news-card-footer">
-          <div><span class="badge badge-orange">Recruiting</span></div>
-          <a href="apply.html" class="read-more">Apply <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
 
-    <!-- News Card 9 — Placeholder for future news -->
-    <article class="news-card fade-up" data-delay="200" data-category="publication">
-      <div class="news-card-img" style="background:linear-gradient(135deg,#f0fdf4,#bbf7d0);">
-        🌱
-        <span class="cat-icon badge badge-green">Publication</span>
-      </div>
-      <div class="news-card-body">
-        <div class="news-card-meta">
-          <span class="news-card-date"><i class="far fa-calendar"></i> PLACEHOLDER Date</span>
-        </div>
-        <h3><a href="#">PLACEHOLDER: News Item Title</a></h3>
-        <p>PLACEHOLDER: News item description. Replace this entire card with real news content when available. Includes summary of 2-3 sentences about the news item.</p>
-        <div class="news-card-footer">
-          <div><span class="badge badge-green">Publication</span></div>
-          <a href="#" class="read-more">Read <i class="fas fa-arrow-right"></i></a>
-        </div>
-      </div>
-    </article>
+      </a>
 
-  </div><!-- end .news-grid -->
 
-  <!-- Pagination -->
-  <div class="pagination-wrap fade-up">
-    <div class="pagination">
-      <button class="page-btn prev"><i class="fas fa-chevron-left"></i> Prev</button>
-      <button class="page-btn active">1</button>
-      <button class="page-btn">2</button>
-      <button class="page-btn">3</button>
-      <button class="page-btn next">Next <i class="fas fa-chevron-right"></i></button>
-    </div>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════
-     NEWSLETTER SIGNUP (PLACEHOLDER)
-═══════════════════════════════════════ -->
-<section class="section section-light">
-  <div class="container-sm" style="text-align:center;">
-    <div class="section-tag fade-up">Stay Connected</div>
-    <h2 class="section-title fade-up" data-delay="100">Get Lab Updates</h2>
-    <p class="section-subtitle fade-up" data-delay="200" style="margin-bottom:36px;">
-      PLACEHOLDER: Subscribe to receive news, publications, and announcements directly in your inbox.
-    </p>
-    <div class="fade-up" data-delay="300" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;max-width:480px;margin:0 auto;">
-      <input type="email" placeholder="your@email.edu" style="flex:1;padding:12px 18px;border-radius:8px;border:1.5px solid var(--border);font-family:var(--font);font-size:14px;outline:none;min-width:200px;">
-      <button class="btn btn-primary">Subscribe</button>
-    </div>
-    <p style="font-size:12px;color:var(--text-light);margin-top:12px;" class="fade-up" data-delay="400">PLACEHOLDER: Unsubscribe at any time. No spam.</p>
-  </div>
-</section>
+      <ul
+        class="nav-menu"
+        id="nav-menu">
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand-col">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
-      <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="apply.html">Apply</a></li>
+
+        <li>
+          <a
+            href="index.html"
+            class="nav-link">
+
+            Home
+
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="news.html"
+            class="nav-link">
+
+            News
+
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="projects.html"
+            class="nav-link">
+
+            Projects
+
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="team.html"
+            class="nav-link">
+
+            Team
+
+          </a>
+        </li>
+
+
+        <li>
+          <a
+            href="contact.html"
+            class="nav-link">
+
+            Contact
+
+          </a>
+        </li>
+
       </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Research</h4>
-      <ul>
-        <li><a href="projects.html">GeoAI</a></li>
-        <li><a href="projects.html">Remote Sensing</a></li>
-        <li><a href="projects.html">Disaster Risk</a></li>
-        <li><a href="projects.html">Publications</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li>Dept. of Geography &amp; Sustainability</li>
-        <li>University of Tennessee, Knoxville</li>
-        <li>Knoxville, TN 37996</li>
-        <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom container">
-    <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville.</span>
-    <span>Built with ❤️ for science and society.</span>
-  </div>
-</footer>
 
-<button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-<script src="assets/js/main.js"></script>
+
+
+      <div class="nav-actions">
+
+
+        <a
+          href="apply.html"
+          class="btn-apply">
+
+          Apply
+
+        </a>
+
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- ======================================================
+       HERO
+       No Home > News breadcrumb
+  ======================================================= -->
+
+  <section class="page-hero">
+
+    <div class="page-hero-content">
+
+      <h1>News &amp; Announcements</h1>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       FEATURED NEWS
+       SOUNDIT AAG 2026 FINALIST
+  ======================================================= -->
+
+  <section class="news-featured fade-up">
+
+    <div class="news-featured-card">
+
+
+      <div class="news-featured-img">
+
+        <a
+          href="https://gisense.github.io/SounDiT-Page/"
+          target="_blank"
+          rel="noopener noreferrer">
+
+          <img
+            src="assets/images/projects/soundit-cover.jpg"
+            class="soundit-featured"
+            alt="SounDiT geo-contextual soundscape-to-landscape generation">
+
+        </a>
+
+      </div>
+
+
+
+      <div class="news-featured-body">
+
+
+        <div class="news-featured-meta">
+
+
+          <span class="badge badge-orange">
+
+            Featured · Award
+
+          </span>
+
+
+          <span
+            style="
+              font-size:12px;
+              color:rgba(255,255,255,0.5);
+            ">
+
+            <i
+              class="far fa-calendar"
+              style="margin-right:5px;">
+            </i>
+
+            2026
+
+          </span>
+
+        </div>
+
+
+
+        <h2>
+
+          <a
+            href="https://gisense.github.io/SounDiT-Page/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            SounDiT Named Finalist in the
+            AAG 2026 Student Honors Paper Competition
+
+          </a>
+
+        </h2>
+
+
+
+        <p>
+
+          Junbo Wang and collaborators presented SounDiT,
+          a geo-contextual multimodal framework for
+          soundscape-to-landscape generation,
+          at the 2026 AAG Annual Meeting.
+
+          The work was selected as a finalist in the
+          GISS-SG Student Paper Competition.
+
+        </p>
+
+
+
+        <div class="news-featured-footer">
+
+
+          <div class="news-author">
+
+
+            <div class="author-avatar">
+
+              JW
+
+            </div>
+
+
+            <span class="author-name">
+
+              Junbo Wang
+
+            </span>
+
+          </div>
+
+
+
+          <a
+            href="https://gisense.github.io/SounDiT-Page/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline-white btn-sm">
+
+            View Project
+
+            <i class="fas fa-arrow-right"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       FILTER BAR
+  ======================================================= -->
+
+  <div class="filter-bar fade-up">
+
+
+    <span class="filter-label">
+
+      <i class="fas fa-filter"></i>
+
+      Filter:
+
+    </span>
+
+
+
+    <button
+      class="filter-btn active"
+      data-filter="all">
+
+      All
+
+    </button>
+
+
+
+    <button
+      class="filter-btn"
+      data-filter="publication">
+
+      Publications
+
+    </button>
+
+
+
+    <button
+      class="filter-btn"
+      data-filter="award">
+
+      Awards
+
+    </button>
+
+
+
+    <button
+      class="filter-btn"
+      data-filter="event">
+
+      Events
+
+    </button>
+
+
+
+    <button
+      class="filter-btn"
+      data-filter="announcement">
+
+      Announcements
+
+    </button>
+
+  </div>
+
+
+
+  <!-- ======================================================
+       SEARCH
+  ======================================================= -->
+
+  <div class="news-search-wrap">
+
+    <div class="news-search">
+
+      <i class="fas fa-search"></i>
+
+      <input
+        type="text"
+        id="news-search"
+        placeholder="Search news…"
+        aria-label="Search news">
+
+    </div>
+
+  </div>
+
+
+
+  <!-- ======================================================
+       NEWS GRID
+  ======================================================= -->
+
+  <section class="news-section">
+
+    <div
+      class="news-grid"
+      id="news-grid">
+
+      <!-- ==================================================
+           HAZARDWEAVE AWARD
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-delay="100"
+        data-category="award">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/projects/HW.png"
+            alt="HazardWeave disaster intelligence platform">
+
+          <span
+            class="cat-icon badge badge-orange">
+
+            Award
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              2026
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://hazard-weave.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              HazardWeave Receives
+              AI-Tennessee THRIVE Support
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            Dr. Bing Zhou received support from the
+            AI-Tennessee THRIVE Program to lead HazardWeave,
+            an AI-supported unified platform for
+            smart disaster management.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-green">
+
+                AI-Tennessee
+
+              </span>
+
+
+              <span class="badge badge-orange">
+
+                $20,000
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://hazard-weave.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Explore
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ==================================================
+           NORA
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-delay="100"
+        data-category="publication">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/news/NORA.png"
+            alt="NORA autonomous research agent">
+
+          <span
+            class="cat-icon badge badge-blue">
+
+            Preprint
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              May 2026
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://arxiv.org/pdf/2605.02092"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              NORA: A Harness-Engineered Autonomous Research Agent
+              for End-to-End Spatial Data Science
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            NORA introduces an autonomous research agent
+            designed to support end-to-end spatial data
+            science workflows.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-blue">
+
+                Spatial AI
+
+              </span>
+
+
+              <span class="badge badge-teal">
+
+                arXiv
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://arxiv.org/pdf/2605.02092"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Read
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ==================================================
+           AAG 2026
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-delay="200"
+        data-category="event">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/projects/AAG2026.png"
+            alt="AAG 2026 GeoAI and Deep Learning Symposium">
+
+          <span
+            class="cat-icon badge badge-blue">
+
+            Event
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              Mar 2026
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://geography.wisc.edu/geods/archives/4331"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Dr. Bing Zhou Chairs GeoAI for
+              Disaster Resilience at AAG 2026
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            Dr. Zhou chaired the GeoAI and Deep Learning
+            Symposium session on GeoAI for Disaster Resilience
+            during the 2026 AAG Annual Meeting
+            in San Francisco.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-blue">
+
+                AAG 2026
+
+              </span>
+
+
+              <span class="badge badge-orange">
+
+                Disaster Resilience
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://geography.wisc.edu/geods/archives/4331"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Details
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ==================================================
+           GISER 2026
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-category="event">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/projects/GISER.png"
+            alt="GISER Symposium at AAG 2026">
+
+          <span
+            class="cat-icon badge badge-purple">
+
+            Event
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              Mar 2026
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://gisersym.github.io/"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              GRIND Lab Director Helps Organize
+              GISER Symposium at AAG 2026
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            Dr. Zhou participated in organizing sessions
+            focused on ethics in GIScience,
+            AI ethics in geography education,
+            and spatial equity.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-purple">
+
+                GIScience Ethics
+
+              </span>
+
+
+              <span class="badge badge-green">
+
+                Spatial Equity
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://gisersym.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Visit
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ==================================================
+           HARVARD CGA
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-delay="100"
+        data-category="announcement">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/projects/HarvardSDL.png"
+            alt="Harvard Spatial Data Lab Internship Program">
+
+          <span
+            class="cat-icon badge badge-green">
+
+            Announcement
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              2026
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://sdl.gis.harvard.edu/spatial-data-lab-internship-program"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Research Mentorship with the
+              Harvard CGA Spatial Data Lab
+              Internship Program
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            Dr. Zhou is mentoring students through the
+            Harvard Center for Geographic Analysis
+            Spatial Data Lab Internship Program,
+            including research on extreme heat
+            and human behavior change.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-green">
+
+                Mentorship
+
+              </span>
+
+
+              <span class="badge badge-purple">
+
+                Harvard CGA
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://sdl.gis.harvard.edu/spatial-data-lab-internship-program"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Program
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ==================================================
+           RAPID DISASTER RESPONSE
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-category="publication">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/news/hurricane-damage-map.jpg"
+            alt="Rapid disaster response and damage estimation">
+
+          <span
+            class="cat-icon badge badge-blue">
+
+            Publication
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              Nov 2025
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://www.tandfonline.com/doi/full/10.1080/24694452.2025.2560491"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Rapid Disaster Response and Damage Estimation
+              with Social Media and Pretrained Large Language Models
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            Dr. Zhou and collaborators present a
+            large-language-model framework for rapid
+            disaster damage estimation using social media
+            evidence across multiple hurricane events.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-blue">
+
+                GeoAI
+
+              </span>
+
+
+              <span class="badge badge-teal">
+
+                Annals of AAG
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://www.tandfonline.com/doi/full/10.1080/24694452.2025.2560491"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Read
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ==================================================
+           NLP BOOK CHAPTER
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-delay="200"
+        data-category="publication">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/news/NLP.png"
+            alt="Integrating Natural Language Processing in Human Geography">
+
+          <span
+            class="cat-icon badge badge-purple">
+
+            Book Chapter
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              Jul 2025
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://link.springer.com/chapter/10.1007/978-3-031-87421-5_4"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Integrating Natural Language Processing
+              in Human Geography
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            This book chapter explores how natural language
+            processing methods can support human geography
+            research and spatial understanding.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-purple">
+
+                NLP
+
+              </span>
+
+
+              <span class="badge badge-blue">
+
+                Human Geography
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://link.springer.com/chapter/10.1007/978-3-031-87421-5_4"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Read
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      <!-- ==================================================
+           OVERLOOKED VOICES
+      =================================================== -->
+
+      <article
+        class="news-card fade-up"
+        data-category="publication">
+
+
+        <div class="news-card-img">
+
+          <img
+            src="assets/images/news/overlooked.jpg"
+            alt="Overlooked Voices Shanghai lockdown research">
+
+          <span
+            class="cat-icon badge badge-red">
+
+            Publication
+
+          </span>
+
+        </div>
+
+
+
+        <div class="news-card-body">
+
+
+          <div class="news-card-meta">
+
+            <span class="news-card-date">
+
+              <i class="far fa-calendar"></i>
+
+              Mar 2024
+
+            </span>
+
+          </div>
+
+
+
+          <h3>
+
+            <a
+              href="https://www.tandfonline.com/doi/full/10.1080/15230406.2024.2314547"
+              target="_blank"
+              rel="noopener noreferrer">
+
+              Overlooked Voices Under Strict Lockdown:
+              Mapping Humanitarian Needs in the
+              2022 Shanghai COVID-19 Outbreak
+
+            </a>
+
+          </h3>
+
+
+
+          <p>
+
+            The study uses social sensing to map
+            humanitarian needs during the Shanghai lockdown,
+            revealing spatial disparities in access to
+            essential resources.
+
+          </p>
+
+
+
+          <div class="news-card-footer">
+
+
+            <div
+              style="
+                display:flex;
+                gap:6px;
+                flex-wrap:wrap;
+              ">
+
+              <span class="badge badge-red">
+
+                Social Sensing
+
+              </span>
+
+
+              <span class="badge badge-teal">
+
+                Cartography
+
+              </span>
+
+            </div>
+
+
+
+            <a
+              href="https://www.tandfonline.com/doi/full/10.1080/15230406.2024.2314547"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="read-more">
+
+              Read
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+
+
+
+
+      <!-- ==================================================
+           NO RESULTS
+      =================================================== -->
+
+      <div
+        class="news-no-results"
+        id="news-no-results">
+
+        <i class="fas fa-magnifying-glass"></i>
+
+        No matching news items found.
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+
+
+      <!-- ==================================================
+           BRAND
+      =================================================== -->
+
+      <div class="footer-brand-col">
+
+
+        <img
+          src="assets/images/logo/Lab_Logo_ver01.png"
+          alt="GRIND Lab">
+
+
+        <p>
+
+          Geospatial Responsible AI for Nature-human Dynamics Laboratory.
+
+          <br>
+
+          University of Tennessee, Knoxville.
+
+        </p>
+
+
+
+        <div class="footer-social">
+
+
+          <a
+            href="https://github.com/bzbarrett"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub">
+
+            <i class="fab fa-github"></i>
+
+          </a>
+
+
+
+          <a
+            href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Scholar">
+
+            <i class="fas fa-graduation-cap"></i>
+
+          </a>
+
+
+
+          <a
+            href="https://www.linkedin.com/in/bing-zhou-a90b98239/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn">
+
+            <i class="fab fa-linkedin-in"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ==================================================
+           NAVIGATE
+      =================================================== -->
+
+      <div class="footer-col">
+
+
+        <h4>
+
+          Navigate
+
+        </h4>
+
+
+        <ul>
+
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+
+          <li>
+            <a href="news.html">
+              News
+            </a>
+          </li>
+
+
+          <li>
+            <a href="projects.html">
+              Projects
+            </a>
+          </li>
+
+
+          <li>
+            <a href="team.html">
+              Team
+            </a>
+          </li>
+
+
+          <li>
+            <a href="contact.html">
+              Contact
+            </a>
+          </li>
+
+
+          <li>
+            <a href="apply.html">
+              Apply
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- ==================================================
+           RESEARCH
+      =================================================== -->
+
+      <div class="footer-col">
+
+
+        <h4>
+
+          Research
+
+        </h4>
+
+
+        <ul>
+
+
+          <li>
+            <a href="projects.html">
+              Disaster Resilience
+            </a>
+          </li>
+
+
+          <li>
+            <a href="projects.html">
+              Environmental Health
+            </a>
+          </li>
+
+
+          <li>
+            <a href="projects.html">
+              Spatial Data Science
+            </a>
+          </li>
+
+
+          <li>
+            <a href="projects.html">
+              Responsible GIScience
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <!-- ==================================================
+           CONTACT
+      =================================================== -->
+
+      <div class="footer-col">
+
+
+        <h4>
+
+          Contact
+
+        </h4>
+
+
+        <ul>
+
+
+          <li>
+            Dept. of Geography &amp; Sustainability
+          </li>
+
+
+          <li>
+            University of Tennessee, Knoxville
+          </li>
+
+
+          <li>
+            Knoxville, TN 37996
+          </li>
+
+
+          <li>
+
+            <a href="mailto:bzhou11@utk.edu">
+
+              bzhou11@utk.edu
+
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom container">
+
+
+      <span>
+
+        &copy; 2026 GRIND Lab,
+        University of Tennessee, Knoxville.
+
+      </span>
+
+
+      <span>
+
+        Geospatial Responsible AI for Nature-human Dynamics.
+
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ======================================================
+       SCROLL TO TOP
+  ======================================================= -->
+
+  <button
+    class="scroll-top"
+    aria-label="Scroll to top">
+
+    <i class="fas fa-arrow-up"></i>
+
+  </button>
+
+
+
+  <!-- ======================================================
+       GLOBAL JS
+  ======================================================= -->
+
+  <script src="assets/js/main.js"></script>
+
+
+
+  <!-- ======================================================
+       FILTER + SEARCH
+  ======================================================= -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+
+
+        const filterButtons =
+          document.querySelectorAll(
+            ".filter-btn"
+          );
+
+
+        const newsCards =
+          document.querySelectorAll(
+            ".news-card[data-category]"
+          );
+
+
+        const searchInput =
+          document.getElementById(
+            "news-search"
+          );
+
+
+        const noResults =
+          document.getElementById(
+            "news-no-results"
+          );
+
+
+        let activeFilter =
+          "all";
+
+
+
+        function updateNews() {
+
+
+          const searchTerm =
+            searchInput
+              ? searchInput
+                  .value
+                  .trim()
+                  .toLowerCase()
+              : "";
+
+
+          let visibleCount =
+            0;
+
+
+
+          newsCards.forEach(
+            card => {
+
+
+              const category =
+                card.dataset.category;
+
+
+              const text =
+                card
+                  .innerText
+                  .toLowerCase();
+
+
+              const matchesFilter =
+                activeFilter === "all" ||
+                category === activeFilter;
+
+
+              const matchesSearch =
+                !searchTerm ||
+                text.includes(
+                  searchTerm
+                );
+
+
+              const shouldShow =
+                matchesFilter &&
+                matchesSearch;
+
+
+              card.classList.toggle(
+                "news-hidden",
+                !shouldShow
+              );
+
+
+              if (shouldShow) {
+
+                visibleCount += 1;
+
+              }
+
+            }
+          );
+
+
+
+          if (noResults) {
+
+            noResults.classList.toggle(
+              "show",
+              visibleCount === 0
+            );
+
+          }
+
+        }
+
+
+
+        filterButtons.forEach(
+          button => {
+
+
+            button.addEventListener(
+              "click",
+              () => {
+
+
+                filterButtons.forEach(
+                  btn => {
+
+                    btn.classList.remove(
+                      "active"
+                    );
+
+                  }
+                );
+
+
+                button.classList.add(
+                  "active"
+                );
+
+
+                activeFilter =
+                  button.dataset.filter;
+
+
+                updateNews();
+
+              }
+            );
+
+          }
+        );
+
+
+
+        if (searchInput) {
+
+          searchInput.addEventListener(
+            "input",
+            updateNews
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
+
 </body>
+
 </html>

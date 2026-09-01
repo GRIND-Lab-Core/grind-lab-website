@@ -1,408 +1,2394 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GRIND Lab Research Projects — GeoAI, Remote Sensing, Disaster Risk, and Coupled Systems research.">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Selected GRIND Lab research projects in disaster intelligence, environmental health, spatial data science, resilience, and geospatial technologies.">
+
   <title>Projects — GRIND Lab</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo/Lab_Logo_ver01.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <link rel="stylesheet" href="assets/css/projects.css">
+
+
+  <!-- ======================================================
+       FAVICON
+  ======================================================= -->
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="assets/images/logo/Lab_Logo_ver01.png">
+
+
+  <!-- ======================================================
+       FONTS
+  ======================================================= -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+
+  <!-- ======================================================
+       ICONS
+  ======================================================= -->
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+  <!-- ======================================================
+       GLOBAL CSS
+  ======================================================= -->
+
+  <link
+    rel="stylesheet"
+    href="assets/css/main.css">
+
+  <link
+    rel="stylesheet"
+    href="assets/css/projects.css">
+
+
+  <!-- ======================================================
+       PROJECT PAGE FINAL OVERRIDES
+  ======================================================= -->
+
+  <style>
+
+    /* ======================================================
+       HERO
+    ======================================================= */
+
+    .page-hero {
+      position: relative !important;
+
+      width: 100%;
+
+      min-height: 350px !important;
+      height: auto !important;
+
+      padding:
+        42px
+        28px
+        68px !important;
+
+      overflow: visible !important;
+    }
+
+
+    /* ======================================================
+       HERO CONTENT
+       THIS is what moves Research Portfolio downward
+    ======================================================= */
+
+    .page-hero-content {
+      position: relative;
+
+      z-index: 5;
+
+      width: 100%;
+      max-width: 980px;
+
+      margin: 0 auto;
+
+      text-align: center;
+
+      transform:
+        translateY(34px) !important;
+    }
+
+
+
+    /* ======================================================
+       REMOVE BREADCRUMB
+    ======================================================= */
+
+    .page-hero .breadcrumb {
+      display: none !important;
+    }
+
+
+
+    /* ======================================================
+       RESEARCH PORTFOLIO
+    ======================================================= */
+
+    .page-hero-eyebrow {
+      display: inline-flex !important;
+
+      align-items: center;
+      justify-content: center;
+
+      margin:
+        0
+        auto
+        15px !important;
+
+      opacity: 1 !important;
+      visibility: visible !important;
+
+      transform: none !important;
+    }
+
+
+
+    /* ======================================================
+       HERO TITLE
+    ======================================================= */
+
+    .page-hero h1 {
+      margin:
+        0
+        0
+        18px !important;
+
+      color: #ffffff;
+
+      font-size:
+        clamp(
+          46px,
+          5vw,
+          64px
+        );
+
+      font-weight: 900;
+
+      line-height: 1.02;
+
+      letter-spacing: -0.04em;
+    }
+
+
+
+    /* ======================================================
+       HERO DESCRIPTION
+    ======================================================= */
+
+    .page-hero p {
+      max-width: 820px;
+
+      margin:
+        0
+        auto !important;
+
+      color:
+        rgba(255, 255, 255, 0.80);
+
+      font-size: 17px;
+
+      line-height: 1.55;
+    }
+
+
+
+    /* ======================================================
+       PROJECT AREA
+    ======================================================= */
+
+    .projects-section {
+      padding-top: 52px !important;
+    }
+
+
+
+    /* ======================================================
+       FEATURED PROJECT
+    ======================================================= */
+
+    .project-featured-card {
+      overflow: hidden;
+    }
+
+
+    .project-featured-visual {
+      position: relative;
+
+      min-height: 430px;
+
+      overflow: hidden;
+
+      background: #061425;
+    }
+
+
+
+    /* Make the featured image fill the entire left panel.
+       Absolute positioning removes the narrow dark gap on the right. */
+    .project-featured-visual a {
+      position: absolute;
+      inset: 0;
+
+      display: block;
+
+      width: 100%;
+      height: 100%;
+    }
+
+
+
+    .project-featured-visual img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      min-height: 0;
+
+      object-fit: cover;
+
+      /* Reveal a little more of the LEFT side of HW.png. */
+      object-position: 40% center;
+
+      /* Tiny overscan prevents any dark edge/gap. */
+      transform: scale(1.025);
+
+      transition:
+        transform 0.32s ease,
+        filter 0.32s ease;
+    }
+
+
+
+    .project-featured-visual:hover img {
+      transform: scale(1.04);
+
+      filter: brightness(1.04);
+    }
+
+
+
+    /* ======================================================
+       FEATURED BUTTON
+    ======================================================= */
+
+    .featured-actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 24px;
+    }
+
+
+    .featured-live-btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding:
+        11px
+        20px;
+
+      border:
+        1px solid #8bd63c;
+
+      border-radius: 9px;
+
+      background: #8bd63c;
+
+      color: #14220d;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      text-decoration: none;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+    }
+
+
+    .featured-live-btn:hover {
+      transform: translateY(-2px);
+
+      background: #98e149;
+
+      box-shadow:
+        0
+        8px
+        22px
+        rgba(139, 214, 60, 0.22);
+    }
+
+
+
+    /* ======================================================
+       NORMAL PROJECT IMAGE
+    ======================================================= */
+
+    .project-card-img.project-real-image {
+      position: relative;
+
+      width: 100%;
+      height: 220px;
+
+      overflow: hidden;
+
+      background: #eef3ec;
+    }
+
+
+    .project-card-img.project-real-image > a {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+    }
+
+
+    .project-card-img.project-real-image img {
+      display: block;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+    }
+
+
+    .project-card:hover
+    .project-card-img.project-real-image img {
+      transform: scale(1.025);
+
+      filter: brightness(1.035);
+    }
+
+
+
+    /* ======================================================
+       STATUS BADGE
+    ======================================================= */
+
+    .project-card-img .project-status-badge {
+      position: absolute;
+
+      z-index: 4;
+
+      top: 14px;
+      right: 14px;
+    }
+
+
+
+    /* ======================================================
+       PROJECT TITLE LINKS
+    ======================================================= */
+
+    .project-card-body h3 a {
+      color: inherit;
+
+      text-decoration: none;
+
+      transition:
+        color 0.18s ease;
+    }
+
+
+    .project-card-body h3 a:hover {
+      color: var(--accent);
+    }
+
+
+
+    /* ======================================================
+       PROJECT META
+    ======================================================= */
+
+    .project-role-note {
+      margin-top: 12px;
+
+      color: var(--text-light);
+
+      font-size: 12px;
+
+      line-height: 1.5;
+    }
+
+
+
+    /* ======================================================
+       VIEW PROJECT
+    ======================================================= */
+
+    .project-view-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 6px;
+
+      margin-top: 15px;
+
+      color: var(--accent);
+
+      font-size: 12.5px;
+
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition:
+        gap 0.18s ease,
+        color 0.18s ease;
+    }
+
+
+    .project-view-link:hover {
+      gap: 9px;
+    }
+
+
+
+    /* ======================================================
+       PUBLICATIONS
+    ======================================================= */
+
+    .publications-block {
+      margin-top: 24px;
+
+      padding: 48px;
+
+      border-radius:
+        var(--radius-lg);
+
+      background:
+        var(--lighter);
+    }
+
+
+    .publication-list {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 14px;
+    }
+
+
+    .publication-item {
+      padding:
+        20px
+        24px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius: 10px;
+
+      background:
+        var(--white);
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+    }
+
+
+    .publication-item:hover {
+      transform:
+        translateY(-2px);
+
+      border-color:
+        rgba(139, 214, 60, 0.28);
+
+      box-shadow:
+        0
+        8px
+        24px
+        rgba(16, 24, 32, 0.05);
+    }
+
+
+    .publication-meta {
+      display: flex;
+
+      align-items: center;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-bottom: 8px;
+    }
+
+
+    .publication-year {
+      margin-left: auto;
+
+      color:
+        var(--text-light);
+
+      font-size: 12px;
+    }
+
+
+    .publication-title {
+      margin-bottom: 5px;
+
+      color:
+        var(--text-dark);
+
+      font-size: 15px;
+
+      font-weight: 650;
+
+      line-height: 1.45;
+    }
+
+
+    .publication-authors {
+      margin-bottom: 9px;
+
+      color:
+        var(--text-gray);
+
+      font-size: 13px;
+
+      line-height: 1.5;
+    }
+
+
+    .publication-link {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+      color: var(--accent);
+
+      font-size: 12.5px;
+
+      font-weight: 650;
+
+      text-decoration: none;
+    }
+
+
+
+    /* ======================================================
+       TABLET
+    ======================================================= */
+
+    @media (max-width: 768px) {
+
+      .page-hero {
+        min-height: 325px !important;
+
+        padding:
+          40px
+          22px
+          60px !important;
+      }
+
+
+      .page-hero-content {
+        transform:
+          translateY(26px) !important;
+      }
+
+
+      .page-hero h1 {
+        font-size: 45px;
+      }
+
+
+      .page-hero p {
+        font-size: 16px;
+      }
+
+
+      .project-featured-visual,
+      .project-featured-visual img {
+        min-height: 300px;
+      }
+
+
+      .project-card-img.project-real-image {
+        height: 240px;
+      }
+
+
+      .publications-block {
+        padding:
+          38px
+          28px;
+      }
+
+    }
+
+
+
+    /* ======================================================
+       MOBILE
+    ======================================================= */
+
+    @media (max-width: 520px) {
+
+      .page-hero {
+        min-height: 295px !important;
+
+        padding:
+          38px
+          18px
+          54px !important;
+      }
+
+
+      .page-hero-content {
+        transform:
+          translateY(16px) !important;
+      }
+
+
+      .page-hero-eyebrow {
+        margin-bottom:
+          11px !important;
+      }
+
+
+      .page-hero h1 {
+        margin-bottom:
+          14px !important;
+
+        font-size: 38px;
+      }
+
+
+      .page-hero p {
+        font-size: 14.5px;
+      }
+
+
+      .projects-section {
+        padding-top: 38px !important;
+      }
+
+
+      .project-featured-visual,
+      .project-featured-visual img {
+        min-height: 230px;
+      }
+
+
+      .project-card-img.project-real-image {
+        height: 220px;
+      }
+
+
+      .publications-block {
+        padding:
+          32px
+          20px;
+      }
+
+
+      .publication-item {
+        padding:
+          18px;
+      }
+
+
+      .publication-year {
+        width: 100%;
+
+        margin-left: 0;
+      }
+
+    }
+
+  </style>
+
 </head>
+
+
 <body>
 
-<div class="page-loader" id="page-loader">
-  <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab" class="loader-logo" width="80">
-</div>
 
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-brand">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab Logo" class="nav-logo-img">
-      <div class="nav-logo-text">
-        <span class="nav-logo-main">GRIND Lab</span>
-        <span class="nav-logo-sub">UTK Geography</span>
-      </div>
-    </a>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="news.html" class="nav-link">News</a></li>
-      <li><a href="projects.html" class="nav-link">Projects</a></li>
-      <li><a href="team.html" class="nav-link">Team</a></li>
-      <li><a href="contact.html" class="nav-link">Contact</a></li>
-    </ul>
-    <div class="nav-actions">
-      <a href="apply.html" class="btn-apply">Apply</a>
-      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <!-- ======================================================
+       LOADER
+  ======================================================= -->
+
+  <div
+    class="page-loader"
+    id="page-loader">
+
+    <img
+      src="assets/images/logo/Lab_Logo_ver01.png"
+      alt="GRIND Lab"
+      class="loader-logo"
+      width="80">
+
   </div>
-</nav>
 
-<!-- Page Hero -->
-<section class="page-hero">
-  <div class="page-hero-content">
-    <div class="breadcrumb">
-      <a href="index.html">Home</a>
-      <i class="fas fa-chevron-right"></i>
-      <span>Projects</span>
-    </div>
-    <div class="page-hero-eyebrow">Research Portfolio</div>
-    <h1>Our Research Projects</h1>
-    <p>Advancing responsible geospatial AI to understand and mitigate coupled nature-human risks across scales.</p>
-  </div>
-</section>
 
-<!-- ═══════════════════════════════════════
-     FILTER BAR
-═══════════════════════════════════════ -->
-<div class="projects-filter">
-  <div class="projects-filter-inner">
-    <div class="projects-filter-tabs">
-      <button class="filter-btn active" data-filter="all">All Projects</button>
-      <button class="filter-btn" data-filter="geoai">GeoAI</button>
-      <button class="filter-btn" data-filter="remote-sensing">Remote Sensing</button>
-      <button class="filter-btn" data-filter="coupled-systems">Coupled Systems</button>
-    </div>
-    <div class="projects-sort">
-      <label for="sort-select">Sort by:</label>
-      <select id="sort-select">
-        <option>Newest First</option>
-        <option>Status: Active</option>
-        <option>Funding Agency</option>
-      </select>
-    </div>
-  </div>
-</div>
 
-<!-- ═══════════════════════════════════════
-     FEATURED PROJECT
-═══════════════════════════════════════ -->
-<section class="projects-section">
-  <div class="projects-container">
+  <!-- ======================================================
+       NAVBAR
+  ======================================================= -->
 
-    <!-- Featured highlight -->
-    <div class="project-featured-card fade-up" data-category="geoai">
-      <div class="project-featured-visual">
-        <span style="font-size:100px;opacity:0.3;">🔥</span>
-      </div>
-      <div class="project-featured-body">
-        <div class="section-tag">Featured Project</div>
-        <h2>GeoAI-Powered Wildfire Risk Assessment and Community Vulnerability Mapping</h2>
-        <p>Developing explainable GeoAI models to assess wildfire risk and identify socially vulnerable communities in the western U.S. We integrate multi-source remote sensing, socioeconomic data, and physics-informed AI for near-real-time risk mapping.</p>
-        <div class="project-meta-row">
-          <div class="project-meta-item">
-            <i class="fas fa-clock"></i>
-            <span>2024 – 2027</span>
-          </div>
-          <div class="project-meta-item">
-            <i class="fas fa-building"></i>
-            <strong>NSF Funded</strong>
-          </div>
-          <div class="project-meta-item">
-            <i class="fas fa-user"></i>
-            <span>PI: Dr. Bing Zhou</span>
-          </div>
+  <nav
+    class="navbar"
+    id="navbar">
+
+    <div class="nav-container">
+
+
+      <a
+        href="index.html"
+        class="nav-brand">
+
+        <img
+          src="assets/images/logo/Lab_Logo_ver01.png"
+          alt="GRIND Lab Logo"
+          class="nav-logo-img">
+
+
+        <div class="nav-logo-text">
+
+          <span class="nav-logo-main">
+            GRIND Lab
+          </span>
+
+          <span class="nav-logo-sub">
+            UTK Geography
+          </span>
+
         </div>
-        <a href="#project-details-001" class="btn btn-outline-white">
-          <i class="fas fa-info-circle"></i> Learn More
+
+      </a>
+
+
+
+      <ul
+        class="nav-menu"
+        id="nav-menu">
+
+        <li>
+          <a
+            href="index.html"
+            class="nav-link">
+            Home
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="news.html"
+            class="nav-link">
+            News
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="projects.html"
+            class="nav-link">
+            Projects
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="team.html"
+            class="nav-link">
+            Team
+          </a>
+        </li>
+
+        <li>
+          <a
+            href="contact.html"
+            class="nav-link">
+            Contact
+          </a>
+        </li>
+
+      </ul>
+
+
+
+      <div class="nav-actions">
+
+        <a
+          href="apply.html"
+          class="btn-apply">
+          Apply
         </a>
+
+
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false">
+
+          <span></span>
+          <span></span>
+          <span></span>
+
+        </button>
+
       </div>
+
     </div>
 
-    <!-- ═══════ ONGOING PROJECTS ═══════ -->
-    <div class="projects-category">
-      <div class="projects-category-header">
-        <h2>Ongoing Projects</h2>
-        <span class="count">5 Active</span>
-      </div>
+  </nav>
 
-      <div class="projects-grid">
 
-        <!-- Project Card 1 -->
-        <article class="project-card fade-up" data-category="remote-sensing">
-          <div class="project-card-img theme-disaster">
-            <span class="project-icon">🌊</span>
-            <span class="project-status-badge ongoing">Ongoing</span>
-          </div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="badge badge-teal">Remote Sensing</span>
-              <span class="badge badge-blue">Deep Learning</span>
-            </div>
-            <h3><a href="#">Responsible AI for Flood Damage Assessment Using Multi-Temporal Satellite Imagery</a></h3>
-            <p>Deep learning models for automated flood damage assessment using Sentinel-1 SAR and Sentinel-2 optical imagery, with bias mitigation across socioeconomic regions.</p>
-            <div class="project-card-footer">
-              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: Funding Agency</span>
-              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
 
-        <!-- Project Card 2 -->
-        <article class="project-card fade-up" data-delay="100" data-category="coupled-systems">
-          <div class="project-card-img theme-nature">
-            <span class="project-icon">🌀</span>
-            <span class="project-status-badge ongoing">Ongoing</span>
-          </div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="badge badge-green">Coupled Systems</span>
-              <span class="badge badge-orange">Hurricane</span>
-            </div>
-            <h3><a href="#">Coupled Nature-Human Risk Modeling: Hurricane Impacts on Coastal Communities</a></h3>
-            <p>Investigating how coupled nature-human system dynamics influence hurricane impact severity and recovery trajectories across Gulf Coast communities.</p>
-            <div class="project-card-footer">
-              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: NOAA/NSF</span>
-              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
+  <!-- ======================================================
+       HERO
+  ======================================================= -->
 
-        <!-- Project Card 3 -->
-        <article class="project-card fade-up" data-delay="200" data-category="geoai">
-          <div class="project-card-img theme-urban">
-            <span class="project-icon">⚖️</span>
-            <span class="project-status-badge ongoing">Ongoing</span>
-          </div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="badge badge-purple">Responsible AI</span>
-              <span class="badge badge-blue">Fairness</span>
-            </div>
-            <h3><a href="#">Spatial Fairness in GeoAI: Detecting and Mitigating Geographic Bias</a></h3>
-            <p>Foundational research examining sources of geographic and demographic bias in GeoAI models, developing methodological frameworks for fairness-aware geospatial AI.</p>
-            <div class="project-card-footer">
-              <span class="project-funding"><i class="fas fa-coins"></i> Internal / PLACEHOLDER</span>
-              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
+  <section class="page-hero">
 
-        <!-- Project Card 4 (Placeholder) -->
-        <article class="project-card fade-up" data-category="geoai">
-          <div class="project-card-img theme-remote">
-            <span class="project-icon">🌡️</span>
-            <span class="project-status-badge upcoming">Upcoming</span>
-          </div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="badge badge-red">Urban Heat</span>
-              <span class="badge badge-green">Env. Justice</span>
-            </div>
-            <h3><a href="#">Urban Heat Island Detection and Environmental Justice Using Remote Sensing and GeoAI</a></h3>
-            <p>PLACEHOLDER: Mapping urban heat island patterns with high spatial resolution and analyzing their unequal distribution across income and race demographics in U.S. cities.</p>
-            <div class="project-card-footer">
-              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: NIH/EPA</span>
-              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
+    <div class="page-hero-content">
 
-        <!-- Project Card 5 (Placeholder) -->
-        <article class="project-card fade-up" data-delay="100" data-category="coupled-systems">
-          <div class="project-card-img theme-nature">
-            <span class="project-icon">🏔️</span>
-            <span class="project-status-badge upcoming">Upcoming</span>
-          </div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="badge badge-teal">PLACEHOLDER</span>
-              <span class="badge badge-blue">GeoAI</span>
-            </div>
-            <h3><a href="#">PLACEHOLDER: Upcoming Project Title</a></h3>
-            <p>PLACEHOLDER: Brief description of upcoming project. Replace with actual project details when available. Describe the research questions, methods, and anticipated impact.</p>
-            <div class="project-card-footer">
-              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER Funding</span>
-              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
+      <h1>Our Research Projects</h1>
 
-      </div>
-    </div><!-- end ongoing -->
+    </div>
 
-    <!-- ═══════ COMPLETED PROJECTS ═══════ -->
-    <div class="projects-category">
-      <div class="projects-category-header">
-        <h2>Completed Projects</h2>
-        <span class="count">1 Completed</span>
-      </div>
+  </section>
 
-      <div class="projects-grid">
 
-        <!-- Completed Project 1 -->
-        <article class="project-card fade-up" data-category="coupled-systems">
-          <div class="project-card-img theme-disaster" style="opacity:0.8;">
-            <span class="project-icon">🗺️</span>
-            <span class="project-status-badge completed">Completed</span>
-          </div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="badge badge-dark">2023–2024</span>
-              <span class="badge badge-teal">Multi-Hazard</span>
-            </div>
-            <h3><a href="#">Multi-Hazard Risk Atlas for the Tennessee Valley Region</a></h3>
-            <p>Developed a comprehensive multi-hazard risk atlas integrating floods, tornadoes, severe storms, and drought for the Tennessee Valley region to support emergency management planning.</p>
-            <div class="project-card-footer">
-              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER: State/Local</span>
-              <a href="#" class="project-link">View Output <i class="fas fa-arrow-right"></i></a>
-            </div>
-          </div>
-        </article>
 
-        <!-- Placeholder for completed projects -->
-        <article class="project-card fade-up" data-delay="100" data-category="geoai">
-          <div class="project-card-img" style="background:linear-gradient(135deg,#e5e7eb,#d1d5db); opacity:0.7;">
-            <span class="project-icon" style="color:#6b7280;">➕</span>
-            <span class="project-status-badge" style="background:rgba(107,114,128,0.85);color:white;">Placeholder</span>
+  <!-- ======================================================
+       PROJECTS
+  ======================================================= -->
+
+  <section class="projects-section">
+
+    <div class="projects-container">
+
+
+
+      <!-- ==================================================
+           HAZARDWEAVE
+      =================================================== -->
+
+      <div class="project-featured-card fade-up">
+
+
+        <div class="project-featured-visual">
+
+          <a
+            href="https://hazard-weave.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            <img
+              src="assets/images/projects/HW.png"
+              alt="HazardWeave disaster intelligence platform">
+
+          </a>
+
+        </div>
+
+
+
+        <div class="project-featured-body">
+
+
+          <div class="section-tag">
+            Featured Project · 2026
           </div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span class="badge badge-dark">PLACEHOLDER Year</span>
+
+
+          <h2>
+            HazardWeave: An AI-Supported Unified Platform
+            for Smart Disaster Management
+          </h2>
+
+
+          <p>
+            HazardWeave is an AI-supported disaster intelligence platform
+            integrating geospatial evidence, hazard information,
+            and intelligent decision support in a unified environment
+            for disaster monitoring and emergency response.
+          </p>
+
+
+
+          <div class="project-meta-row">
+
+
+            <div class="project-meta-item">
+
+              <i class="fas fa-user"></i>
+
+              <span>
+                PI: Dr. Bing Zhou
+              </span>
+
             </div>
-            <h3>PLACEHOLDER: Completed Project Title</h3>
-            <p>PLACEHOLDER: Description of a completed project. Replace with actual project details including methods, findings, and publications that resulted from this work.</p>
-            <div class="project-card-footer">
-              <span class="project-funding"><i class="fas fa-coins"></i> PLACEHOLDER Funding</span>
-              <a href="#" class="project-link">Details <i class="fas fa-arrow-right"></i></a>
+
+
+            <div class="project-meta-item">
+
+              <i class="fas fa-building-columns"></i>
+
+              <span>
+                AI-Tennessee THRIVE
+              </span>
+
             </div>
+
+
+            <div class="project-meta-item">
+
+              <i class="fas fa-coins"></i>
+
+              <span>
+                $20,000
+              </span>
+
+            </div>
+
           </div>
-        </article>
+
+
+
+          <div
+            class="project-card-tags"
+            style="margin-top:22px;">
+
+            <span class="badge badge-blue">
+              Disaster Intelligence
+            </span>
+
+            <span class="badge badge-purple">
+              AI
+            </span>
+
+            <span class="badge badge-green">
+              Decision Support
+            </span>
+
+          </div>
+
+
+
+          <div class="featured-actions">
+
+            <a
+              href="https://hazard-weave.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="featured-live-btn">
+
+              <i class="fas fa-arrow-up-right-from-square"></i>
+
+              Explore HazardWeave
+
+            </a>
+
+          </div>
+
+        </div>
 
       </div>
-    </div><!-- end completed -->
 
-    <!-- ═══════ PUBLICATIONS TEASER ═══════ -->
-    <section class="section section-light" style="border-radius:var(--radius-lg); margin-top:20px; padding:48px;">
-      <div class="section-header fade-up" style="margin-bottom:36px;">
-        <div class="section-tag">Publications</div>
-        <h2 class="section-title" style="font-size:28px;">Selected Publications</h2>
-        <p class="section-subtitle" style="font-size:15px;">
-          PLACEHOLDER: A curated list of key publications will appear here. See Google Scholar for the full list.
+
+
+      <!-- ======================================================
+           CURRENT & RECENT PROJECTS
+      ======================================================= -->
+
+      <div class="projects-category">
+
+
+        <div class="projects-category-header">
+
+          <h2>
+            Current &amp; Recent Projects
+          </h2>
+
+          <span class="count">
+            Selected Research
+          </span>
+
+        </div>
+
+
+
+        <div class="projects-grid">
+
+
+
+          <!-- ==================================================
+               CLIMATE-LEAD
+          =================================================== -->
+
+          <article class="project-card fade-up">
+
+
+            <div class="project-card-img project-real-image">
+
+              <a
+                href="https://www.geoearlab.com/climatelead"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <img
+                  src="assets/images/projects/CL.png"
+                  alt="Climate-LEAD environmental health project">
+
+              </a>
+
+
+              <span class="project-status-badge ongoing">
+                2023–2026
+              </span>
+
+            </div>
+
+
+
+            <div class="project-card-body">
+
+
+              <div class="project-card-tags">
+
+                <span class="badge badge-green">
+                  Environmental Health
+                </span>
+
+                <span class="badge badge-orange">
+                  Climate
+                </span>
+
+              </div>
+
+
+
+              <h3>
+
+                <a
+                  href="https://www.geoearlab.com/climatelead"
+                  target="_blank"
+                  rel="noopener noreferrer">
+
+                  Climate-LEAD:
+                  Climate Effects on Localized
+                  Environmental Health Disparities
+
+                </a>
+
+              </h3>
+
+
+
+              <p>
+                Examining climate-related environmental health disparities
+                in overburdened Texas Gulf Coast communities through
+                geospatial analysis, environmental observations,
+                and community-level data.
+              </p>
+
+
+
+              <div class="project-card-footer">
+
+                <span class="project-funding">
+
+                  <i class="fas fa-building-columns"></i>
+
+                  NASEM Gulf Research Program
+
+                </span>
+
+              </div>
+
+
+
+              <div class="project-role-note">
+                Research Assistant · Award: $1,499,990
+              </div>
+
+
+
+              <a
+                href="https://www.geoearlab.com/climatelead"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-view-link">
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ==================================================
+               NSF HNDS-I
+          =================================================== -->
+
+          <article
+            class="project-card fade-up"
+            data-delay="100">
+
+
+            <div class="project-card-img project-real-image">
+
+              <a
+                href="https://www.geoearlab.com/post/gear-lab-receives-nsf-funding-to-develop-a-cyber-infrastructure-for-disaster-resilience-research"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <img
+                  src="assets/images/projects/NSF.png"
+                  alt="NSF HNDS cyberinfrastructure project">
+
+              </a>
+
+
+              <span class="project-status-badge ongoing">
+                2023–2026
+              </span>
+
+            </div>
+
+
+
+            <div class="project-card-body">
+
+
+              <div class="project-card-tags">
+
+                <span class="badge badge-blue">
+                  Spatial Data Science
+                </span>
+
+                <span class="badge badge-purple">
+                  Cyberinfrastructure
+                </span>
+
+              </div>
+
+
+
+              <h3>
+
+                <a
+                  href="https://www.geoearlab.com/post/gear-lab-receives-nsf-funding-to-develop-a-cyber-infrastructure-for-disaster-resilience-research"
+                  target="_blank"
+                  rel="noopener noreferrer">
+
+                  HNDS-I:
+                  A Cyberinfrastructure for Multiscale
+                  Human Dynamics and Resilience Research
+
+                </a>
+
+              </h3>
+
+
+
+              <p>
+                Developing cyberinfrastructure and geospatial workflows
+                to support multiscale research on human dynamics,
+                disaster resilience, and spatially intensive data analysis.
+              </p>
+
+
+
+              <div class="project-card-footer">
+
+                <span class="project-funding">
+
+                  <i class="fas fa-building-columns"></i>
+
+                  NSF HNDS
+
+                </span>
+
+              </div>
+
+
+
+              <div class="project-role-note">
+                Research Assistant · Award: $1,096,902
+              </div>
+
+
+
+              <a
+                href="https://www.geoearlab.com/post/gear-lab-receives-nsf-funding-to-develop-a-cyber-infrastructure-for-disaster-resilience-research"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-view-link">
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ==================================================
+               SOUNDIT
+          =================================================== -->
+
+          <article
+            class="project-card fade-up"
+            data-delay="200">
+
+
+            <div class="project-card-img project-real-image">
+
+              <a
+                href="https://gisense.github.io/SounDiT-Page/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <img
+                  src="assets/images/projects/soundit-cover.jpg"
+                  alt="SounDiT geo-contextual soundscape-to-landscape generation">
+
+              </a>
+
+
+              <span class="project-status-badge completed">
+                2025–2026
+              </span>
+
+            </div>
+
+
+
+            <div class="project-card-body">
+
+
+              <div class="project-card-tags">
+
+                <span class="badge badge-teal">
+                  Multimodal GeoAI
+                </span>
+
+                <span class="badge badge-purple">
+                  Generative AI
+                </span>
+
+              </div>
+
+
+
+              <h3>
+
+                <a
+                  href="https://gisense.github.io/SounDiT-Page/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+
+                  SounDiT:
+                  Geo-Contextual Soundscape-to-Landscape Generation
+
+                </a>
+
+              </h3>
+
+
+
+              <p>
+                A geo-contextual multimodal framework that generates
+                geographically coherent landscape imagery from environmental
+                soundscapes using Diffusion Transformers.
+              </p>
+
+
+
+              <div class="project-card-footer">
+
+                <span class="project-funding">
+
+                  <i class="fas fa-users"></i>
+
+                  Junbo Wang et al.
+
+                </span>
+
+              </div>
+
+
+
+              <div class="project-role-note">
+                AAG 2026 · GISS-SG Student Paper Competition Finalist
+              </div>
+
+
+
+              <a
+                href="https://gisense.github.io/SounDiT-Page/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-view-link">
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ======================================================
+           SELECTED PAST PROJECTS
+      ======================================================= -->
+
+      <div class="projects-category">
+
+
+        <div class="projects-category-header">
+
+          <h2>
+            Selected Past Projects
+          </h2>
+
+          <span class="count">
+            Previous Research
+          </span>
+
+        </div>
+
+
+
+        <div class="projects-grid">
+
+
+
+          <!-- ==================================================
+               PANTHER RISE
+          =================================================== -->
+
+          <article class="project-card fade-up">
+
+
+            <div class="project-card-img project-real-image">
+
+              <a
+                href="https://research.tamu.edu/funding/panther-rise-grant-program/award-recipients/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <img
+                  src="assets/images/projects/PRISE.png"
+                  alt="Panther RISE geospatial big data and AI disaster resilience project">
+
+              </a>
+
+
+              <span class="project-status-badge completed">
+                2022–2024
+              </span>
+
+            </div>
+
+
+
+            <div class="project-card-body">
+
+
+              <div class="project-card-tags">
+
+                <span class="badge badge-purple">
+                  Geospatial Big Data
+                </span>
+
+                <span class="badge badge-green">
+                  Community Resilience
+                </span>
+
+              </div>
+
+
+
+              <h3>
+
+                <a
+                  href="https://research.tamu.edu/funding/panther-rise-grant-program/award-recipients/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+
+                  Leveraging Geospatial Big Data and Artificial Intelligence
+                  to Enhance Disaster Resilience in Vulnerable Communities
+
+                </a>
+
+              </h3>
+
+
+
+              <p>
+                Applying geospatial big data and artificial intelligence
+                to disaster resilience research with an emphasis on
+                socially vulnerable communities and community-level risk.
+              </p>
+
+
+
+              <div class="project-card-footer">
+
+                <span class="project-funding">
+
+                  <i class="fas fa-building-columns"></i>
+
+                  PVAMU &amp; TAMU Panther RISE
+
+                </span>
+
+              </div>
+
+
+
+              <div class="project-role-note">
+                Research Assistant · Award: $40,000
+              </div>
+
+
+
+              <a
+                href="https://research.tamu.edu/funding/panther-rise-grant-program/award-recipients/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-view-link">
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ==================================================
+               DIGITAL TWIN
+          =================================================== -->
+
+          <article
+            class="project-card fade-up"
+            data-delay="100">
+
+
+            <div class="project-card-img project-real-image">
+
+              <a
+                href="https://pef-symposium.tamu.edu/x-grant-presentation/disaster-city-digital-twin-integrating-machine-and-human-intelligence-to-augment-flood-resilience/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <img
+                  src="assets/images/projects/DT.png"
+                  alt="Disaster City Digital Twin project">
+
+              </a>
+
+
+              <span class="project-status-badge completed">
+                2020–2023
+              </span>
+
+            </div>
+
+
+
+            <div class="project-card-body">
+
+
+              <div class="project-card-tags">
+
+                <span class="badge badge-blue">
+                  Digital Twin
+                </span>
+
+                <span class="badge badge-orange">
+                  Flood Resilience
+                </span>
+
+              </div>
+
+
+
+              <h3>
+
+                <a
+                  href="https://pef-symposium.tamu.edu/x-grant-presentation/disaster-city-digital-twin-integrating-machine-and-human-intelligence-to-augment-flood-resilience/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+
+                  Disaster City Digital Twin:
+                  Integrating Machine and Human Intelligence
+                  to Augment Flood Resilience
+
+                </a>
+
+              </h3>
+
+
+
+              <p>
+                Integrating machine intelligence,
+                human information, and geospatial analysis
+                in a disaster digital-twin framework
+                designed to support urban flood resilience.
+              </p>
+
+
+
+              <div class="project-card-footer">
+
+                <span class="project-funding">
+
+                  <i class="fas fa-building-columns"></i>
+
+                  TAMU-X Grant
+
+                </span>
+
+              </div>
+
+
+
+              <div class="project-role-note">
+                Award: $1,000,000
+              </div>
+
+
+
+              <a
+                href="https://pef-symposium.tamu.edu/x-grant-presentation/disaster-city-digital-twin-integrating-machine-and-human-intelligence-to-augment-flood-resilience/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-view-link">
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+
+          <!-- ==================================================
+               FLASH FLOOD
+          =================================================== -->
+
+          <article
+            class="project-card fade-up"
+            data-delay="200">
+
+
+            <div class="project-card-img project-real-image">
+
+              <a
+                href="https://stories.tamu.edu/news/2019/12/09/reducing-human-impacts-of-flash-flooding/"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                <img
+                  src="assets/images/projects/RH.jpg"
+                  alt="Reducing human impacts of flash flooding research">
+
+              </a>
+
+
+              <span class="project-status-badge completed">
+                2019–2022
+              </span>
+
+            </div>
+
+
+
+            <div class="project-card-body">
+
+
+              <div class="project-card-tags">
+
+                <span class="badge badge-blue">
+                  Flood Risk
+                </span>
+
+                <span class="badge badge-green">
+                  Human Impacts
+                </span>
+
+              </div>
+
+
+
+              <h3>
+
+                <a
+                  href="https://stories.tamu.edu/news/2019/12/09/reducing-human-impacts-of-flash-flooding/"
+                  target="_blank"
+                  rel="noopener noreferrer">
+
+                  Reducing the Human Impacts of Flash Floods
+
+                </a>
+
+              </h3>
+
+
+
+              <p>
+                Developing microdata and causal models
+                to understand human impacts from flash flooding
+                and support improved disaster mitigation,
+                preparedness, and resilience planning.
+              </p>
+
+
+
+              <div class="project-card-footer">
+
+                <span class="project-funding">
+
+                  <i class="fas fa-building-columns"></i>
+
+                  NSF HDBE
+
+                </span>
+
+              </div>
+
+
+
+              <div class="project-role-note">
+                Research Assistant · Award: $350,000
+              </div>
+
+
+
+              <a
+                href="https://stories.tamu.edu/news/2019/12/09/reducing-human-impacts-of-flash-flooding/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="project-view-link">
+
+                View Project
+
+                <i class="fas fa-arrow-right"></i>
+
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+
+
+      <!-- ======================================================
+           SELECTED PUBLICATIONS
+      ======================================================= -->
+
+      <section class="publications-block">
+
+
+        <div
+          class="section-header fade-up"
+          style="margin-bottom:36px;">
+
+
+          <div class="section-tag">
+            Research Outputs
+          </div>
+
+
+          <h2
+            class="section-title"
+            style="font-size:28px;">
+
+            Selected Publications
+
+          </h2>
+
+
+          <p
+            class="section-subtitle"
+            style="font-size:15px;">
+
+            Selected publications highlighting research in GeoAI,
+            disaster response, spatial data science,
+            and geospatial intelligence.
+
+          </p>
+
+        </div>
+
+
+
+        <div class="publication-list">
+
+
+
+          <!-- PUBLICATION 1 -->
+
+          <div class="publication-item fade-up">
+
+
+            <div class="publication-meta">
+
+              <span class="badge badge-purple">
+                GeoAI
+              </span>
+
+              <span class="badge badge-green">
+                Foundation Models
+              </span>
+
+              <span class="publication-year">
+                2026
+              </span>
+
+            </div>
+
+
+            <div class="publication-title">
+
+              Measuring the Spatial Explicitness of GeoAI and Geospatial
+              Foundation Models:
+              A Systematic Review and Future Roadmap
+
+            </div>
+
+
+            <div class="publication-authors">
+
+              <strong>Bing Zhou</strong> et al.
+
+              <em>
+                ISPRS Journal of Photogrammetry and Remote Sensing.
+              </em>
+
+            </div>
+
+
+            <a
+              href="https://doi.org/10.1016/j.isprsjprs.2026.08.001"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="publication-link">
+
+              <i class="fas fa-external-link-alt"></i>
+
+              DOI
+
+            </a>
+
+          </div>
+
+
+
+          <!-- PUBLICATION 2 -->
+
+          <div class="publication-item fade-up">
+
+
+            <div class="publication-meta">
+
+              <span class="badge badge-blue">
+                Disaster Response
+              </span>
+
+              <span class="badge badge-purple">
+                Large Language Models
+              </span>
+
+              <span class="publication-year">
+                2026
+              </span>
+
+            </div>
+
+
+            <div class="publication-title">
+
+              Rapid Disaster Response and Damage Estimation
+              with Social Media and Pretrained Large Language Models:
+              Insights from Multiple Hurricanes
+
+            </div>
+
+
+            <div class="publication-authors">
+
+              <strong>Bing Zhou</strong> et al.
+
+              <em>
+                Annals of the American Association of Geographers.
+              </em>
+
+            </div>
+
+
+            <a
+              href="https://doi.org/10.1080/24694452.2025.2560491"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="publication-link">
+
+              <i class="fas fa-external-link-alt"></i>
+
+              DOI
+
+            </a>
+
+          </div>
+
+
+
+          <!-- PUBLICATION 3 -->
+
+          <div class="publication-item fade-up">
+
+
+            <div class="publication-meta">
+
+              <span class="badge badge-teal">
+                Street View
+              </span>
+
+              <span class="badge badge-blue">
+                Damage Assessment
+              </span>
+
+              <span class="publication-year">
+                2025
+              </span>
+
+            </div>
+
+
+            <div class="publication-title">
+
+              Hyperlocal Disaster Damage Assessment Using
+              Bi-Temporal Street-View Imagery
+              and Pre-Trained Vision Models
+
+            </div>
+
+
+            <div class="publication-authors">
+
+              Yifan Yang, Lei Zou,
+              <strong>Bing Zhou</strong> et al.
+
+              <em>
+                Computers, Environment and Urban Systems.
+              </em>
+
+            </div>
+
+
+            <a
+              href="https://doi.org/10.1016/j.compenvurbsys.2025.102335"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="publication-link">
+
+              <i class="fas fa-external-link-alt"></i>
+
+              DOI
+
+            </a>
+
+          </div>
+
+
+
+          <!-- PUBLICATION 4 -->
+
+          <div class="publication-item fade-up">
+
+
+            <div class="publication-meta">
+
+              <span class="badge badge-blue">
+                NLP
+              </span>
+
+              <span class="badge badge-purple">
+                Toponym Recognition
+              </span>
+
+              <span class="publication-year">
+                2023
+              </span>
+
+            </div>
+
+
+            <div class="publication-title">
+
+              TopoBERT:
+              A Plug and Play Toponym Recognition Module
+              Harnessing Fine-Tuned BERT
+
+            </div>
+
+
+            <div class="publication-authors">
+
+              <strong>Bing Zhou</strong>,
+              Lei Zou,
+              Yingjie Hu,
+              Yi Qiang,
+              Daniel Goldberg.
+
+              <em>
+                International Journal of Digital Earth.
+              </em>
+
+            </div>
+
+
+            <a
+              href="https://doi.org/10.1080/17538947.2023.2239794"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="publication-link">
+
+              <i class="fas fa-external-link-alt"></i>
+
+              DOI
+
+            </a>
+
+          </div>
+
+
+
+          <!-- PUBLICATION 5 -->
+
+          <div class="publication-item fade-up">
+
+
+            <div class="publication-meta">
+
+              <span class="badge badge-blue">
+                BERT
+              </span>
+
+              <span class="badge badge-orange">
+                Disaster Response
+              </span>
+
+              <span class="publication-year">
+                2022
+              </span>
+
+            </div>
+
+
+            <div class="publication-title">
+
+              VictimFinder:
+              Harvesting Rescue Requests in Disaster Response
+              from Social Media with BERT
+
+            </div>
+
+
+            <div class="publication-authors">
+
+              <strong>Bing Zhou</strong> et al.
+
+              <em>
+                Computers, Environment and Urban Systems.
+              </em>
+
+            </div>
+
+
+            <a
+              href="https://doi.org/10.1016/j.compenvurbsys.2022.101824"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="publication-link">
+
+              <i class="fas fa-external-link-alt"></i>
+
+              DOI
+
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div
+          class="fade-up"
+          style="
+            text-align:center;
+            margin-top:32px;
+          ">
+
+          <a
+            href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline">
+
+            <i class="fas fa-graduation-cap"></i>
+
+            Full List on Google Scholar
+
+          </a>
+
+        </div>
+
+      </section>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       CTA
+  ======================================================= -->
+
+  <section class="cta-section">
+
+    <div class="cta-inner fade-up">
+
+
+      <h2>
+        Collaborate With Us
+      </h2>
+
+
+      <p>
+        Interested in research collaboration or joining the GRIND Lab?
+        We welcome inquiries from prospective students,
+        researchers, and collaborators.
+      </p>
+
+
+      <div class="cta-actions">
+
+
+        <a
+          href="contact.html"
+          class="btn btn-white btn-lg">
+
+          <i class="fas fa-envelope"></i>
+
+          Get in Touch
+
+        </a>
+
+
+        <a
+          href="apply.html"
+          class="btn btn-outline-white btn-lg">
+
+          <i class="fas fa-graduation-cap"></i>
+
+          Apply to Join
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ======================================================
+       FOOTER
+  ======================================================= -->
+
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+
+      <div class="footer-brand-col">
+
+        <img
+          src="assets/images/logo/Lab_Logo_ver01.png"
+          alt="GRIND Lab">
+
+
+        <p>
+          Geospatial Responsible AI for Nature-human Dynamics Laboratory.
+          <br>
+          University of Tennessee, Knoxville.
         </p>
-      </div>
 
-      <!-- Publication items -->
-      <div style="display:flex;flex-direction:column;gap:16px;max-width:900px;margin:0 auto;">
 
-        <div style="background:white;border-radius:10px;padding:20px 24px;border:1px solid var(--border);" class="fade-up">
-          <div style="display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
-            <span class="badge badge-blue">Journal Article</span>
-            <span style="font-size:12px;color:var(--text-light);">2025</span>
-          </div>
-          <p style="font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:4px;">PLACEHOLDER: Full Paper Title Here</p>
-          <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;"><strong>Bing Zhou</strong>, PLACEHOLDER Co-Authors. <em>PLACEHOLDER: Journal Name</em>.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-external-link-alt"></i> DOI</a>
-            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-file-pdf"></i> PDF</a>
-          </div>
-        </div>
+        <div class="footer-social">
 
-        <div style="background:white;border-radius:10px;padding:20px 24px;border:1px solid var(--border);" class="fade-up" data-delay="100">
-          <div style="display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
-            <span class="badge badge-blue">Journal Article</span>
-            <span style="font-size:12px;color:var(--text-light);">2024</span>
-          </div>
-          <p style="font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:4px;">PLACEHOLDER: Full Paper Title Here</p>
-          <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;"><strong>Bing Zhou</strong>, PLACEHOLDER Co-Authors. <em>PLACEHOLDER: Journal Name</em>.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-external-link-alt"></i> DOI</a>
-            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-file-pdf"></i> PDF</a>
-          </div>
-        </div>
 
-        <div style="background:white;border-radius:10px;padding:20px 24px;border:1px solid var(--border);" class="fade-up" data-delay="200">
-          <div style="display:flex;gap:10px;margin-bottom:8px;flex-wrap:wrap;">
-            <span class="badge badge-teal">Conference Paper</span>
-            <span style="font-size:12px;color:var(--text-light);">2025</span>
-          </div>
-          <p style="font-size:15px;font-weight:600;color:var(--text-dark);margin-bottom:4px;">PLACEHOLDER: Conference Paper Title</p>
-          <p style="font-size:13px;color:var(--text-gray);margin-bottom:8px;"><strong>Bing Zhou</strong>, PLACEHOLDER Co-Authors. <em>PLACEHOLDER: Conference Name</em>, 2025.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;">
-            <a href="#" style="font-size:12.5px;color:var(--accent);font-weight:600;display:flex;align-items:center;gap:5px;"><i class="fas fa-external-link-alt"></i> DOI</a>
-          </div>
+          <a
+            href="https://github.com/bzbarrett"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub">
+
+            <i class="fab fa-github"></i>
+
+          </a>
+
+
+          <a
+            href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Scholar">
+
+            <i class="fas fa-graduation-cap"></i>
+
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/bing-zhou-a90b98239/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn">
+
+            <i class="fab fa-linkedin-in"></i>
+
+          </a>
+
         </div>
 
       </div>
 
-      <div style="text-align:center;margin-top:32px;" class="fade-up">
-        <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener" class="btn btn-outline">
-          <i class="fas fa-graduation-cap"></i> Full List on Google Scholar
-        </a>
+
+
+      <div class="footer-col">
+
+        <h4>
+          Navigate
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="news.html">
+              News
+            </a>
+          </li>
+
+          <li>
+            <a href="projects.html">
+              Projects
+            </a>
+          </li>
+
+          <li>
+            <a href="team.html">
+              Team
+            </a>
+          </li>
+
+          <li>
+            <a href="contact.html">
+              Contact
+            </a>
+          </li>
+
+          <li>
+            <a href="apply.html">
+              Apply
+            </a>
+          </li>
+
+        </ul>
+
       </div>
-    </section>
 
-  </div><!-- end container -->
-</section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-inner fade-up">
-    <h2>Collaborate With Us</h2>
-    <p>Interested in research collaboration or joining the GRIND Lab? We welcome inquiries from prospective students, postdocs, and collaborators.</p>
-    <div class="cta-actions">
-      <a href="contact.html" class="btn btn-white btn-lg"><i class="fas fa-envelope"></i> Get in Touch</a>
-      <a href="apply.html" class="btn btn-outline-white btn-lg"><i class="fas fa-graduation-cap"></i> Apply to Join</a>
-    </div>
-  </div>
-</section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-inner">
-    <div class="footer-brand-col">
-      <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
-      <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
-      <div class="footer-social">
-        <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-        <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <div class="footer-col">
+
+        <h4>
+          Research
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="projects.html">
+              Disaster Resilience
+            </a>
+          </li>
+
+          <li>
+            <a href="projects.html">
+              Environmental Health
+            </a>
+          </li>
+
+          <li>
+            <a href="projects.html">
+              Spatial Data Science
+            </a>
+          </li>
+
+          <li>
+            <a href="projects.html">
+              Responsible GIScience
+            </a>
+          </li>
+
+        </ul>
+
       </div>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="apply.html">Apply</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Research</h4>
-      <ul>
-        <li><a href="projects.html">GeoAI</a></li>
-        <li><a href="projects.html">Remote Sensing</a></li>
-        <li><a href="projects.html">Disaster Risk</a></li>
-        <li><a href="projects.html">Publications</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
-      <ul>
-        <li>Dept. of Geography &amp; Sustainability</li>
-        <li>University of Tennessee, Knoxville</li>
-        <li>Knoxville, TN 37996</li>
-        <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="footer-bottom container">
-    <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville.</span>
-    <span>Built with ❤️ for science and society.</span>
-  </div>
-</footer>
 
-<button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-<script src="assets/js/main.js"></script>
+
+
+      <div class="footer-col">
+
+        <h4>
+          Contact
+        </h4>
+
+        <ul>
+
+          <li>
+            Dept. of Geography &amp; Sustainability
+          </li>
+
+          <li>
+            University of Tennessee, Knoxville
+          </li>
+
+          <li>
+            Knoxville, TN 37996
+          </li>
+
+          <li>
+
+            <a href="mailto:bzhou11@utk.edu">
+              bzhou11@utk.edu
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom container">
+
+      <span>
+        &copy; 2026 GRIND Lab,
+        University of Tennessee, Knoxville.
+      </span>
+
+      <span>
+        Geospatial Responsible AI for Nature-human Dynamics.
+      </span>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- ======================================================
+       SCROLL TOP
+  ======================================================= -->
+
+  <button
+    class="scroll-top"
+    aria-label="Scroll to top">
+
+    <i class="fas fa-arrow-up"></i>
+
+  </button>
+
+
+
+  <!-- ======================================================
+       JS
+  ======================================================= -->
+
+  <script src="assets/js/main.js"></script>
+
+
 </body>
+
 </html>

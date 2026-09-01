@@ -1,197 +1,1966 @@
 /* ============================================================
-   Team Page Styles — GRIND Lab
-   ============================================================ */
+   TEAM PAGE — GRIND LAB
+   FINAL CLEAN VERSION
+============================================================ */
 
-/* ── Director Section ── */
-.director-full {
-  max-width: 1200px; margin: 0 auto;
-  padding: 64px 28px 48px;
-  display: grid; grid-template-columns: 300px 1fr; gap: 64px; align-items: start;
+:root {
+  --team-green: #8bd63c;
+  --team-green-dark: #68ad2d;
+  --team-green-soft: rgba(139, 214, 60, 0.11);
+  --team-green-border: rgba(139, 214, 60, 0.30);
 }
+
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.page-hero {
+  position: relative !important;
+
+  min-height: 370px !important;
+  height: auto !important;
+
+  padding:
+    40px
+    28px
+    84px !important;
+
+  overflow: visible !important;
+}
+
+
+/* Hero content must stay above the curve */
+
+.page-hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+
+  max-width: 980px;
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+
+/* ============================================================
+   HERO BOTTOM CURVE
+   IMPORTANT:
+   This replaces the white area with the same light green
+   used by the Director section.
+============================================================ */
+
+.page-hero::after {
+  content: "" !important;
+
+  position: absolute !important;
+
+  z-index: 3 !important;
+
+  left: -5% !important;
+  right: auto !important;
+
+  bottom: -38px !important;
+
+  width: 110% !important;
+  height: 78px !important;
+
+  background: var(--lighter) !important;
+
+  border-radius:
+    50%
+    50%
+    0
+    0
+    /
+    65%
+    65%
+    0
+    0 !important;
+
+  transform: none !important;
+
+  pointer-events: none;
+}
+
+
+/* Extra fallback in case main.css has a wave element */
+
+.page-hero-wave,
+.hero-wave,
+.page-hero .wave {
+  color: var(--lighter) !important;
+
+  fill: var(--lighter) !important;
+}
+
+
+.page-hero-wave path,
+.hero-wave path,
+.page-hero .wave path {
+  fill: var(--lighter) !important;
+}
+
+
+
+/* ============================================================
+   BREADCRUMB
+============================================================ */
+
+.page-hero .breadcrumb {
+  display: flex !important;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 10px;
+
+  margin:
+    0
+    0
+    23px !important;
+
+  text-align: left;
+
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+
+.page-hero .breadcrumb a,
+.page-hero .breadcrumb span {
+  color:
+    rgba(255, 255, 255, 0.82);
+}
+
+
+.page-hero .breadcrumb a:hover {
+  color:
+    var(--team-green);
+}
+
+
+.page-hero .breadcrumb i {
+  color:
+    rgba(255, 255, 255, 0.45);
+
+  font-size: 10px;
+}
+
+
+
+/* ============================================================
+   PEOPLE PILL
+============================================================ */
+
+.page-hero-eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin:
+    0
+    auto
+    16px;
+
+  padding:
+    8px
+    22px;
+
+  border:
+    1px solid
+    var(--team-green-border);
+
+  border-radius: 999px;
+
+  background:
+    rgba(139, 214, 60, 0.09);
+
+  color:
+    var(--team-green);
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+}
+
+
+
+/* ============================================================
+   HERO TITLE
+============================================================ */
+
+.page-hero h1 {
+  margin:
+    0
+    0
+    18px !important;
+
+  color:
+    #ffffff;
+
+  font-size:
+    clamp(48px, 5vw, 66px);
+
+  font-weight: 900;
+
+  line-height: 1;
+
+  letter-spacing: -0.04em;
+}
+
+
+
+/* ============================================================
+   HERO DESCRIPTION
+============================================================ */
+
+.page-hero p {
+  max-width: 780px;
+
+  margin:
+    0
+    auto !important;
+
+  color:
+    rgba(255, 255, 255, 0.80) !important;
+
+  font-size: 17px;
+
+  line-height: 1.62;
+
+  text-shadow: none;
+}
+
+
+
+/* ============================================================
+   DIRECTOR SECTION
+============================================================ */
+
+.director-section {
+  position: relative;
+
+  z-index: 1;
+
+  margin-top: 0;
+
+  background:
+    var(--lighter) !important;
+}
+
+
+.director-full {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding:
+    66px
+    28px
+    64px;
+
+  display: grid;
+
+  grid-template-columns:
+    300px
+    minmax(0, 1fr);
+
+  gap: 60px;
+
+  align-items: start;
+}
+
+
+
+/* ============================================================
+   DIRECTOR PHOTO
+============================================================ */
+
 .director-photo-full {
   position: relative;
 }
+
+
 .director-photo-full .photo-frame {
-  width: 100%; aspect-ratio: 3/4;
-  background: linear-gradient(160deg, var(--primary-light), var(--primary));
-  border-radius: var(--radius-lg);
-  overflow: hidden; position: relative;
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 70px; color: rgba(255,255,255,0.2);
-}
-.director-photo-full .photo-frame img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-.director-contact-card {
-  background: var(--lighter);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 20px; margin-top: 16px;
-}
-.director-contact-item {
-  display: flex; align-items: flex-start; gap: 12px;
-  padding: 10px 0; border-bottom: 1px solid var(--border);
-  font-size: 13.5px; color: var(--text-dark);
-}
-.director-contact-item:last-child { border-bottom: none; padding-bottom: 0; }
-.director-contact-item i { color: var(--accent); width: 16px; margin-top: 2px; flex-shrink: 0; }
-.director-contact-item a { color: var(--accent); word-break: break-all; }
-.director-info h2 { font-size: 38px; font-weight: 900; color: var(--text-dark); margin-bottom: 4px; }
-.director-info .position { font-size: 18px; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
-.director-info .department { font-size: 15px; color: var(--text-gray); margin-bottom: 24px; }
-.director-bio-section { margin-bottom: 28px; }
-.director-bio-section h4 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--accent); margin-bottom: 14px; }
-.director-bio-section p { font-size: 15px; color: var(--text-gray); line-height: 1.8; margin-bottom: 12px; }
-.education-list { display: flex; flex-direction: column; gap: 10px; }
-.edu-item { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; color: var(--text-dark); }
-.edu-item i { color: var(--accent); margin-top: 2px; flex-shrink: 0; }
-.edu-degree { font-weight: 600; display: block; margin-bottom: 1px; }
-.edu-school { color: var(--text-gray); font-size: 13px; }
-.research-interests-list { display: flex; flex-wrap: wrap; gap: 8px; }
-.interest-chip {
-  background: var(--light); border: 1px solid rgba(0,150,183,0.15);
-  color: var(--secondary); font-size: 13px; font-weight: 500;
-  padding: 6px 15px; border-radius: 50px; cursor: default;
-  transition: var(--transition);
-}
-.interest-chip:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
-.director-profile-links { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
-.profile-link-btn {
-  display: inline-flex; align-items: center; gap: 7px;
-  padding: 9px 18px; border-radius: var(--radius-sm);
-  font-size: 13px; font-weight: 600; transition: var(--transition);
-  border: 1.5px solid var(--border); color: var(--text-dark); background: var(--white);
-}
-.profile-link-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--light); }
-.profile-link-btn i { font-size: 14px; }
-
-/* ── Team Section Divider ── */
-.team-section-divider { max-width: 1200px; margin: 0 auto; padding: 0 28px; }
-.team-section-divider hr { border: none; border-top: 2px solid var(--border); margin: 0; }
-
-/* ── Team Category ── */
-.team-category { padding: 56px 28px; max-width: 1200px; margin: 0 auto; }
-.team-category-header {
-  display: flex; align-items: center; gap: 16px; margin-bottom: 36px;
-}
-.team-category-icon {
-  width: 48px; height: 48px; border-radius: 12px;
-  background: var(--light); color: var(--accent);
-  display: flex; align-items: center; justify-content: center; font-size: 20px;
-}
-.team-category-header h2 { font-size: 24px; font-weight: 800; color: var(--text-dark); }
-.team-category-header .count { font-size: 14px; color: var(--text-light); }
-
-/* ── Team Cards Grid ── */
-.team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-.team-card {
-  border-radius: var(--radius); border: 1px solid var(--border);
-  background: var(--white); transition: var(--transition); overflow: hidden; text-align: center;
-}
-.team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-.team-card-photo {
-  width: 100%;
-  height: 250px;
-  background: linear-gradient(160deg, var(--light), #d4efc0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 56px;
-  color: var(--accent);
   position: relative;
-  overflow: hidden;
-}
 
-.team-card-photo img {
-  display: block;
   width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  background:
+    linear-gradient(
+      160deg,
+      var(--primary-light),
+      var(--primary)
+    );
+
+  box-shadow:
+    0
+    18px
+    42px
+    rgba(16, 24, 32, 0.10);
+}
+
+
+.director-photo-full .photo-frame img {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+
   height: 100%;
-  max-width: 100%;
+
   object-fit: cover;
-  object-position: center 30%;
-  position: static;
+
+  object-position: center 24%;
 }
 
-.team-card-photo img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-.team-card-body { padding: 20px; }
-.team-card-body h3 { font-size: 16px; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
-.team-card-role { font-size: 13px; color: var(--accent); font-weight: 500; margin-bottom: 6px; }
-.team-card-dept { font-size: 12.5px; color: var(--text-light); margin-bottom: 12px; }
-.team-card-research { font-size: 12.5px; color: var(--text-gray); line-height: 1.5; margin-bottom: 14px; }
-.team-card-links { display: flex; justify-content: center; gap: 8px; }
-.team-card-link {
-  width: 30px; height: 30px; border-radius: 8px;
-  background: var(--lighter); border: 1px solid var(--border);
-  color: var(--text-gray); display: flex; align-items: center; justify-content: center;
-  font-size: 13px; transition: var(--transition);
-}
-.team-card-link:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
-.team-card-tags { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; margin-bottom: 12px; }
 
-/* ── Placeholder / Join card ── */
-.team-card.placeholder-card {
-  background: var(--lighter);
-  border-style: dashed; border-color: var(--border);
-  cursor: default;
-}
-.team-card.placeholder-card:hover { transform: none; box-shadow: none; }
-.team-placeholder-body {
-  height: 100%; min-height: 240px;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 12px;
-  padding: 28px; color: var(--text-light);
-}
-.team-placeholder-body i { font-size: 28px; color: var(--border); }
-.team-placeholder-body span { font-size: 14px; font-weight: 600; }
-.team-placeholder-body small { font-size: 12px; text-align: center; line-height: 1.5; }
 
-/* ── Alumni Table ── */
-.alumni-section { padding: 0 28px 64px; }
-.alumni-container { max-width: 1200px; margin: 0 auto; }
-.alumni-table {
-  width: 100%; border-collapse: collapse;
+/* ============================================================
+   DIRECTOR CONTACT CARD
+============================================================ */
+
+.director-contact-card {
+  margin-top: 16px;
+
+  padding:
+    17px
+    18px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius);
+
+  background:
+    var(--white);
+
+  box-shadow:
+    0
+    8px
+    24px
+    rgba(16, 24, 32, 0.045);
+}
+
+
+.director-contact-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 11px;
+
+  padding:
+    10px
+    0;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  color:
+    var(--text-dark);
+
+  font-size: 13px;
+}
+
+
+.director-contact-item:first-child {
+  padding-top: 2px;
+}
+
+
+.director-contact-item:last-child {
+  padding-bottom: 2px;
+
+  border-bottom: none;
+}
+
+
+.director-contact-item > i {
+  width: 17px;
+
+  margin-top: 3px;
+
+  flex-shrink: 0;
+
+  color:
+    var(--team-green-dark);
+}
+
+
+.director-contact-text {
+  min-width: 0;
+}
+
+
+.director-contact-text strong {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color:
+    var(--text-light);
+
+  font-size: 10.5px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+}
+
+
+.director-contact-item a {
+  color:
+    var(--text-dark);
+
+  text-decoration: none;
+
+  word-break: break-word;
+}
+
+
+.director-contact-item a:hover {
+  color:
+    var(--team-green-dark);
+}
+
+
+
+/* ============================================================
+   DIRECTOR INFORMATION
+============================================================ */
+
+.director-info {
+  min-width: 0;
+}
+
+
+.director-info > .section-tag {
+  display: inline-block;
+
+  margin-bottom: 18px;
+}
+
+
+.director-info h2 {
+  margin:
+    0
+    0
+    7px;
+
+  color:
+    var(--text-dark);
+
+  font-size:
+    clamp(35px, 4vw, 46px);
+
+  font-weight: 900;
+
+  line-height: 1.05;
+
+  letter-spacing: -0.035em;
+}
+
+
+.director-info .position {
+  margin-bottom: 5px;
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 18px;
+
+  font-weight: 750;
+}
+
+
+.director-info .department {
+  margin-bottom: 28px;
+
+  color:
+    var(--text-gray);
+
+  font-size: 15px;
+
+  line-height: 1.55;
+}
+
+
+
+/* ============================================================
+   DIRECTOR BIO
+============================================================ */
+
+.director-bio-section {
+  margin-bottom: 28px;
+}
+
+
+.director-bio-section:last-of-type {
+  margin-bottom: 22px;
+}
+
+
+.director-bio-section h4 {
+  margin:
+    0
+    0
+    12px;
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.17em;
+
+  text-transform: uppercase;
+}
+
+
+.director-bio-section p {
+  max-width: 800px;
+
+  margin:
+    0
+    0
+    11px;
+
+  color:
+    var(--text-gray);
+
+  font-size: 15px;
+
+  line-height: 1.75;
+}
+
+
+
+/* ============================================================
+   EDUCATION
+============================================================ */
+
+.education-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.edu-item {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 12px;
+
+  color:
+    var(--text-dark);
+
   font-size: 14px;
 }
-.alumni-table thead th {
-  padding: 12px 16px; text-align: left;
-  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;
-  color: var(--text-light); background: var(--lighter);
-  border-bottom: 2px solid var(--border);
-}
-.alumni-table tbody tr { border-bottom: 1px solid var(--border-light); transition: var(--transition); }
-.alumni-table tbody tr:hover { background: var(--lighter); }
-.alumni-table td { padding: 14px 16px; color: var(--text-dark); }
-.alumni-table td .name { font-weight: 600; }
-.alumni-table td .degree { color: var(--accent); font-size: 13px; }
-.alumni-table td .placement { color: var(--text-gray); }
-.alumni-table td .year { color: var(--text-light); }
 
-/* ── Collaborators ── */
-.collab-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+.edu-item > i {
+  width: 18px;
+
+  margin-top: 3px;
+
+  flex-shrink: 0;
+
+  color:
+    var(--team-green-dark);
+}
+
+
+.edu-degree {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color:
+    var(--text-dark);
+
+  font-weight: 700;
+}
+
+
+.edu-school {
+  display: block;
+
+  color:
+    var(--text-gray);
+
+  font-size: 13px;
+
+  line-height: 1.45;
+}
+
+
+
+/* ============================================================
+   DIRECTOR RESEARCH INTERESTS
+============================================================ */
+
+.research-interests-list {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+
+.interest-chip {
+  padding:
+    7px
+    14px;
+
+  border:
+    1px solid
+    var(--team-green-border);
+
+  border-radius: 999px;
+
+  background:
+    var(--team-green-soft);
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: default;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.interest-chip:hover {
+  transform:
+    translateY(-1px);
+
+  border-color:
+    var(--team-green);
+
+  background:
+    var(--team-green);
+
+  color:
+    #17300e;
+}
+
+
+
+/* ============================================================
+   DIRECTOR LINKS
+============================================================ */
+
+.director-profile-links {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 9px;
+
+  margin-top: 22px;
+}
+
+
+.profile-link-btn {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding:
+    9px
+    16px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-sm);
+
+  background:
+    var(--white);
+
+  color:
+    var(--text-dark);
+
+  font-size: 12.5px;
+
+  font-weight: 650;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.profile-link-btn i {
+  font-size: 13px;
+}
+
+
+.profile-link-btn:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    var(--team-green-border);
+
+  background:
+    var(--team-green-soft);
+
+  color:
+    var(--team-green-dark);
+
+  box-shadow:
+    0
+    7px
+    18px
+    rgba(16, 24, 32, 0.06);
+}
+
+
+
+/* ============================================================
+   MEMBERS SECTION
+============================================================ */
+
+.members-section {
+  background:
+    var(--white);
+
+  border-top:
+    1px solid
+    var(--border);
+}
+
+
+.team-category {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding:
+    62px
+    28px
+    74px;
+}
+
+
+.team-category-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 34px;
+}
+
+
+.team-category-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 48px;
+
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    var(--team-green-border);
+
+  border-radius: 13px;
+
+  background:
+    var(--team-green-soft);
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 19px;
+}
+
+
+.team-category-header h2 {
+  margin:
+    0
+    0
+    3px;
+
+  color:
+    var(--text-dark);
+
+  font-size: 27px;
+
+  font-weight: 850;
+
+  letter-spacing: -0.025em;
+}
+
+
+.team-category-header .count {
+  color:
+    var(--text-light);
+
+  font-size: 13px;
+}
+
+
+
+/* ============================================================
+   TEAM GRID
+   Feifei | Junbo | Join Us
+============================================================ */
+
+.team-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 24px;
+
+  width: 100%;
+
+  max-width: 1080px;
+
+  margin: 0 auto;
+}
+
+
+
+/* ============================================================
+   MEMBER CARD
+============================================================ */
+
+.team-card {
+  overflow: hidden;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 18px;
+
+  background:
+    var(--white);
+
+  text-align: left;
+
+  box-shadow:
+    0
+    10px
+    28px
+    rgba(16, 24, 32, 0.045);
+
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+
+.team-card:hover {
+  transform:
+    translateY(-5px);
+
+  border-color:
+    var(--team-green-border);
+
+  box-shadow:
+    0
+    18px
+    42px
+    rgba(16, 24, 32, 0.10);
+}
+
+
+
+/* ============================================================
+   MEMBER PHOTO
+   More vertical than previous version
+============================================================ */
+
+.team-card-photo {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      #edf5e8,
+      #dcebd1
+    );
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 56px;
+}
+
+
+.team-card-photo img {
+  position: absolute;
+
+  inset: 0;
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  max-width: none;
+
+  object-fit: cover;
+
+  object-position: center 23%;
+}
+
+
+.team-card-photo img:not(.bbo-photo) {
+  object-position: center 23%;
+}
+
+
+.team-card-photo img.bbo-photo {
+  object-position: center 21%;
+}
+
+
+
+/* ============================================================
+   MEMBER BODY
+============================================================ */
+
+.team-card-body {
+  padding:
+    23px
+    24px
+    25px;
+}
+
+
+.team-card-body h3 {
+  margin:
+    0
+    0
+    5px;
+
+  color:
+    var(--text-dark);
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  line-height: 1.2;
+
+  letter-spacing: -0.02em;
+}
+
+
+.team-card-role {
+  margin-bottom: 3px;
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+.team-card-dept {
+  margin-bottom: 10px;
+
+  color:
+    var(--text-light);
+
+  font-size: 12.5px;
+}
+
+
+
+/* ============================================================
+   MEMBER EMAIL
+============================================================ */
+
+.team-card-email {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  margin:
+    0
+    0
+    15px;
+
+  color:
+    var(--text-gray);
+
+  font-size: 12px;
+
+  line-height: 1.4;
+}
+
+
+.team-card-email i {
+  flex-shrink: 0;
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 11px;
+}
+
+
+.team-card-email a {
+  color:
+    var(--text-gray);
+
+  text-decoration: none;
+}
+
+
+.team-card-email a:hover {
+  color:
+    var(--team-green-dark);
+
+  text-decoration: underline;
+}
+
+
+
+/* ============================================================
+   STUDENT LEVEL
+============================================================ */
+
+.team-level {
+  display: inline-flex;
+
+  align-items: center;
+
+  margin-bottom: 9px;
+
+  padding:
+    5px
+    10px;
+
+  border:
+    1px solid
+    var(--team-green-border);
+
+  border-radius: 999px;
+
+  background:
+    var(--team-green-soft);
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 10px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+
+
+/* ============================================================
+   MEMBER TAGS
+============================================================ */
+
+.team-card-tags {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: flex-start;
+
+  gap: 6px;
+
+  margin-bottom: 15px;
+}
+
+
+.member-tag {
+  display: inline-flex;
+
+  align-items: center;
+
+  padding:
+    5px
+    10px;
+
+  border:
+    1px solid
+    var(--team-green-border);
+
+  border-radius: 999px;
+
+  background:
+    rgba(139, 214, 60, 0.07);
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 10.5px;
+
+  font-weight: 700;
+
+  line-height: 1.2;
+}
+
+
+
+/* ============================================================
+   MEMBER RESEARCH TEXT
+============================================================ */
+
+.team-card-research {
+  margin:
+    0
+    0
+    18px;
+
+  color:
+    var(--text-gray);
+
+  font-size: 13px;
+
+  line-height: 1.65;
+}
+
+
+
+/* ============================================================
+   SOCIAL LINKS
+============================================================ */
+
+.team-card-links {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 8px;
+}
+
+
+.team-card-link {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 35px;
+
+  height: 35px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 9px;
+
+  background:
+    var(--lighter);
+
+  color:
+    var(--text-gray);
+
+  font-size: 13px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    color 0.18s ease,
+    border-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+
+.team-card-link:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    var(--team-green);
+
+  background:
+    var(--team-green);
+
+  color:
+    #18300f;
+
+  box-shadow:
+    0
+    6px
+    14px
+    rgba(139, 214, 60, 0.18);
+}
+
+
+
+/* ============================================================
+   JOIN US CARD
+============================================================ */
+
+.join-team-card {
+  min-height: 100%;
+
+  border:
+    1px dashed
+    rgba(139, 214, 60, 0.45);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139, 214, 60, 0.08),
+      rgba(139, 214, 60, 0.025)
+    );
+}
+
+
+.join-team-card:hover {
+  border-color:
+    var(--team-green);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(139, 214, 60, 0.13),
+      rgba(139, 214, 60, 0.04)
+    );
+}
+
+
+.join-team-inner {
+  width: 100%;
+
+  min-height: 100%;
+
+  padding:
+    48px
+    30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+.join-team-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 70px;
+
+  height: 70px;
+
+  margin-bottom: 19px;
+
+  border:
+    1px solid
+    var(--team-green-border);
+
+  border-radius: 50%;
+
+  background:
+    rgba(139, 214, 60, 0.13);
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 26px;
+}
+
+
+.join-team-card h3 {
+  margin:
+    4px
+    0
+    12px;
+
+  color:
+    var(--text-dark);
+
+  font-size: 23px;
+
+  font-weight: 850;
+
+  letter-spacing: -0.025em;
+}
+
+
+.join-team-card p {
+  max-width: 270px;
+
+  margin:
+    0
+    auto
+    24px;
+
+  color:
+    var(--text-gray);
+
+  font-size: 13.5px;
+
+  line-height: 1.65;
+}
+
+
+.join-team-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding:
+    11px
+    22px;
+
+  border:
+    1px solid
+    var(--team-green);
+
+  border-radius: 9px;
+
+  background:
+    var(--team-green);
+
+  color:
+    #17300e;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.join-team-button:hover {
+  transform:
+    translateY(-2px);
+
+  background:
+    #96df48;
+
+  box-shadow:
+    0
+    9px
+    20px
+    rgba(139, 214, 60, 0.25);
+}
+
+
+.join-contact-link {
+  margin-top: 15px;
+
+  color:
+    var(--text-light);
+
+  font-size: 11.5px;
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.join-contact-link:hover {
+  color:
+    var(--team-green-dark);
+
+  text-decoration: underline;
+}
+
+
+
+/* ============================================================
+   RESEARCH MENTEES
+============================================================ */
+
+#research-mentees {
+  padding-top: 68px;
+
+  padding-bottom: 74px;
+}
+
+
+#research-mentees .section-header {
+  margin-bottom: 36px;
+}
+
+
+.collab-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 20px;
+}
+
+
+
+/* ============================================================
+   MENTEE CARD
+============================================================ */
+
 .collab-card {
-  background: var(--white); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 24px; transition: var(--transition);
-  display: flex; gap: 14px; align-items: flex-start;
-}
-.collab-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
-.collab-avatar {
-  width: 44px; height: 44px; border-radius: 10px; flex-shrink: 0;
-  background: var(--light); display: flex; align-items: center; justify-content: center;
-  font-size: 18px; color: var(--accent); font-weight: 700;
-}
-.collab-info h4 { font-size: 15px; font-weight: 700; color: var(--text-dark); margin-bottom: 3px; }
-.collab-info .collab-title { font-size: 12.5px; color: var(--text-gray); margin-bottom: 4px; }
-.collab-info .collab-inst { font-size: 12px; color: var(--text-light); }
+  display: flex;
 
-/* ── Responsive ── */
+  align-items: flex-start;
+
+  gap: 15px;
+
+  min-height: 150px;
+
+  padding:
+    23px
+    22px;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius: 16px;
+
+  background:
+    var(--white);
+
+  box-shadow:
+    0
+    8px
+    24px
+    rgba(16, 24, 32, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+
+.collab-card:hover {
+  transform:
+    translateY(-4px);
+
+  border-color:
+    var(--team-green-border);
+
+  box-shadow:
+    0
+    15px
+    34px
+    rgba(16, 24, 32, 0.08);
+}
+
+
+
+/* ============================================================
+   MENTEE AVATAR
+============================================================ */
+
+.collab-avatar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 48px;
+
+  height: 48px;
+
+  flex-shrink: 0;
+
+  border:
+    1px solid
+    var(--team-green-border);
+
+  border-radius: 12px;
+
+  background:
+    var(--team-green-soft);
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 16px;
+
+  font-weight: 850;
+}
+
+
+
+/* ============================================================
+   MENTEE INFO
+============================================================ */
+
+.collab-info {
+  min-width: 0;
+}
+
+
+.collab-info h4 {
+  margin:
+    1px
+    0
+    5px;
+
+  color:
+    var(--text-dark);
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+}
+
+
+.collab-info .collab-title {
+  margin-bottom: 5px;
+
+  color:
+    var(--text-gray);
+
+  font-size: 12.5px;
+
+  line-height: 1.4;
+}
+
+
+.collab-info .collab-inst {
+  color:
+    var(--text-light);
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+.mentee-topic {
+  margin-top: 7px;
+
+  color:
+    var(--team-green-dark);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
 @media (max-width: 1024px) {
-  .team-grid { grid-template-columns: repeat(3, 1fr); }
-  .collab-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .director-full {
+    grid-template-columns:
+      270px
+      minmax(0, 1fr);
+
+    gap: 44px;
+  }
+
+
+  .team-grid {
+    gap: 20px;
+  }
+
+
+  .collab-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
 }
+
+
+
+/* ============================================================
+   900PX
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .team-grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+
+    max-width: 760px;
+  }
+
+
+  .join-team-card {
+    grid-column:
+      1 / -1;
+
+    min-height: 320px;
+  }
+
+}
+
+
+
+/* ============================================================
+   SMALL TABLET
+============================================================ */
+
 @media (max-width: 768px) {
-  .director-full { grid-template-columns: 1fr; gap: 40px; }
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
-  .collab-grid { grid-template-columns: 1fr; }
+
+  .page-hero {
+    min-height: 340px !important;
+
+    padding:
+      36px
+      22px
+      72px !important;
+  }
+
+
+  .page-hero::after {
+    bottom: -32px !important;
+
+    height: 66px !important;
+  }
+
+
+  .page-hero .breadcrumb {
+    margin-bottom: 20px !important;
+  }
+
+
+  .page-hero h1 {
+    font-size: 47px;
+  }
+
+
+  .page-hero p {
+    font-size: 16px;
+  }
+
+
+  .director-full {
+    padding:
+      60px
+      24px
+      56px;
+
+    grid-template-columns: 1fr;
+
+    gap: 38px;
+  }
+
+
+  .director-photo-full {
+    width: 100%;
+
+    max-width: 330px;
+
+    margin: 0 auto;
+  }
+
+
+  .director-info h2 {
+    font-size: 36px;
+  }
+
+
+  .team-category {
+    padding:
+      52px
+      24px
+      60px;
+  }
+
+
+  .collab-grid {
+    grid-template-columns: 1fr;
+  }
+
 }
-@media (max-width: 480px) {
-  .team-grid { grid-template-columns: 1fr; }
+
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+
+  .team-grid {
+    grid-template-columns: 1fr;
+
+    max-width: 420px;
+  }
+
+
+  .join-team-card {
+    grid-column: auto;
+
+    min-height: 380px;
+  }
+
+}
+
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 520px) {
+
+  .page-hero {
+    min-height: 315px !important;
+
+    padding:
+      30px
+      18px
+      64px !important;
+  }
+
+
+  .page-hero::after {
+    bottom: -27px !important;
+
+    height: 56px !important;
+  }
+
+
+  .page-hero .breadcrumb {
+    margin-bottom: 16px !important;
+  }
+
+
+  .page-hero-eyebrow {
+    margin-bottom: 13px;
+  }
+
+
+  .page-hero h1 {
+    margin-bottom: 14px !important;
+
+    font-size: 40px;
+  }
+
+
+  .page-hero p {
+    font-size: 14.5px;
+
+    line-height: 1.55;
+  }
+
+
+  .director-full {
+    padding:
+      54px
+      18px
+      50px;
+  }
+
+
+  .director-photo-full {
+    max-width: 290px;
+  }
+
+
+  .director-info h2 {
+    font-size: 32px;
+  }
+
+
+  .director-info .position {
+    font-size: 16px;
+  }
+
+
+  .director-bio-section p {
+    font-size: 14px;
+  }
+
+
+  .director-profile-links {
+    gap: 7px;
+  }
+
+
+  .profile-link-btn {
+    padding:
+      8px
+      12px;
+
+    font-size: 11.5px;
+  }
+
+
+  .team-category {
+    padding:
+      46px
+      18px
+      52px;
+  }
+
+
+  .team-category-header {
+    margin-bottom: 25px;
+  }
+
+
+  .team-category-header h2 {
+    font-size: 23px;
+  }
+
+
+  .team-card-body {
+    padding:
+      21px
+      20px
+      23px;
+  }
+
+
+  .team-card-email {
+    font-size: 11.5px;
+  }
+
+
+  #research-mentees {
+    padding-top: 52px;
+
+    padding-bottom: 56px;
+  }
+
+
+  .collab-card {
+    padding: 20px;
+  }
+
 }

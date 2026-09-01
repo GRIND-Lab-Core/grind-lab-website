@@ -87,6 +87,6 @@ This is a static website that can be deployed to:
 
 ## Contact
 
-Dr. Bing Zhou · [bzhou@utk.edu](mailto:bzhou@utk.edu)
+Dr. Bing Zhou · [bzhou11@utk.edu](mailto:bzhou11@utk.edu)
 Department of Geography & Sustainability
 University of Tennessee, Knoxville

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Apply to the GRIND Lab — PhD, MS, postdoc, and undergrad research opportunities at UTK.">
+    content="Apply to the GRIND Lab — PhD and undergraduate research opportunities at UTK.">
   <title>Apply — GRIND Lab</title>
   <link rel="icon" type="image/svg+xml" href="assets/images/logo/Lab_Logo_ver01.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -350,6 +350,73 @@
           grid-template-columns: 1fr;
         }
       }
+  
+    /* Compact Apply hero */
+    .page-hero {
+      min-height: 300px !important;
+      height: auto !important;
+      padding: 74px 28px 52px !important;
+    }
+
+    .page-hero-content {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .page-hero .breadcrumb {
+      display: none !important;
+    }
+
+    .page-hero-eyebrow {
+      margin-bottom: 18px !important;
+    }
+
+    .page-hero h1 {
+      margin-bottom: 16px !important;
+    }
+
+    .page-hero p {
+      max-width: 690px;
+      margin: 0 auto !important;
+    }
+
+    .cta-email-static {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+      padding: 17px 28px;
+      min-width: 320px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.96);
+      color: var(--text-dark);
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      user-select: text;
+      cursor: default;
+    }
+
+    .cta-email-static i {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        min-height: 270px !important;
+        padding: 62px 22px 44px !important;
+      }
+
+      .cta-email-static {
+        min-width: 0;
+        width: 100%;
+        max-width: 360px;
+        font-size: 17px;
+      }
+    }
+
   </style>
 </head>
 
@@ -387,16 +454,13 @@
 
   <!-- Page Hero -->
   <section class="page-hero">
+
     <div class="page-hero-content">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <i class="fas fa-chevron-right"></i>
-        <span>Apply</span>
-      </div>
-      <div class="page-hero-eyebrow">Opportunities</div>
+
       <h1>Join the GRIND Lab</h1>
-      <p>We are looking for passionate, motivated researchers to join our team. See current openings below.</p>
+
     </div>
+
   </section>
 
   <!-- ═══════════════════════════════════════
@@ -491,7 +555,7 @@
 
           <div class="position-deadline">
             <i class="fas fa-clock"></i>
-            <span>Application Deadline: <strong>PLACEHOLDER: Month DD, YYYY</strong> (for fall entry) — Contact Dr. Zhou
+            <span>Application Deadline: <strong>Month DD, YYYY</strong> (for fall entry) — Contact Dr. Zhou
               before applying.</span>
           </div>
 
@@ -501,41 +565,7 @@
         </div>
       </div>
 
-      <!-- Position 2: Postdoc (Placeholder) -->
-      <div class="position-card fade-up">
-        <div class="position-header">
-          <div class="position-title-group">
-            <div class="position-title">Postdoctoral Researcher — PLACEHOLDER: Research Area</div>
-            <div class="position-meta">
-              <span><i class="fas fa-map-marker-alt"></i> Knoxville, TN</span>
-              <span><i class="fas fa-calendar"></i> Start: PLACEHOLDER</span>
-              <span><i class="fas fa-clock"></i> 1–2 Year Appointment</span>
-            </div>
-          </div>
-          <span class="position-status reviewing">Reviewing</span>
-        </div>
-        <div class="position-body">
-          <p>PLACEHOLDER: Description of postdoc position. We are seeking a postdoctoral researcher with expertise in
-            [PLACEHOLDER: research area]. The candidate will lead a research project on [PLACEHOLDER topic], mentor
-            graduate students, and contribute to grant writing.</p>
-          <div class="position-requirements">
-            <h4>Required Qualifications</h4>
-            <ul class="req-list">
-              <li><i class="fas fa-check"></i> Ph.D. in relevant field</li>
-              <li><i class="fas fa-check"></i> Strong publication record</li>
-              <li><i class="fas fa-check"></i> PLACEHOLDER: Specific technical skill</li>
-              <li><i class="fas fa-check"></i> PLACEHOLDER: Specific domain expertise</li>
-            </ul>
-          </div>
-          <div class="position-deadline">
-            <i class="fas fa-clock"></i>
-            <span>Deadline: <strong>PLACEHOLDER: Open until filled</strong></span>
-          </div>
-          <a href="contact.html" class="btn btn-outline-white"><i class="fas fa-envelope"></i> Express Interest</a>
-        </div>
-      </div>
-
-      <!-- Position 3: Undergrad -->
+      <!-- Position 2: Undergrad -->
       <div class="position-card fade-up">
         <div class="position-header">
           <div class="position-title-group">
@@ -589,9 +619,9 @@
         <div class="step-card fade-up" data-delay="100">
           <div class="step-num">2</div>
           <h3>Email Dr. Zhou</h3>
-          <p>Send a brief email to <a href="mailto:bzhou@utk.edu" style="color:var(--accent);">bzhou@utk.edu</a> with
+          <p>Send a brief email to <a href="mailto:bzhou11@utk.edu" style="color:var(--accent);">bzhou11@utk.edu</a> with
             your CV and a short statement (1 paragraph) about your interests and goals. Use subject: "Prospective
-            [PhD/Postdoc/Undergrad]: [Your Name]".</p>
+            [PhD/Undergrad]: [Your Name]".</p>
         </div>
         <div class="step-card fade-up" data-delay="200">
           <div class="step-num">3</div>
@@ -604,7 +634,7 @@
           <h3>Formal Application</h3>
           <p>Submit a formal application through the <a href="https://gradschool.utk.edu/" target="_blank"
               rel="noopener" style="color:var(--accent);">UTK Graduate School</a> and the Department of Geography &amp;
-            Sustainability. PLACEHOLDER: Application portal link.</p>
+            Sustainability. Application portal link.</p>
         </div>
       </div>
     </div>
@@ -664,7 +694,7 @@
           <div class="material-text">
             <h4>English Proficiency Scores <span style="color:var(--text-light);font-size:12px;margin-left:6px;">(if
                 applicable)</span></h4>
-            <p>TOEFL or IELTS scores for international students whose primary language is not English. PLACEHOLDER:
+            <p>TOEFL or IELTS scores for international students whose primary language is not English. 
               Minimum scores required by UTK.</p>
           </div>
         </div>
@@ -683,7 +713,7 @@
           <div class="material-icon"><i class="fas fa-award"></i></div>
           <div class="material-text">
             <h4>GRE Scores <span style="color:var(--text-light);font-size:12px;margin-left:6px;">(optional)</span></h4>
-            <p>PLACEHOLDER: GRE may be optional or required depending on UTK's current policy. Check the UTK Geography
+            <p>GRE may be optional or required depending on UTK's current policy. Check the UTK Geography
               application requirements.</p>
           </div>
         </div>
@@ -697,9 +727,9 @@
       <h2>Ready to Apply?</h2>
       <p>Reach out to Dr. Bing Zhou to discuss your research interests and potential fit before submitting a formal
         application.</p>
-      <div class="cta-actions">
-        <a href="mailto:bzhou@utk.edu" class="btn btn-white btn-lg"><i class="fas fa-envelope"></i> Email Dr. Zhou</a>
-        <a href="contact.html" class="btn btn-outline-white btn-lg"><i class="fas fa-comment"></i> Contact Form</a>
+      <div class="cta-email-static">
+        <i class="fas fa-envelope"></i>
+        <span>bzhou11@utk.edu</span>
       </div>
     </div>
   </section>
@@ -711,10 +741,9 @@
         <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
         <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="Scholar"><i class="fas fa-graduation-cap"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/bzbarrett" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://www.linkedin.com/in/bing-zhou-a90b98239/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -743,12 +772,12 @@
           <li>Dept. of Geography &amp; Sustainability</li>
           <li>University of Tennessee, Knoxville</li>
           <li>Knoxville, TN 37996</li>
-          <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
+          <li><a href="mailto:bzhou11@utk.edu">bzhou11@utk.edu</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom container">
-      <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville.</span>
+      <span>&copy; 2026 GRIND Lab, University of Tennessee, Knoxville.</span>
       <span>Built with ❤️ for science and society.</span>
     </div>
   </footer>

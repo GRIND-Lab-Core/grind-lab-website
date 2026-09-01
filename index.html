@@ -25,8 +25,6 @@
   <link rel="stylesheet" href="assets/css/disaster-runner.css">
 </head>
 
-<script src="assets/js/escape-hazard.js"></script>
-
 <body>
 
   <!-- Page Loader -->
@@ -63,103 +61,121 @@
   </nav>
 
   <!-- ═══════════════════════════════════════
-     INTERACTIVE RESILIENCE HERO
+     GAME-FIRST HURRICANE HERO
 ═══════════════════════════════════════ -->
-  <section class="hero game-hero" id="home">
+  <section class="hero game-strip-hero" id="home">
     <canvas id="hero-canvas"></canvas>
     <div class="hero-bg-glow glow-1"></div>
     <div class="hero-bg-glow glow-2"></div>
 
-    <div class="hero-container">
-      <!-- Left: Original GRIND visual language -->
-      <div class="hero-content">
-        <div class="hero-eyebrow">
-          <span></span>
-          GRIND Lab · University of Tennessee, Knoxville
+    <div class="game-strip-inner">
+      <div class="game-strip" id="resilience-game">
+
+        <div class="game-canvas-window">
+          <canvas id="disaster-runner" aria-label="Interactive hurricane evacuation runner game"></canvas>
+
+          <div class="runner-start-screen" id="runner-start-screen">
+            <i class="fas fa-hurricane" aria-hidden="true"></i>
+            <h3>Hurricane Evacuation</h3>
+            <p>
+              Reach the shelter through storm-damaged streets. Change lanes to avoid
+              flooded pavement and debris, or jump when the road ahead is blocked.
+            </p>
+            <button id="runner-start-btn" type="button">
+              <i class="fas fa-play" aria-hidden="true"></i> Start Run
+            </button>
+          </div>
         </div>
 
-        <h1 class="hero-title">
-          Can You Make a City
-          <span class="highlight">Resilient?</span>
-        </h1>
-
-        <p class="hero-desc">
-          Prepare for a disaster. Protect communities. Make difficult choices.
-          Your city has only three actions before the hazard arrives.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#resilience-game" class="btn btn-primary btn-lg">
-            <i class="fas fa-shield-halved"></i> Protect the City
-          </a>
-          <a href="#research-focus" class="btn btn-outline-white btn-lg">
-            <i class="fas fa-flask"></i> Explore Our Research
-          </a>
+        <div class="game-ui-card">
+          <span class="runner-kicker">Interactive Scenario</span>
+          <h2>Outrun the Hurricane</h2>
         </div>
 
-        <div class="rg-hero-note">
-          <i class="fas fa-circle-info"></i>
-          There is no perfect strategy—resilience also depends on who is protected.
+        <div class="game-metrics" aria-label="Game status">
+          <div class="game-metric">
+            <span>Distance</span>
+            <strong id="runner-distance">0 m</strong>
+          </div>
+          <div class="game-metric">
+            <span>Impacts</span>
+            <strong id="runner-impacts">0 / 4</strong>
+          </div>
+          <div class="game-metric">
+            <span>Shelter</span>
+            <strong id="runner-shelter">500 m</strong>
+          </div>
         </div>
-      </div>
 
-      <!-- Right: Disaster Runner -->
-      <div class="hero-visual">
+        <div class="game-status-card" id="runner-status">
+          Press Start, then use ← → to change lanes and ↑ to jump.
+        </div>
 
-        <div class="runner-game">
-
-          <div class="runner-header">
-            <div>
-              <span class="runner-kicker">Interactive Scenario</span>
-              <h2>Outrun the Hurricane</h2>
-            </div>
-
-            <div class="runner-score">
-              <span>Distance</span>
-              <strong id="runner-distance">0 m</strong>
-            </div>
-          </div>
-
-          <div class="runner-status" id="runner-status">
-            Press Start, then use ← → to change lanes and ↑ to jump.
-          </div>
-
-          <div class="runner-canvas-wrap">
-            <canvas id="disaster-runner" width="620" height="520"></canvas>
-
-            <div class="runner-start-screen" id="runner-start-screen">
-              <i class="fas fa-hurricane"></i>
-              <h3>Hurricane Evacuation</h3>
-              <p>
-                Navigate storm-damaged streets and reach the shelter.
-                Dodge debris, flooding, and fallen trees while strong winds
-                disrupt your route.
-              </p>
-
-              <button id="runner-start-btn">
-                <i class="fas fa-play"></i> Start Run
-              </button>
-            </div>
-          </div>
-
-          <div class="runner-controls">
-            <span><kbd>←</kbd> <kbd>→</kbd> Move</span>
-            <span><kbd>↑</kbd> Jump</span>
-          </div>
-
+        <div class="game-control-cluster" aria-label="Game controls">
+          <button class="runner-control-btn" id="runner-left" type="button" aria-label="Move left">←</button>
+          <button class="runner-control-btn" id="runner-right" type="button" aria-label="Move right">→</button>
+          <button class="runner-control-btn jump" id="runner-jump" type="button" aria-label="Jump">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i> Jump
+          </button>
         </div>
 
       </div>
-
-    </div>
-
-    <div class="hero-scroll">
-      <i class="fas fa-chevron-down"></i>
-      <span>Explore the Lab</span>
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════
+     LAB INTRODUCTION
+═══════════════════════════════════════ -->
+  <section class="lab-intro-section" id="lab-intro">
+    <div class="container">
+      <div class="lab-intro-grid">
 
+        <div class="lab-intro-copy fade-up">
+          <div class="section-tag">About the Lab</div>
+          <h1>GRIND Lab</h1>
+          <span class="lab-name">Geospatial Responsible AI for Nature-human Dynamics</span>
+
+          <p>
+            At the University of Tennessee, Knoxville, the GRIND Lab develops
+            responsible geospatial AI to understand how people, places, and natural
+            systems interact under environmental change and disaster risk. Our work
+            connects GeoAI, remote sensing, spatial data science, resilience, equity,
+            and health to build more trustworthy tools for science and society.
+          </p>
+
+          <div class="lab-intro-actions">
+            <a href="#research-focus" class="btn btn-primary">
+              <i class="fas fa-flask"></i> What We Study
+            </a>
+            <a href="team.html" class="btn btn-outline">
+              <i class="fas fa-users"></i> Meet the Team
+            </a>
+          </div>
+        </div>
+
+        <div class="lab-intro-points fade-up" data-delay="150">
+          <div class="lab-intro-point">
+            <i class="fas fa-brain"></i>
+            <h3>Responsible GeoAI</h3>
+            <p>Fair, explainable, and trustworthy geospatial artificial intelligence.</p>
+          </div>
+
+          <div class="lab-intro-point">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Resilience</h3>
+            <p>Understanding hazards, adaptation, recovery, and nature-human dynamics.</p>
+          </div>
+
+          <div class="lab-intro-point">
+            <i class="fas fa-heart-pulse"></i>
+            <h3>Equity &amp; Health</h3>
+            <p>Studying who is exposed, who is protected, and how impacts differ across communities.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ═══════════════════════════════════════
      STATS BANNER
@@ -254,10 +270,17 @@
 
         <!-- Card 5 -->
         <div class="research-card fade-up" data-delay="100">
-          <div class="research-icon"><i class="fas fa-chart-network"></i></div>
+          <div class="research-icon">
+            <i class="fas fa-diagram-project"></i>
+          </div>
+
           <h3>Spatial Data Science</h3>
-          <p>Advancing methods for spatial statistics, graph neural networks, and spatio-temporal modeling to extract
-            knowledge from complex geospatial datasets.</p>
+
+          <p>
+            Advancing methods for spatial statistics, graph neural networks, and spatio-temporal modeling to extract
+            knowledge from complex geospatial datasets.
+          </p>
+
           <div class="research-tags">
             <span class="badge badge-purple">GNN</span>
             <span class="badge badge-purple">Spatio-Temporal</span>
@@ -351,34 +374,37 @@
 
       <div class="home-preview-grid">
 
-        <!-- News 1 -->
+        <!-- News 1 — NORA -->
         <article class="home-preview-card fade-up">
 
           <div class="home-preview-image">
-            <img src="assets/images/news/NLP.png" alt="GeoAI and large language models for disaster response">
+            <a href="https://arxiv.org/pdf/2605.02092" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/news/NORA.png"
+                alt="NORA autonomous research agent for spatial data science">
+            </a>
           </div>
 
           <div class="home-preview-body">
 
             <div class="home-preview-meta">
-              <span class="badge badge-blue">Publication</span>
+              <span class="badge badge-blue">Preprint</span>
               <span class="home-preview-date">
-                <i class="far fa-calendar"></i> Mar 2026
+                <i class="far fa-calendar"></i> May 2026
               </span>
             </div>
 
             <h3>
-              <a href="https://doi.org/10.1080/24694452.2025.2560491" target="_blank" rel="noopener noreferrer">
-                Rapid Disaster Response and Damage Estimation with Social Media and Pretrained Large Language Models
+              <a href="https://arxiv.org/pdf/2605.02092" target="_blank" rel="noopener noreferrer">
+                NORA: A Harness-Engineered Autonomous Research Agent for End-to-End Spatial Data Science
               </a>
             </h3>
 
             <p>
-              A GeoAI framework using pretrained language models and social media
-              to support rapid, location-based disaster response and damage assessment.
+              NORA introduces an autonomous research agent designed to support
+              end-to-end spatial data science workflows.
             </p>
 
-            <a href="https://doi.org/10.1080/24694452.2025.2560491" target="_blank" rel="noopener noreferrer"
+            <a href="https://arxiv.org/pdf/2605.02092" target="_blank" rel="noopener noreferrer"
               class="home-preview-link">
               Read More <i class="fas fa-arrow-right"></i>
             </a>
@@ -387,36 +413,37 @@
         </article>
 
 
-        <!-- News 2 -->
+        <!-- News 2 — AAG 2026 -->
         <article class="home-preview-card fade-up" data-delay="150">
 
           <div class="home-preview-image">
-            <img src="assets/images/news/hurricane-damage-map.jpg"
-              alt="Street-view imagery for disaster damage assessment">
+            <a href="https://geography.wisc.edu/geods/archives/4331" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/projects/AAG2026.png"
+                alt="AAG 2026 GeoAI and Deep Learning Symposium">
+            </a>
           </div>
 
           <div class="home-preview-body">
 
             <div class="home-preview-meta">
-              <span class="badge badge-teal">Publication</span>
+              <span class="badge badge-teal">Event</span>
               <span class="home-preview-date">
-                <i class="far fa-calendar"></i> Oct 2025
+                <i class="far fa-calendar"></i> Mar 2026
               </span>
             </div>
 
             <h3>
-              <a href="https://doi.org/10.1016/j.compenvurbsys.2025.102335" target="_blank" rel="noopener noreferrer">
-                Hyperlocal Disaster Damage Assessment Using Bi-temporal Street-view Imagery and Pre-trained Vision
-                Models
+              <a href="https://geography.wisc.edu/geods/archives/4331" target="_blank" rel="noopener noreferrer">
+                Dr. Bing Zhou Chairs GeoAI for Disaster Resilience at AAG 2026
               </a>
             </h3>
 
             <p>
-              Using pre- and post-disaster street-view imagery and vision models
-              to assess damage at building and street-level scales.
+              Dr. Zhou chaired a GeoAI and Deep Learning Symposium session
+              focused on GeoAI for disaster resilience at the 2026 AAG Annual Meeting.
             </p>
 
-            <a href="https://doi.org/10.1016/j.compenvurbsys.2025.102335" target="_blank" rel="noopener noreferrer"
+            <a href="https://geography.wisc.edu/geods/archives/4331" target="_blank" rel="noopener noreferrer"
               class="home-preview-link">
               Read More <i class="fas fa-arrow-right"></i>
             </a>
@@ -438,96 +465,206 @@
   <!-- ═══════════════════════════════════════
      FEATURED PROJECTS
 ═══════════════════════════════════════ -->
+
   <section class="section">
+
     <div class="container">
 
+
       <div class="section-header">
-        <div class="section-tag fade-up">Our Research</div>
-        <h2 class="section-title fade-up" data-delay="100">Featured Projects</h2>
+
+        <div class="section-tag fade-up">
+          Our Research
+        </div>
+
+        <h2 class="section-title fade-up" data-delay="100">
+
+          Featured Projects
+
+        </h2>
+
         <p class="section-subtitle fade-up" data-delay="200">
-          Selected research advancing GeoAI, resilience, and human–environment understanding.
+
+          Selected work in disaster intelligence,
+          multimodal GeoAI, and human–environment research.
+
         </p>
+
       </div>
+
+
 
       <div class="home-preview-grid">
 
-        <!-- Project 1: VisMo-Health -->
+
+        <!-- ==========================================
+           PROJECT 1 — HAZARDWEAVE
+      =========================================== -->
+
         <article class="home-preview-card fade-up">
 
+
           <div class="home-preview-image">
-            <img src="assets/images/projects/vismo-health.jpg" alt="VisMo-Health explainable GeoAI project">
-          </div>
 
-          <div class="home-preview-body">
+            <a href="https://hazard-weave.vercel.app/" target="_blank" rel="noopener noreferrer">
 
-            <div class="home-preview-meta">
-              <span class="badge badge-blue">GeoAI</span>
-              <span class="home-preview-status">Ongoing</span>
-            </div>
+              <img src="assets/images/projects/HW.png" alt="HazardWeave AI-supported disaster intelligence platform">
 
-            <h3>
-              <a href="https://sdl.gis.harvard.edu/project-25008" target="_blank" rel="noopener noreferrer">
-                VisMo-Health: Explainable GeoAI for Post-Disaster Health and Community Recovery
-              </a>
-            </h3>
-
-            <p>
-              Integrating street-view imagery, human mobility, and explainable GeoAI
-              to understand disaster impacts, community recovery, and health outcomes.
-            </p>
-
-            <a href="https://sdl.gis.harvard.edu/project-25008" target="_blank" rel="noopener noreferrer"
-              class="home-preview-link">
-              View Project <i class="fas fa-arrow-right"></i>
             </a>
 
           </div>
-        </article>
 
 
-        <!-- Project 2: SounDiT -->
-        <article class="home-preview-card fade-up" data-delay="150">
-
-          <div class="home-preview-image">
-            <img src="assets/images/projects/soundit-cover.jpg"
-              alt="SounDiT geo-contextual soundscape-to-landscape generation">
-          </div>
 
           <div class="home-preview-body">
 
+
             <div class="home-preview-meta">
-              <span class="badge badge-teal">Multimodal GeoAI</span>
-              <span class="home-preview-status completed">Completed</span>
+
+              <span class="badge badge-green">
+                Disaster Intelligence
+              </span>
+
+              <span class="home-preview-status">
+                Ongoing
+              </span>
+
             </div>
 
+
+
             <h3>
-              <a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer">
-                SounDiT: Geo-Contextual Soundscape-to-Landscape Generation
+
+              <a href="https://hazard-weave.vercel.app/" target="_blank" rel="noopener noreferrer">
+
+                HazardWeave: An AI-Supported Unified Platform
+                for Smart Disaster Management
+
               </a>
+
             </h3>
 
+
+
             <p>
-              A geo-contextual multimodal framework that generates geographically
-              coherent landscape images from environmental soundscapes using Diffusion Transformers.
+
+              An AI-supported disaster intelligence platform
+              integrating geospatial evidence, hazard information,
+              and intelligent decision support for disaster
+              monitoring and emergency response.
+
             </p>
+
+
+
+            <a href="https://hazard-weave.vercel.app/" target="_blank" rel="noopener noreferrer"
+              class="home-preview-link">
+
+              Explore HazardWeave
+
+              <i class="fas fa-arrow-right"></i>
+
+            </a>
+
+          </div>
+
+        </article>
+
+
+
+        <!-- ==========================================
+           PROJECT 2 — SOUNDIT
+      =========================================== -->
+
+        <article class="home-preview-card fade-up" data-delay="150">
+
+
+          <div class="home-preview-image">
+
+            <a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer">
+
+              <img src="assets/images/projects/soundit-cover.jpg"
+                alt="SounDiT geo-contextual soundscape-to-landscape generation">
+
+            </a>
+
+          </div>
+
+
+
+          <div class="home-preview-body">
+
+
+            <div class="home-preview-meta">
+
+              <span class="badge badge-teal">
+                Multimodal GeoAI
+              </span>
+
+              <span class="home-preview-status completed">
+                Completed
+              </span>
+
+            </div>
+
+
+
+            <h3>
+
+              <a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer">
+
+                SounDiT: Geo-Contextual
+                Soundscape-to-Landscape Generation
+
+              </a>
+
+            </h3>
+
+
+
+            <p>
+
+              A geo-contextual multimodal framework that generates
+              geographically coherent landscape imagery from
+              environmental soundscapes using Diffusion Transformers.
+
+            </p>
+
+
 
             <a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer"
               class="home-preview-link">
-              View Project <i class="fas fa-arrow-right"></i>
+
+              View SounDiT
+
+              <i class="fas fa-arrow-right"></i>
+
             </a>
 
           </div>
+
         </article>
 
+
       </div>
+
+
 
       <div class="home-preview-button fade-up">
+
         <a href="projects.html" class="btn btn-outline">
-          <i class="fas fa-folder-open"></i> View All Projects
+
+          <i class="fas fa-folder-open"></i>
+
+          View All Projects
+
         </a>
+
       </div>
 
+
     </div>
+
   </section>
 
   <!-- ═══════════════════════════════════════
@@ -537,15 +674,13 @@
     <div class="container">
       <div class="section-header" style="margin-bottom:32px;">
         <div class="section-tag fade-up">Supported By</div>
-        <h2 class="section-title fade-up" data-delay="100" style="font-size:24px;">Funding &amp; Affiliations</h2>
+        <h2 class="section-title fade-up" data-delay="100">Funding &amp; Affiliations</h2>
       </div>
       <div class="partners-row fade-up">
-        <!-- Add real logos once available — replace placeholders below -->
         <div class="partner-placeholder">NSF</div>
-        <div class="partner-placeholder">NOAA</div>
-        <div class="partner-placeholder">NIH</div>
-        <div class="partner-placeholder">NASA</div>
-        <div class="partner-placeholder">USGS</div>
+        <div class="partner-placeholder">NASEM</div>
+        <div class="partner-placeholder">AI-Tennessee</div>
+        <div class="partner-placeholder">CaGIS</div>
         <div class="partner-placeholder">UTK</div>
       </div>
     </div>
@@ -618,7 +753,7 @@
           <li>Dept. of Geography &amp; Sustainability</li>
           <li>University of Tennessee, Knoxville</li>
           <li>Knoxville, TN 37996</li>
-          <li><a href="mailto:bzhou@utk.edu">bzhou@utk.edu</a></li>
+          <li><a href="mailto:bzhou11@utk.edu">bzhou11@utk.edu</a></li>
         </ul>
       </div>
     </div>

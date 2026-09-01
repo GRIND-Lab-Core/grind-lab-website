@@ -1,888 +1,1210 @@
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
+    "use strict";
 
     const canvas = document.getElementById("disaster-runner");
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
 
-    const startBtn = document.getElementById("runner-start-btn");
     const startScreen = document.getElementById("runner-start-screen");
-    const distanceDisplay = document.getElementById("runner-distance");
-    const statusDisplay = document.getElementById("runner-status");
+    const startButton = document.getElementById("runner-start-btn");
+    const startTitle = startScreen?.querySelector("h3");
+    const startCopy = startScreen?.querySelector("p");
 
-    const W = canvas.width;
-    const H = canvas.height;
+    const distanceEl = document.getElementById("runner-distance");
+    const impactsEl = document.getElementById("runner-impacts");
+    const shelterEl = document.getElementById("runner-shelter");
+    const statusEl = document.getElementById("runner-status");
 
-    const GOAL_DISTANCE = 500;
+    const leftButton = document.getElementById("runner-left");
+    const rightButton = document.getElementById("runner-right");
+    const jumpButton = document.getElementById("runner-jump");
 
+    const ACCENT = "#8bd63c";
+    const GOAL_DISTANCE = 1000;
+    const MAX_IMPACTS = 4;
+    const LANE_COUNT = 3;
 
-    /* ============================================================
-       GAME STATE
-    ============================================================ */
+    const DEFAULT_TITLE = "Hurricane Evacuation";
+    const DEFAULT_COPY =
+        "Reach the shelter through storm-damaged streets. Change lanes to avoid flooded pavement and debris, or jump when the road ahead is blocked.";
+
+    const OBSTACLE_TYPES = ["barrel", "puddle", "branch", "debris"];
+
+    let width = 1200;
+    let height = 420;
+    let dpr = 1;
 
     let running = false;
+    let frameId = null;
+    let lastTime = 0;
+    let distance = 0;
+    let impacts = 0;
 
-    let playerLane = 1;
+    let targetLane = 1;
+    let visualLane = 1;
 
     let jumpHeight = 0;
     let jumpVelocity = 0;
 
-    let distance = 0;
-    let impacts = 0;
-
     let obstacles = [];
-    let obstacleTimer = 0;
+    let spawnTimer = 0.8;
 
-    let roadOffset = 0;
+    let rainOffset = 0;
+    let hitFlash = 0;
 
-    let windTimer = 0;
-    let windWarning = 0;
-    let windDirection = null;
+    function clamp(value, min, max) {
+        return Math.max(min, Math.min(max, value));
+    }
 
-    let flashTimer = 0;
+    function lerp(a, b, t) {
+        return a + (b - a) * t;
+    }
 
+    function horizonY() {
+        return height * 0.18;
+    }
 
-    const player = {
-        y: H - 85,
-        size: 48
-    };
+    function vanishX() {
+        return width * 0.5;
+    }
 
+    /*
+      TRUE ONE-POINT PERSPECTIVE
+  
+                      vanishing point
+                           |
+                        ___|___
+                       /       \
+                      /         \
+                     /           \
+                    /             \
+                   /               \
+                  /_________________\
+  
+      Road edges and lane dividers are straight.
+    */
 
-    /* ============================================================
-       START GAME
-    ============================================================ */
+    function perspectiveT(y) {
+        const h = horizonY();
 
-    function startGame() {
-        startScreen.classList.remove("runner-win");
+        return clamp(
+            (y - h) /
+            Math.max(1, height - h),
+            0,
+            1
+        );
+    }
 
-        running = true;
+    function roadHalfWidthAt(y) {
+        const t = perspectiveT(y);
 
-        playerLane = 1;
+        const topHalf = width * 0.045;
+        const bottomHalf = width * 0.345;
 
-        jumpHeight = 0;
-        jumpVelocity = 0;
+        return lerp(
+            topHalf,
+            bottomHalf,
+            t
+        );
+    }
+
+    function roadEdgesAt(y) {
+        const half = roadHalfWidthAt(y);
+
+        return {
+            left: vanishX() - half,
+            right: vanishX() + half
+        };
+    }
+
+    function laneCenterAt(lane, y) {
+        const edges = roadEdgesAt(y);
+        const roadWidth = edges.right - edges.left;
+
+        return (
+            edges.left +
+            roadWidth *
+            ((lane + 0.5) / LANE_COUNT)
+        );
+    }
+
+    function laneDividerAt(divider, y) {
+        const edges = roadEdgesAt(y);
+
+        return lerp(
+            edges.left,
+            edges.right,
+            divider / LANE_COUNT
+        );
+    }
+
+    /*
+      progress:
+      0 = horizon
+      1 = player / foreground
+    */
+
+    function progressToY(progress) {
+        const h = horizonY();
+        const p = clamp(progress, 0, 1);
+
+        return (
+            h +
+            Math.pow(p, 1.55) *
+            (height - h)
+        );
+    }
+
+    function objectScale(progress) {
+        return lerp(
+            0.16,
+            1.16,
+            Math.pow(
+                clamp(progress, 0, 1),
+                1.18
+            )
+        );
+    }
+
+    function resizeCanvas() {
+        const rect =
+            canvas.getBoundingClientRect();
+
+        width = Math.max(
+            320,
+            rect.width || 1200
+        );
+
+        height = Math.max(
+            260,
+            rect.height || 420
+        );
+
+        dpr = Math.max(
+            1,
+            Math.min(
+                2,
+                window.devicePixelRatio || 1
+            )
+        );
+
+        canvas.width =
+            Math.round(width * dpr);
+
+        canvas.height =
+            Math.round(height * dpr);
+
+        ctx.setTransform(
+            dpr,
+            0,
+            0,
+            dpr,
+            0,
+            0
+        );
+
+        drawScene();
+    }
+
+    function setStatus(message) {
+        if (statusEl) {
+            statusEl.textContent = message;
+        }
+    }
+
+    function updateHud() {
+        if (distanceEl) {
+            distanceEl.textContent =
+                `${Math.floor(distance)} m`;
+        }
+
+        if (impactsEl) {
+            impactsEl.textContent =
+                `${impacts} / ${MAX_IMPACTS}`;
+        }
+
+        if (shelterEl) {
+            shelterEl.textContent =
+                `${Math.max(
+                    0,
+                    Math.ceil(
+                        GOAL_DISTANCE - distance
+                    )
+                )} m`;
+        }
+    }
+
+    function resetGame() {
+        running = false;
 
         distance = 0;
         impacts = 0;
 
+        targetLane = 1;
+        visualLane = 1;
+
+        jumpHeight = 0;
+        jumpVelocity = 0;
+
         obstacles = [];
-        obstacleTimer = 65;
+        spawnTimer = 0.75;
 
-        obstacles.push({
-            lane: Math.floor(Math.random() * 3),
-            progress: 0.12,
-            type: Math.random() < 0.5 ? "debris" : "tree",
-            hit: false
-        });
+        rainOffset = 0;
+        hitFlash = 0;
 
-        roadOffset = 0;
+        if (startTitle) {
+            startTitle.textContent =
+                DEFAULT_TITLE;
+        }
 
-        windTimer = 0;
-        windWarning = 0;
-        windDirection = null;
+        if (startCopy) {
+            startCopy.textContent =
+                DEFAULT_COPY;
+        }
 
-        flashTimer = 0;
+        if (startButton) {
+            startButton.innerHTML =
+                '<i class="fas fa-play"></i> Start Run';
+        }
 
-        distanceDisplay.textContent = "0 m";
+        updateHud();
 
-        statusDisplay.textContent =
-            "Reach the shelter. Use ← → to change lanes and ↑ to jump.";
+        setStatus(
+            "Press Start, then use ← → to change lanes and ↑ to jump."
+        );
 
-        startScreen.classList.add("hidden");
+        drawScene();
     }
 
+    function startGame() {
+        if (frameId) {
+            cancelAnimationFrame(frameId);
+        }
 
-    startBtn.addEventListener("click", startGame);
+        resetGame();
 
+        running = true;
 
-    /* ============================================================
-       KEYBOARD
-    ============================================================ */
+        startScreen?.classList.add(
+            "is-hidden"
+        );
 
-    window.addEventListener("keydown", (event) => {
+        setStatus(
+            "Reach the shelter. Avoid flooded lanes and storm debris."
+        );
 
+        lastTime = performance.now();
+
+        frameId =
+            requestAnimationFrame(loop);
+    }
+
+    function finishGame(success) {
+        running = false;
+
+        startScreen?.classList.remove(
+            "is-hidden"
+        );
+
+        if (success) {
+            if (startTitle) {
+                startTitle.textContent =
+                    "Shelter Reached";
+            }
+
+            if (startCopy) {
+                startCopy.textContent =
+                    `You reached safety with ${impacts} impact${impacts === 1 ? "" : "s"
+                    }. Try again and improve your evacuation route.`;
+            }
+
+            setStatus(
+                "Evacuation complete — you reached the shelter."
+            );
+        } else {
+            if (startTitle) {
+                startTitle.textContent =
+                    "Route Blocked";
+            }
+
+            if (startCopy) {
+                startCopy.textContent =
+                    "Four impacts stopped the evacuation. Change lanes earlier or jump over debris and try again.";
+            }
+
+            setStatus(
+                "Too many impacts — the evacuation route is blocked."
+            );
+        }
+
+        if (startButton) {
+            startButton.innerHTML =
+                '<i class="fas fa-rotate-right"></i> Run Again';
+        }
+
+        drawScene();
+    }
+
+    function moveLane(direction) {
         if (!running) return;
 
-        if (
-            event.key === "ArrowLeft" ||
-            event.key.toLowerCase() === "a"
-        ) {
+        targetLane = clamp(
+            targetLane + direction,
+            0,
+            LANE_COUNT - 1
+        );
+    }
 
-            event.preventDefault();
+    function jump() {
+        if (!running) return;
+        if (jumpHeight > 1) return;
 
-            playerLane = Math.max(
-                0,
-                playerLane - 1
-            );
-        }
+        jumpVelocity = Math.max(
+            430,
+            height * 1.18
+        );
+    }
 
-
-        if (
-            event.key === "ArrowRight" ||
-            event.key.toLowerCase() === "d"
-        ) {
-
-            event.preventDefault();
-
-            playerLane = Math.min(
-                2,
-                playerLane + 1
-            );
-        }
-
-
-        if (
-            (
-                event.key === "ArrowUp" ||
-                event.key.toLowerCase() === "w"
-            ) &&
-            jumpHeight === 0
-        ) {
-
-            event.preventDefault();
-
-            jumpVelocity = 12;
-        }
-
-    });
-
-
-    /* ============================================================
-       OBSTACLES
-    ============================================================ */
 
     function spawnObstacle() {
+        const lanes = [0, 1, 2];
 
-        const random = Math.random();
+        const recent = obstacles.filter(
+            obstacle => obstacle.progress < 0.22
+        );
 
-        let type;
+        const blocked = new Set(
+            recent.map(
+                obstacle => obstacle.lane
+            )
+        );
 
+        const available = lanes.filter(
+            lane => !blocked.has(lane)
+        );
 
-        /*
-          35% debris
-          35% fallen tree
-          30% flooded lane
-        */
-
-        if (random < 0.35) {
-
-            type = "debris";
-
-        } else if (random < 0.70) {
-
-            type = "tree";
-
-        } else {
-
-            type = "water";
-
-        }
-
+        const lanePool =
+            available.length
+                ? available
+                : lanes;
 
         obstacles.push({
+            lane:
+                lanePool[
+                Math.floor(
+                    Math.random() *
+                    lanePool.length
+                )
+                ],
 
-            lane: Math.floor(
-                Math.random() * 3
-            ),
+            progress: 0.025,
 
-            progress: 0,
-
-            type,
+            type:
+                OBSTACLE_TYPES[
+                Math.floor(
+                    Math.random() *
+                    OBSTACLE_TYPES.length
+                )
+                ],
 
             hit: false
-
         });
-
     }
 
 
-    /* ============================================================
-       WIND GUST
-    ============================================================ */
-
-    function updateWind() {
-
+    function update(dt) {
         if (!running) return;
 
+        const seconds = dt / 1000;
 
-        /*
-          Don't start gusts immediately.
-        */
+        /* -------------------------
+           Distance
+        ------------------------- */
 
-        windTimer++;
-
-
-        /*
-          About every 7–10 seconds.
-        */
-
-        if (
-            windTimer > 430 &&
-            windWarning === 0
-        ) {
-
-            windDirection =
-                Math.random() > 0.5
-                    ? "left"
-                    : "right";
-
-            windWarning = 90;
-
-            windTimer =
-                Math.floor(
-                    Math.random() * 120
-                );
+        distance += seconds * 25.5;
 
 
-            if (windDirection === "left") {
+        /* -------------------------
+           Rain animation
+        ------------------------- */
 
-                statusDisplay.textContent =
-                    "⚠ Strong wind from the east — brace right!";
-
-            } else {
-
-                statusDisplay.textContent =
-                    "⚠ Strong wind from the west — brace left!";
-
-            }
-
-        }
+        rainOffset =
+            (
+                rainOffset +
+                seconds * 230
+            ) % 62;
 
 
-        /*
-          Countdown before gust.
-        */
+        /* -------------------------
+           Impact flash
+        ------------------------- */
 
-        if (windWarning > 0) {
-
-            windWarning--;
-
-
-            if (windWarning === 1) {
-
-                applyWindGust();
-
-            }
-
-        }
-
-    }
+        hitFlash = Math.max(
+            0,
+            hitFlash - seconds
+        );
 
 
-    function applyWindGust() {
+        /* -------------------------
+           Smooth lane movement
+        ------------------------- */
 
-        /*
-          Wind actually moves player one lane.
-        */
-
-        if (windDirection === "left") {
-
-            playerLane =
-                Math.max(
-                    0,
-                    playerLane - 1
-                );
-
-        } else {
-
-            playerLane =
-                Math.min(
-                    2,
-                    playerLane + 1
-                );
-
-        }
+        visualLane +=
+            (
+                targetLane -
+                visualLane
+            ) *
+            Math.min(
+                1,
+                seconds * 9
+            );
 
 
-        statusDisplay.textContent =
-            "💨 A strong gust pushed you sideways.";
-
-    }
-
-
-    /* ============================================================
-       UPDATE GAME
-    ============================================================ */
-
-    function update() {
-
-        if (!running) return;
-
-
-        /* Run forward */
-
-        distance += 0.5;
-
-        distanceDisplay.textContent =
-            `${Math.floor(distance)} m`;
-
-
-        roadOffset += 5;
-
-        if (roadOffset > 55) {
-            roadOffset = 0;
-        }
-
-
-        /* Jump */
+        /* -------------------------
+           Jump physics
+        ------------------------- */
 
         if (
             jumpVelocity !== 0 ||
             jumpHeight > 0
         ) {
+            jumpHeight +=
+                jumpVelocity *
+                seconds;
 
-            jumpHeight += jumpVelocity;
-
-            jumpVelocity -= 0.75;
-
+            jumpVelocity -=
+                1220 *
+                seconds;
 
             if (jumpHeight <= 0) {
-
                 jumpHeight = 0;
                 jumpVelocity = 0;
-
             }
-
         }
 
 
-        /* Generate obstacles */
+        /* -------------------------
+           Move obstacles
+        ------------------------- */
 
-        obstacleTimer++;
+        const speed =
+            0.27 +
+            Math.min(
+                0.13,
+                distance / 3200
+            );
 
-        let spawnInterval = 78;
+        for (const obstacle of obstacles) {
 
-        if (distance > 500) {
-            spawnInterval = 68;
-        }
-
-        if (distance > 1000) {
-            spawnInterval = 58;
-        }
-
-        if (obstacleTimer > spawnInterval) {
-
-            spawnObstacle();
-
-            obstacleTimer =
-                Math.floor(
-                    Math.random() * 18
-                );
-
-        }
+            obstacle.progress +=
+                seconds * speed;
 
 
-        /* Move objects toward player */
+            /* =========================
+               COLLISION DETECTION
+            ========================= */
 
-        obstacles.forEach((obstacle) => {
+            /*
+              Only detect collision when the obstacle
+              is physically close to the player's feet.
+    
+              This prevents an obstacle from being counted
+              before it visually reaches the player.
+            */
 
-            obstacle.progress += 0.0075;
+            const collisionCenter = 0.955;
+            const collisionTolerance = 0.025;
 
-        });
-
-
-        /* Collision */
-
-        obstacles.forEach((obstacle) => {
-
-            if (obstacle.hit) return;
-
-
-            /* Calculate the obstacle's actual screen position */
-
-            const horizonY = 90;
-
-            const obstacleY =
-                horizonY +
-                obstacle.progress *
-                (H - horizonY);
-
-
-            /* Only collide when obstacle is actually beside the player */
-
-            const verticalDistance =
+            const inCollisionZone =
                 Math.abs(
-                    obstacleY - player.y
-                );
-
-            const nearPlayer =
-                verticalDistance < 26;
-
-
-            const sameLane =
-                obstacle.lane === playerLane;
-
-
-            if (!nearPlayer || !sameLane) {
-                return;
-            }
+                    obstacle.progress -
+                    collisionCenter
+                ) < collisionTolerance;
 
 
             /*
-              Flying debris can be jumped.
-              Trees and flooded lanes must be avoided
-              by changing lanes.
+              Use visualLane, not targetLane.
+    
+              This means collision follows where the
+              player actually appears on screen.
             */
 
+            const sameLane =
+                Math.abs(
+                    visualLane -
+                    obstacle.lane
+                ) < 0.34;
+
+
+            /*
+              If the player is visibly in the air,
+              the obstacle is successfully cleared.
+            */
+
+            const highEnough =
+                jumpHeight >
+                height * 0.04;
+
+
             if (
-                obstacle.type === "debris" &&
-                jumpHeight > 38
+                inCollisionZone &&
+                sameLane &&
+                !highEnough &&
+                !obstacle.hit
             ) {
-                return;
+                obstacle.hit = true;
+
+                impacts += 1;
+                hitFlash = 0.19;
+
+                updateHud();
+
+                setStatus(
+                    `Impact ${impacts}/${MAX_IMPACTS}. Keep moving — the shelter is still ahead.`
+                );
+
+                if (
+                    impacts >=
+                    MAX_IMPACTS
+                ) {
+                    finishGame(false);
+                    return;
+                }
             }
-
-
-            obstacle.hit = true;
-
-            impacts++;
-
-            flashTimer = 15;
-
-
-            if (obstacle.type === "debris") {
-
-                statusDisplay.textContent =
-                    "Flying debris hit you. Jump earlier next time.";
-
-            }
-
-            if (obstacle.type === "tree") {
-
-                statusDisplay.textContent =
-                    "You hit a fallen tree. Change lanes earlier.";
-
-            }
-
-            if (obstacle.type === "water") {
-
-                statusDisplay.textContent =
-                    "You entered a flooded lane. Avoid standing water.";
-
-            }
-
-
-            if (impacts >= 4) {
-
-                endGame(false);
-
-            }
-
-        });
-
-
-        /* Remove old obstacles */
-
-        obstacles =
-            obstacles.filter(
-                obstacle =>
-                    obstacle.progress < 1.15 &&
-                    !obstacle.hit
-            );
-
-
-        updateWind();
-
-
-        if (flashTimer > 0) {
-            flashTimer--;
         }
 
 
-        /* Reach shelter */
+        /* -------------------------
+           Remove passed obstacles
+        ------------------------- */
 
-        if (distance >= GOAL_DISTANCE) {
-
-            endGame(true);
-
-        }
-
-    }
+        obstacles = obstacles.filter(
+            obstacle =>
+                obstacle.progress < 1.10
+        );
 
 
-    /* ============================================================
-       ROAD GEOMETRY
-    ============================================================ */
+        /* -------------------------
+           Spawn new obstacle
+        ------------------------- */
 
-    function roadXAt(y, side) {
+        spawnTimer -= seconds;
 
-        const horizonY = 82;
+        if (spawnTimer <= 0) {
 
-        const t =
-            Math.max(
-                0,
+            spawnObstacle();
+
+            spawnTimer =
+                0.86 +
+                Math.random() * 0.58 -
                 Math.min(
-                    1,
-                    (y - horizonY) /
-                    (H - horizonY)
-                )
-            );
-
-
-        if (side === "left") {
-
-            return (
-                W * 0.43 -
-                t * W * 0.35
-            );
-
+                    0.18,
+                    distance / 2800
+                );
         }
 
 
-        return (
-            W * 0.57 +
-            t * W * 0.35
-        );
+        /* -------------------------
+           Reach shelter
+        ------------------------- */
 
+        if (
+            distance >=
+            GOAL_DISTANCE
+        ) {
+            distance = GOAL_DISTANCE;
+
+            updateHud();
+
+            finishGame(true);
+
+            return;
+        }
+
+
+        updateHud();
     }
 
-
-    function laneXAt(lane, y) {
-
-        const left =
-            roadXAt(y, "left");
-
-        const right =
-            roadXAt(y, "right");
-
-        const width =
-            (right - left) / 3;
-
-
-        return (
-            left +
-            width * (lane + 0.5)
+    function drawScene() {
+        ctx.clearRect(
+            0,
+            0,
+            width,
+            height
         );
 
+        drawSky();
+
+        drawStormClouds();
+
+        drawDistantCity();
+
+        drawSideTerrain();
+
+        drawSidewalks();
+
+        drawRoad();
+
+        drawPerspectiveBuildings();
+
+        drawTreesAndLamps();
+
+        drawLaneMarkings();
+
+        drawObstacles();
+
+        drawPlayer();
+
+        drawRain();
+
+        drawVignette();
+
+        if (hitFlash > 0) {
+            ctx.fillStyle =
+                `rgba(232,49,122,${hitFlash * 1.8
+                })`;
+
+            ctx.fillRect(
+                0,
+                0,
+                width,
+                height
+            );
+        }
     }
-
-
-    /* ============================================================
-       HURRICANE SKY
-    ============================================================ */
 
     function drawSky() {
-
         const gradient =
             ctx.createLinearGradient(
                 0,
                 0,
                 0,
-                H * 0.6
+                height
             );
-
 
         gradient.addColorStop(
             0,
-            "#4e5d63"
+            "#536671"
         );
 
         gradient.addColorStop(
-            0.55,
-            "#78888a"
+            0.50,
+            "#7b8991"
+        );
+
+        gradient.addColorStop(
+            0.501,
+            "#94a983"
         );
 
         gradient.addColorStop(
             1,
-            "#a8b7ad"
+            "#7b9072"
         );
 
-
-        ctx.fillStyle = gradient;
+        ctx.fillStyle =
+            gradient;
 
         ctx.fillRect(
             0,
             0,
-            W,
-            H
+            width,
+            height
         );
-
-
-        /* Storm clouds */
-
-        ctx.fillStyle =
-            "rgba(42, 52, 55, .45)";
-
-
-        ctx.beginPath();
-
-        ctx.arc(
-            100,
-            62,
-            75,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.arc(
-            210,
-            50,
-            95,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.arc(
-            360,
-            65,
-            110,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.arc(
-            515,
-            50,
-            90,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fill();
-
     }
 
+    function drawStormClouds() {
+        const gradient =
+            ctx.createRadialGradient(
+                width * 0.74,
+                height * 0.05,
+                8,
+                width * 0.74,
+                height * 0.05,
+                width * 0.42
+            );
 
-    /* ============================================================
-       CITY
-    ============================================================ */
+        gradient.addColorStop(
+            0,
+            "rgba(23,33,42,.54)"
+        );
 
-    function drawCity() {
+        gradient.addColorStop(
+            1,
+            "rgba(23,33,42,0)"
+        );
 
-        const buildings = [
+        ctx.fillStyle =
+            gradient;
 
-            [18, 90, 72, 110],
-            [100, 115, 65, 85],
-            [175, 75, 85, 130],
+        ctx.fillRect(
+            0,
+            0,
+            width,
+            height * 0.52
+        );
+    }
 
-            [370, 105, 66, 95],
-            [460, 68, 88, 135],
-            [560, 112, 55, 90]
+    function drawDistantCity() {
+        const h =
+            horizonY();
 
+        const center =
+            vanishX();
+
+        const gap =
+            width * 0.075;
+
+        const colors = [
+            "#71818d",
+            "#87937f",
+            "#909b83",
+            "#687985"
         ];
 
+        [-1, 1].forEach(side => {
+            for (
+                let i = 0;
+                i < 8;
+                i++
+            ) {
+                const buildingWidth =
+                    width *
+                    (
+                        0.019 +
+                        (i % 3) * 0.004
+                    );
 
-        buildings.forEach(
-            ([x, y, w, h], index) => {
+                const buildingHeight =
+                    height *
+                    (
+                        0.075 +
+                        (i % 4) * 0.018
+                    );
+
+                const offset =
+                    gap +
+                    i *
+                    buildingWidth *
+                    1.18;
+
+                const x =
+                    side < 0
+                        ? center -
+                        offset -
+                        buildingWidth
+                        : center +
+                        offset;
+
+                const y =
+                    h -
+                    buildingHeight;
 
                 ctx.fillStyle =
-                    index % 2 === 0
-                        ? "#66756f"
-                        : "#78857d";
-
+                    colors[
+                    i %
+                    colors.length
+                    ];
 
                 ctx.fillRect(
                     x,
                     y,
-                    w,
-                    h
+                    buildingWidth,
+                    buildingHeight
                 );
 
-
-                ctx.fillStyle =
-                    "rgba(210,220,185,.55)";
-
-
-                for (
-                    let wy = y + 15;
-                    wy < y + h - 10;
-                    wy += 20
-                ) {
-
-                    for (
-                        let wx = x + 11;
-                        wx < x + w - 8;
-                        wx += 20
-                    ) {
-
-                        ctx.fillRect(
-                            wx,
-                            wy,
-                            6,
-                            8
-                        );
-
-                    }
-
-                }
-
+                drawWindows(
+                    x,
+                    y,
+                    buildingWidth,
+                    buildingHeight,
+                    0.26
+                );
             }
-        );
-
+        });
     }
 
+    function drawSideTerrain() {
+        const h =
+            horizonY();
 
-    /* ============================================================
-       ROAD
-    ============================================================ */
+        const top =
+            roadEdgesAt(h);
 
-    function drawRoad() {
+        const bottom =
+            roadEdgesAt(height);
 
-        drawSky();
+        ctx.fillStyle =
+            "#91a47f";
 
-        drawCity();
-
-
-        /* Ground */
-
-        ctx.fillStyle = "#7f9774";
-
-        ctx.fillRect(
-            0,
-            H * 0.38,
-            W,
-            H
-        );
-
-
-        /* Road */
+        /* left */
 
         ctx.beginPath();
 
         ctx.moveTo(
-            W * 0.43,
-            82
+            0,
+            h
         );
 
         ctx.lineTo(
-            W * 0.07,
-            H
+            top.left,
+            h
         );
 
         ctx.lineTo(
-            W * 0.93,
-            H
+            bottom.left,
+            height
         );
 
         ctx.lineTo(
-            W * 0.57,
-            82
+            0,
+            height
         );
 
         ctx.closePath();
 
+        ctx.fill();
 
-        ctx.fillStyle = "#393f40";
+        /* right */
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            top.right,
+            h
+        );
+
+        ctx.lineTo(
+            width,
+            h
+        );
+
+        ctx.lineTo(
+            width,
+            height
+        );
+
+        ctx.lineTo(
+            bottom.right,
+            height
+        );
+
+        ctx.closePath();
+
+        ctx.fill();
+    }
+
+    function drawSidewalks() {
+        const h =
+            horizonY();
+
+        const top =
+            roadEdgesAt(h);
+
+        const bottom =
+            roadEdgesAt(height);
+
+        const topOffset =
+            width * 0.008;
+
+        const bottomOffset =
+            width * 0.055;
+
+        ctx.fillStyle =
+            "#778a75";
+
+        /* left */
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            top.left -
+            topOffset,
+            h
+        );
+
+        ctx.lineTo(
+            top.left,
+            h
+        );
+
+        ctx.lineTo(
+            bottom.left,
+            height
+        );
+
+        ctx.lineTo(
+            bottom.left -
+            bottomOffset,
+            height
+        );
+
+        ctx.closePath();
 
         ctx.fill();
 
+        /* right */
 
-        /* Edges */
+        ctx.beginPath();
+
+        ctx.moveTo(
+            top.right,
+            h
+        );
+
+        ctx.lineTo(
+            top.right +
+            topOffset,
+            h
+        );
+
+        ctx.lineTo(
+            bottom.right +
+            bottomOffset,
+            height
+        );
+
+        ctx.lineTo(
+            bottom.right,
+            height
+        );
+
+        ctx.closePath();
+
+        ctx.fill();
 
         ctx.strokeStyle =
-            "rgba(225,230,225,.75)";
+            "rgba(230,235,222,.55)";
 
-        ctx.lineWidth = 4;
-
-
-        ctx.beginPath();
-
-        ctx.moveTo(
-            W * 0.43,
-            82
-        );
-
-        ctx.lineTo(
-            W * 0.07,
-            H
-        );
-
-        ctx.stroke();
-
+        ctx.lineWidth =
+            Math.max(
+                1,
+                width * 0.0015
+            );
 
         ctx.beginPath();
 
         ctx.moveTo(
-            W * 0.57,
-            82
+            top.left -
+            topOffset,
+            h
         );
 
         ctx.lineTo(
-            W * 0.93,
-            H
+            bottom.left -
+            bottomOffset,
+            height
+        );
+
+        ctx.moveTo(
+            top.right +
+            topOffset,
+            h
+        );
+
+        ctx.lineTo(
+            bottom.right +
+            bottomOffset,
+            height
         );
 
         ctx.stroke();
+    }
 
+    function drawRoad() {
+        const h =
+            horizonY();
 
-        /* Moving lane lines */
+        const top =
+            roadEdgesAt(h);
+
+        const bottom =
+            roadEdgesAt(height);
+
+        const roadGradient =
+            ctx.createLinearGradient(
+                0,
+                h,
+                0,
+                height
+            );
+
+        roadGradient.addColorStop(
+            0,
+            "#3b4449"
+        );
+
+        roadGradient.addColorStop(
+            1,
+            "#30383d"
+        );
+
+        ctx.fillStyle =
+            roadGradient;
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            top.left,
+            h
+        );
+
+        ctx.lineTo(
+            top.right,
+            h
+        );
+
+        ctx.lineTo(
+            bottom.right,
+            height
+        );
+
+        ctx.lineTo(
+            bottom.left,
+            height
+        );
+
+        ctx.closePath();
+
+        ctx.fill();
+
+        ctx.strokeStyle =
+            "rgba(238,241,233,.82)";
+
+        ctx.lineWidth =
+            Math.max(
+                2,
+                width * 0.002
+            );
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            top.left,
+            h
+        );
+
+        ctx.lineTo(
+            bottom.left,
+            height
+        );
+
+        ctx.moveTo(
+            top.right,
+            h
+        );
+
+        ctx.lineTo(
+            bottom.right,
+            height
+        );
+
+        ctx.stroke();
+    }
+
+    /*
+      CLEAN LANE MARKINGS
+  
+      Only two dividers for three lanes.
+      All dash segments sit on straight perspective lines.
+    */
+
+    function drawLaneMarkings() {
+        const dashBands = [
+            [0.16, 0.20],
+            [0.25, 0.30],
+            [0.36, 0.42],
+            [0.49, 0.56],
+            [0.63, 0.72],
+            [0.79, 0.89]
+        ];
+
+        const drift =
+            (
+                distance *
+                0.0011
+            ) % 0.13;
 
         for (
-            let y = 105 - roadOffset;
-            y < H;
-            y += 58
+            let divider = 1;
+            divider < LANE_COUNT;
+            divider++
         ) {
-
-            if (y < 88) continue;
-
-
-            const y2 =
-                Math.min(
-                    y + 26,
-                    H
-                );
-
-
             for (
-                let separator = 1;
-                separator <= 2;
-                separator++
+                const band
+                of dashBands
             ) {
+                let p1 =
+                    band[0] +
+                    drift;
 
-                const left1 =
-                    roadXAt(
-                        y,
-                        "left"
+                let p2 =
+                    band[1] +
+                    drift;
+
+                if (p1 > 0.92) {
+                    p1 -= 0.78;
+                    p2 -= 0.78;
+                }
+
+                if (
+                    p2 <= 0.05 ||
+                    p1 >= 0.92
+                ) {
+                    continue;
+                }
+
+                p1 =
+                    clamp(
+                        p1,
+                        0.055,
+                        0.92
                     );
 
-                const right1 =
-                    roadXAt(
-                        y,
-                        "right"
+                p2 =
+                    clamp(
+                        p2,
+                        0.06,
+                        0.94
                     );
 
-                const left2 =
-                    roadXAt(
-                        y2,
-                        "left"
-                    );
+                const y1 =
+                    progressToY(p1);
 
-                const right2 =
-                    roadXAt(
-                        y2,
-                        "right"
-                    );
-
+                const y2 =
+                    progressToY(p2);
 
                 const x1 =
-                    left1 +
-                    (
-                        right1 -
-                        left1
-                    ) *
-                    separator / 3;
-
+                    laneDividerAt(
+                        divider,
+                        y1
+                    );
 
                 const x2 =
-                    left2 +
-                    (
-                        right2 -
-                        left2
-                    ) *
-                    separator / 3;
-
+                    laneDividerAt(
+                        divider,
+                        y2
+                    );
 
                 ctx.strokeStyle =
-                    "rgba(255,255,255,.65)";
+                    "rgba(244,245,238,.82)";
 
                 ctx.lineWidth =
-                    1 + y / H * 3;
+                    lerp(
+                        1.1,
+                        4.4,
+                        p1
+                    );
 
+                ctx.lineCap =
+                    "round";
 
                 ctx.beginPath();
 
                 ctx.moveTo(
                     x1,
-                    y
+                    y1
                 );
 
                 ctx.lineTo(
@@ -891,178 +1213,574 @@ document.addEventListener("DOMContentLoaded", () => {
                 );
 
                 ctx.stroke();
-
             }
-
         }
-
     }
 
+    function drawPerspectiveBuildings() {
+        const depths = [
+            0.18,
+            0.31,
+            0.46,
+            0.63,
+            0.79
+        ];
 
-    /* ============================================================
-       RAIN
-    ============================================================ */
+        depths.forEach(
+            (depth, index) => {
+                drawBuilding(
+                    -1,
+                    depth,
+                    index
+                );
 
-    function drawRain() {
-
-        const time =
-            Date.now() * 0.4;
-
-
-        ctx.strokeStyle =
-            "rgba(215,235,245,.32)";
-
-        ctx.lineWidth = 1.4;
-
-
-        for (
-            let i = 0;
-            i < 55;
-            i++
-        ) {
-
-            const x =
-                (
-                    i * 83 +
-                    time
-                ) % (W + 100) - 50;
-
-
-            const y =
-                (
-                    i * 47 +
-                    time * 1.5
-                ) % H;
-
-
-            ctx.beginPath();
-
-            ctx.moveTo(
-                x,
-                y
-            );
-
-            ctx.lineTo(
-                x - 10,
-                y + 23
-            );
-
-            ctx.stroke();
-
-        }
-
+                drawBuilding(
+                    1,
+                    depth,
+                    index + 2
+                );
+            }
+        );
     }
 
+    function drawBuilding(
+        side,
+        depth,
+        variant
+    ) {
+        const groundY =
+            progressToY(depth);
 
-    /* ============================================================
-       OBSTACLE DRAWING
-    ============================================================ */
+        const road =
+            roadEdgesAt(groundY);
 
-    function drawObstacle(obstacle) {
+        const buildingWidth =
+            lerp(
+                width * 0.025,
+                width * 0.09,
+                depth
+            );
 
-        const horizonY = 90;
+        const buildingHeight =
+            lerp(
+                height * 0.10,
+                height * 0.42,
+                depth
+            );
 
+        const sidewalk =
+            lerp(
+                width * 0.014,
+                width * 0.072,
+                depth
+            );
 
-        const y =
-            horizonY +
-            obstacle.progress *
-            (H - horizonY);
-
+        const inner =
+            side < 0
+                ? road.left -
+                sidewalk
+                : road.right +
+                sidewalk;
 
         const x =
-            laneXAt(
-                obstacle.lane,
-                y
+            side < 0
+                ? inner -
+                buildingWidth
+                : inner;
+
+        const y =
+            groundY -
+            buildingHeight;
+
+        const colors = [
+            "#687c8b",
+            "#84917c",
+            "#74858e",
+            "#939e80"
+        ];
+
+        ctx.fillStyle =
+            colors[
+            variant %
+            colors.length
+            ];
+
+        const roof =
+            buildingWidth *
+            0.07 *
+            side;
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            x,
+            y +
+            Math.abs(roof)
+        );
+
+        ctx.lineTo(
+            x +
+            buildingWidth,
+            y
+        );
+
+        ctx.lineTo(
+            x +
+            buildingWidth,
+            groundY
+        );
+
+        ctx.lineTo(
+            x,
+            groundY
+        );
+
+        ctx.closePath();
+
+        ctx.fill();
+
+        drawWindows(
+            x,
+            y,
+            buildingWidth,
+            buildingHeight,
+            lerp(
+                0.18,
+                0.45,
+                depth
+            )
+        );
+    }
+
+    function drawWindows(
+        x,
+        y,
+        buildingWidth,
+        buildingHeight,
+        alpha
+    ) {
+        const columns =
+            Math.max(
+                2,
+                Math.floor(
+                    buildingWidth / 25
+                )
             );
 
+        const rows =
+            Math.max(
+                2,
+                Math.floor(
+                    buildingHeight / 27
+                )
+            );
+
+        const paddingX =
+            buildingWidth * 0.15;
+
+        const paddingY =
+            buildingHeight * 0.13;
+
+        const usableWidth =
+            buildingWidth -
+            paddingX * 2;
+
+        const usableHeight =
+            buildingHeight -
+            paddingY * 2;
+
+        ctx.fillStyle =
+            `rgba(218,225,184,${alpha})`;
+
+        for (
+            let row = 0;
+            row < rows;
+            row++
+        ) {
+            for (
+                let column = 0;
+                column < columns;
+                column++
+            ) {
+                const cellWidth =
+                    usableWidth /
+                    columns;
+
+                const cellHeight =
+                    usableHeight /
+                    rows;
+
+                ctx.fillRect(
+                    x +
+                    paddingX +
+                    (
+                        column +
+                        0.31
+                    ) *
+                    cellWidth,
+
+                    y +
+                    paddingY +
+                    (
+                        row +
+                        0.31
+                    ) *
+                    cellHeight,
+
+                    Math.max(
+                        2,
+                        cellWidth *
+                        0.35
+                    ),
+
+                    Math.max(
+                        2,
+                        cellHeight *
+                        0.31
+                    )
+                );
+            }
+        }
+    }
+
+    function drawTreesAndLamps() {
+        const depths = [
+            0.26,
+            0.43,
+            0.60,
+            0.76,
+            0.89
+        ];
+
+        depths.forEach(
+            (depth, index) => {
+                drawTree(
+                    -1,
+                    depth,
+                    index
+                );
+
+                drawTree(
+                    1,
+                    Math.min(
+                        0.93,
+                        depth + 0.045
+                    ),
+                    index + 1
+                );
+
+                if (
+                    index % 2 === 0
+                ) {
+                    drawLamp(
+                        -1,
+                        Math.min(
+                            0.91,
+                            depth + 0.07
+                        )
+                    );
+
+                    drawLamp(
+                        1,
+                        Math.min(
+                            0.91,
+                            depth + 0.10
+                        )
+                    );
+                }
+            }
+        );
+    }
+
+    function drawTree(
+        side,
+        progress,
+        seed
+    ) {
+        const y =
+            progressToY(progress);
+
+        const road =
+            roadEdgesAt(y);
+
+        const offset =
+            lerp(
+                width * 0.020,
+                width * 0.084,
+                progress
+            );
+
+        const x =
+            side < 0
+                ? road.left -
+                offset
+                : road.right +
+                offset;
 
         const scale =
-            0.3 +
-            obstacle.progress *
-            1.25;
+            objectScale(progress) *
+            0.66;
 
+        ctx.strokeStyle =
+            "#674f3b";
 
-        /*
-          Flying debris
-        */
-
-        if (obstacle.type === "debris") {
-
-            ctx.font =
-                `${25 * scale}px Arial`;
-
-            ctx.textAlign =
-                "center";
-
-            ctx.fillText(
-                "🪵",
-                x,
-                y
+        ctx.lineWidth =
+            Math.max(
+                1,
+                5 * scale
             );
 
-        }
+        ctx.beginPath();
 
+        ctx.moveTo(
+            x,
+            y
+        );
 
-        /*
-          Fallen tree
-        */
+        ctx.lineTo(
+            x,
+            y -
+            30 *
+            scale
+        );
 
-        if (obstacle.type === "tree") {
+        ctx.stroke();
 
-            ctx.save();
+        ctx.fillStyle =
+            seed % 2
+                ? "#6b8755"
+                : "#748e59";
 
-            ctx.translate(
-                x,
-                y
+        ctx.beginPath();
+
+        ctx.arc(
+            x,
+            y -
+            40 *
+            scale,
+            19 *
+            scale,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.arc(
+            x -
+            12 *
+            scale,
+            y -
+            34 *
+            scale,
+            13 *
+            scale,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.arc(
+            x +
+            12 *
+            scale,
+            y -
+            35 *
+            scale,
+            14 *
+            scale,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+    }
+
+    function drawLamp(
+        side,
+        progress
+    ) {
+        const y =
+            progressToY(progress);
+
+        const road =
+            roadEdgesAt(y);
+
+        const offset =
+            lerp(
+                width * 0.016,
+                width * 0.060,
+                progress
             );
 
-            ctx.rotate(
-                -0.18
+        const x =
+            side < 0
+                ? road.left -
+                offset
+                : road.right +
+                offset;
+
+        const scale =
+            objectScale(progress) *
+            0.60;
+
+        ctx.strokeStyle =
+            "#273139";
+
+        ctx.lineWidth =
+            Math.max(
+                1,
+                3 *
+                scale
             );
 
+        ctx.beginPath();
 
-            ctx.font =
-                `${34 * scale}px Arial`;
+        ctx.moveTo(
+            x,
+            y
+        );
 
-            ctx.textAlign =
-                "center";
+        ctx.lineTo(
+            x,
+            y -
+            62 *
+            scale
+        );
 
-            ctx.fillText(
-                "🌳",
-                0,
-                0
+        ctx.lineTo(
+            x +
+            side *
+            17 *
+            scale,
+            y -
+            62 *
+            scale
+        );
+
+        ctx.stroke();
+
+        ctx.fillStyle =
+            "#c8cdbd";
+
+        ctx.fillRect(
+            x +
+            side *
+            17 *
+            scale -
+            5 *
+            scale,
+
+            y -
+            66 *
+            scale,
+
+            10 *
+            scale,
+
+            6 *
+            scale
+        );
+    }
+
+    function drawObstacles() {
+        [...obstacles]
+            .sort(
+                (a, b) =>
+                    a.progress -
+                    b.progress
+            )
+            .forEach(
+                obstacle => {
+                    const y =
+                        progressToY(
+                            obstacle.progress
+                        );
+
+                    const x =
+                        laneCenterAt(
+                            obstacle.lane,
+                            y
+                        );
+
+                    drawObstacle(
+                        obstacle.type,
+                        x,
+                        y,
+                        objectScale(
+                            obstacle.progress
+                        ),
+                        obstacle.hit
+                    );
+                }
             );
+    }
 
+    function drawObstacle(
+        type,
+        x,
+        y,
+        scale,
+        hit
+    ) {
+        ctx.save();
 
-            ctx.restore();
+        ctx.translate(
+            x,
+            y
+        );
 
-        }
+        ctx.scale(
+            scale,
+            scale
+        );
 
+        ctx.globalAlpha =
+            hit
+                ? 0.42
+                : 1;
 
-        /*
-          Flooded lane
-        */
+        if (
+            type === "barrel"
+        ) {
+            ctx.fillStyle =
+                "#945345";
 
-        if (obstacle.type === "water") {
-
-            const width =
-                45 * scale;
-
-            const height =
-                15 * scale;
-
+            ctx.fillRect(
+                -10,
+                -22,
+                20,
+                22
+            );
 
             ctx.fillStyle =
-                "rgba(62,166,210,.75)";
+                ACCENT;
 
+            ctx.fillRect(
+                -12,
+                -20,
+                24,
+                4
+            );
+
+            ctx.fillRect(
+                -11,
+                -8,
+                22,
+                3
+            );
+        }
+
+        else if (
+            type === "puddle"
+        ) {
+            ctx.fillStyle =
+                "rgba(68,147,180,.78)";
 
             ctx.beginPath();
 
             ctx.ellipse(
-                x,
-                y + 5,
-                width,
-                height,
+                0,
+                -2,
+                28,
+                10,
                 0,
                 0,
                 Math.PI * 2
@@ -1070,65 +1788,156 @@ document.addEventListener("DOMContentLoaded", () => {
 
             ctx.fill();
 
-
             ctx.strokeStyle =
-                "rgba(215,245,255,.85)";
+                "rgba(185,225,239,.72)";
 
             ctx.lineWidth = 2;
 
+            ctx.beginPath();
+
+            ctx.arc(
+                -4,
+                -2,
+                13,
+                0.2,
+                2.8
+            );
+
+            ctx.stroke();
+        }
+
+        else if (
+            type === "branch"
+        ) {
+            ctx.strokeStyle =
+                "#594536";
+
+            ctx.lineWidth = 8;
+
+            ctx.lineCap =
+                "round";
 
             ctx.beginPath();
 
             ctx.moveTo(
-                x - width * 0.7,
-                y + 2
+                -24,
+                -4
             );
 
-            ctx.quadraticCurveTo(
-                x,
-                y - 5,
-                x + width * 0.7,
-                y + 2
+            ctx.lineTo(
+                18,
+                -24
+            );
+
+            ctx.moveTo(
+                -2,
+                -15
+            );
+
+            ctx.lineTo(
+                13,
+                -34
             );
 
             ctx.stroke();
 
-        }
+            ctx.fillStyle =
+                "#5e774a";
 
-    }
+            ctx.beginPath();
 
-
-    /* ============================================================
-       PLAYER
-    ============================================================ */
-
-    function drawPlayer() {
-
-        const x =
-            laneXAt(
-                playerLane,
-                player.y
+            ctx.arc(
+                18,
+                -27,
+                8,
+                0,
+                Math.PI * 2
             );
 
+            ctx.arc(
+                12,
+                -35,
+                6,
+                0,
+                Math.PI * 2
+            );
 
+            ctx.fill();
+        }
+
+        else {
+            ctx.fillStyle =
+                "#746b63";
+
+            ctx.beginPath();
+
+            ctx.moveTo(
+                -22,
+                0
+            );
+
+            ctx.lineTo(
+                -14,
+                -18
+            );
+
+            ctx.lineTo(
+                1,
+                -12
+            );
+
+            ctx.lineTo(
+                10,
+                -26
+            );
+
+            ctx.lineTo(
+                24,
+                -6
+            );
+
+            ctx.lineTo(
+                18,
+                0
+            );
+
+            ctx.closePath();
+
+            ctx.fill();
+        }
+
+        ctx.restore();
+    }
+
+    function drawPlayer() {
         const y =
-            player.y -
-            jumpHeight;
+            height * 0.865;
 
+        const x =
+            laneCenterAt(
+                visualLane,
+                y
+            );
 
-        /* Shadow */
+        const scale =
+            clamp(
+                height / 430,
+                0.72,
+                1.16
+            );
+
+        ctx.save();
 
         ctx.fillStyle =
-            "rgba(0,0,0,.28)";
-
+            "rgba(0,0,0,.30)";
 
         ctx.beginPath();
 
         ctx.ellipse(
             x,
-            player.y + 8,
-            23,
-            7,
+            y + 12,
+            22 * scale,
+            6 * scale,
             0,
             0,
             Math.PI * 2
@@ -1136,341 +1945,344 @@ document.addEventListener("DOMContentLoaded", () => {
 
         ctx.fill();
 
-
-        ctx.font =
-            `${player.size}px Arial`;
-
-        ctx.textAlign =
-            "center";
-
-
-        ctx.fillText(
-            "🏃",
+        ctx.translate(
             x,
-            y
+            y -
+            jumpHeight
         );
 
+        ctx.scale(
+            scale,
+            scale
+        );
+
+        /* legs */
+
+        ctx.strokeStyle =
+            "#26333b";
+
+        ctx.lineWidth = 5;
+
+        ctx.lineCap =
+            "round";
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            -2,
+            -3
+        );
+
+        ctx.lineTo(
+            -15,
+            16
+        );
+
+        ctx.moveTo(
+            3,
+            -2
+        );
+
+        ctx.lineTo(
+            17,
+            13
+        );
+
+        ctx.stroke();
+
+        /* arms */
+
+        ctx.strokeStyle =
+            "#ad7245";
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            -1,
+            -27
+        );
+
+        ctx.lineTo(
+            -16,
+            -12
+        );
+
+        ctx.moveTo(
+            2,
+            -26
+        );
+
+        ctx.lineTo(
+            18,
+            -18
+        );
+
+        ctx.stroke();
+
+        /* shirt */
+
+        ctx.fillStyle =
+            ACCENT;
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            -8,
+            -30
+        );
+
+        ctx.lineTo(
+            8,
+            -30
+        );
+
+        ctx.lineTo(
+            6,
+            -7
+        );
+
+        ctx.lineTo(
+            -6,
+            -7
+        );
+
+        ctx.closePath();
+
+        ctx.fill();
+
+        /* head */
+
+        ctx.fillStyle =
+            "#ad7245";
+
+        ctx.beginPath();
+
+        ctx.arc(
+            0,
+            -40,
+            7,
+            0,
+            Math.PI * 2
+        );
+
+        ctx.fill();
+
+        ctx.restore();
     }
 
+    function drawRain() {
+        ctx.strokeStyle =
+            "rgba(221,231,237,.26)";
 
-    /* ============================================================
-       HUD
-    ============================================================ */
+        ctx.lineWidth = 1.25;
 
-    function drawHUD() {
+        const spacing = 62;
 
-        /*
-          Impacts
-        */
+        for (
+            let x = -spacing;
+            x <
+            width + spacing;
+            x += spacing
+        ) {
+            for (
+                let y = -spacing;
+                y <
+                height + spacing;
+                y += spacing
+            ) {
+                const jitter =
+                    (
+                        x * 13 +
+                        y * 7
+                    ) % 31;
 
-        ctx.fillStyle =
-            "rgba(24,31,32,.72)";
+                const rainX =
+                    x +
+                    jitter +
+                    rainOffset *
+                    0.15;
 
-        ctx.fillRect(
-            15,
-            15,
-            145,
-            42
-        );
+                const rainY =
+                    y +
+                    (
+                        rainOffset +
+                        jitter
+                    ) %
+                    spacing;
 
+                ctx.beginPath();
 
-        ctx.fillStyle =
-            "#ffffff";
+                ctx.moveTo(
+                    rainX,
+                    rainY
+                );
 
-        ctx.font =
-            "700 12px Arial";
+                ctx.lineTo(
+                    rainX - 9,
+                    rainY + 22
+                );
 
-        ctx.textAlign =
-            "left";
+                ctx.stroke();
+            }
+        }
+    }
 
-
-        ctx.fillText(
-            `IMPACTS  ${impacts} / 4`,
-            29,
-            41
-        );
-
-
-        /*
-          Distance remaining
-        */
-
-        const remaining =
-            Math.max(
+    function drawVignette() {
+        const gradient =
+            ctx.createLinearGradient(
                 0,
-                Math.floor(
-                    GOAL_DISTANCE -
-                    distance
-                )
+                0,
+                width,
+                0
             );
 
+        gradient.addColorStop(
+            0,
+            "rgba(12,20,25,.18)"
+        );
+
+        gradient.addColorStop(
+            0.16,
+            "rgba(12,20,25,0)"
+        );
+
+        gradient.addColorStop(
+            0.84,
+            "rgba(12,20,25,0)"
+        );
+
+        gradient.addColorStop(
+            1,
+            "rgba(12,20,25,.18)"
+        );
 
         ctx.fillStyle =
-            "rgba(24,31,32,.72)";
-
+            gradient;
 
         ctx.fillRect(
-            W - 172,
-            15,
-            157,
-            42
+            0,
+            0,
+            width,
+            height
         );
-
-
-        ctx.fillStyle =
-            "#ffffff";
-
-
-        ctx.fillText(
-            `SHELTER  ${remaining}m`,
-            W - 156,
-            41
-        );
-
     }
 
-
-    /* ============================================================
-       WIND WARNING
-    ============================================================ */
-
-    function drawWindWarning() {
-
-        if (windWarning <= 0) return;
-
-
-        const opacity =
+    function loop(now) {
+        const dt =
             Math.min(
-                1,
-                windWarning / 30
+                40,
+                now -
+                lastTime ||
+                16.67
             );
 
+        lastTime = now;
 
-        ctx.fillStyle =
-            `rgba(255, 196, 65, ${0.12 * opacity})`;
+        update(dt);
 
+        drawScene();
 
-        ctx.fillRect(
-            0,
-            0,
-            W,
-            H
-        );
+        if (running) {
+            frameId =
+                requestAnimationFrame(loop);
+        }
+    }
 
+    function handleKeyboard(event) {
+        const tag =
+            document.activeElement
+                ?.tagName
+                ?.toLowerCase();
 
-        ctx.font =
-            "700 18px Arial";
-
-        ctx.textAlign =
-            "center";
-
-
-        ctx.fillStyle =
-            `rgba(255,255,255,${opacity})`;
-
-
-        if (windDirection === "left") {
-
-            ctx.fillText(
-                "💨  WIND ←",
-                W / 2,
-                100
-            );
-
-        } else {
-
-            ctx.fillText(
-                "WIND →  💨",
-                W / 2,
-                100
-            );
-
+        if (
+            [
+                "input",
+                "textarea",
+                "select"
+            ].includes(tag)
+        ) {
+            return;
         }
 
-    }
-
-
-    /* ============================================================
-       DRAW
-    ============================================================ */
-
-    function draw() {
-
-        ctx.clearRect(
-            0,
-            0,
-            W,
-            H
-        );
-
-
-        drawRoad();
-
-        obstacles.forEach(
-            drawObstacle
-        );
-
-        drawPlayer();
-
-        drawRain();
-
-        drawHUD();
-
-        drawWindWarning();
-
-
-        /*
-          Collision flash
-        */
-
-        if (flashTimer > 0) {
-
-            ctx.fillStyle =
-                `rgba(220,60,60,${flashTimer / 55
-                })`;
-
-
-            ctx.fillRect(
-                0,
-                0,
-                W,
-                H
-            );
-
+        if (
+            [
+                "ArrowLeft",
+                "ArrowRight",
+                "ArrowUp",
+                " "
+            ].includes(event.key)
+        ) {
+            event.preventDefault();
         }
 
-    }
-
-
-    /* ============================================================
-       END GAME
-    ============================================================ */
-
-    function endGame(success) {
-
-        running = false;
-
-        startScreen.classList.remove(
-            "hidden"
-        );
-
-
-        if (success) {
-
-            startScreen.classList.add("runner-win");
-
-            startScreen.innerHTML = `
-
-        <div class="runner-victory">
-
-            <div class="runner-victory-icon">
-                <i class="fas fa-house-medical"></i>
-            </div>
-
-            <div class="runner-victory-ribbon">
-                <span>EVACUATION COMPLETE</span>
-            </div>
-
-            <div class="runner-victory-card">
-
-                <div class="runner-victory-check">
-                    <i class="fas fa-check"></i>
-                </div>
-
-                <h3>You Reached Safety!</h3>
-
-                <p>
-                    You successfully navigated the hurricane
-                    and reached the emergency shelter.
-                </p>
-
-                <div class="runner-victory-stats">
-
-                    <div>
-                        <strong>${Math.floor(distance)} m</strong>
-                        <span>Distance</span>
-                    </div>
-
-                    <div>
-                        <strong>${impacts}</strong>
-                        <span>Impact${impacts === 1 ? "" : "s"}</span>
-                    </div>
-
-                </div>
-
-                <button id="runner-restart-btn">
-                    <i class="fas fa-rotate-right"></i>
-                    Run Again
-                </button>
-
-            </div>
-
-        </div>
-
-    `;
-
-        } else {
-
-            startScreen.innerHTML = `
-
-        <i class="fas fa-hurricane"></i>
-
-        <h3>Evacuation Failed</h3>
-
-        <p>
-          Debris, flooding, and storm damage
-          made the route too dangerous.
-          Try switching lanes earlier.
-        </p>
-
-        <button id="runner-restart-btn">
-          <i class="fas fa-rotate-right"></i>
-          Try Again
-        </button>
-
-      `;
-
+        if (
+            event.key ===
+            "ArrowLeft"
+        ) {
+            moveLane(-1);
         }
 
+        if (
+            event.key ===
+            "ArrowRight"
+        ) {
+            moveLane(1);
+        }
 
-        document
-            .getElementById(
-                "runner-restart-btn"
-            )
-            .addEventListener(
-                "click",
-                resetAfterGame
+        if (
+            event.key ===
+            "ArrowUp" ||
+            event.key === " "
+        ) {
+            jump();
+        }
+    }
+
+    startButton?.addEventListener(
+        "click",
+        startGame
+    );
+
+    leftButton?.addEventListener(
+        "click",
+        () => moveLane(-1)
+    );
+
+    rightButton?.addEventListener(
+        "click",
+        () => moveLane(1)
+    );
+
+    jumpButton?.addEventListener(
+        "click",
+        jump
+    );
+
+    window.addEventListener(
+        "keydown",
+        handleKeyboard,
+        {
+            passive: false
+        }
+    );
+
+    if (
+        "ResizeObserver"
+        in window
+    ) {
+        const observer =
+            new ResizeObserver(
+                resizeCanvas
             );
 
-    }
-
-
-    function resetAfterGame() {
-
-        location.reload();
-
-    }
-
-
-    /* ============================================================
-       GAME LOOP
-    ============================================================ */
-
-    function gameLoop() {
-
-        update();
-
-        draw();
-
-        requestAnimationFrame(
-            gameLoop
+        observer.observe(canvas);
+    } else {
+        window.addEventListener(
+            "resize",
+            resizeCanvas
         );
-
     }
 
-
-    draw();
-
-    gameLoop();
-
-});
+    resizeCanvas();
+    resetGame();
+})();

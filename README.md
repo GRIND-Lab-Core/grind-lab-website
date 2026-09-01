@@ -43,12 +43,16 @@ grind-lab-website/
 └── data/
     └── team.json                   # Team member data
 
+└── data/
+    └── team.json                   # Team member data
+```
+
 ---
 
 ## Contact
 
 **Dr. Bing Zhou**  
-[bzhou11@utk.edu](mailto:bzhou11@utk.edu)  
+[bzhou11@utk.edu](mailto:bzhou11@utk.edu)
 
 Department of Geography & Sustainability  
 University of Tennessee, Knoxville

@@ -1083,3 +1083,49 @@
     font-size: 16px;
   }
 }
+/* =========================================================
+   MOBILE GAME UI FIX
+========================================================= */
+
+@media (max-width: 520px) {
+
+  /* 手机端游戏里不再显示左上角标题卡
+     Start / Result screen 已经有标题，不需要重复 */
+  .game-ui-card {
+    display: none !important;
+  }
+
+  /* Start screen / Result screen 出现时，
+     隐藏 metrics 和方向控制键，避免和 Start / Run Again 重叠 */
+  .game-strip:has(.runner-start-screen:not(.is-hidden)) .game-metrics,
+  .game-strip:has(.runner-start-screen:not(.is-hidden)) .game-control-cluster {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
+  /* 游戏真正开始后自动恢复 */
+  .game-metrics,
+  .game-control-cluster {
+    transition: opacity 0.2s ease;
+  }
+
+  /* Result / Start 内容稍微收紧 */
+  .runner-start-screen {
+    padding: 24px 20px !important;
+  }
+
+  .runner-start-screen h3 {
+    font-size: 30px !important;
+  }
+
+  .runner-start-screen p {
+    max-width: 330px;
+    font-size: 14px !important;
+    line-height: 1.55 !important;
+  }
+
+  #runner-start-btn {
+    margin-top: 10px;
+  }
+}

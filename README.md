@@ -42,6 +42,9 @@ grind-lab-website/
 │
 └── data/
     └── team.json                   # Team member data
+
+└── data/
+    └── team.json                   # Team member data
 ```
 
 ---

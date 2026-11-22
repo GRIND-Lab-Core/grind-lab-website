@@ -1,0 +1,38 @@
+.resource-index { padding-block: clamp(1.5rem, 3vw, 2.75rem) var(--section-space); }
+.resource-list > li > :first-child {
+  grid-template-columns: clamp(9rem, 16vw, 13rem) minmax(0, 1fr);
+  gap: clamp(1rem, 2.7vw, 2.5rem);
+  padding-block: clamp(1rem, 2vw, 1.6rem);
+}
+.resource-list .news-thumb { aspect-ratio: 1.65; }
+.resource-list .news-row-meta { font-size: .86rem; }
+.resource-list .news-row-copy h2 { margin-block: .32rem; font-size: clamp(1.25rem, 2.1vw, 1.85rem); }
+.resource-list .news-row-copy p { max-width: 66ch; font-size: 1rem; }
+.symposium-thumb { object-fit: contain; background: #1c2c4b; }
+.placeholder-thumb { display: grid; place-items: center; background: var(--surface); color: var(--muted); font-size: 1.65rem; }
+
+.program-heading h1 { margin-block: 1.25rem .7rem; }
+.aag-legend, .aag-card-top, .aag-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .5rem; }
+.aag-legend { margin-top: 1rem; }
+.aag-body { display: grid; gap: clamp(2rem, 4vw, 3.5rem); padding-block: var(--section-space); }
+.aag-day-block { display: grid; grid-template-columns: minmax(8rem, 18%) minmax(0, 1fr); gap: 1.5rem; }
+.aag-day-label { font-size: clamp(1.4rem, 2.4vw, 2.2rem); }
+.aag-day-date { display: block; margin-top: .3rem; color: var(--muted); font-size: .95rem; font-weight: 400; letter-spacing: 0; }
+.aag-card { border-top: 1px solid var(--line); padding-block: 1rem; }
+.aag-role-pill, .aag-type-tag, .aag-hybrid-tag { display: inline-flex; align-items: center; gap: .35rem; padding: .2rem .5rem; border: 1px solid var(--line); border-radius: 3px; font-size: .78rem; line-height: 1.4; }
+.aag-role-pill.chair, .aag-role-pill.presenter { border-left: 3px solid var(--orange); }
+.aag-session-title { margin-block: .55rem; font-size: clamp(1.12rem, 1.7vw, 1.55rem); }
+.aag-meta { gap: .3rem 1rem; color: var(--muted); font-size: .92rem; }
+.aag-summary { display: flex; flex-wrap: wrap; gap: 1rem 2.3rem; padding-block: 1.2rem; border-block: 1px solid var(--line); }
+.aag-sum-num { display: block; font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+.aag-sum-label { color: var(--muted); font-size: .85rem; }
+
+@media (max-width: 700px) {
+  .aag-day-block { grid-template-columns: 1fr; gap: .7rem; }
+  .aag-day-date { display: inline; margin-left: .5rem; }
+}
+@media (max-width: 520px) {
+  .resource-list > li > :first-child { grid-template-columns: clamp(5.25rem, 22vw, 7rem) minmax(0, 1fr); gap: .8rem; }
+  .resource-list .news-thumb { aspect-ratio: 1.3; }
+  .resource-list .news-row-copy p { font-size: .94rem; }
+}

@@ -9,120 +9,85 @@
   <meta property="og:title" content="GRIND Lab — UTK Geography">
   <meta property="og:description" content="Responsible GeoAI for a Resilient, Equitable, and Healthy Society.">
   <title>GRIND Lab — Home</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/logo/Lab_Logo_ver01.png">
-
-  <!-- Fonts & Icons -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-  <!-- Styles -->
+  <meta name="theme-color" content="#faf8f2">
+  <link rel="icon" type="image/png" href="assets/images/logo/grind-icon.png">
+  <link rel="stylesheet" href="assets/fonts/fontawesome/icons.css">
   <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/news-rows.css">
   <link rel="stylesheet" href="assets/css/home.css">
-  <link rel="stylesheet" href="assets/css/disaster-runner.css">
+  <link rel="stylesheet" href="assets/research/motion.css">
 </head>
 
 <body>
-
-  <!-- Page Loader -->
-  <div class="page-loader" id="page-loader">
-    <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab" class="loader-logo" width="80">
-  </div>
-
-  <!-- Navbar -->
-  <nav class="navbar" id="navbar">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="index.html" class="nav-brand">
-        <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab Logo" class="nav-logo-img">
-        <div class="nav-logo-text">
-          <span class="nav-logo-main">GRIND Lab</span>
-          <span class="nav-logo-sub">UTK Geography</span>
-        </div>
+      <a class="nav-brand" href="index.html" aria-label="GRIND Lab home">
+        <img src="assets/images/logo/grind-tennessee.png" alt="GRIND Lab" width="640" height="173">
       </a>
-
+      <div class="affiliation">University of Tennessee<span>Knoxville</span></div>
+      <a class="pi-avatar" href="https://bzbarrett.github.io/" aria-label="Bing Zhou’s personal website" title="Principal Investigator · Bing Zhou’s personal website">
+        <span class="pi-hint" aria-hidden="true">PI <span class="pi-arrow"></span></span>
+        <span class="nav-portrait" aria-hidden="true">
+          <span class="portrait-turn">
+            <img class="portrait-face" src="assets/images/team/bing-zhou-avatar.jpg" alt="" width="40" height="40">
+            <img class="portrait-face portrait-back" src="assets/images/team/bing-zhou-avatar-illustrated.webp" alt="" width="40" height="40">
+          </span>
+        </span>
+      </a>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="news.html" class="nav-link">News</a></li>
-        <li><a href="projects.html" class="nav-link">Projects</a></li>
-        <li><a href="team.html" class="nav-link">Team</a></li>
-        <li><a href="contact.html" class="nav-link">Contact</a></li>
+        <li><a class="nav-link" href="index.html" aria-current="page">Home</a></li>
+        <li><a class="nav-link" href="news.html">News</a></li>
+        <li><a class="nav-link" href="research.html">Research</a></li>
+        <li><a class="nav-link" href="publications.html">Publication</a></li>
+        <li><a class="nav-link" href="team.html">Team</a></li>
+        <li><a class="nav-link" href="resources.html">Resource</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-
       <div class="nav-actions">
-        <a href="apply.html" class="btn-apply">Apply</a>
-        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <a class="btn-apply" href="apply.html">Apply</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════
-     GAME-FIRST HURRICANE HERO
-═══════════════════════════════════════ -->
-  <section class="hero game-strip-hero" id="home">
-    <canvas id="hero-canvas"></canvas>
-    <div class="hero-bg-glow glow-1"></div>
-    <div class="hero-bg-glow glow-2"></div>
-
-    <div class="game-strip-inner">
-      <div class="game-strip" id="resilience-game">
-
-        <div class="game-canvas-window">
-          <canvas id="disaster-runner" aria-label="Interactive hurricane evacuation runner game"></canvas>
-
-          <div class="runner-start-screen" id="runner-start-screen">
-
-            <h3>Hurricane Evacuation</h3>
-
-            <p>
-              Reach the shelter. Use ← → to change lanes and ↑ to jump.
-            </p>
-
-            <button id="runner-start-btn" type="button">
-              <i class="fas fa-play" aria-hidden="true"></i> Start Run
-            </button>
-
-          </div>
-        </div>
-
-        <div class="game-ui-card">
-          <span class="runner-kicker">Interactive Scenario</span>
-          <h2>Outrun the Hurricane</h2>
-        </div>
-
-        <div class="game-metrics" aria-label="Game status">
-          <div class="game-metric">
-            <span>Distance</span>
-            <strong id="runner-distance">0 m</strong>
-          </div>
-          <div class="game-metric">
-            <span>Impacts</span>
-            <strong id="runner-impacts">0 / 4</strong>
-          </div>
-          <div class="game-metric">
-            <span>Shelter</span>
-            <strong id="runner-shelter">500 m</strong>
-          </div>
-        </div>
-
-        <div class="game-status-card" id="runner-status">
-          Press Start, then use ← → to change lanes and ↑ to jump.
-        </div>
-
-        <div class="game-control-cluster" aria-label="Game controls">
-          <button class="runner-control-btn" id="runner-left" type="button" aria-label="Move left">←</button>
-          <button class="runner-control-btn" id="runner-right" type="button" aria-label="Move right">→</button>
-          <button class="runner-control-btn jump" id="runner-jump" type="button" aria-label="Jump">
-            <i class="fas fa-arrow-up" aria-hidden="true"></i> Jump
-          </button>
-        </div>
-
+  <main id="main-content" tabindex="-1">
+  <section class="motion" id="home" aria-labelledby="motion-title" tabindex="-1">
+    <div class="motion-stage">
+      <div class="motion-copy">
+        <h1 class="section-tag" id="motion-title">Research in motion</h1>
+        <h2 id="topic">Observe<span>.</span></h2>
+        <p class="statement" id="statement">Connect signals across<br> people and place.</p>
+        <p class="description" id="description">Remote sensing, street-view imagery, mobility, environmental monitoring, and population-scale digital traces.</p>
+        <div class="keywords" id="keywords"><span>Multimodal fusion</span><span>Georeferenced layers</span></div>
+        <p class="principles">Transparent. Equitable. Human-centered.</p>
+      </div>
+      <div class="visual" role="group" aria-label="Interactive 3D research landscape" tabindex="0" aria-describedby="scene-instructions">
+        <canvas id="scene" role="img" aria-label="Two satellites and a street-view vehicle collect observations across a miniature landscape."></canvas>
+        <div id="labels" class="labels" aria-hidden="true"></div>
+        <span class="visual-hint" aria-hidden="true"><i class="far fa-hand-pointer" aria-hidden="true"></i> Drag to explore</span>
+        <span class="sr-only" id="scene-instructions">Drag to rotate. Use the left and right arrow keys to select a topic or the space bar to pause and play.</span>
+        <p id="fallback" hidden>The 3D landscape is unavailable in this browser. Select a topic below to explore the research.</p>
       </div>
     </div>
+    <div class="motion-controls">
+      <div class="topics" role="group" aria-label="Research topics">
+        <button type="button" class="topic active" data-phase="0" aria-pressed="true"><span class="track"><i></i></span><span>Observe</span><small>Geospatial data</small></button>
+        <button type="button" class="topic" data-phase="1" aria-pressed="false"><span class="track"><i></i></span><span>Model</span><small>Spatial intelligence</small></button>
+        <button type="button" class="topic" data-phase="2" aria-pressed="false"><span class="track"><i></i></span><span>Understand</span><small>Coupled risks</small></button>
+        <button type="button" class="topic" data-phase="3" aria-pressed="false"><span class="track"><i></i></span><span>Act</span><small>Resilience</small></button>
+      </div>
+      <div class="playback">
+        <div class="playback-buttons">
+          <button type="button" id="play" aria-label="Pause animation"><span class="play-icon" aria-hidden="true"></span><span id="play-label">Pause</span></button>
+          <button type="button" id="restart" aria-label="Restart animation" title="Restart animation"><i class="fas fa-rotate-left" aria-hidden="true"></i></button>
+        </div>
+        <span class="loop-label">10-second loop</span>
+      </div>
+    </div>
+    <p id="announcement" class="sr-only" role="status"></p>
   </section>
 
   <!-- ═══════════════════════════════════════
@@ -134,7 +99,7 @@
 
         <div class="lab-intro-copy fade-up">
           <div class="section-tag">About the Lab</div>
-          <h1>GRIND Lab</h1>
+          <h2>GRIND Lab</h2>
           <span class="lab-name">Geospatial Responsible AI for Nature-human Dynamics</span>
 
           <p>
@@ -146,591 +111,144 @@
           </p>
 
           <div class="lab-intro-actions">
-            <a href="#research-focus" class="btn btn-primary">
-              <i class="fas fa-flask"></i> What We Study
+            <a href="research.html" class="btn btn-primary">
+              <i class="fas fa-flask" aria-hidden="true"></i> What We Study
             </a>
             <a href="team.html" class="btn btn-outline">
-              <i class="fas fa-users"></i> Meet the Team
+              <i class="fas fa-users" aria-hidden="true"></i> Meet the Team
             </a>
           </div>
         </div>
 
-        <div class="lab-intro-points fade-up" data-delay="150">
-          <div class="lab-intro-point">
-            <i class="fas fa-brain"></i>
-            <h3>Responsible GeoAI</h3>
-            <p>Fair, explainable, and trustworthy geospatial artificial intelligence.</p>
-          </div>
-
-          <div class="lab-intro-point">
-            <i class="fas fa-shield-halved"></i>
-            <h3>Resilience</h3>
-            <p>Understanding hazards, adaptation, recovery, and nature-human dynamics.</p>
-          </div>
-
-          <div class="lab-intro-point">
-            <i class="fas fa-heart-pulse"></i>
-            <h3>Equity &amp; Health</h3>
-            <p>Studying who is exposed, who is protected, and how impacts differ across communities.</p>
-          </div>
-        </div>
-
+        <section class="focus-panel" id="research-focus" aria-labelledby="focus-heading">
+          <h2 class="section-tag" id="focus-heading">Research Focus</h2>
+          <details class="focus-area">
+            <summary><i class="fas fa-brain" aria-hidden="true"></i>Responsible GeoAI</summary>
+            <p>Designing fair, explainable, and trustworthy geospatial AI models that account for spatial heterogeneity and social equity in predictions.</p>
+            <div class="focus-tags"><span class="badge">XAI</span><span class="badge">Fairness</span><span class="badge">GNN</span></div>
+          </details>
+          <details class="focus-area">
+            <summary><i class="fas fa-satellite" aria-hidden="true"></i>Remote Sensing &amp; Earth Observation</summary>
+            <p>Leveraging multi-source satellite imagery (SAR, optical, LiDAR) and deep learning for land cover mapping, change detection, and disaster monitoring.</p>
+            <div class="focus-tags"><span class="badge">SAR</span><span class="badge">Sentinel</span><span class="badge">Deep Learning</span></div>
+          </details>
+          <details class="focus-area">
+            <summary><i class="fas fa-fire-flame-curved" aria-hidden="true"></i>Disaster Risk &amp; Resilience</summary>
+            <p>Developing predictive and post-event models for wildfire, flood, hurricane, and compound hazards, with a focus on community resilience and recovery.</p>
+            <div class="focus-tags"><span class="badge">Wildfire</span><span class="badge">Flood</span><span class="badge">Hurricane</span></div>
+          </details>
+          <details class="focus-area">
+            <summary><i class="fas fa-leaf" aria-hidden="true"></i>Coupled Nature-Human Systems</summary>
+            <p>Studying how human activities and natural processes interact across spatial and temporal scales to generate and amplify socio-environmental risks.</p>
+            <div class="focus-tags"><span class="badge">Sustainability</span><span class="badge">Urban Heat</span><span class="badge">Ecosystem</span></div>
+          </details>
+          <details class="focus-area">
+            <summary><i class="fas fa-diagram-project" aria-hidden="true"></i>Spatial Data Science</summary>
+            <p>Advancing methods for spatial statistics, graph neural networks, and spatio-temporal modeling to extract knowledge from complex geospatial datasets.</p>
+            <div class="focus-tags"><span class="badge">GNN</span><span class="badge">Spatio-Temporal</span><span class="badge">ML</span></div>
+          </details>
+          <details class="focus-area">
+            <summary><i class="fas fa-shield-halved" aria-hidden="true"></i>Environmental Justice &amp; Equity</summary>
+            <p>Examining how environmental hazards and climate change disproportionately affect marginalized communities, and developing equitable GeoAI solutions.</p>
+            <div class="focus-tags"><span class="badge">Equity</span><span class="badge">Environmental Justice</span></div>
+          </details>
+        </section>
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-     STATS BANNER
-═══════════════════════════════════════ -->
-  <section class="stats-banner">
-    <div class="stats-inner">
-
-      <div class="stat-item fade-in" data-delay="100">
-        <div class="stat-num">
-          <span data-count="20" data-suffix="+">20+</span>
-        </div>
-        <div class="stat-label">Peer-Reviewed Publications</div>
-      </div>
-
-      <div class="stat-item fade-in" data-delay="200">
-        <div class="stat-num">
-          <span data-count="6">6</span>
-        </div>
-        <div class="stat-label">Research Focus Areas</div>
-      </div>
-
-      <div class="stat-item fade-in" data-delay="300">
-        <div class="stat-num">
-          <span data-count="3">3</span>
-        </div>
-        <div class="stat-label">Core Lab Members</div>
-      </div>
-
-      <div class="stat-item fade-in" data-delay="400">
-        <div class="stat-num">
-          <span data-count="3" data-suffix="+">3+</span>
-        </div>
-        <div class="stat-label">Research Mentees</div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-     RESEARCH FOCUS AREAS
-═══════════════════════════════════════ -->
-  <section class="section" id="research-focus">
+  <section class="section home-news" id="latest-news" aria-labelledby="news-heading">
     <div class="container">
-      <div class="section-header">
-        <div class="section-tag fade-up">Research Focus</div>
-        <h2 class="section-title fade-up" data-delay="100">What We Study</h2>
-        <p class="section-subtitle fade-up" data-delay="200">
-          We use geospatial data and AI to study people, places, and the environment.
-        </p>
+      <div class="home-news-heading">
+        <h2 id="news-heading">Latest News</h2>
+        <a class="direct-text-link" href="news.html">All news <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
       </div>
-
-      <div class="research-grid">
-        <!-- Card 1 -->
-        <div class="research-card fade-up">
-          <div class="research-icon"><i class="fas fa-brain"></i></div>
-          <h3>Responsible GeoAI</h3>
-          <p>Designing fair, explainable, and trustworthy geospatial AI models that account for spatial heterogeneity
-            and social equity in predictions.</p>
-          <div class="research-tags">
-            <span class="badge badge-blue">XAI</span>
-            <span class="badge badge-blue">Fairness</span>
-            <span class="badge badge-blue">GNN</span>
+      <ul class="news-rows">
+        <li><a href="https://hazard-weave.vercel.app/" target="_blank" rel="noopener noreferrer">
+          <img class="news-thumb" src="assets/images/news/thumbs/hazardweave.png" alt="" width="140" height="86" loading="lazy" decoding="async">
+          <div class="news-row-copy">
+            <div class="news-row-meta"><time datetime="2026">2026</time><span>Award</span></div>
+            <h3>HazardWeave receives AI-Tennessee THRIVE support</h3>
+            <p>The award supports a platform that brings hazard maps, geospatial data, and decision tools together for disaster management.</p>
           </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="research-card fade-up" data-delay="100">
-          <div class="research-icon"><i class="fas fa-satellite"></i></div>
-          <h3>Remote Sensing & Earth Observation</h3>
-          <p>Leveraging multi-source satellite imagery (SAR, optical, LiDAR) and deep learning for land cover mapping,
-            change detection, and disaster monitoring.</p>
-          <div class="research-tags">
-            <span class="badge badge-teal">SAR</span>
-            <span class="badge badge-teal">Sentinel</span>
-            <span class="badge badge-teal">Deep Learning</span>
+        </a></li>
+        <li><a href="https://arxiv.org/pdf/2605.02092" target="_blank" rel="noopener noreferrer">
+          <img class="news-thumb" src="assets/images/news/thumbs/nora.png" alt="" width="140" height="86" loading="lazy" decoding="async">
+          <div class="news-row-copy">
+            <div class="news-row-meta"><time datetime="2026-05">May 2026</time><span>Preprint</span></div>
+            <h3>NORA: An autonomous agent for spatial data science</h3>
+            <p>The preprint introduces a research agent that can plan a spatial analysis, run it, and report its findings.</p>
           </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="research-card fade-up" data-delay="200">
-          <div class="research-icon"><i class="fas fa-fire-flame-curved"></i></div>
-          <h3>Disaster Risk & Resilience</h3>
-          <p>Developing predictive and post-event models for wildfire, flood, hurricane, and compound hazards, with a
-            focus on community resilience and recovery.</p>
-          <div class="research-tags">
-            <span class="badge badge-orange">Wildfire</span>
-            <span class="badge badge-orange">Flood</span>
-            <span class="badge badge-orange">Hurricane</span>
+        </a></li>
+        <li><a href="https://geography.wisc.edu/geods/archives/4331" target="_blank" rel="noopener noreferrer">
+          <img class="news-thumb" src="assets/images/news/thumbs/aag.png" alt="" width="140" height="86" loading="lazy" decoding="async">
+          <div class="news-row-copy">
+            <div class="news-row-meta"><time datetime="2026-03">Mar 2026</time><span>Event</span></div>
+            <h3>Bing Zhou chairs GeoAI for Disaster Resilience at AAG 2026</h3>
+            <p>The San Francisco session brought together researchers using GeoAI and deep learning to study disaster impacts and recovery.</p>
           </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="research-card fade-up" data-delay="300">
-          <div class="research-icon"><i class="fas fa-leaf"></i></div>
-          <h3>Coupled Nature-Human Systems</h3>
-          <p>Studying how human activities and natural processes interact across spatial and temporal scales to generate
-            and amplify socio-environmental risks.</p>
-          <div class="research-tags">
-            <span class="badge badge-green">Sustainability</span>
-            <span class="badge badge-green">Urban Heat</span>
-            <span class="badge badge-green">Ecosystem</span>
+        </a></li>
+        <li><a href="https://gisersym.github.io/" target="_blank" rel="noopener noreferrer">
+          <img class="news-thumb" src="assets/images/news/thumbs/giser.png" alt="" width="140" height="86" loading="lazy" decoding="async">
+          <div class="news-row-copy">
+            <div class="news-row-meta"><time datetime="2026-03">Mar 2026</time><span>Event</span></div>
+            <h3>Bing Zhou co-organizes the GISER Symposium at AAG 2026</h3>
+            <p>The symposium explored ethics in GIScience, the use of AI in geography education, and spatial equity.</p>
           </div>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="research-card fade-up" data-delay="100">
-          <div class="research-icon">
-            <i class="fas fa-diagram-project"></i>
+        </a></li>
+        <li><a href="https://sdl.gis.harvard.edu/spatial-data-lab-internship-program" target="_blank" rel="noopener noreferrer">
+          <img class="news-thumb" src="assets/images/news/thumbs/harvard.png" alt="" width="140" height="86" loading="lazy" decoding="async">
+          <div class="news-row-copy">
+            <div class="news-row-meta"><time datetime="2026">2026</time><span>Announcement</span></div>
+            <h3>Mentoring interns at Harvard’s Spatial Data Lab</h3>
+            <p>Through Harvard’s Center for Geographic Analysis, Dr. Zhou mentors interns studying how extreme heat changes human behavior.</p>
           </div>
-
-          <h3>Spatial Data Science</h3>
-
-          <p>
-            Advancing methods for spatial statistics, graph neural networks, and spatio-temporal modeling to extract
-            knowledge from complex geospatial datasets.
-          </p>
-
-          <div class="research-tags">
-            <span class="badge badge-purple">GNN</span>
-            <span class="badge badge-purple">Spatio-Temporal</span>
-            <span class="badge badge-purple">ML</span>
-          </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="research-card fade-up" data-delay="200">
-          <div class="research-icon"><i class="fas fa-shield-halved"></i></div>
-          <h3>Environmental Justice & Equity</h3>
-          <p>Examining how environmental hazards and climate change disproportionately affect marginalized communities,
-            and developing equitable GeoAI solutions.</p>
-          <div class="research-tags">
-            <span class="badge badge-red">Equity</span>
-            <span class="badge badge-red">Environmental Justice</span>
-          </div>
-        </div>
-      </div>
+        </a></li>
+      </ul>
     </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-     DIRECTOR SPOTLIGHT
-═══════════════════════════════════════ -->
-  <section class="director-section">
-    <div class="director-inner">
-
-      <div class="director-photo-wrap fade-up">
-        <div class="director-photo">
-          <img src="assets/images/team/bingzhou.jpg" alt="Dr. Bing Zhou">
-        </div>
-        <div class="director-badge">Lab Director</div>
-      </div>
-
-      <div class="director-content fade-up" data-delay="200">
-
-        <div class="section-tag">Principal Investigator</div>
-
-        <h2>Dr. Bing Zhou</h2>
-
-        <div class="director-title">
-          Assistant Professor (Tenure-Track)
-        </div>
-
-        <div class="director-dept">
-          Department of Geography &amp; Sustainability, UTK
-        </div>
-
-        <p>
-          Dr. Bing Zhou leads the GRIND Lab, developing responsible GeoAI to understand disaster risk, nature–human
-          dynamics, and community resilience.
-        </p>
-
-        <div class="director-interests">
-          <span class="interest-tag">GeoAI</span>
-          <span class="interest-tag">Disaster Resilience</span>
-          <span class="interest-tag">Nature–Human Systems</span>
-        </div>
-
-        <div class="director-links">
-
-          <a href="team.html" class="btn btn-outline-white btn-sm">
-            <i class="fas fa-user"></i> View Profile
-          </a>
-
-          <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener noreferrer"
-            class="btn btn-outline-white btn-sm">
-            <i class="fas fa-graduation-cap"></i> Google Scholar
-          </a>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-     LATEST NEWS
-═══════════════════════════════════════ -->
-  <section class="section section-light">
-    <div class="container">
-
-      <div class="section-header">
-        <div class="section-tag fade-up">Latest Updates</div>
-        <h2 class="section-title fade-up" data-delay="100">Latest News</h2>
-        <p class="section-subtitle fade-up" data-delay="200">
-          Recent publications and research updates from the GRIND Lab.
-        </p>
-      </div>
-
-      <div class="home-preview-grid">
-
-        <!-- News 1 — NORA -->
-        <article class="home-preview-card fade-up">
-
-          <div class="home-preview-image">
-            <a href="https://arxiv.org/pdf/2605.02092" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/news/NORA.png" alt="NORA autonomous research agent for spatial data science">
-            </a>
-          </div>
-
-          <div class="home-preview-body">
-
-            <div class="home-preview-meta">
-              <span class="badge badge-blue">Preprint</span>
-              <span class="home-preview-date">
-                <i class="far fa-calendar"></i> May 2026
-              </span>
-            </div>
-
-            <h3>
-              <a href="https://arxiv.org/pdf/2605.02092" target="_blank" rel="noopener noreferrer">
-                NORA: A Harness-Engineered Autonomous Research Agent for End-to-End Spatial Data Science
-              </a>
-            </h3>
-
-            <p>
-              NORA introduces an autonomous research agent designed to support
-              end-to-end spatial data science workflows.
-            </p>
-
-            <a href="https://arxiv.org/pdf/2605.02092" target="_blank" rel="noopener noreferrer"
-              class="home-preview-link">
-              Read More <i class="fas fa-arrow-right"></i>
-            </a>
-
-          </div>
-        </article>
-
-
-        <!-- News 2 — AAG 2026 -->
-        <article class="home-preview-card fade-up" data-delay="150">
-
-          <div class="home-preview-image">
-            <a href="https://geography.wisc.edu/geods/archives/4331" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/projects/AAG2026.png" alt="AAG 2026 GeoAI and Deep Learning Symposium">
-            </a>
-          </div>
-
-          <div class="home-preview-body">
-
-            <div class="home-preview-meta">
-              <span class="badge badge-teal">Event</span>
-              <span class="home-preview-date">
-                <i class="far fa-calendar"></i> Mar 2026
-              </span>
-            </div>
-
-            <h3>
-              <a href="https://geography.wisc.edu/geods/archives/4331" target="_blank" rel="noopener noreferrer">
-                Dr. Bing Zhou Chairs GeoAI for Disaster Resilience at AAG 2026
-              </a>
-            </h3>
-
-            <p>
-              Dr. Zhou chaired a GeoAI and Deep Learning Symposium session
-              focused on GeoAI for disaster resilience at the 2026 AAG Annual Meeting.
-            </p>
-
-            <a href="https://geography.wisc.edu/geods/archives/4331" target="_blank" rel="noopener noreferrer"
-              class="home-preview-link">
-              Read More <i class="fas fa-arrow-right"></i>
-            </a>
-
-          </div>
-        </article>
-
-      </div>
-
-      <div class="home-preview-button fade-up">
-        <a href="news.html" class="btn btn-outline">
-          <i class="fas fa-newspaper"></i> View All News
-        </a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ═══════════════════════════════════════
-     FEATURED PROJECTS
-═══════════════════════════════════════ -->
-
-  <section class="section">
-
-    <div class="container">
-
-
-      <div class="section-header">
-
-        <div class="section-tag fade-up">
-          Our Research
-        </div>
-
-        <h2 class="section-title fade-up" data-delay="100">
-
-          Featured Projects
-
-        </h2>
-
-        <p class="section-subtitle fade-up" data-delay="200">
-
-          Selected work in disaster intelligence,
-          multimodal GeoAI, and human–environment research.
-
-        </p>
-
-      </div>
-
-
-
-      <div class="home-preview-grid">
-
-
-        <!-- ==========================================
-           PROJECT 1 — HAZARDWEAVE
-      =========================================== -->
-
-        <article class="home-preview-card fade-up">
-
-
-          <div class="home-preview-image">
-
-            <a href="https://hazard-weave.vercel.app/" target="_blank" rel="noopener noreferrer">
-
-              <img src="assets/images/projects/HW.png" alt="HazardWeave AI-supported disaster intelligence platform">
-
-            </a>
-
-          </div>
-
-
-
-          <div class="home-preview-body">
-
-
-            <div class="home-preview-meta">
-
-              <span class="badge badge-green">
-                Disaster Intelligence
-              </span>
-
-              <span class="home-preview-status">
-                Ongoing
-              </span>
-
-            </div>
-
-
-
-            <h3>
-
-              <a href="https://hazard-weave.vercel.app/" target="_blank" rel="noopener noreferrer">
-
-                HazardWeave: An AI-Supported Unified Platform
-                for Smart Disaster Management
-
-              </a>
-
-            </h3>
-
-
-
-            <p>
-
-              An AI-supported disaster intelligence platform
-              integrating geospatial evidence, hazard information,
-              and intelligent decision support for disaster
-              monitoring and emergency response.
-
-            </p>
-
-
-
-            <a href="https://hazard-weave.vercel.app/" target="_blank" rel="noopener noreferrer"
-              class="home-preview-link">
-
-              Explore HazardWeave
-
-              <i class="fas fa-arrow-right"></i>
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-
-        <!-- ==========================================
-           PROJECT 2 — SOUNDIT
-      =========================================== -->
-
-        <article class="home-preview-card fade-up" data-delay="150">
-
-
-          <div class="home-preview-image">
-
-            <a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer">
-
-              <img src="assets/images/projects/soundit-cover.jpg"
-                alt="SounDiT geo-contextual soundscape-to-landscape generation">
-
-            </a>
-
-          </div>
-
-
-
-          <div class="home-preview-body">
-
-
-            <div class="home-preview-meta">
-
-              <span class="badge badge-teal">
-                Multimodal GeoAI
-              </span>
-
-              <span class="home-preview-status completed">
-                Completed
-              </span>
-
-            </div>
-
-
-
-            <h3>
-
-              <a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer">
-
-                SounDiT: Geo-Contextual
-                Soundscape-to-Landscape Generation
-
-              </a>
-
-            </h3>
-
-
-
-            <p>
-
-              A geo-contextual multimodal framework that generates
-              geographically coherent landscape imagery from
-              environmental soundscapes using Diffusion Transformers.
-
-            </p>
-
-
-
-            <a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer"
-              class="home-preview-link">
-
-              View SounDiT
-
-              <i class="fas fa-arrow-right"></i>
-
-            </a>
-
-          </div>
-
-        </article>
-
-
-      </div>
-
-
-
-      <div class="home-preview-button fade-up">
-
-        <a href="projects.html" class="btn btn-outline">
-
-          <i class="fas fa-folder-open"></i>
-
-          View All Projects
-
-        </a>
-
-      </div>
-
-
-    </div>
-
   </section>
 
   <!-- ═══════════════════════════════════════
      FUNDING / PARTNERS
 ═══════════════════════════════════════ -->
-  <section class="section-light">
+  <section class="section section-light" id="partners" aria-labelledby="partners-heading">
     <div class="container">
-      <div class="section-header" style="margin-bottom:32px;">
+      <div class="section-header">
         <div class="section-tag fade-up">Supported By</div>
-        <h2 class="section-title fade-up" data-delay="100">Funding &amp; Affiliations</h2>
+        <h2 class="section-title fade-up" id="partners-heading" data-delay="100">Funding &amp; Collaboration</h2>
       </div>
-      <div class="partners-row fade-up">
-        <div class="partner-placeholder">NSF</div>
-        <div class="partner-placeholder">NASEM</div>
-        <div class="partner-placeholder">AI-Tennessee</div>
-        <div class="partner-placeholder">CaGIS</div>
-        <div class="partner-placeholder">UTK</div>
-      </div>
+      <ul class="partner-list" aria-label="Funding and collaborating institutions">
+        <li><a href="https://www.nsf.gov/"><img src="assets/images/partners/nsf.png" alt="National Science Foundation" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.nationalacademies.org/"><img src="assets/images/partners/nasem.svg" alt="National Academies of Sciences, Engineering, and Medicine" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.nasa.gov/"><img src="assets/images/partners/nasa.svg" alt="NASA" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://research.utk.edu/aitn/" class="partner-ai"><img src="assets/images/partners/ai-tennessee.png" alt="AI Tennessee Initiative" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://cartogis.org/"><img src="assets/images/partners/cagis.png" alt="Cartography and Geographic Information Society" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.utk.edu/"><img src="assets/images/partners/utk.svg" alt="University of Tennessee, Knoxville" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.utexas.edu/"><img src="assets/images/partners/ut-austin.svg" alt="The University of Texas at Austin" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.usc.edu/"><img src="assets/images/partners/usc.svg" alt="University of Southern California" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.emory.edu/"><img src="assets/images/partners/emory.svg" alt="Emory University" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.usf.edu/"><img src="assets/images/partners/usf.png" alt="University of South Florida" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.tamu.edu/"><img src="assets/images/partners/tamu.png" alt="Texas A&amp;M University" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.lsu.edu/" class="partner-lsu"><img src="assets/images/partners/lsu.svg" alt="Louisiana State University" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.nvidia.com/"><img src="assets/images/partners/nvidia.svg" alt="NVIDIA" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.etdd.org/"><img src="assets/images/partners/etdd.svg" alt="East Tennessee Development District" loading="lazy" decoding="async"></a></li>
+        <li><a href="https://www.harvard.edu/"><img src="assets/images/partners/harvard.svg" alt="Harvard University" loading="lazy" decoding="async"></a></li>
+      </ul>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════
-     CALL TO ACTION
-═══════════════════════════════════════ -->
-  <section class="cta-section">
-    <div class="cta-inner fade-up">
-      <h2>Join the GRIND Lab</h2>
-      <p>We are actively recruiting PhD students, postdocs, and undergraduate researchers with a passion for geospatial
-        AI, remote sensing, and disaster risk science.</p>
-      <div class="cta-actions">
-        <a href="apply.html" class="btn btn-white btn-lg">
-          <i class="fas fa-graduation-cap"></i> Apply Now
-        </a>
-        <a href="contact.html" class="btn btn-outline-white btn-lg">
-          <i class="fas fa-envelope"></i> Get in Touch
-        </a>
-      </div>
-    </div>
-  </section>
+  </main>
 
-  <!-- ═══════════════════════════════════════
-     FOOTER
-═══════════════════════════════════════ -->
   <footer class="footer">
     <div class="footer-inner">
       <!-- Brand -->
       <div class="footer-brand-col">
-        <img src="assets/images/logo/Lab_Logo_ver01.png" alt="GRIND Lab">
+        <img src="assets/images/logo/grind-tennessee.png" alt="GRIND Lab" width="640" height="173">
         <p>Geospatial Responsible AI for Nature-human Dynamics Laboratory.<br>University of Tennessee, Knoxville.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Twitter/X" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-          <a href="#" aria-label="GitHub" title="GitHub"><i class="fab fa-github"></i></a>
-          <a href="#" aria-label="Google Scholar" title="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-          <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/bzbarrett" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+          <a href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/in/bing-zhou-a90b98239/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
         </div>
       </div>
 
@@ -740,8 +258,10 @@
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="news.html">News</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publication</a></li>
           <li><a href="team.html">Team</a></li>
+          <li><a href="resources.html">Resource</a></li>
           <li><a href="contact.html">Contact</a></li>
           <li><a href="apply.html">Apply</a></li>
         </ul>
@@ -751,10 +271,10 @@
       <div class="footer-col">
         <h4>Research</h4>
         <ul>
-          <li><a href="projects.html">GeoAI</a></li>
-          <li><a href="projects.html">Remote Sensing</a></li>
-          <li><a href="projects.html">Disaster Risk</a></li>
-          <li><a href="projects.html">Publications</a></li>
+          <li><a href="research.html">GeoAI</a></li>
+          <li><a href="research.html">Remote Sensing</a></li>
+          <li><a href="research.html">Disaster Risk</a></li>
+          <li><a href="publications.html">Publications</a></li>
         </ul>
       </div>
 
@@ -771,18 +291,16 @@
     </div>
 
     <div class="footer-bottom container">
-      <span>&copy; 2025 GRIND Lab, University of Tennessee, Knoxville. All rights reserved.</span>
-      <span>Built with ❤️ for science and society.</span>
+      <span>&copy; 2026 GRIND Lab, University of Tennessee, Knoxville. All rights reserved.</span>
     </div>
   </footer>
 
-  <!-- Scroll to top -->
-  <button class="scroll-top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-
-  <!-- Scripts -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/disaster-runner.js"></script>
-  <script src="assets/js/particles.js"></script>
+  <button type="button" class="scroll-top" aria-label="Scroll to top" hidden><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/research/vendor/three.min.js" defer></script>
+  <script src="assets/research/software-renderer.js" defer></script>
+  <script src="assets/research/geoai-elements.js" defer></script>
+  <script src="assets/research/scene-stories.js" defer></script>
+  <script src="assets/research/app.js" defer></script>
 </body>
-
 </html>

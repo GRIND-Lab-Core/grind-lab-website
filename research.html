@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explore GRIND Lab research on urban resilience and digital twins, urban inequality and segregation, geospatial foundation models and causal intelligence, and responsible GeoAI.">
+
+  <title>Research — GRIND Lab</title>
+  <meta name="theme-color" content="#faf8f2">
+  <link rel="icon" type="image/png" href="assets/images/logo/grind-icon.png">
+  <link rel="stylesheet" href="assets/fonts/fontawesome/icons.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/projects.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="nav-container">
+      <a class="nav-brand" href="index.html" aria-label="GRIND Lab home">
+        <img src="assets/images/logo/grind-tennessee.png" alt="GRIND Lab" width="640" height="173">
+      </a>
+      <div class="affiliation">University of Tennessee<span>Knoxville</span></div>
+      <a class="pi-avatar" href="https://bzbarrett.github.io/" aria-label="Bing Zhou’s personal website" title="Principal Investigator · Bing Zhou’s personal website">
+        <span class="pi-hint" aria-hidden="true">PI <span class="pi-arrow"></span></span>
+        <span class="nav-portrait" aria-hidden="true">
+          <span class="portrait-turn">
+            <img class="portrait-face" src="assets/images/team/bing-zhou-avatar.jpg" alt="" width="40" height="40">
+            <img class="portrait-face portrait-back" src="assets/images/team/bing-zhou-avatar-illustrated.webp" alt="" width="40" height="40">
+          </span>
+        </span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="news.html">News</a></li>
+        <li><a class="nav-link" href="research.html" aria-current="page">Research</a></li>
+        <li><a class="nav-link" href="publications.html">Publication</a></li>
+        <li><a class="nav-link" href="team.html">Team</a></li>
+        <li><a class="nav-link" href="resources.html">Resource</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a class="btn-apply" href="apply.html">Apply</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+    <header class="research-heading container">
+      <div class="research-heading-text">
+        <h1>Research<span aria-hidden="true">.</span></h1>
+        <p>We study how climate hazards change daily life in cities, who can adapt, and how geospatial AI can support decisions about people and places.</p>
+      </div>
+      <div class="research-contents">
+        <nav aria-label="Research directions">
+          <a href="#disaster-resilience">Urban resilience</a>
+          <a href="#environmental-justice">Urban inequality</a>
+          <a href="#spatial-data-science">Foundation models</a>
+          <a href="#responsible-geoai">Responsible GeoAI</a>
+        </nav>
+        <button class="motion-link" id="research-motion" type="button" hidden>Pause animation</button>
+      </div>
+    </header>
+    <div class="directions container">
+      <section class="direction" id="disaster-resilience" aria-labelledby="disaster-resilience-title">
+        <div class="direction-copy" id="earth-observation">
+          <h2 id="disaster-resilience-title">GeoAI &amp; Digital Twins for Urban Resilience</h2>
+          <p>When floodwater reaches a neighborhood, which roads, homes, and services are at risk? We use satellite and street-view imagery, residents’ requests for help, and flood simulations to trace how a hazard moves through a city. During Hurricane Harvey, rescue requests revealed needs even in areas mapped as low risk.</p>
+          <p>We are extending this work to wildfire and extreme heat. We aim to build models that respect the physics of each hazard and show when one disruption can trigger another across roads, power grids, and other infrastructure.</p>
+          <details class="direction-work">
+            <summary>Flood models and disaster response studies</summary>
+            <ul>
+              <li><a href="https://doi.org/10.1016/j.compenvurbsys.2026.102414">FlowsDT</a><p>A geospatial digital twin simulates how urban floods unfold in space and time.</p></li>
+              <li><a href="https://doi.org/10.1016/j.compenvurbsys.2022.101824">VictimFinder</a><p>A language model identifies requests for rescue in social media messages during a hurricane.</p></li>
+              <li><a href="https://doi.org/10.1016/j.compenvurbsys.2025.102335">Street-level damage assessment</a><p>Before-and-after imagery records damage at individual locations.</p></li>
+              <li id="featured-project"><a href="https://hazard-weave.vercel.app/">HazardWeave</a><p>Our AI Tennessee THRIVE project brings hazard information together to support local emergency planning.</p></li>
+            </ul>
+          </details>
+        </div>
+        <figure class="direction-figure">
+          <div class="direction-art" aria-hidden="true">
+            <img src="assets/research/directions/hazards.svg" alt="" width="540" height="312" fetchpriority="high">
+            <canvas data-scene="hazards" width="540" height="312"></canvas>
+          </div>
+          <figcaption>As the river rises toward the bridge, the terrain determines which homes flood first.</figcaption>
+        </figure>
+      </section>
+      <section class="direction" id="environmental-justice" aria-labelledby="environmental-justice-title">
+        <div class="direction-copy" id="nature-human-systems">
+          <h2 id="environmental-justice-title">Urban Inequality &amp; Segregation</h2>
+          <p>Whose daily routines can change when temperatures rise? In Houston, mobile phone data showed that residents of higher-poverty neighborhoods had less flexibility to reduce daytime travel during extreme heat. We combine mobility records, street and satellite imagery, and census data to study how segregation shapes exposure and access to services beyond the home neighborhood.</p>
+          <p>We plan to examine how housing and transportation policies change exposure, and how the benefits and environmental costs of data centers and power grids are distributed across communities.</p>
+          <details class="direction-work">
+            <summary>Studies of mobility, exposure, and access</summary>
+            <ul>
+              <li><a href="https://doi.org/10.1016/j.jenvman.2024.121665">Mobility during extreme heat</a><p>Mobile phone records reveal differences in how Houston communities adjust their daily activities.</p></li>
+              <li><a href="https://doi.org/10.1016/j.ijdrr.2024.104339">Winter Storm Uri and power outages</a><p>Nighttime lights and travel patterns show how the 2021 Texas storm disrupted different communities.</p></li>
+              <li><a href="https://doi.org/10.1080/15230406.2024.2314547">Humanitarian needs during Shanghai’s lockdown</a><p>Residents’ requests for food and medical care reveal needs that district-level resource counts miss.</p></li>
+            </ul>
+          </details>
+        </div>
+        <figure class="direction-figure">
+          <div class="direction-art" aria-hidden="true">
+            <img src="assets/research/directions/equity.svg" alt="" width="540" height="312" loading="lazy">
+            <canvas data-scene="equity" width="540" height="312"></canvas>
+          </div>
+          <figcaption>Three neighborhoods share a clinic. The river and its crossings give residents different routes to care.</figcaption>
+        </figure>
+      </section>
+      <section class="direction" id="spatial-data-science" aria-labelledby="spatial-data-science-title">
+        <div class="direction-copy">
+          <h2 id="spatial-data-science-title">Geospatial Foundation Models &amp; Causal Intelligence</h2>
+          <p>What does a model learn about a place beyond its coordinates? Our review of 1,122 studies examined how GeoAI models represent space. With GeoProbe, we test where language models encode geographic concepts. Our RegionFormer work builds distance decay and regional differences into forecasts.</p>
+          <p>We are exploring whether learned representations can help researchers compare similar places and estimate the effects of interventions when neighboring areas influence one another. We also plan to test how reliably models reason about space and transfer to new regions.</p>
+          <details class="direction-work">
+            <summary>Foundation models and geographic reasoning</summary>
+            <ul>
+              <li><a href="https://doi.org/10.1016/j.isprsjprs.2026.08.001">Measuring spatial explicitness in GeoAI</a><p>A systematic review examines how geographic concepts enter model design and evaluation.</p></li>
+              <li><a href="geoprobe.html">GeoProbe</a><p>Layer-by-layer measurements test how language models represent distance decay and spatial autocorrelation.</p></li>
+              <li><a href="https://gisense.github.io/SounDiT-Page/">SounDiT</a><p>A diffusion model uses geographic context and sound to generate images of landscapes.</p></li>
+            </ul>
+          </details>
+        </div>
+        <figure class="direction-figure">
+          <div class="direction-art" aria-hidden="true">
+            <img src="assets/research/directions/spatial.svg" alt="" width="540" height="312" loading="lazy">
+            <canvas data-scene="spatial" width="540" height="312"></canvas>
+          </div>
+          <figcaption>Signals travel between places across a globe. The links illustrate the local and long-distance relationships a geographic model can learn.</figcaption>
+        </figure>
+      </section>
+      <section class="direction" id="responsible-geoai" aria-labelledby="responsible-geoai-title">
+        <div class="direction-copy">
+          <h2 id="responsible-geoai-title">Responsible GeoAI for Decision Support</h2>
+          <p>What evidence should an emergency manager see before acting on a model’s prediction? Our STEP framework brings security, trustworthiness, equity, and philanthropy into GIScience. In NORA, a spatial research agent, we put safeguards into the workflow so researchers can trace and reproduce an analysis.</p>
+          <p>We are developing ways to communicate uncertainty across places, explain predictions to the people using them, and flag decisions for human review when the evidence is thin.</p>
+          <details class="direction-work">
+            <summary>Frameworks, uncertainty, and research tools</summary>
+            <ul>
+              <li><a href="https://doi.org/10.1080/19475683.2026.2738435">The STEP framework</a><p>Four principles guide decisions about geographic data, methods, and whom the work serves.</p></li>
+              <li><a href="https://arxiv.org/abs/2605.02092">NORA</a><p>An autonomous research agent supports reproducible spatial data science from question to report.</p></li>
+              <li><a href="https://doi.org/10.1080/15230406.2023.2286385">Uncertainty in geolocating social media</a><p>Different geolocation methods can change where disaster reports appear on a map.</p></li>
+            </ul>
+          </details>
+        </div>
+        <figure class="direction-figure">
+          <div class="direction-art" aria-hidden="true">
+            <img src="assets/research/directions/geoai.svg" alt="" width="540" height="312" loading="lazy">
+            <canvas data-scene="geoai" width="540" height="312"></canvas>
+          </div>
+          <figcaption>The orange cells show which local observations contribute most to a prediction, making its geographic basis visible.</figcaption>
+        </figure>
+      </section>
+    </div>
+    <aside class="research-contact container" aria-label="Research collaboration">
+      <h2>Collaborate with us</h2>
+      <p>We welcome inquiries from researchers, prospective students, and community partners.</p>
+      <div><a href="contact.html">Get in touch</a><a href="apply.html">Apply to join</a></div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+
+    <div class="footer-inner">
+
+
+      <div class="footer-brand-col">
+
+        <img src="assets/images/logo/grind-tennessee.png" alt="GRIND Lab" width="640" height="173">
+
+
+        <p>
+          Geospatial Responsible AI for Nature-human Dynamics Laboratory.
+          <br>
+          University of Tennessee, Knoxville.
+        </p>
+
+
+        <div class="footer-social">
+
+
+          <a
+            href="https://github.com/bzbarrett"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub">
+
+            <i class="fab fa-github" aria-hidden="true"></i>
+
+          </a>
+
+
+          <a
+            href="https://scholar.google.com/citations?user=ehw9A-EAAAAJ"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Google Scholar">
+
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+
+          </a>
+
+
+          <a
+            href="https://www.linkedin.com/in/bing-zhou-a90b98239/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn">
+
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="footer-col">
+
+        <h4>
+          Navigate
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a href="news.html">
+              News
+            </a>
+          </li>
+
+          <li>
+            <a href="research.html">Research</a>
+          </li>
+            <li><a href="publications.html">Publication</a></li>
+
+          <li>
+            <a href="team.html">
+              Team
+            </a>
+          </li>
+          <li><a href="resources.html">Resource</a></li>
+
+          <li>
+            <a href="contact.html">
+              Contact
+            </a>
+          </li>
+
+          <li>
+            <a href="apply.html">
+              Apply
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class="footer-col">
+
+        <h4>
+          Research
+        </h4>
+
+        <ul>
+
+          <li>
+            <a href="research.html#disaster-resilience">
+              Urban resilience
+            </a>
+          </li>
+
+          <li>
+            <a href="research.html#environmental-justice">
+              Urban inequality
+            </a>
+          </li>
+
+          <li>
+            <a href="research.html#spatial-data-science">
+              Geospatial foundation models
+            </a>
+          </li>
+
+          <li>
+            <a href="research.html#responsible-geoai">
+              Responsible GeoAI
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+
+
+      <div class="footer-col">
+
+        <h4>
+          Contact
+        </h4>
+
+        <ul>
+
+          <li>
+            Dept. of Geography &amp; Sustainability
+          </li>
+
+          <li>
+            University of Tennessee, Knoxville
+          </li>
+
+          <li>
+            Knoxville, TN 37996
+          </li>
+
+          <li>
+
+            <a href="mailto:bzhou11@utk.edu">
+              bzhou11@utk.edu
+            </a>
+
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+
+
+    <div class="footer-bottom container">
+
+      <span>
+        &copy; 2026 GRIND Lab,
+        University of Tennessee, Knoxville.
+      </span>
+
+      <span>
+        Geospatial Responsible AI for Nature-human Dynamics.
+      </span>
+
+    </div>
+
+  </footer>
+
+  <button type="button" class="scroll-top" aria-label="Scroll to top" hidden><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+  <script src="assets/js/main.js" defer></script>
+  <script type="module" src="assets/js/research.js"></script>
+</body>
+</html>

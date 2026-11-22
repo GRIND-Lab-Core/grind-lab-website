@@ -1,0 +1,85 @@
+.pub-heading { padding-bottom: 0; border-bottom: 0; }
+.pub-stats {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .35rem;
+  margin: clamp(1.25rem, 2vw, 2rem) 0 0;
+  padding: .65rem 0;
+  border-block: 1px solid var(--line);
+}
+.pub-stats div {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: baseline;
+  gap: .32rem;
+  padding-left: clamp(.45rem, 1.15vw, 1.15rem);
+  border-left: 1px solid var(--line);
+}
+.pub-stats div:first-child { padding-left: 0; border: 0; }
+.pub-stats dt { color: #615e56; font-size: .78rem; line-height: 1.3; white-space: nowrap; }
+.pub-stats dd {
+  margin: 0;
+  color: #333b38;
+  font-size: clamp(1.1rem, 1.55vw, 1.45rem);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.pub-stats div:first-child dd { color: #a64b07; }
+.pub-heading .pub-metrics-source { margin: .5rem 0 0; color: #615e56; font-size: .78rem; text-align: right; }
+.stat-short { display: none; text-decoration: none; }
+@media (max-width: 990px) {
+  .pub-stats .stat-name { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .pub-stats .stat-short { display: inline; }
+}
+@media (max-width: 540px) {
+  .pub-stats { padding-block: .65rem; gap: .12rem; }
+  .pub-stats div { padding-left: clamp(.12rem, .7vw, .25rem); gap: .15rem; }
+  .pub-stats dt { font-size: clamp(.62rem, 2.5vw, .75rem); }
+  .pub-stats dd { font-size: clamp(.83rem, 3.4vw, 1rem); }
+}
+@media (max-width: 365px) {
+  .pub-stats { gap: 1px; }
+  .pub-stats div { padding-left: 1px; gap: 2px; }
+}
+.pub-catalog { padding-block: clamp(1.6rem, 4vw, 3.5rem) var(--section-space); }
+.pub-catalog p { color: var(--muted); }
+.pub-filters { display: flex; align-items: end; gap: .8rem; flex-wrap: wrap; }
+.pub-filters label { display: grid; gap: .28rem; font-size: .83rem; font-weight: 600; }
+.pub-filters select, .pub-filters input {
+  min-width: 0; width: 100%; height: 2.7rem; border: 1px solid #aca699; border-radius: 3px;
+  background: var(--paper); color: var(--smokey); font: inherit; font-size: .94rem; font-weight: 400; padding: .35rem .65rem;
+}
+.pub-filters select { padding-right: 1.35rem; }
+.pub-search { flex: 1 1 15rem; max-width: 27rem; }
+.pub-filters button { height: 2.7rem; }
+.pub-count { margin: 1.3rem 0 .45rem; font-size: .89rem; font-variant-numeric: tabular-nums; }
+.pub-year { display: grid; grid-template-columns: clamp(5rem,14vw,13rem) minmax(0,1fr); border-top: 1px solid var(--line); }
+.pub-year h2 { margin-top: 1.05rem; font-size: clamp(1.55rem,2.5vw,2.45rem); letter-spacing: -.048em; font-variant-numeric: tabular-nums; }
+.pub-year ul { list-style: none; padding: 0; }
+.pub-record { padding: 1rem 0 1.1rem; }
+.pub-record + .pub-record { border-top: 1px solid var(--line); }
+.pub-type { display: block; margin-bottom: .35rem; color: #77502c; font-size: .71rem; font-weight: bold; letter-spacing: .095em; text-transform: uppercase; }
+.pub-record h3 { max-width: 78ch; margin-bottom: .4rem; font-size: clamp(1.06rem,1.45vw,1.35rem); line-height: 1.23; letter-spacing: -.023em; }
+.pub-record h3 a { text-decoration-thickness: 1px; }
+.pub-record h3 a:hover { text-decoration-thickness: 2px; }
+.pub-authors, .pub-venue { font-size: .87rem; line-height: 1.45; }
+.pub-authors strong { color: var(--smokey); }
+.pub-venue { margin-top: .12rem; }
+.version-link { display: inline-block; margin-left: .5rem; font-style: normal; }
+.pub-empty { padding-block: 2rem; border-top: 1px solid var(--line); }
+.pub-additional { margin-top: 1.5rem; border-block: 1px solid var(--line); }
+.pub-additional summary { padding: .9rem 0; cursor: pointer; font-weight: 600; }
+.pub-additional summary span { color: #615e56; font-size: .9em; font-weight: 400; }
+.pub-detail { padding-block: var(--section-space); }
+.pub-detail h1 { max-width: 32ch; font-size: clamp(2rem,4.5vw,4.2rem); letter-spacing: -.05em; }
+.pub-detail .section-tag { margin-top: 2.5rem; }
+.pub-detail p { margin-top: .9rem; }
+.pub-detail .btn { margin-top: 1.4rem; }
+@media (max-width: 650px) {
+  .pub-filters { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(0,1fr); gap: .6rem; }
+  .pub-search { max-width: none; }
+  .pub-year { display: block; }
+  .pub-year h2 { margin-top: .85rem; }
+}

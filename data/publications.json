@@ -1,73 +1,495 @@
 [
   {
-    "id": "pub-001",
     "type": "journal",
-    "title": "PLACEHOLDER: Full Paper Title Here",
-    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author"],
-    "journal": "PLACEHOLDER: Journal Name",
-    "year": 2025,
-    "volume": "PLACEHOLDER",
-    "issue": "PLACEHOLDER",
-    "pages": "PLACEHOLDER",
-    "doi": "PLACEHOLDER: 10.XXXX/XXXXXX",
-    "url": "#",
-    "abstract": "PLACEHOLDER: Brief abstract or summary of this paper.",
-    "tags": ["GeoAI", "Remote Sensing"]
+    "year": 2026,
+    "title": "GeoProbe: Layer-wise Probing of Core Geospatial Concepts in Large Language Models",
+    "authors": "Zhou, B., Wang, J., Yang, Y., Zou, L., & Kang, Y.",
+    "venue": "International Journal of Geographical Information Science · In press",
+    "url": "geoprobe.html",
+    "related": [
+      {
+        "label": "Assigned DOI",
+        "url": "https://doi.org/10.1080/13658816.2026.2756583"
+      }
+    ]
   },
   {
-    "id": "pub-002",
     "type": "journal",
-    "title": "PLACEHOLDER: Full Paper Title Here",
-    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author", "PLACEHOLDER Co-Author"],
-    "journal": "PLACEHOLDER: Journal Name",
-    "year": 2024,
-    "doi": "PLACEHOLDER: 10.XXXX/XXXXXX",
-    "url": "#",
-    "abstract": "PLACEHOLDER: Brief abstract.",
-    "tags": ["Disaster Risk", "GeoAI"]
+    "year": 2026,
+    "title": "Modeling hospital visitation flows through distance-attractiveness tradeoffs: Integrating human mobility, hospital attributes, and socioeconomic context",
+    "authors": "Lin, B., Zou, L., Tian, H., Cai, H., Yang, Y., & Zhou, B.",
+    "venue": "Transactions in GIS, 30(7), Article e70432",
+    "url": "https://doi.org/10.1111/tgis.70432",
+    "related": [
+      {
+        "label": "Preprint",
+        "url": "https://arxiv.org/abs/2601.15977"
+      }
+    ]
   },
   {
-    "id": "pub-003",
     "type": "journal",
-    "title": "PLACEHOLDER: Full Paper Title Here",
-    "authors": ["PLACEHOLDER Co-Author", "Bing Zhou"],
-    "journal": "PLACEHOLDER: Journal Name",
-    "year": 2024,
-    "doi": "PLACEHOLDER: 10.XXXX/XXXXXX",
-    "url": "#",
-    "abstract": "PLACEHOLDER: Brief abstract.",
-    "tags": ["Nature-Human", "Climate"]
+    "year": 2026,
+    "title": "STEP towards responsible GIScience: Pillars, purposes, and challenges",
+    "authors": "Zhou, B., & Zou, L.",
+    "venue": "Annals of GIS. Advance online publication",
+    "url": "https://doi.org/10.1080/19475683.2026.2738435"
   },
   {
-    "id": "pub-004",
+    "type": "journal",
+    "year": 2026,
+    "title": "From large language models to agentic systems: A systematic review of generative AI in GIScience",
+    "authors": "Zhang, J., Huang, X., Mai, G., Zhou, B., Jia, Y., Wu, Q., & Franklin, R.",
+    "venue": "Transactions in GIS, 30(7), Article e70400",
+    "url": "https://doi.org/10.1111/tgis.70400"
+  },
+  {
+    "type": "journal",
+    "year": 2026,
+    "title": "Measuring the spatial explicitness of GeoAI and geospatial foundation models: A systematic review and future roadmap",
+    "authors": "Zhou, B., Huang, X., Wang, S., Mai, G., Li, D., Wang, Z., Wu, Q., Ning, H., Wang, J., Wu, Q., Jia, Y., Wang, R., Lyu, S., Tang, B., & Huang, Z.",
+    "venue": "ISPRS Journal of Photogrammetry and Remote Sensing, 240, 601–622",
+    "url": "https://doi.org/10.1016/j.isprsjprs.2026.08.001"
+  },
+  {
+    "type": "journal",
+    "year": 2026,
+    "title": "Rapid disaster response and damage estimation with social media and pretrained large language models: Insights from multiple hurricanes",
+    "authors": "Zhou, B., Zou, L., Yang, M., Lin, B., Mandal, D., Abedin, J., Cai, H., Ji, S., Klein, A., & Tian, H.",
+    "venue": "Annals of the American Association of Geographers, 116(3), 501–523",
+    "url": "https://doi.org/10.1080/24694452.2025.2560491"
+  },
+  {
+    "type": "journal",
+    "year": 2026,
+    "title": "FlowsDT: A geospatial digital twin for navigating urban flood dynamics",
+    "authors": "Mandal, D., Zou, L., Wadhwa, A., Wilkho, R. S., Cai, Z., Zhou, B., Ye, X., Newman, G., Gharaibeh, N., & Güneralp, B.",
+    "venue": "Computers, Environment and Urban Systems, 126, 102414",
+    "url": "https://doi.org/10.1016/j.compenvurbsys.2026.102414"
+  },
+  {
+    "type": "journal",
+    "year": 2026,
+    "title": "Toward building next-generation geocoding systems: A systematic review",
+    "authors": "Yin, Z., Goldberg, D. W., Lin, B., Zhou, B., Li, D., Ma, A., Ming, Z., Cai, H., Zhang, Z., Wang, S., Gao, S., Lee, J. Y., Li, X., & Huo, D.",
+    "venue": "Computational Urban Science · Accepted, in press",
+    "url": "https://arxiv.org/abs/2503.18888"
+  },
+  {
     "type": "conference",
-    "title": "PLACEHOLDER: Conference Paper Title",
-    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author"],
-    "venue": "PLACEHOLDER: Conference Name (CONF XXXX)",
-    "year": 2024,
-    "pages": "PLACEHOLDER: pp. XX–XX",
-    "url": "#",
-    "tags": ["GeoAI", "XAI"]
+    "year": 2026,
+    "title": "What Makes a City Noisy? A Multi-Source Feature Fusion for Urban Noise Prediction",
+    "authors": "Yang, X., Wang, J., Tan, H., Li, X., Zhou, B., Liang, L., & Kang, Y.",
+    "venue": "ACM SIGSPATIAL 2026 · Application track, short paper (in press)",
+    "url": "https://drive.google.com/file/d/1vs-z36gnHGGLEzX-1F4AVw5GTLx9TUh5/view",
+    "alternateTitle": "Urban Noise Prediction using Multi-source Geographic Feature Fusion",
+    "related": [
+      {
+        "label": "Conference program",
+        "url": "https://sigspatial2026.sigspatial.org/application-accepted/"
+      }
+    ]
   },
   {
-    "id": "pub-005",
     "type": "conference",
-    "title": "PLACEHOLDER: Conference Paper Title",
-    "authors": ["PLACEHOLDER Student Name", "Bing Zhou"],
-    "venue": "PLACEHOLDER: Conference Name (CONF XXXX)",
-    "year": 2025,
-    "url": "#",
-    "tags": ["Remote Sensing", "Disaster"]
+    "year": 2026,
+    "title": "SounDiT: Geo-contextual soundscape-to-landscape generation",
+    "authors": "Wang, J., Tan, H., Liao, B., Jiang, A., Fei, T., Huang, Q., Zhou, B., Tu, Z., Ye, S., & Kang, Y.",
+    "venue": "Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)",
+    "url": "https://openaccess.thecvf.com/content/CVPR2026/html/Wang_SounDiT_Geo-Contextual_Soundscape-to-Landscape_Generation_CVPR_2026_paper.html",
+    "related": [
+      {
+        "label": "Preprint",
+        "url": "https://arxiv.org/abs/2505.12734"
+      }
+    ]
   },
   {
-    "id": "pub-006",
     "type": "preprint",
-    "title": "PLACEHOLDER: Preprint Title",
-    "authors": ["Bing Zhou", "PLACEHOLDER Co-Author"],
-    "venue": "arXiv / ESSOAr",
+    "year": 2026,
+    "title": "NORA: A harness-engineered autonomous research agent for end-to-end spatial data science",
+    "authors": "Zhou, B., Huang, X., Ning, H., Wu, Q., Li, D., & Zhang, Z.",
+    "venue": "arXiv:2605.02092",
+    "url": "https://arxiv.org/abs/2605.02092"
+  },
+  {
+    "type": "preprint",
+    "year": 2026,
+    "title": "DamageArbiter: A multimodal arbitration framework for disaster damage assessment from street-view imagery",
+    "authors": "Yang, Y., Zou, L., Gong, W., Fu, K., Li, Z., Wang, S., Zhou, B., Cai, H., & Tian, H.",
+    "venue": "arXiv:2603.14837",
+    "url": "https://arxiv.org/abs/2603.14837"
+  },
+  {
+    "type": "preprint",
+    "year": 2026,
+    "title": "Predicting healthcare system visitation flow by integrating hospital attributes and population socioeconomics with human mobility data",
+    "authors": "Lin, B., Zou, L., Tian, H., Cai, H., Yang, Y., & Zhou, B.",
+    "venue": "arXiv:2601.15977",
+    "url": "https://arxiv.org/abs/2601.15977",
+    "related": [
+      {
+        "label": "Published article",
+        "url": "https://doi.org/10.1111/tgis.70432"
+      }
+    ]
+  },
+  {
+    "type": "journal",
     "year": 2025,
-    "arxiv": "PLACEHOLDER: XXXX.XXXXX",
-    "url": "#",
-    "tags": ["GeoAI", "Responsible AI"]
+    "title": "Where are GIScience faculty hired from? Analyzing faculty mobility and research themes through hiring networks",
+    "authors": "Chen, Y., Nelson, J. K., Zhou, B., Zhou, R. Z., Ye, S., Liu, H., Gu, Z., Kar, A., Kwon, H., & Kang, Y.",
+    "venue": "Cartography and Geographic Information Science, 1–25",
+    "url": "https://doi.org/10.1080/15230406.2025.2567564"
+  },
+  {
+    "type": "journal",
+    "year": 2025,
+    "title": "Hyperlocal disaster damage assessment using bi-temporal street-view imagery and pre-trained vision models",
+    "authors": "Yang, Y., Zou, L., Zhou, B., Li, D., Lin, B., Abedin, J., & Yang, M.",
+    "venue": "Computers, Environment and Urban Systems, 121, 102335",
+    "url": "https://doi.org/10.1016/j.compenvurbsys.2025.102335"
+  },
+  {
+    "type": "journal",
+    "year": 2025,
+    "title": "GISphere Knowledge Graph for Geography Education: Recommending Graduate Geographic Information System/Science Programs",
+    "authors": "Gu, Z., Li, W., Zhou, B., Wang, Y., Chen, Y., Ye, S., Wang, K., Gu, H., & Kang, Y.",
+    "venue": "Transactions in GIS, 29(1), e13283",
+    "url": "https://doi.org/10.1111/tgis.13283"
+  },
+  {
+    "type": "conference",
+    "year": 2025,
+    "title": "Leveraging reinforcement learning for maternity care resource reallocation: A case study in Florida",
+    "authors": "Qin, A., Kang, Y., Li, H., Wang, S., Zhou, B., Wang, F., & Hung, P.",
+    "venue": "Proceedings of the 33rd ACM International Conference on Advances in Geographic Information Systems",
+    "url": "https://doi.org/10.1145/3748636.3764184"
+  },
+  {
+    "type": "chapter",
+    "year": 2025,
+    "title": "Integrating natural language processing in human geography",
+    "authors": "Zhou, B., Lin, B., Zou, L., Yang, M., Tian, H., & Cai, H.",
+    "venue": "GeoAI and Human Geography: The Dawn of a New Spatial Intelligence Era, pp. 43–61 · Springer",
+    "url": "https://doi.org/10.1007/978-3-031-87421-5_4"
+  },
+  {
+    "type": "abstract",
+    "year": 2025,
+    "title": "Geospatial Big Data and AI for Smart Humanitarian Mapping",
+    "authors": "Zou, L., Zhou, B., & Qiang, Y.",
+    "venue": "Abstracts of the ICA, 10, 325",
+    "url": "https://doi.org/10.5194/ica-abs-10-325-2025",
+    "additional": true
+  },
+  {
+    "type": "abstract",
+    "year": 2025,
+    "title": "Resilience in 4D: AI-Driven Geospatial Digital Twins for Urban Flood Simulation and Management",
+    "authors": "Zou, L., Mandal, D., Zhou, B., Yang, Y., & Yang, M.",
+    "venue": "AGU Annual Meeting 2025",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:ZeXyd9-uunAC",
+    "additional": true
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "Progress in understanding human-COVID-19 dynamics using geospatial big data: A systematic review",
+    "authors": "Lin, B., Zou, L., Yang, M., Zhou, B., Mandal, D., Abedin, J., Cai, H., & Ning, N.",
+    "venue": "Annals of GIS, 30(4), 513–533",
+    "url": "https://doi.org/10.1080/19475683.2024.2418584",
+    "related": [
+      {
+        "label": "Preprint",
+        "url": "https://arxiv.org/abs/2404.10013"
+      }
+    ]
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "PRIME: A CyberGIS platform for resilience inference measurement and enhancement",
+    "authors": "Mandal, D., Zou, L., Wilkho, R. S., Baig, F., Abedin, J., Zhou, B., Cai, H., Gharaibeh, N., & Lam, N.",
+    "venue": "Computers, Environment and Urban Systems, 114, 102197",
+    "url": "https://doi.org/10.1016/j.compenvurbsys.2024.102197"
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "Unveiling community adaptations to extreme heat events using mobile phone location data",
+    "authors": "Tian, H., Cai, H., Hu, L., Qiang, Y., Zhou, B., Yang, M., & Lin, B.",
+    "venue": "Journal of Environmental Management, 366, 121665",
+    "url": "https://doi.org/10.1016/j.jenvman.2024.121665"
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "Deciphering spatial-temporal dynamics of flood exposure in the United States",
+    "authors": "Abedin, J., Zou, L., Yang, M., Rohli, R., Mandal, D., Qiang, Y., Akter, H., Zhou, B., Lin, B., & Cai, H.",
+    "venue": "Sustainable Cities and Society, 108, 105444",
+    "url": "https://doi.org/10.1016/j.scs.2024.105444"
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "Understanding the disparate impacts of the 2021 Texas winter storm and power outages through mobile phone location data and nighttime light images",
+    "authors": "Zhou, R. Z., Hu, Y., Zou, L., Cai, H., & Zhou, B.",
+    "venue": "International Journal of Disaster Risk Reduction, 103, 104339",
+    "url": "https://doi.org/10.1016/j.ijdrr.2024.104339"
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "Overlooked voices under strict lockdown: Mapping humanitarian needs in 2022 Shanghai COVID-19 outbreak",
+    "authors": "Zhou, B., Zou, L., Yang, M., Lin, B., Mandal, D., & Abedin, J.",
+    "venue": "Cartography and Geographic Information Science, 51(3), 347–365",
+    "url": "https://doi.org/10.1080/15230406.2024.2314547"
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "Sensing the pulse of the pandemic: Unveiling the geographical and demographic disparities of public sentiment toward COVID-19 through social media",
+    "authors": "Lin, B., Zou, L., Zhao, B., Huang, X., Cai, H., Yang, M., & Zhou, B.",
+    "venue": "Cartography and Geographic Information Science, 51(3), 366–384",
+    "url": "https://doi.org/10.1080/15230406.2024.2323489",
+    "related": [
+      {
+        "label": "Preprint",
+        "url": "https://arxiv.org/abs/2304.06120"
+      }
+    ]
+  },
+  {
+    "type": "journal",
+    "year": 2024,
+    "title": "Algorithmic uncertainties in geolocating social media data for disaster management",
+    "authors": "Mandal, D., Zou, L., Abedin, J., Zhou, B., Yang, M., Lin, B., & Cai, H.",
+    "venue": "Cartography and Geographic Information Science, 51(4), 565–582",
+    "url": "https://doi.org/10.1080/15230406.2023.2286385"
+  },
+  {
+    "type": "conference",
+    "year": 2024,
+    "title": "Sleepless Cities under Social Isolation: Geographically and Temporally Revealing Circadian Rhythm Disorders through Social Media",
+    "authors": "Yang, M., Zou, L., Li, W., Cai, H., Lin, B., & Zhou, B.",
+    "venue": "2024 CaGIS + UCGIS Symposium",
+    "url": "https://cartogis.org/docs/conferences/CaGIS_UCGIS_2024/Research%20Paper/CAGIS-UCGIS-2024_paper_46.pdf",
+    "additional": true
+  },
+  {
+    "type": "thesis",
+    "year": 2024,
+    "title": "STEP Toward Responsible GIScience: Paradigms, Purposes, and Challenges",
+    "authors": "Zhou, B.",
+    "venue": "Doctoral dissertation · Texas A&M University",
+    "url": "https://oaktrust.library.tamu.edu/items/d12641fe-4696-46e1-b27a-7c5628ab77c9",
+    "additional": true
+  },
+  {
+    "type": "journal",
+    "year": 2023,
+    "title": "TopoBERT: A plug and play toponym recognition module harnessing fine-tuned BERT",
+    "authors": "Zhou, B., Zou, L., Hu, Y., Qiang, Y., & Goldberg, D.",
+    "venue": "International Journal of Digital Earth, 16(1), 3045–3063",
+    "url": "https://doi.org/10.1080/17538947.2023.2239794"
+  },
+  {
+    "type": "journal",
+    "year": 2023,
+    "title": "Choosing GIS graduate programs from afar: Chinese students’ perspectives",
+    "authors": "Wang, Y., Kang, Y., Liu, H., Hou, C., Zhou, B., Ye, S., Liu, Y., Rao, J., Pei, Z., Ye, X., & Gao, S.",
+    "venue": "Transactions in GIS, 27(2), 450–475",
+    "url": "https://doi.org/10.1111/tgis.13037"
+  },
+  {
+    "type": "journal",
+    "year": 2023,
+    "title": "Social media for emergency rescue: An analysis of rescue requests on Twitter during Hurricane Harvey",
+    "authors": "Zou, L., Liao, D., Lam, N., Meyer, M., Gharaibeh, N., Cai, H., Zhou, B., & Li, D.",
+    "venue": "International Journal of Disaster Risk Reduction, 85, 103513",
+    "url": "https://doi.org/10.1016/j.ijdrr.2022.103513"
+  },
+  {
+    "type": "chapter",
+    "year": 2023,
+    "title": "GeoAI for Disaster Response",
+    "authors": "Zou, L., Mostafavi, A., Zhou, B., Lin, B., Mandal, D., Yang, M., Abedin, J., & Cai, H.",
+    "venue": "Handbook of Geospatial Artificial Intelligence, pp. 287–304 · CRC Press",
+    "url": "https://doi.org/10.1201/9781003308423-14",
+    "alternateTitle": "Empowering smart disaster response with GeoAI"
+  },
+  {
+    "type": "abstract",
+    "year": 2023,
+    "title": "Smart Disaster Response with GeoAI and Big Data",
+    "authors": "Zou, L., Zhou, B., Lin, B., Mandal, D., Yang, M., Abedin, J., & Cai, H.",
+    "venue": "AGU Fall Meeting Abstracts · NH21A-06",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:KlAtU1dfN6UC",
+    "additional": true
+  },
+  {
+    "type": "abstract",
+    "year": 2023,
+    "title": "Empowering Disaster Resilience through Cyberinfrastructure: A Multi-Scale Approach to Visualization and Management",
+    "authors": "Mandal, D., Zou, L., Wilkho, R. S., Abedin, J., Zhou, B., & Cai, H.",
+    "venue": "AGU Fall Meeting Abstracts · GC21F-097",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:kNdYIx-mwKoC",
+    "additional": true
+  },
+  {
+    "type": "abstract",
+    "year": 2023,
+    "title": "A CyberGIS platform for resilience inference measurement and enhancement",
+    "authors": "Mandal, D., Zou, L., Wilkho, R. S. S., Abedin, J., & Zhou, B.",
+    "venue": "AGU Fall Meeting Abstracts · NH23A-0676",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:u5HHmVD_uO8C",
+    "additional": true
+  },
+  {
+    "type": "journal",
+    "year": 2022,
+    "title": "VictimFinder: Harvesting rescue requests in disaster response from social media with BERT",
+    "authors": "Zhou, B., Zou, L., Mostafavi, A., Lin, B., Yang, M., Gharaibeh, N., Cai, H., Abedin, J., & Mandal, D.",
+    "venue": "Computers, Environment and Urban Systems, 95, 101824",
+    "url": "https://doi.org/10.1016/j.compenvurbsys.2022.101824"
+  },
+  {
+    "type": "journal",
+    "year": 2022,
+    "title": "Revealing the linguistic and geographical disparities of public awareness to COVID-19 outbreak through social media",
+    "authors": "Lin, B., Zou, L., Duffield, N., Mostafavi, A., Cai, H., Zhou, B., Tao, J., Yang, M., Mandal, D., & Abedin, J.",
+    "venue": "International Journal of Digital Earth, 15(1), 868–889",
+    "url": "https://doi.org/10.1080/17538947.2022.2070677"
+  },
+  {
+    "type": "journal",
+    "year": 2022,
+    "title": "Spatial–temporal land loss modeling and simulation in a vulnerable coast: A case study in coastal Louisiana",
+    "authors": "Yang, M., Zou, L., Cai, H., Qiang, Y., Lin, B., Zhou, B., Abedin, J., & Mandal, D.",
+    "venue": "Remote Sensing, 14(4), 896",
+    "url": "https://doi.org/10.3390/rs14040896"
+  },
+  {
+    "type": "abstract",
+    "year": 2022,
+    "title": "Spatial-Temporal Changes of Flood Exposure in the United States",
+    "authors": "Abedin, J., Zou, L., Cai, H., Yang, M., Akter, H., Mandal, D., Lin, B., & Zhou, B.",
+    "venue": "AGU Fall Meeting Abstracts · NH12A-07",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:5nxA0vEk-isC",
+    "additional": true
+  },
+  {
+    "type": "abstract",
+    "year": 2022,
+    "title": "Evolving Geographical Disparities of Community Disaster Resilience in the United States",
+    "authors": "Mandal, D., Zou, L., Cai, H., Abedin, J., Yang, M., Lin, B., & Zhou, B.",
+    "venue": "AGU Fall Meeting Abstracts · NH15C-0327",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:YsMSGLbcyi4C",
+    "additional": true
+  },
+  {
+    "type": "journal",
+    "year": 2021,
+    "title": "Application of RTK UAV in intertidal zone survey",
+    "authors": "Hu, Y., He, X., Xu, H., Zhou, B., & Wang, L.",
+    "venue": "Geospatial Information, 19(4), 41–43",
+    "url": "https://doi.org/10.3969/j.issn.1672-4623.2021.04.010"
+  },
+  {
+    "type": "journal",
+    "year": 2021,
+    "title": "Intelligent extraction of ground features in transmission line corridors from multi-source remote sensing images based on deep learning",
+    "authors": "Chen, G., Liu, J., Yao, Y., Wu, X., Wang, L., Zhou, B., Wang, X., Wang, L., & Jiang, Q.",
+    "venue": "Journal of Green Science and Technology",
+    "url": "https://m.fx361.com/news/2021/0221/11855934.html",
+    "related": [
+      {
+        "label": "Citation record",
+        "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:QIV2ME_5wuYC"
+      }
+    ]
+  },
+  {
+    "type": "abstract",
+    "year": 2021,
+    "title": "Visualizing and Evaluating the Geocoding Uncertainty in Social Sensing for Disaster Management",
+    "authors": "Mandal, D., Lin, B., Zhou, B., & Yang, M.",
+    "venue": "Abstracts of the ICA, 3, 192",
+    "url": "https://doi.org/10.5194/ica-abs-3-192-2021",
+    "additional": true
+  },
+  {
+    "type": "journal",
+    "year": 2020,
+    "title": "3D digital survey and design of distribution line based on Internet+, GIS, and typical design library",
+    "authors": "Chen, G., Cheng, Z., Yao, Y., Xu, H., Wang, L., Zhou, B., & Wang, X.",
+    "venue": "Electric Power Survey and Design, z1, 211–215",
+    "url": "https://doi.org/10.13500/j.dlkcsj.issn1671-9913.2020.S1.039"
+  },
+  {
+    "type": "journal",
+    "year": 2017,
+    "title": "The stability monitoring of UHV convertor station using high resolution InSAR dataset",
+    "authors": "Cheng, Z., Hu, J., Lu, S., Xu, N., Zhang, J., & Zhou, B.",
+    "venue": "Electric Power Survey and Design, 6, 5–8",
+    "url": "https://m.fx361.com/news/2018/0121/18792972.html"
+  },
+  {
+    "type": "journal",
+    "year": 2017,
+    "title": "Application of InSAR in electric power transmission line projects",
+    "authors": "Cheng, Z., Lu, S., Zhou, B., Chen, G., & Xu, N.",
+    "venue": "Electric Power Survey and Design, s1, 100–104",
+    "url": "https://doi.org/10.13500/j.cnki.11-4908/tk.2017.s1.022"
+  },
+  {
+    "type": "journal",
+    "year": 2017,
+    "title": "Application and accuracy analysis of control point free UAV in topological survey of power plants",
+    "authors": "Zhou, B., Liu, J., & Wu, X.",
+    "venue": "Bulletin of Surveying and Mapping, S1, 188–191",
+    "url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ehw9A-EAAAAJ&citation_for_view=ehw9A-EAAAAJ:4DMP91E08xMC"
+  },
+  {
+    "type": "journal",
+    "year": 2016,
+    "title": "Development of mobile data collecting system based on Windows Mobile",
+    "authors": "Zhou, B., Xu, H., Cheng, Z., & Pei, L.",
+    "venue": "Chinese Journal of Engineering Geophysics, 13(5), 684–688",
+    "url": "https://doi.org/10.3969/j.issn.1672-7940.2016.05.021"
+  },
+  {
+    "type": "journal",
+    "year": 2015,
+    "title": "Research on the critical techniques for the design of mobile mapping systems",
+    "authors": "Wang, Z., Yao, L., & Zhou, B.",
+    "venue": "Bulletin of Surveying and Mapping, S1, 231–234",
+    "url": "https://doi.org/10.13474/j.cnki.11-2246.2015.0666"
+  },
+  {
+    "type": "chapter",
+    "year": 2014,
+    "title": "Development and tests of low cost MMS",
+    "authors": "Yao, L., & Zhou, B.",
+    "venue": "Principle and Application Progress in Location-Based Services · Springer",
+    "url": "https://doi.org/10.1007/978-3-319-04028-8_12"
+  },
+  {
+    "type": "journal",
+    "year": 2013,
+    "title": "Development and Implementation of Real Time Piling Monitoring System Based On Android",
+    "authors": "Zhou, B., Yao, L., Xie, Y., & Bian, S.",
+    "venue": "Bulletin of Surveying and Mapping, 12, 97–100",
+    "url": "http://tb.chinasmp.com/EN/Y2013/V0/I12/97",
+    "alternateTitle": "Development and implementation of realtime piling ship monitoring system based on Android"
+  },
+  {
+    "type": "journal",
+    "year": 2012,
+    "title": "Research on new technologies in engineering survey",
+    "authors": "Zhou, B., & Xiao, J.",
+    "venue": "Geomatics Spatial Information Technology, 35(2), 221–222",
+    "url": "https://doi.org/10.3969/j.issn.1672-5867.2012.02.068"
   }
 ]

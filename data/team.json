@@ -6,14 +6,13 @@
     "university": "University of Tennessee, Knoxville",
     "email": "bzhou11@utk.edu",
     "office": "207 Burchfiel Geography Bldg. Knoxville, TN 37996-0925",
-    "phone": "(979) 255-0199",
     "website": "https://geography.utk.edu/people/instructional-faculty/bing-zhou/",
     "scholar": "https://scholar.google.com/citations?user=ehw9A-EAAAAJ",
     "orcid": "https://orcid.org/0000-0003-1106-1370",
     "github": "https://bzbarrett.github.io/",
     "twitter": "https://x.com/BarrettBingZhou/media",
     "linkedin": "https://www.linkedin.com/in/bing-zhou-a90b98239/",
-    "photo": "assets/images/team/bingzhou.jpg",
+    "photo": "assets/images/team/bing-zhou-square.jpg",
     "bio": [
       "Dr. Bing Zhou is an Assistant Professor (Tenure-Track) in the Department of Geography and Sustainability at the University of Tennessee, Knoxville. He leads the GRIND Lab (Geospatial Responsible AI for Nature-human Dynamics Laboratory).",
       "Dr. Zhou's research focuses on developing responsible geospatial AI to understand and mitigate coupled nature-human risks. His work spans GeoAI model design, remote sensing applications, and explainable AI for disaster detection, forecasting, and impact assessment across space and time.",
@@ -54,17 +53,23 @@
   },
   "phd_students": [
     {
-      "name": "Lula(Feifei) Yang",
+      "name": "Lula (Feifei) Yang",
       "role": "Ph.D. Student",
       "year": "Year 1",
-      "research": "Her research uses GeoAI and geospatial analysis to study nature–human dynamics, with interests in disaster resilience, environmental health, and responsible modeling.",
-      "email": "Fyang40@vols.utk.edu",
-      "photo": "assets/images/team/lula.png",
+      "research": "Her research uses geospatial data science to investigate environmental health, spatial equity, urban systems, and human–environment interactions.",
+      "email": "fyang40@vols.utk.edu",
+      "photo": "assets/images/team/lula-yang.webp",
       "tags": [
-        "Geospatial Science",
-        "Public Health"
+        "Environmental Health",
+        "Spatial Data Science"
       ],
-      "advisor": "Dr. Bing Zhou"
+      "advisor": "Dr. Bing Zhou",
+      "affiliation": "University of Tennessee, Knoxville",
+      "department": "Geography & Sustainability",
+      "links": {
+        "LinkedIn": "https://www.linkedin.com/in/lula-yang",
+        "GitHub": "https://github.com/LulaYang"
+      }
     }
   ],
   "ms_students": [
@@ -72,14 +77,95 @@
       "name": "Junbo Wang",
       "role": "M.S. Student",
       "year": "Year 2",
-      "research": "His research focuses on GeoAI, foundation models, and their applications in natural hazards and human-centered environmental perception.",
-      "email": "Jwang206@vols.utk.edu",
-      "photo": "assets/images/team/bbo.png",
+      "research": "His research focuses on multimodal GeoAI, geospatial foundation models, and spatial data science, with applications to natural hazards and human-centered environmental perception.",
+      "email": "jwang206@vols.utk.edu",
+      "photo": "assets/images/team/junbo-wang.webp",
       "tags": [
         "GeoAI",
-        "Data Analysis"
+        "Multimodal GenAI"
       ],
-      "advisor": "Dr. Bing Zhou"
+      "advisor": "Dr. Bing Zhou",
+      "affiliation": "University of Tennessee, Knoxville",
+      "department": "Geography & Sustainability",
+      "links": {
+        "GitHub": "https://github.com/bbo-junbo",
+        "LinkedIn": "https://www.linkedin.com/in/junbo-wang-a72b57141/",
+        "Google Scholar": "https://scholar.google.com/citations?user=UGKPVxkAAAAJ&hl=en"
+      }
+    }
+  ],
+  "research_profiles": [
+    {
+      "name": "Xiaoshu Yang",
+      "role": "Research Assistant",
+      "affiliation": "Rice University",
+      "bio": "Xiaoshu Yang is a Master's student in Computer Science at Rice University, where her research lies at the intersection of artificial intelligence, geospatial computing, and urban environmental analysis. Her current work focuses on multimodal learning and cross-modal interaction modeling for urban noise prediction, exploring how heterogeneous geospatial data and complex spatial relationships can be integrated to better understand and predict urban environmental dynamics. Her broader research interests include Geospatial Artificial Intelligence (GeoAI), machine learning, and human–environment interactions, with a particular emphasis on understanding how geographic environments influence human perception, behavior, and everyday experiences. Through advanced computational models, she aims to uncover hidden spatial patterns and support more intelligent, sustainable, and human-centered urban environments.",
+      "photo": "assets/images/team/xiaoshu-yang.webp",
+      "topic": "Predicting urban noise with multimodal geospatial data."
+    },
+    {
+      "name": "Xuechun Yu",
+      "role": "Research Assistant",
+      "affiliation": "University of Hong Kong",
+      "bio": "Xuechun Yu holds a Master of Urban Design from the University of Hong Kong. During three years as an urban planner, Yu worked on child-friendly city initiatives, including projects commissioned by UNICEF. That experience sparked an interest in how city design shapes everyday life and well-being. Yu’s research brings together human-centered GeoAI, multimodal urban sensing, and urban planning. Using urban imagery, soundscapes, and geospatial data, Yu studies how people experience cities and how those experiences can inform more equitable planning and design.",
+      "photo": "assets/images/team/xuechun-yu.webp",
+      "topic": "Using urban imagery and soundscapes to inform equitable planning."
+    },
+    {
+      "name": "Nikhila Ainala",
+      "role": "Research Mentee",
+      "affiliation": "Stevens Institute of Technology",
+      "bio": "Nikhila Ainala is a master’s student studying how floods affect access to hospitals in Tennessee. In an independent project supervised by Dr. Bing Zhou, Ainala examines how disruptions to the road network can change the routes communities rely on to reach hospital care.",
+      "project": "Flood Impacts on Road Connectivity and Hospital Accessibility in Tennessee",
+      "photo": "assets/images/team/nikhila-ainala.webp"
+    },
+    {
+      "name": "Katie James",
+      "role": "Research Assistant",
+      "affiliation": "Mount Holyoke College",
+      "bio": "Katie James is an undergraduate at Mount Holyoke College in South Hadley, Massachusetts, where she double majors in mathematics and geology. Her interests include data analysis and geotechnical applications. As an intern at the Pioneer Valley Planning Commission, she analyzed local business data, compiled a directory of the region’s businesses, and mapped their locations. In the GRIND Lab, she studies how vision-language models interpret geographic concepts.",
+      "photo": "assets/images/team/katie-james.webp",
+      "topic": "How vision-language models interpret geographic concepts."
+    },
+    {
+      "name": "Maitreyi Sinha",
+      "role": "Research Assistant",
+      "affiliation": "University of California, Irvine",
+      "bio": "Maitreyi Sinha is a Master’s student in Computer Science at the University of California, Irvine, where she also earned her Bachelor’s degree in Computer Science with a specialization in Intelligent Systems. Her research interests include computer vision, vision-language models, and multimodal learning, with a particular focus on how these models represent and reason about spatial information. Her current research explores the geographic reasoning capabilities of vision-language models, investigating their ability to recognize and utilize location-relevant visual features.",
+      "photo": "assets/images/team/maitreyi-sinha.webp",
+      "topic": "How vision-language models use visual cues to reason about location."
+    },
+    {
+      "name": "Jacob Spier",
+      "role": "Research Assistant",
+      "affiliation": "New York University",
+      "bio": "Jacob Spier is a master’s student who studies how extreme heat changes daily routines. Through the Spatial Data Lab Internship Program at Harvard’s Center for Geographic Analysis, Spier works with Dr. Bing Zhou to examine how visits to gyms and restaurants across California change during periods of extreme heat.",
+      "topic": "How extreme heat changes visits to gyms and restaurants in California."
+    },
+    {
+      "name": "Shiyun Wen",
+      "role": "Research Assistant",
+      "affiliation": "Texas A&M University",
+      "bio": "Shiyun Wen is a Research Assistant with an interdisciplinary background in landscape architecture, software engineering, and artificial intelligence. Her research focuses on GeoAI, urban computing, and multimodal machine learning, with an emphasis on understanding and modeling complex urban environments. She develops data-driven and generative AI approaches that integrate geospatial, visual, and acoustic information to investigate urban perception, environmental conditions, and human–environment interactions. Her work aims to bridge computational methods and urban research to support more intelligent, sustainable, and human-centered cities.",
+      "photo": "assets/images/team/shiyun-wen.webp",
+      "topic": "Modeling urban environments with geospatial, visual, and acoustic data."
+    },
+    {
+      "name": "Yuankun Jiao",
+      "role": "Research Assistant",
+      "affiliation": "University of Minnesota Twin Cities",
+      "bio": "Yuankun Jiao has an interdisciplinary background in GIScience and Computer Science. Her research interests lie at the intersection of GIScience, GeoAI, and human geography, with a focus on applying computational methods to environmental and social challenges. Her research experience spans georeferencing, recommender systems, natural language processing, vision-language model benchmarking, and spatiotemporal environmental analysis. She is currently collaborating with Dr. Bing Zhou on research examining wildfires and their cascading impacts on air quality and communities.",
+      "photo": "assets/images/team/yuankun-jiao.webp",
+      "topic": "How wildfires affect air quality and communities."
+    },
+    {
+      "name": "Augie Brown",
+      "role": "Research Mentee",
+      "affiliation": "Harvard University",
+      "period": "2026–Present",
+      "topic": "Extreme Heat & Human Behavior Change",
+      "affiliation_label": "Internship host",
+      "department": "Center for Geographic Analysis · Spatial Data Lab Internship Program"
     }
   ],
   "undergrads": [
@@ -125,5 +211,17 @@
       "thesis": "PLACEHOLDER: Thesis title",
       "placement": "PLACEHOLDER: Current position at institution"
     }
-  ]
+  ],
+  "school_logos": {
+    "University of Tennessee, Knoxville": "assets/images/education/ut-knoxville.svg",
+    "Rice University": "assets/images/education/rice.png",
+    "University of Hong Kong": "https://www.hku.hk/adobe/dynamicmedia/deliver/dm-aid--e220d385-e7d6-4b0b-9eab-f183eb6117a5/Frame%2011205.png.webp?preferwebp=true&width=1280",
+    "Mount Holyoke College": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Mount_Holyoke_College_logo.svg",
+    "University of California, Irvine": "https://brand.uci.edu/logos/_img/ucirvine-monogram.png",
+    "New York University": "https://upload.wikimedia.org/wikipedia/commons/6/66/Nyu_stacked_color.svg",
+    "Texas A&M University": "assets/images/education/texas-am.png",
+    "University of Minnesota Twin Cities": "https://upload.wikimedia.org/wikipedia/commons/6/6a/University_of_Minnesota_Logo.svg",
+    "Stevens Institute of Technology": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Stevens_inst_tech_textlogo.png",
+    "Harvard University": "assets/images/education/harvard.svg"
+  }
 }

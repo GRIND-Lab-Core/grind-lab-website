@@ -14,728 +14,49 @@
     content="GRIND Lab News — Research findings, awards, events, publications, and announcements.">
 
   <title>News — GRIND Lab</title>
-
-
-  <!-- ======================================================
-       FAVICON
-  ======================================================= -->
-
-  <link
-    rel="icon"
-    type="image/png"
-    href="assets/images/logo/Lab_Logo_ver01.png">
-
-
-  <!-- ======================================================
-       FONTS
-  ======================================================= -->
-
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com">
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-
-
-  <!-- ======================================================
-       ICONS
-  ======================================================= -->
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-
-  <!-- ======================================================
-       GLOBAL CSS
-  ======================================================= -->
-
-  <link
-    rel="stylesheet"
-    href="assets/css/main.css">
-
-
-  <!-- ======================================================
-       NEWS CSS
-  ======================================================= -->
-
-  <link
-    rel="stylesheet"
-    href="assets/css/news.css">
-
-
-  <!-- ======================================================
-       NEWS PAGE OVERRIDES
-  ======================================================= -->
-
-  <style>
-
-    /* ======================================================
-       HERO
-    ======================================================= */
-
-    .page-hero {
-      position: relative !important;
-
-      width: 100%;
-
-      min-height: 350px !important;
-      height: auto !important;
-
-      padding:
-        118px
-        28px
-        66px !important;
-
-      overflow: visible !important;
-    }
-
-
-
-    /* ======================================================
-       HERO CONTENT
-    ======================================================= */
-
-    .page-hero-content {
-      position: relative;
-
-      z-index: 5;
-
-      width: 100%;
-      max-width: 980px;
-
-      margin: 0 auto;
-
-      text-align: center;
-    }
-
-
-
-    /* ======================================================
-       HIDE ANY BREADCRUMB
-       Safety fallback even though breadcrumb HTML is removed
-    ======================================================= */
-
-    .page-hero .breadcrumb {
-      display: none !important;
-    }
-
-
-
-    /* ======================================================
-       LAB UPDATES
-    ======================================================= */
-
-    .page-hero-eyebrow {
-      display: inline-flex !important;
-
-      align-items: center;
-      justify-content: center;
-
-      margin:
-        0
-        auto
-        13px !important;
-
-      padding:
-        8px
-        22px;
-
-      opacity: 1 !important;
-      visibility: visible !important;
-
-      transform: none !important;
-    }
-
-
-
-    /* ======================================================
-       HERO TITLE
-    ======================================================= */
-
-    .page-hero h1 {
-      margin:
-        0
-        0
-        15px !important;
-
-      color: #ffffff;
-
-      font-size:
-        clamp(
-          43px,
-          4.7vw,
-          60px
-        );
-
-      font-weight: 900;
-
-      line-height: 1.02;
-
-      letter-spacing: -0.04em;
-    }
-
-
-
-    /* ======================================================
-       HERO DESCRIPTION
-    ======================================================= */
-
-    .page-hero p {
-      max-width: 720px;
-
-      margin:
-        0
-        auto !important;
-
-      color:
-        rgba(255, 255, 255, 0.78);
-
-      font-size: 16px;
-
-      line-height: 1.5;
-    }
-
-
-
-    /* ======================================================
-       FEATURED NEWS SECTION
-    ======================================================= */
-
-    .news-featured {
-      padding-top: 44px !important;
-      padding-bottom: 48px !important;
-    }
-
-
-
-    /* ======================================================
-       FEATURED CARD
-    ======================================================= */
-
-    .news-featured-card {
-      overflow: hidden;
-    }
-
-
-
-    /* ======================================================
-       FEATURED IMAGE
-    ======================================================= */
-
-    .news-featured-img {
-      position: relative;
-
-      min-height: 400px;
-
-      overflow: hidden;
-
-      background: #081522;
-    }
-
-
-    .news-featured-img a {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-    }
-
-
-    .news-featured-img img {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      min-height: 400px;
-
-      object-fit: cover;
-
-      transition:
-        transform 0.32s ease,
-        filter 0.32s ease;
-    }
-
-
-
-    /* ======================================================
-       SOUNDIT CROP
-       Focus more on center/right of image
-    ======================================================= */
-
-    .news-featured-img img.soundit-featured {
-      object-position:
-        82%
-        center !important;
-    }
-
-
-    .news-featured-card:hover
-    .news-featured-img img {
-      transform:
-        scale(1.015);
-
-      filter:
-        brightness(1.035);
-    }
-
-
-
-    /* ======================================================
-       FEATURED TITLE LINK
-    ======================================================= */
-
-    .news-featured-body h2 a {
-      color: inherit;
-
-      text-decoration: none;
-    }
-
-
-
-    /* ======================================================
-       FILTER BAR
-    ======================================================= */
-
-    .filter-bar {
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      flex-wrap: wrap;
-
-      gap: 9px;
-    }
-
-
-    .filter-btn {
-      cursor: pointer;
-    }
-
-
-
-    /* ======================================================
-       SEARCH
-    ======================================================= */
-
-    .news-search-wrap {
-      margin-bottom: 32px;
-    }
-
-
-
-    /* ======================================================
-       NEWS CARD IMAGES
-    ======================================================= */
-
-    .news-card-img {
-      position: relative;
-
-      width: 100%;
-      height: 220px;
-
-      overflow: hidden;
-
-      background: #eef2ee;
-    }
-
-
-    .news-card-img img {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-      object-position: center;
-
-      transition:
-        transform 0.28s ease,
-        filter 0.28s ease;
-    }
-
-
-    .news-card:hover
-    .news-card-img img {
-      transform:
-        scale(1.025);
-
-      filter:
-        brightness(1.035);
-    }
-
-
-
-    /* ======================================================
-       CATEGORY BADGE
-    ======================================================= */
-
-    .cat-icon {
-      position: absolute;
-
-      z-index: 3;
-
-      top: 14px;
-      left: 14px;
-    }
-
-
-
-    /* ======================================================
-       CARD TITLE LINKS
-    ======================================================= */
-
-    .news-card h3 a {
-      color: inherit;
-
-      text-decoration: none;
-
-      transition:
-        color 0.18s ease;
-    }
-
-
-    .news-card h3 a:hover {
-      color:
-        var(--accent);
-    }
-
-
-
-    /* ======================================================
-       FILTER VISIBILITY
-    ======================================================= */
-
-    .news-card.news-hidden {
-      display: none !important;
-    }
-
-
-
-    /* ======================================================
-       NO RESULTS
-    ======================================================= */
-
-    .news-no-results {
-      display: none;
-
-      grid-column:
-        1 / -1;
-
-      padding:
-        64px
-        20px;
-
-      color:
-        var(--text-light);
-
-      text-align: center;
-    }
-
-
-    .news-no-results.show {
-      display: block;
-    }
-
-
-    .news-no-results i {
-      display: block;
-
-      margin-bottom: 14px;
-
-      color:
-        var(--accent);
-
-      font-size: 30px;
-    }
-
-
-
-    /* ======================================================
-       TABLET
-    ======================================================= */
-
-    @media (max-width: 768px) {
-
-      .page-hero {
-        min-height:
-          325px !important;
-
-        padding:
-          106px
-          22px
-          60px !important;
-      }
-
-
-      .page-hero h1 {
-        font-size:
-          42px;
-      }
-
-
-      .page-hero p {
-        font-size:
-          15.5px;
-      }
-
-
-      .news-featured {
-        padding-top:
-          36px !important;
-      }
-
-
-      .news-featured-img,
-      .news-featured-img img {
-        min-height:
-          290px;
-      }
-
-
-      .news-card-img {
-        height:
-          240px;
-      }
-
-    }
-
-
-
-    /* ======================================================
-       MOBILE
-    ======================================================= */
-
-    @media (max-width: 520px) {
-
-      .page-hero {
-        min-height:
-          300px !important;
-
-        padding:
-          96px
-          18px
-          54px !important;
-      }
-
-
-      .page-hero-eyebrow {
-        margin-bottom:
-          10px !important;
-      }
-
-
-      .page-hero h1 {
-        margin-bottom:
-          12px !important;
-
-        font-size:
-          34px;
-      }
-
-
-      .page-hero p {
-        font-size:
-          14px;
-      }
-
-
-      .news-featured {
-        padding-top:
-          28px !important;
-      }
-
-
-      .news-featured-img,
-      .news-featured-img img {
-        min-height:
-          220px;
-      }
-
-
-      .news-featured-img img.soundit-featured {
-        object-position:
-          78%
-          center !important;
-      }
-
-
-      .news-card-img {
-        height:
-          220px;
-      }
-
-    }
-
-  </style>
-
+  <meta name="theme-color" content="#faf8f2">
+  <link rel="icon" type="image/png" href="assets/images/logo/grind-icon.png">
+  <link rel="stylesheet" href="assets/fonts/fontawesome/icons.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/news.css">
 </head>
 
-
-
 <body>
-
-
-  <!-- ======================================================
-       PAGE LOADER
-  ======================================================= -->
-
-  <div
-    class="page-loader"
-    id="page-loader">
-
-    <img
-      src="assets/images/logo/Lab_Logo_ver01.png"
-      alt="GRIND Lab"
-      class="loader-logo"
-      width="80">
-
-  </div>
-
-
-
-  <!-- ======================================================
-       NAVBAR
-  ======================================================= -->
-
-  <nav
-    class="navbar"
-    id="navbar">
-
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
     <div class="nav-container">
-
-
-      <a
-        href="index.html"
-        class="nav-brand">
-
-
-        <img
-          src="assets/images/logo/Lab_Logo_ver01.png"
-          alt="GRIND Lab Logo"
-          class="nav-logo-img">
-
-
-        <div class="nav-logo-text">
-
-          <span class="nav-logo-main">
-            GRIND Lab
-          </span>
-
-          <span class="nav-logo-sub">
-            UTK Geography
-          </span>
-
-        </div>
-
+      <a class="nav-brand" href="index.html" aria-label="GRIND Lab home">
+        <img src="assets/images/logo/grind-tennessee.png" alt="GRIND Lab" width="640" height="173">
       </a>
-
-
-
-      <ul
-        class="nav-menu"
-        id="nav-menu">
-
-
-        <li>
-          <a
-            href="index.html"
-            class="nav-link">
-
-            Home
-
-          </a>
-        </li>
-
-
-        <li>
-          <a
-            href="news.html"
-            class="nav-link">
-
-            News
-
-          </a>
-        </li>
-
-
-        <li>
-          <a
-            href="projects.html"
-            class="nav-link">
-
-            Projects
-
-          </a>
-        </li>
-
-
-        <li>
-          <a
-            href="team.html"
-            class="nav-link">
-
-            Team
-
-          </a>
-        </li>
-
-
-        <li>
-          <a
-            href="contact.html"
-            class="nav-link">
-
-            Contact
-
-          </a>
-        </li>
-
+      <div class="affiliation">University of Tennessee<span>Knoxville</span></div>
+      <a class="pi-avatar" href="https://bzbarrett.github.io/" aria-label="Bing Zhou’s personal website" title="Principal Investigator · Bing Zhou’s personal website">
+        <span class="pi-hint" aria-hidden="true">PI <span class="pi-arrow"></span></span>
+        <span class="nav-portrait" aria-hidden="true">
+          <span class="portrait-turn">
+            <img class="portrait-face" src="assets/images/team/bing-zhou-avatar.jpg" alt="" width="40" height="40">
+            <img class="portrait-face portrait-back" src="assets/images/team/bing-zhou-avatar-illustrated.webp" alt="" width="40" height="40">
+          </span>
+        </span>
+      </a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a class="nav-link" href="index.html">Home</a></li>
+        <li><a class="nav-link" href="news.html" aria-current="page">News</a></li>
+        <li><a class="nav-link" href="research.html">Research</a></li>
+        <li><a class="nav-link" href="publications.html">Publication</a></li>
+        <li><a class="nav-link" href="team.html">Team</a></li>
+        <li><a class="nav-link" href="resources.html">Resource</a></li>
+        <li><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-
-
-
       <div class="nav-actions">
-
-
-        <a
-          href="apply.html"
-          class="btn-apply">
-
-          Apply
-
-        </a>
-
-
-        <button
-          class="hamburger"
-          id="hamburger"
-          aria-label="Toggle menu"
-          aria-expanded="false">
-
-          <span></span>
-          <span></span>
-          <span></span>
-
+        <a class="btn-apply" href="apply.html">Apply</a>
+        <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+          <span></span><span></span><span></span>
         </button>
-
       </div>
-
     </div>
-
   </nav>
 
-
-
-  <!-- ======================================================
-       HERO
-       No Home > News breadcrumb
-  ======================================================= -->
-
+  <main id="main-content" tabindex="-1">
   <section class="page-hero">
 
     <div class="page-hero-content">
@@ -748,231 +69,30 @@
 
 
 
-  <!-- ======================================================
-       FEATURED NEWS
-       SOUNDIT AAG 2026 FINALIST
-  ======================================================= -->
-
-  <section class="news-featured fade-up">
-
-    <div class="news-featured-card">
-
-
-      <div class="news-featured-img">
-
-        <a
-          href="https://gisense.github.io/SounDiT-Page/"
-          target="_blank"
-          rel="noopener noreferrer">
-
-          <img
-            src="assets/images/projects/soundit-cover.jpg"
-            class="soundit-featured"
-            alt="SounDiT geo-contextual soundscape-to-landscape generation">
-
-        </a>
-
-      </div>
-
-
-
-      <div class="news-featured-body">
-
-
-        <div class="news-featured-meta">
-
-
-          <span class="badge badge-orange">
-
-            Featured · Award
-
-          </span>
-
-
-          <span
-            style="
-              font-size:12px;
-              color:rgba(255,255,255,0.5);
-            ">
-
-            <i
-              class="far fa-calendar"
-              style="margin-right:5px;">
-            </i>
-
-            2026
-
-          </span>
-
-        </div>
-
-
-
-        <h2>
-
-          <a
-            href="https://gisense.github.io/SounDiT-Page/"
-            target="_blank"
-            rel="noopener noreferrer">
-
-            SounDiT Named Finalist in the
-            AAG 2026 Student Honors Paper Competition
-
-          </a>
-
-        </h2>
-
-
-
-        <p>
-
-          Junbo Wang and collaborators presented SounDiT,
-          a geo-contextual multimodal framework for
-          soundscape-to-landscape generation,
-          at the 2026 AAG Annual Meeting.
-
-          The work was selected as a finalist in the
-          GISS-SG Student Paper Competition.
-
-        </p>
-
-
-
-        <div class="news-featured-footer">
-
-
-          <div class="news-author">
-
-
-            <div class="author-avatar">
-
-              JW
-
-            </div>
-
-
-            <span class="author-name">
-
-              Junbo Wang
-
-            </span>
-
-          </div>
-
-
-
-          <a
-            href="https://gisense.github.io/SounDiT-Page/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-outline-white btn-sm">
-
-            View Project
-
-            <i class="fas fa-arrow-right"></i>
-
-          </a>
-
-        </div>
-
-      </div>
-
+  <div class="news-tools" role="search" aria-label="Filter and search news">
+    <div class="filter-bar" role="group" aria-label="Filter news by category">
+      <span class="filter-label" aria-hidden="true">Filter</span>
+      <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="filter-btn" data-filter="publication" aria-pressed="false">Publications</button>
+      <button type="button" class="filter-btn" data-filter="award" aria-pressed="false">Awards</button>
+      <button type="button" class="filter-btn" data-filter="event" aria-pressed="false">Events</button>
+      <button type="button" class="filter-btn" data-filter="announcement" aria-pressed="false">Announcements</button>
     </div>
-
-  </section>
-
-
-
-  <!-- ======================================================
-       FILTER BAR
-  ======================================================= -->
-
-  <div class="filter-bar fade-up">
-
-
-    <span class="filter-label">
-
-      <i class="fas fa-filter"></i>
-
-      Filter:
-
-    </span>
-
-
-
-    <button
-      class="filter-btn active"
-      data-filter="all">
-
-      All
-
-    </button>
-
-
-
-    <button
-      class="filter-btn"
-      data-filter="publication">
-
-      Publications
-
-    </button>
-
-
-
-    <button
-      class="filter-btn"
-      data-filter="award">
-
-      Awards
-
-    </button>
-
-
-
-    <button
-      class="filter-btn"
-      data-filter="event">
-
-      Events
-
-    </button>
-
-
-
-    <button
-      class="filter-btn"
-      data-filter="announcement">
-
-      Announcements
-
-    </button>
-
+    <label class="news-mobile-filter"><span class="sr-only">Filter news by category</span>
+      <select id="news-category" aria-controls="news-grid">
+        <option value="all">All categories</option>
+        <option value="publication">Publications</option>
+        <option value="award">Awards</option>
+        <option value="event">Events</option>
+        <option value="announcement">Announcements</option>
+      </select>
+    </label>
+    <label class="news-search">
+      <i class="fas fa-search" aria-hidden="true"></i>
+      <span class="sr-only">Search news</span>
+      <input type="search" id="news-search" placeholder="Search news…" aria-controls="news-grid">
+    </label>
   </div>
-
-
-
-  <!-- ======================================================
-       SEARCH
-  ======================================================= -->
-
-  <div class="news-search-wrap">
-
-    <div class="news-search">
-
-      <i class="fas fa-search"></i>
-
-      <input
-        type="text"
-        id="news-search"
-        placeholder="Search news…"
-        aria-label="Search news">
-
-    </div>
-
-  </div>
-
-
 
   <!-- ======================================================
        NEWS GRID
@@ -1018,7 +138,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               2026
 
@@ -1058,12 +178,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-green">
 
@@ -1090,7 +205,7 @@
 
               Explore
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1098,6 +213,22 @@
 
         </div>
 
+      </article>
+
+      <article class="news-card" data-category="award">
+        <div class="news-card-img">
+          <img src="assets/images/projects/soundit-cover.jpg" alt="SounDiT soundscape-to-landscape project" class="soundit-cover">
+          <span class="cat-icon badge badge-orange">Award</span>
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-meta"><span class="news-card-date"><i class="far fa-calendar" aria-hidden="true"></i> 2026</span></div>
+          <h3><a href="https://gisense.github.io/SounDiT-Page/" target="_blank" rel="noopener noreferrer">SounDiT Named Finalist in the AAG 2026 Student Honors Paper Competition</a></h3>
+          <p>Junbo Wang and collaborators presented SounDiT, a framework for generating landscapes from sound, at AAG 2026. The work was a finalist in the GISS-SG Student Paper Competition.</p>
+          <div class="news-card-footer">
+            <div><span class="badge">AAG 2026</span></div>
+            <a href="https://gisense.github.io/SounDiT-Page/" class="read-more" target="_blank" rel="noopener noreferrer">View project <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
       </article>
 
 
@@ -1135,7 +266,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               May 2026
 
@@ -1174,12 +305,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-blue">
 
@@ -1206,7 +332,7 @@
 
               Read
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1251,7 +377,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               Mar 2026
 
@@ -1291,12 +417,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-blue">
 
@@ -1323,7 +444,7 @@
 
               Details
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1367,7 +488,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               Mar 2026
 
@@ -1407,12 +528,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-purple">
 
@@ -1439,7 +555,7 @@
 
               Visit
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1484,7 +600,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               2026
 
@@ -1526,12 +642,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-green">
 
@@ -1558,7 +669,7 @@
 
               Program
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1602,7 +713,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               Nov 2025
 
@@ -1642,12 +753,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-blue">
 
@@ -1674,7 +780,7 @@
 
               Read
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1719,7 +825,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               Jul 2025
 
@@ -1758,12 +864,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-purple">
 
@@ -1790,7 +891,7 @@
 
               Read
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1834,7 +935,7 @@
 
             <span class="news-card-date">
 
-              <i class="far fa-calendar"></i>
+              <i class="far fa-calendar" aria-hidden="true"></i>
 
               Mar 2024
 
@@ -1875,12 +976,7 @@
           <div class="news-card-footer">
 
 
-            <div
-              style="
-                display:flex;
-                gap:6px;
-                flex-wrap:wrap;
-              ">
+            <div>
 
               <span class="badge badge-red">
 
@@ -1907,7 +1003,7 @@
 
               Read
 
-              <i class="fas fa-arrow-right"></i>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
 
             </a>
 
@@ -1928,9 +1024,9 @@
 
       <div
         class="news-no-results"
-        id="news-no-results">
+        id="news-no-results" role="status" hidden>
 
-        <i class="fas fa-magnifying-glass"></i>
+        <i class="fas fa-magnifying-glass" aria-hidden="true"></i>
 
         No matching news items found.
 
@@ -1940,12 +1036,7 @@
     </div>
 
   </section>
-
-
-
-  <!-- ======================================================
-       FOOTER
-  ======================================================= -->
+  </main>
 
   <footer class="footer">
 
@@ -1960,9 +1051,7 @@
       <div class="footer-brand-col">
 
 
-        <img
-          src="assets/images/logo/Lab_Logo_ver01.png"
-          alt="GRIND Lab">
+        <img src="assets/images/logo/grind-tennessee.png" alt="GRIND Lab" width="640" height="173">
 
 
         <p>
@@ -1986,7 +1075,7 @@
             rel="noopener noreferrer"
             aria-label="GitHub">
 
-            <i class="fab fa-github"></i>
+            <i class="fab fa-github" aria-hidden="true"></i>
 
           </a>
 
@@ -1998,7 +1087,7 @@
             rel="noopener noreferrer"
             aria-label="Google Scholar">
 
-            <i class="fas fa-graduation-cap"></i>
+            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
 
           </a>
 
@@ -2010,7 +1099,7 @@
             rel="noopener noreferrer"
             aria-label="LinkedIn">
 
-            <i class="fab fa-linkedin-in"></i>
+            <i class="fab fa-linkedin-in" aria-hidden="true"></i>
 
           </a>
 
@@ -2052,10 +1141,9 @@
 
 
           <li>
-            <a href="projects.html">
-              Projects
-            </a>
+            <a href="research.html">Research</a>
           </li>
+            <li><a href="publications.html">Publication</a></li>
 
 
           <li>
@@ -2063,6 +1151,7 @@
               Team
             </a>
           </li>
+          <li><a href="resources.html">Resource</a></li>
 
 
           <li>
@@ -2102,28 +1191,28 @@
 
 
           <li>
-            <a href="projects.html">
+            <a href="research.html#disaster-resilience">
               Disaster Resilience
             </a>
           </li>
 
 
           <li>
-            <a href="projects.html">
+            <a href="research.html#environmental-justice">
               Environmental Health
             </a>
           </li>
 
 
           <li>
-            <a href="projects.html">
+            <a href="research.html#spatial-data-science">
               Spatial Data Science
             </a>
           </li>
 
 
           <li>
-            <a href="projects.html">
+            <a href="research.html#responsible-geoai">
               Responsible GIScience
             </a>
           </li>
@@ -2205,202 +1294,8 @@
 
   </footer>
 
-
-
-  <!-- ======================================================
-       SCROLL TO TOP
-  ======================================================= -->
-
-  <button
-    class="scroll-top"
-    aria-label="Scroll to top">
-
-    <i class="fas fa-arrow-up"></i>
-
-  </button>
-
-
-
-  <!-- ======================================================
-       GLOBAL JS
-  ======================================================= -->
-
-  <script src="assets/js/main.js"></script>
-
-
-
-  <!-- ======================================================
-       FILTER + SEARCH
-  ======================================================= -->
-
-  <script>
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      () => {
-
-
-        const filterButtons =
-          document.querySelectorAll(
-            ".filter-btn"
-          );
-
-
-        const newsCards =
-          document.querySelectorAll(
-            ".news-card[data-category]"
-          );
-
-
-        const searchInput =
-          document.getElementById(
-            "news-search"
-          );
-
-
-        const noResults =
-          document.getElementById(
-            "news-no-results"
-          );
-
-
-        let activeFilter =
-          "all";
-
-
-
-        function updateNews() {
-
-
-          const searchTerm =
-            searchInput
-              ? searchInput
-                  .value
-                  .trim()
-                  .toLowerCase()
-              : "";
-
-
-          let visibleCount =
-            0;
-
-
-
-          newsCards.forEach(
-            card => {
-
-
-              const category =
-                card.dataset.category;
-
-
-              const text =
-                card
-                  .innerText
-                  .toLowerCase();
-
-
-              const matchesFilter =
-                activeFilter === "all" ||
-                category === activeFilter;
-
-
-              const matchesSearch =
-                !searchTerm ||
-                text.includes(
-                  searchTerm
-                );
-
-
-              const shouldShow =
-                matchesFilter &&
-                matchesSearch;
-
-
-              card.classList.toggle(
-                "news-hidden",
-                !shouldShow
-              );
-
-
-              if (shouldShow) {
-
-                visibleCount += 1;
-
-              }
-
-            }
-          );
-
-
-
-          if (noResults) {
-
-            noResults.classList.toggle(
-              "show",
-              visibleCount === 0
-            );
-
-          }
-
-        }
-
-
-
-        filterButtons.forEach(
-          button => {
-
-
-            button.addEventListener(
-              "click",
-              () => {
-
-
-                filterButtons.forEach(
-                  btn => {
-
-                    btn.classList.remove(
-                      "active"
-                    );
-
-                  }
-                );
-
-
-                button.classList.add(
-                  "active"
-                );
-
-
-                activeFilter =
-                  button.dataset.filter;
-
-
-                updateNews();
-
-              }
-            );
-
-          }
-        );
-
-
-
-        if (searchInput) {
-
-          searchInput.addEventListener(
-            "input",
-            updateNews
-          );
-
-        }
-
-      }
-    );
-
-  </script>
-
-
+  <button type="button" class="scroll-top" aria-label="Scroll to top" hidden><i class="fas fa-arrow-up" aria-hidden="true"></i></button>
+  <script src="assets/js/main.js" defer></script>
+  <script src="assets/js/news.js" defer></script>
 </body>
-
 </html>
